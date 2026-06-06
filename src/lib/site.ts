@@ -360,12 +360,12 @@ export const eventPackages = [
   {
     name: "The Front Nine",
     price: "Reach out for details",
-    items: ["2 hours of private bay time", "Choice of two shareable platters", "One drink ticket per guest", "Up to 12 guests"],
+    items: ["Private bay time for your group", "Shareables from the kitchen", "Drink options for the table", "Great for smaller get-togethers"],
   },
   {
     name: "The Clubhouse",
     price: "Reach out for details",
-    items: ["3 hours of private bay time", "Burger bar + three shareables", "Two drink tickets per guest", "Reserved lounge seating"],
+    items: ["Extended private bay time", "Food spread + shareables", "Bar package options", "Reserved lounge seating"],
     featured: true,
   },
   {
