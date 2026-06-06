@@ -5,8 +5,8 @@ import { useReducedMotion } from "motion/react";
 const items = [
   "5 TrackMan Simulator Bays",
   "500+ Championship Courses",
-  "Smash Burgers & From-Scratch Kitchen",
-  "Full Bar · Craft Cocktails · Cold Drafts",
+  "Burgers · Wings · Sandwiches & Shareables",
+  "Full Bar · Signature Cocktails · Cold Drafts",
   "Veteran-Owned",
   "Henderson, Nevada",
 ];

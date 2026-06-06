@@ -14,8 +14,8 @@ export default function Footer() {
           <div>
             <Wordmark />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/70">
-              Five TrackMan simulator bays, a full bar and a from-scratch
-              kitchen — in the heart of Henderson. Veteran-owned.
+              Five TrackMan simulator bays, a full bar and a full kitchen —
+              in the heart of Henderson. Veteran-owned.
             </p>
             <p className="eyebrow mt-5 text-gold-soft">{business.tagline}</p>
           </div>

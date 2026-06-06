@@ -21,9 +21,9 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Drink — Smash Burgers, Wings & Full Bar",
+  title: "Food & Drink — Burgers, Wings & Full Bar",
   description:
-    "From-scratch smash burgers, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour weekdays 3–6 PM in Henderson, NV.",
+    "Burgers, sandwiches, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour weekdays 3–6 PM in Henderson, NV.",
 };
 
 function SimpleList({ items }: { items: MenuItem[] }) {
@@ -52,7 +52,7 @@ export default function FoodDrink() {
     <>
       <PageHero
         eyebrow="Food & Drink"
-        title="A from-scratch kitchen and a proper bar."
+        title="A full kitchen and a proper bar."
         intro="Real food made to order, an honest pour and a happy hour that runs right into the bays. Golf optional."
         image={img.foodCheesesteak}
       />
@@ -68,7 +68,7 @@ export default function FoodDrink() {
               </h2>
             </div>
             <span className="hidden text-sm text-muted sm:block">
-              Smash-style burgers · made to order
+              Burgers, sandwiches & shareables · made to order
             </span>
           </div>
         </Reveal>

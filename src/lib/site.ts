@@ -5,9 +5,9 @@
 // =============================================================================
 
 export const business = {
-  name: "Chip Shots Indoor Golf",
+  name: "Chip Shots Indoor Golf Club",
   shortName: "Chip Shots",
-  tagline: "Golf • Burgers • Beer",
+  tagline: "Golf • Food • Drinks",
   address: {
     street: "1473 E Lake Mead Pkwy, Suite 110",
     city: "Henderson",
@@ -199,7 +199,7 @@ export const foodMenu: MenuSection[] = [
   },
   {
     title: "Burgers",
-    note: "Smash-style, served with fries",
+    note: "Served with fries",
     items: [
       { name: "The Chip Shots Classic", price: "$16" },
       { name: "Mushroom & Swiss", price: "$17" },

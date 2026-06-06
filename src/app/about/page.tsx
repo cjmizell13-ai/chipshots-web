@@ -29,7 +29,7 @@ const values = [
   {
     icon: Icon.star,
     title: "Quality first",
-    body: "From-scratch food, real cocktails and tour-grade TrackMan tech. No corners cut.",
+    body: "Real food, real cocktails and tour-grade TrackMan tech. No corners cut.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function About() {
             </Reveal>
             <Reveal delay={0.18}>
               <p className="mt-4 leading-relaxed text-muted">
-                Five TrackMan bays, 500+ courses, a from-scratch menu and a full
+                Five TrackMan bays, 500+ courses, a full kitchen and a full
                 bar — open late, climate-controlled, and run by people who live
                 here.
               </p>
@@ -195,7 +195,7 @@ export default function About() {
               <div className="h-full min-h-[420px] overflow-hidden rounded-3xl border border-cream/15 shadow-[var(--shadow-soft)]">
                 <iframe
                   src={business.mapEmbed}
-                  title="Map to Chip Shots Indoor Golf"
+                  title="Map to Chip Shots Indoor Golf Club"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-full min-h-[420px] w-full"

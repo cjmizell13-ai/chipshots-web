@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(business.website),
   title: {
     default:
-      "Chip Shots Indoor Golf | Golf Simulators, Burgers & Bar — Henderson, NV",
-    template: "%s | Chip Shots Indoor Golf",
+      "Chip Shots Indoor Golf Club | Golf Simulators, Food & Bar — Henderson, NV",
+    template: "%s | Chip Shots Indoor Golf Club",
   },
   description:
-    "Five TrackMan simulator bays, a full bar and a from-scratch kitchen in Henderson, NV. Smash burgers, cold drafts, craft cocktails and 500+ courses. Veteran-owned. Now open.",
+    "Five TrackMan simulator bays, a full bar and a full kitchen in Henderson, NV. Burgers, sandwiches, wings, shareables, cold drafts, signature cocktails and 500+ courses. Veteran-owned. Now open.",
   keywords: [
     "indoor golf Henderson",
     "golf simulator Henderson NV",
@@ -43,15 +43,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: business.website,
     siteName: business.name,
-    title: "Chip Shots Indoor Golf — Golf • Burgers • Beer",
+    title: "Chip Shots Indoor Golf Club — Golf • Food • Drinks",
     description:
-      "Five TrackMan bays, a full bar and a from-scratch kitchen in the heart of Henderson, NV.",
+      "Five TrackMan bays, a full bar and a full kitchen in the heart of Henderson, NV.",
     images: [{ url: "/images/hero-bay-coastal.jpg", width: 1200, height: 800, alt: business.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chip Shots Indoor Golf — Henderson, NV",
-    description: "Golf simulators, smash burgers and a full bar. Veteran-owned.",
+    title: "Chip Shots Indoor Golf Club — Henderson, NV",
+    description: "Golf simulators, a full kitchen and a full bar. Veteran-owned.",
     images: ["/images/hero-bay-coastal.jpg"],
   },
   alternates: { canonical: business.website },
@@ -62,7 +62,7 @@ const jsonLd = {
   "@type": ["Restaurant", "BarOrPub", "SportsActivityLocation"],
   name: business.name,
   description:
-    "Indoor golf simulators, full bar and from-scratch kitchen in Henderson, NV.",
+    "Indoor golf simulators, full bar and full kitchen in Henderson, NV.",
   url: business.website,
   telephone: business.phone,
   email: business.email,

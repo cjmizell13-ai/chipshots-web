@@ -28,8 +28,8 @@ const pillars = [
   {
     key: "eat",
     eyebrow: "Eat",
-    title: "Smash Burgers & More",
-    body: "A from-scratch kitchen turning out smash burgers, loaded shareables, wings and salads. Real food worth showing up for — golf optional.",
+    title: "A Full Kitchen & More",
+    body: "Burgers, sandwiches, wings, loaded shareables and salads — a full kitchen turning out real food worth showing up for. Golf optional.",
     image: img.foodCheesesteak,
     href: "/food-drink",
     cta: "View the Menu",
@@ -40,7 +40,7 @@ const pillars = [
     eyebrow: "Drink",
     title: "Full Bar & Cocktails",
     body: "Cold drafts, an honest wine list and signature cocktails like the Transfusion and the Azalea. Happy hour weekdays, 3–6 PM — in the bays too.",
-    image: img.cocktailRed,
+    image: img.cocktailsHighball,
     href: "/food-drink",
     cta: "See Drinks",
     icon: Icon.glass,
@@ -72,15 +72,15 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="font-display mt-5 max-w-4xl text-balance text-5xl font-light leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
-              Golf, burgers <Amp className="text-gold" /> beer{" "}
+              Golf, food <Amp className="text-gold" /> drinks{" "}
               <span className="text-gold">under one roof.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">
-              Five TrackMan simulator bays, a full bar and a from-scratch
-              kitchen in the heart of Henderson. Come for the burgers, stay for
-              the game — or just the game.
+              Five TrackMan simulator bays, a full bar and a full kitchen in
+              the heart of Henderson. Come for the food, stay for the game —
+              or just the game.
             </p>
           </Reveal>
           <Reveal delay={0.24}>
@@ -112,7 +112,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="font-display mt-4 text-balance text-4xl font-light text-green-deep sm:text-5xl">
-              One room. Three ways to enjoy it.
+              One building. Three ways to enjoy it.
             </h2>
           </Reveal>
           <GoldRule className="mx-auto mt-7 w-40" />
@@ -267,14 +267,14 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-5 max-w-lg leading-relaxed text-muted">
-                Smash burgers, hand-breaded wings, loaded totchos and a Philly
-                worth the drive — all made from scratch. Pair it with a cold
-                draft, a glass of wine or a signature cocktail. Happy hour runs
-                weekdays 3–6 PM.
+                Burgers, hand-breaded wings, loaded totchos and a Philly worth
+                the drive — plus sandwiches, wraps and salads. Pair it with a
+                cold draft, a glass of wine or a signature cocktail. Happy hour
+                runs weekdays 3–6 PM.
               </p>
             </Reveal>
             <Stagger className="mt-8 flex flex-wrap gap-3">
-              {["Smash Burgers", "Wings & Tenders", "Craft Cocktails", "Cold Drafts", "Happy Hour 3–6"].map(
+              {["Burgers & Sandwiches", "Wings & Tenders", "Signature Cocktails", "Cold Drafts", "Happy Hour 3–6"].map(
                 (tag) => (
                   <StaggerItem
                     key={tag}
@@ -455,7 +455,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-3xl border border-line shadow-[var(--shadow-soft)]">
               <iframe
                 src={business.mapEmbed}
-                title="Map to Chip Shots Indoor Golf"
+                title="Map to Chip Shots Indoor Golf Club"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-[420px] w-full"
