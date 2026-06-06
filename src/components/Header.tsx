@@ -36,14 +36,15 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,0.7,0.2,1)] ${
-        scrolled
-          ? "bg-green-deep/95 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
-          : "bg-gradient-to-b from-green-deep/70 to-transparent"
-      }`}
-    >
-      <AnnouncementBar />
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,0.7,0.2,1)] ${
+          scrolled
+            ? "bg-green-deep/95 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+            : "bg-gradient-to-b from-green-deep/70 to-transparent"
+        }`}
+      >
+        <AnnouncementBar />
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Wordmark />
 
@@ -80,6 +81,7 @@ export default function Header() {
           </button>
         </div>
       </nav>
+      </header>
 
       <AnimatePresence>
         {open && (
@@ -161,6 +163,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
