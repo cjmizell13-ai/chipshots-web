@@ -359,18 +359,18 @@ export const eventTypes = [
 export const eventPackages = [
   {
     name: "The Front Nine",
-    price: "From $45 / guest",
+    price: "Reach out for details",
     items: ["2 hours of private bay time", "Choice of two shareable platters", "One drink ticket per guest", "Up to 12 guests"],
   },
   {
     name: "The Clubhouse",
-    price: "From $65 / guest",
+    price: "Reach out for details",
     items: ["3 hours of private bay time", "Burger bar + three shareables", "Two drink tickets per guest", "Reserved lounge seating"],
     featured: true,
   },
   {
     name: "The Masters Table",
-    price: "Custom quote",
+    price: "Reach out for details",
     items: ["Full or partial venue buyout", "Curated food & bar package", "Hosted bar tab options", "Dedicated event captain"],
   },
 ];
