@@ -51,6 +51,76 @@ export default function Memberships() {
         </div>
       </section>
 
+      {/* ============================================== HOW IT WORKS ===== */}
+      <section className="border-y border-line bg-cream-2">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+          <Reveal>
+            <div className="max-w-2xl">
+              <p className="eyebrow text-gold">How it works</p>
+              <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
+                Simple to join. Simpler to play.
+              </h2>
+              <p className="mt-5 leading-relaxed text-muted">
+                Memberships are month-to-month or annual — no long contracts.
+                Here's exactly what you get and how playing works once you're in.
+              </p>
+            </div>
+          </Reveal>
+
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: Icon.target,
+                title: "Unlimited or by the hour",
+                body: "Go Unlimited for flat-rate play as often as you like, or keep the $30/hr member rate on pay-as-you-go tiers — always below the $40–$50 walk-in rate.",
+              },
+              {
+                icon: Icon.clock,
+                title: "Fair-use keeps bays open",
+                body: "Up to 2 hours per visit and 2 active reservations at a time, so there's always a bay free when you want to play.",
+              },
+              {
+                icon: Icon.star,
+                title: "Perks on every visit",
+                body: "Priority booking up to 14 days out, 10% off all food and drink, and 24/7 access to the bays the moment you join.",
+              },
+            ].map((step, i) => {
+              const StepIcon = step.icon;
+              return (
+                <StaggerItem
+                  key={step.title}
+                  as="article"
+                  className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green-deep text-gold">
+                      <StepIcon className="h-5 w-5" />
+                    </span>
+                    <span className="font-display text-3xl text-line">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="font-display mt-5 text-xl text-green-deep">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {step.body}
+                  </p>
+                </StaggerItem>
+              );
+            })}
+          </Stagger>
+
+          <Reveal delay={0.05}>
+            <p className="mt-8 text-sm text-muted">
+              <span className="font-medium text-green-deep">Billing:</span>{" "}
+              monthly tiers renew month-to-month — cancel anytime. Annual tiers
+              are billed once up front and save you the most over the year.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ============================================== TIERS ===== */}
       <section className="bg-green-deep text-cream">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal, GoldRule } from "@/components/ui/motion";
+import { AmpText } from "@/components/ui/amp";
 
 /**
  * Shared banner for interior pages — dark green photo header with eyebrow,
@@ -29,11 +30,13 @@ export default function PageHero({
       <div className="veil-green absolute inset-0" />
       <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-44">
         <Reveal>
-          <p className="eyebrow text-gold-soft">{eyebrow}</p>
+          <p className="eyebrow text-gold-soft">
+            <AmpText className="text-gold">{eyebrow}</AmpText>
+          </p>
         </Reveal>
         <Reveal delay={0.08}>
           <h1 className="font-display mt-4 max-w-3xl text-balance text-4xl font-light leading-tight text-cream sm:text-6xl">
-            {title}
+            <AmpText className="text-gold">{title}</AmpText>
           </h1>
         </Reveal>
         {intro && (

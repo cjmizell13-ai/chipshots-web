@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
+import { Amp, AmpText } from "@/components/ui/amp";
 import Marquee from "@/components/home/Marquee";
 import {
   business,
@@ -70,7 +71,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="font-display mt-5 max-w-4xl text-balance text-5xl font-light leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
-              Golf, burgers &amp; beer{" "}
+              Golf, burgers <Amp className="text-gold" /> beer{" "}
               <span className="text-gold">under one roof.</span>
             </h1>
           </Reveal>
@@ -141,7 +142,7 @@ export default function Home() {
                   <div className="p-7">
                     <p className="eyebrow text-gold">{p.eyebrow}</p>
                     <h3 className="font-display mt-2 text-2xl text-green-deep">
-                      {p.title}
+                      <AmpText className="text-gold">{p.title}</AmpText>
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted">
                       {p.body}
@@ -220,7 +221,7 @@ export default function Home() {
                   Book a Bay
                 </ButtonLink>
                 <ButtonLink href="/golf-booking" variant="ghost-light">
-                  Rates &amp; details
+                  Rates <Amp className="text-gold-soft" /> details
                 </ButtonLink>
               </div>
             </Reveal>
@@ -257,7 +258,9 @@ export default function Home() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
             <Reveal>
-              <p className="eyebrow text-gold">The kitchen &amp; bar</p>
+              <p className="eyebrow text-gold">
+                The kitchen <Amp /> bar
+              </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-4 text-balance text-4xl font-light text-green-deep sm:text-5xl">
@@ -279,7 +282,7 @@ export default function Home() {
                     key={tag}
                     className="rounded-full border border-line bg-cream-2 px-4 py-2 text-sm text-green-deep"
                   >
-                    {tag}
+                    <AmpText className="text-gold">{tag}</AmpText>
                   </StaggerItem>
                 )
               )}
@@ -333,11 +336,13 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
           <div className="max-w-2xl">
             <Reveal>
-              <p className="eyebrow text-gold-soft">Events &amp; parties</p>
+              <p className="eyebrow text-gold-soft">
+                Events <Amp /> parties
+              </p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-4 text-balance text-4xl font-light sm:text-5xl">
-                Birthdays, team nights &amp; everything in between.
+                Birthdays, team nights <Amp /> everything in between.
               </h2>
             </Reveal>
             <Reveal delay={0.14}>

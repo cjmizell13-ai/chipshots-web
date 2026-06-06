@@ -50,6 +50,20 @@ export const hoursSummary = [
   { label: "Fri – Sat", time: "11 AM – Midnight" },
 ];
 
+// Machine-readable opening hours for the live "Open now" badge.
+// Keyed by JS Date.getDay(): 0 = Sunday … 6 = Saturday. Times in 24h venue
+// time (America/Los_Angeles). close = 24 means midnight (end of that day).
+export const timezone = "America/Los_Angeles";
+export const schedule: { open: number; close: number }[] = [
+  { open: 11, close: 22 }, // Sun
+  { open: 11, close: 22 }, // Mon
+  { open: 11, close: 22 }, // Tue
+  { open: 11, close: 22 }, // Wed
+  { open: 11, close: 22 }, // Thu
+  { open: 11, close: 24 }, // Fri
+  { open: 11, close: 24 }, // Sat
+];
+
 export type NavItem = { label: string; href: string };
 
 export const nav: NavItem[] = [
@@ -62,26 +76,38 @@ export const nav: NavItem[] = [
 
 // -----------------------------------------------------------------------------
 // Imagery — friendly names mapped to the real venue photos in /public/images
+//
+// NOTE: the raw filenames are mislabeled (the camera-roll names don't match
+// what's actually pictured). These friendly keys are the source of truth and
+// point at the *correct* file for what each one shows. Back-of-house shots
+// (kitchen doors, restroom hallway) are intentionally retired and unused.
 // -----------------------------------------------------------------------------
 export const img = {
-  heroBay: "/images/hero-bay-coastal.jpg",
-  diningRoom: "/images/dining-room.jpg",
-  bayLounge: "/images/bay-lounge-chairs.jpg",
-  bayDesertData: "/images/bay-desert-data.jpg",
-  bayLoveseat: "/images/bay-desert-loveseat.jpg",
-  bayMoody: "/images/bay-coastal-moody.jpg",
-  bayCinematic: "/images/bay-coastal-cinematic.jpg",
-  bayRoomWide: "/images/bay-room-wide.jpg",
-  trackmanActivities: "/images/trackman-activities.jpg",
+  // Simulator bays — the strongest, most cinematic shots up front
+  heroBay: "/images/bay-coastal-cinematic.jpg", // dark, dramatic — the hero
+  bayCinematic: "/images/hero-bay-coastal.jpg", // bright bay + couch
+  bayMoody: "/images/bay-coastal-moody.jpg", // two club chairs, moody
+  bayLounge: "/images/bay-lounge-chairs.jpg", // lounge couch, low light
+  bayLoveseat: "/images/bay-lounge-chairs.jpg", // membership lounge feel
+  bayDesertData: "/images/bay-desert-data.jpg", // TrackMan shot data overlay
+  bayClubs: "/images/hero-bay-coastal.jpg", // gallery filler (bright bay)
+  bayRoomWide: "/images/bay-room-wide.jpg", // TrackMan activity menu
+  trackmanActivities: "/images/trackman-competitions.jpg", // competitions screen
   trackmanCompetitions: "/images/trackman-competitions.jpg",
-  bayClubs: "/images/bay-desert-clubs.jpg",
+
+  // Food — real plates
+  foodCheesesteak: "/images/cocktail-amber.jpg", // ACTUAL cheesesteak + pretzels
+  foodWings: "/images/food-wings.jpg", // ACTUAL wings
+
+  // Drinks — real cocktails
   cocktailRed: "/images/cocktail-red.jpg",
-  cocktailAmber: "/images/cocktail-amber.jpg",
+  cocktailAmber: "/images/dining-room.jpg", // ACTUAL amber cocktail
   cocktailsHighball: "/images/cocktails-highball.jpg",
-  foodCheesesteak: "/images/food-cheesesteak.jpg",
-  foodWings: "/images/food-wings.jpg",
-  exterior: "/images/exterior-storefront.jpg",
-  exterior2: "/images/exterior-storefront-2.jpg",
+
+  // Venue
+  diningRoom: "/images/food-cheesesteak.jpg", // ACTUAL dining room
+  exterior: "/images/exterior-storefront-2.jpg", // angled, sunlit storefront
+  exterior2: "/images/exterior-storefront.jpg",
   entry: "/images/entry-vestibule.jpg",
   logo: "/images/logo-crest.jpg",
 };

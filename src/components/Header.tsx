@@ -8,6 +8,7 @@ import { business, nav } from "@/lib/site";
 import { Wordmark } from "@/components/ui/brand";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
+import { AmpText } from "@/components/ui/amp";
 
 export default function Header() {
   const pathname = usePathname();
@@ -52,7 +53,7 @@ export default function Header() {
                   active ? "text-gold" : "text-cream/85 hover:text-cream"
                 }`}
               >
-                {item.label}
+                <AmpText className="text-gold/90">{item.label}</AmpText>
               </Link>
             );
           })}
@@ -131,7 +132,7 @@ export default function Header() {
                           active ? "text-gold" : "text-cream"
                         }`}
                       >
-                        {item.label}
+                        <AmpText className="text-gold">{item.label}</AmpText>
                       </Link>
                     </motion.div>
                   );

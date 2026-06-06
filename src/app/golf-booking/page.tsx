@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
+import Gallery from "@/components/Gallery";
 import { business, img, golf, rangeCard } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -197,26 +197,24 @@ export default function GolfBooking() {
 
       {/* ============================================== GALLERY ===== */}
       <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">
-        <Stagger className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {[img.bayLounge, img.bayMoody, img.bayClubs, img.trackmanActivities].map(
-            (src, i) => (
-              <StaggerItem
-                key={src}
-                className={`overflow-hidden rounded-2xl ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
-                }`}
-              >
-                <Image
-                  src={src}
-                  alt="Inside a Chip Shots simulator bay"
-                  width={600}
-                  height={600}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </StaggerItem>
-            )
-          )}
-        </Stagger>
+        <Reveal>
+          <p className="eyebrow text-gold">Inside the bays</p>
+          <h2 className="font-display mt-3 text-3xl font-light text-green-deep sm:text-4xl">
+            Take a look around.
+          </h2>
+        </Reveal>
+        <div className="mt-8">
+          <Gallery
+            images={[
+              { src: img.bayLounge, alt: "Lounge seating inside a Chip Shots simulator bay" },
+              { src: img.bayMoody, alt: "A Chip Shots simulator bay lit for evening play" },
+              { src: img.heroBay, alt: "Wide view of a TrackMan bay mid-swing" },
+              { src: img.bayDesertData, alt: "TrackMan shot data on the bay screen" },
+              { src: img.bayRoomWide, alt: "The full simulator room at Chip Shots" },
+              { src: img.trackmanCompetitions, alt: "On-screen competition game on a TrackMan bay" },
+            ]}
+          />
+        </div>
       </section>
     </>
   );

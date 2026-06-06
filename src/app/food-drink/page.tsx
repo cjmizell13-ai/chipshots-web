@@ -4,6 +4,7 @@ import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
+import { Amp, AmpText } from "@/components/ui/amp";
 import {
   business,
   img,
@@ -81,7 +82,7 @@ export default function FoodDrink() {
             >
               <div className="flex items-baseline justify-between">
                 <h3 className="font-display text-2xl text-green-deep">
-                  {section.title}
+                  <AmpText className="text-gold">{section.title}</AmpText>
                 </h3>
                 {section.note && (
                   <span className="text-xs uppercase tracking-wider text-gold">
@@ -240,7 +241,7 @@ export default function FoodDrink() {
                 <SimpleList items={drafts} />
               </div>
               <h3 className="font-display mt-8 text-2xl text-green-deep">
-                Bottles &amp; Cans
+                Bottles <Amp /> Cans
               </h3>
               <div className="mt-3">
                 <SimpleList items={bottlesCans} />
@@ -288,11 +289,13 @@ export default function FoodDrink() {
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 py-14 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
           <div>
             <h2 className="font-display text-3xl text-green-deep sm:text-4xl">
-              Eat, drink &amp; play — all in one place.
+              Eat, drink <Amp className="text-green-deep/70" /> play — all in one
+              place.
             </h2>
             <p className="mt-2 flex items-center justify-center gap-2 text-green-deep/80 md:justify-start">
               <Icon.glass className="h-4 w-4" />
-              Food &amp; drinks come right to your bay.
+              Food <Amp className="text-green-deep/70" /> drinks come right to
+              your bay.
             </p>
           </div>
           <ButtonLink href={business.booking} external variant="green" size="lg" withArrow>

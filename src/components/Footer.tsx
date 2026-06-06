@@ -2,6 +2,8 @@ import Link from "next/link";
 import { business, hoursSummary, nav } from "@/lib/site";
 import { Wordmark } from "@/components/ui/brand";
 import { Icon } from "@/components/ui/icons";
+import { AmpText } from "@/components/ui/amp";
+import OpenStatus from "@/components/ui/OpenStatus";
 
 export default function Footer() {
   return (
@@ -33,7 +35,7 @@ export default function Footer() {
                     href={item.href}
                     className="link-underline pb-0.5 hover:text-cream"
                   >
-                    {item.label}
+                    <AmpText className="text-gold-soft">{item.label}</AmpText>
                   </Link>
                 </li>
               ))}
@@ -79,7 +81,8 @@ export default function Footer() {
           {/* Hours */}
           <div>
             <h3 className="eyebrow text-gold-soft">Hours</h3>
-            <ul className="mt-5 space-y-3 text-sm text-cream/80">
+            <OpenStatus className="mt-4 text-cream/90" />
+            <ul className="mt-4 space-y-3 text-sm text-cream/80">
               {hoursSummary.map((h) => (
                 <li key={h.label} className="flex items-center gap-3">
                   <Icon.clock className="h-4 w-4 shrink-0 text-gold" />

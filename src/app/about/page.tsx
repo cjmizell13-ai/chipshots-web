@@ -4,6 +4,7 @@ import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
+import { Amp } from "@/components/ui/amp";
 import ContactForm from "@/components/forms/ContactForm";
 import { business, img, hours, owners } from "@/lib/site";
 
@@ -115,7 +116,7 @@ export default function About() {
               <Reveal>
                 <p className="eyebrow text-gold-soft">Visit</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  Find us &amp; say hi.
+                  Find us <Amp /> say hi.
                 </h2>
               </Reveal>
 

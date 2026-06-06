@@ -4,6 +4,8 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickyBookBar from "@/components/StickyBookBar";
+import BackToTop from "@/components/BackToTop";
 import { business, hours } from "@/lib/site";
 
 const fraunces = Fraunces({
@@ -128,6 +130,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <StickyBookBar />
+        <BackToTop />
       </body>
     </html>
   );
