@@ -126,8 +126,14 @@ export const golf = {
   ],
   promos: [
     { title: "Buy One Hour, Get One Free", code: "BOGO", detail: "Grand-opening offer — booked through YourGolfBooking." },
-    { title: "One Free Hour", code: "CMC626", detail: "$50 off (one free hour at the flat rate). One use per customer." },
   ],
+};
+
+// Always-on promo banner shown at the very top of every page.
+export const promoBanner = {
+  code: "BOGO",
+  message: "Grand-opening offer — buy one hour, get one free",
+  cta: "Book a Bay",
 };
 
 export const rangeCard = { price: "$350", detail: "10 hours of bay time" };

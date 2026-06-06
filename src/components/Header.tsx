@@ -6,15 +6,19 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { business, nav } from "@/lib/site";
 import { Wordmark } from "@/components/ui/brand";
-import { ButtonLink } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { AmpText } from "@/components/ui/amp";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import BookButton from "@/components/BookButton";
+import { useBooking } from "@/components/BookingProvider";
 
 export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
+  const { open: openBooking } = useBooking();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -39,6 +43,7 @@ export default function Header() {
           : "bg-gradient-to-b from-green-deep/70 to-transparent"
       }`}
     >
+      <AnnouncementBar />
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Wordmark />
 
@@ -61,14 +66,7 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <span className="hidden sm:block">
-            <ButtonLink
-              href={business.booking}
-              external
-              variant="gold"
-              size="md"
-            >
-              Book a Bay
-            </ButtonLink>
+            <BookButton variant="gold" size="md" />
           </span>
 
           <button
@@ -140,15 +138,17 @@ export default function Header() {
               </div>
 
               <div className="mt-auto flex flex-col gap-4 pt-8">
-                <ButtonLink
-                  href={business.booking}
-                  external
+                <Button
                   variant="gold"
                   size="lg"
                   withArrow
+                  onClick={() => {
+                    setOpen(false);
+                    openBooking();
+                  }}
                 >
                   Book a Bay
-                </ButtonLink>
+                </Button>
                 <a
                   href={business.phoneHref}
                   className="inline-flex items-center gap-2 text-cream/80"

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { business } from "@/lib/site";
 import { Icon } from "@/components/ui/icons";
+import { useBooking } from "@/components/BookingProvider";
 
 /**
  * Mobile-only sticky action bar that slides up once the user scrolls past the
@@ -11,6 +12,7 @@ import { Icon } from "@/components/ui/icons";
  */
 export default function StickyBookBar() {
   const reduce = useReducedMotion();
+  const { open: openBooking } = useBooking();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -31,15 +33,14 @@ export default function StickyBookBar() {
           transition={{ duration: 0.35, ease: [0.22, 0.7, 0.2, 1] }}
         >
           <div className="mx-auto flex max-w-md items-stretch gap-2 rounded-2xl border border-cream/15 bg-green-deep/95 p-2 shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-md">
-            <a
-              href={business.booking}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={openBooking}
               className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3.5 text-sm font-medium text-green-deep transition-colors hover:bg-gold-soft"
             >
               Book a Bay
               <Icon.arrow className="h-4 w-4" />
-            </a>
+            </button>
             <a
               href={business.phoneHref}
               aria-label={`Call ${business.phone}`}

@@ -5,8 +5,8 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { Amp, AmpText } from "@/components/ui/amp";
+import BookButton from "@/components/BookButton";
 import {
-  business,
   img,
   foodMenu,
   foodMore,
@@ -298,9 +298,7 @@ export default function FoodDrink() {
               your bay.
             </p>
           </div>
-          <ButtonLink href={business.booking} external variant="green" size="lg" withArrow>
-            Book a Bay
-          </ButtonLink>
+          <BookButton variant="green" size="lg" withArrow />
         </div>
       </section>
     </>

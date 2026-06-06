@@ -4,6 +4,7 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { Amp, AmpText } from "@/components/ui/amp";
+import BookButton from "@/components/BookButton";
 import Marquee from "@/components/home/Marquee";
 import {
   business,
@@ -217,9 +218,7 @@ export default function Home() {
 
             <Reveal delay={0.1}>
               <div className="mt-9 flex flex-wrap gap-4">
-                <ButtonLink href={business.booking} external variant="gold" withArrow>
-                  Book a Bay
-                </ButtonLink>
+                <BookButton variant="gold" withArrow />
                 <ButtonLink href="/golf-booking" variant="ghost-light">
                   Rates <Amp className="text-gold-soft" /> details
                 </ButtonLink>
@@ -239,16 +238,15 @@ export default function Home() {
                 Buy one hour, get one free.
               </h2>
               <p className="mt-2 text-green-deep/80">
-                New here? Use code{" "}
-                <span className="font-semibold">CMC626</span> for a free hour on
-                your first visit.
+                Use code <span className="font-semibold">BOGO</span> at checkout
+                — buy one hour, get the second free.
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <ButtonLink href={business.booking} external variant="green" size="lg" withArrow>
+            <BookButton variant="green" size="lg" withArrow>
               Reserve Now
-            </ButtonLink>
+            </BookButton>
           </Reveal>
         </div>
       </section>
@@ -445,9 +443,7 @@ export default function Home() {
 
             <Reveal delay={0.1}>
               <div className="mt-9 flex flex-wrap gap-4">
-                <ButtonLink href={business.booking} external variant="gold" withArrow>
-                  Book a Bay
-                </ButtonLink>
+                <BookButton variant="gold" withArrow />
                 <ButtonLink href="/about" variant="outline">
                   About us
                 </ButtonLink>

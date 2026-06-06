@@ -124,9 +124,9 @@ export default function GolfBooking() {
       {/* ============================================== PROMOS ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
         <Reveal>
-          <p className="eyebrow text-gold">Grand-opening offers</p>
+          <p className="eyebrow text-gold">Grand-opening offer</p>
           <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-            Two ways to save right now.
+            Buy one hour, get one free.
           </h2>
         </Reveal>
         <Stagger className="mt-10 grid gap-6 md:grid-cols-2">

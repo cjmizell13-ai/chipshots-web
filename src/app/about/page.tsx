@@ -5,6 +5,7 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { Amp } from "@/components/ui/amp";
+import BookButton from "@/components/BookButton";
 import ContactForm from "@/components/forms/ContactForm";
 import { business, img, hours, owners } from "@/lib/site";
 
@@ -186,9 +187,7 @@ export default function About() {
               </div>
 
               <div className="mt-8">
-                <ButtonLink href={business.booking} external variant="gold" withArrow>
-                  Book a Bay
-                </ButtonLink>
+                <BookButton variant="gold" withArrow />
               </div>
             </div>
 

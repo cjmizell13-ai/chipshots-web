@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
-import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import MembershipTiers from "@/components/MembershipTiers";
+import BookButton from "@/components/BookButton";
 import { business, img, memberBenefits } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -162,9 +162,7 @@ export default function Memberships() {
               Book a bay first — you'll be back. Members book free.
             </p>
           </div>
-          <ButtonLink href={business.booking} external variant="green" size="lg" withArrow>
-            Book a Bay
-          </ButtonLink>
+          <BookButton variant="green" size="lg" withArrow />
         </div>
       </section>
     </>
