@@ -9,7 +9,7 @@ import { business, img, golf, rangeCard } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Golf & Booking — TrackMan Simulator Bays",
   description:
-    "Five TrackMan simulator bays with 500+ courses in Henderson, NV. Up to four players, clubs provided. Book online — non-peak $40/hr, peak $50/hr, members $30/hr.",
+    "Five TrackMan simulator bays with 500+ courses in Henderson, NV. Up to four players, clubs provided. Book online — non-peak $40/hr, peak $50/hr, members book free.",
 };
 
 const features = [
@@ -82,7 +82,8 @@ export default function GolfBooking() {
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
                   Rates are per bay, per hour — split it with up to three friends.
-                  Members always play for ${"30"}/hour.
+                  Members book their bay time free, and pay just ${"30"}/hour for
+                  any extra hours.
                 </p>
                 <div className="mt-8 rounded-2xl border border-gold/30 bg-green-soft/25 p-6">
                   <p className="eyebrow text-gold-soft">Range Card</p>

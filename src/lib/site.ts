@@ -122,7 +122,7 @@ export const golf = {
   rates: [
     { name: "Non-Peak", price: "$40", unit: "/hr", note: "All open hours outside peak windows" },
     { name: "Peak", price: "$50", unit: "/hr", note: "Mon–Thu 5–9p · Fri 4p–close · Sat all day · Sun 11a–2p" },
-    { name: "Member", price: "$30", unit: "/hr", note: "Members, anytime" },
+    { name: "Member", price: "$30", unit: "/hr", note: "Additional hours beyond your membership" },
   ],
   promos: [
     { title: "Buy One Hour, Get One Free", code: "BOGO", detail: "Grand-opening offer — booked through YourGolfBooking." },
@@ -143,7 +143,7 @@ export const memberships = [
 ];
 
 export const memberBenefits = [
-  "$30 / hour bay rate, anytime",
+  "Members book bay time free — only pay for extra hours",
   "Priority booking up to 14 days in advance",
   "Up to 2 hours per visit, 2 active reservations",
   "10% off all food & beverage",

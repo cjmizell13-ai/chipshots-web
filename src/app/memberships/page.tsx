@@ -9,7 +9,7 @@ import { business, img, memberBenefits } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Memberships & Pricing",
   description:
-    "Join Chip Shots in Henderson, NV. Unlimited bay time from $239/mo, $30/hr member rate, priority booking and 24/7 access. Youth, corporate and late-night tiers available.",
+    "Join Chip Shots in Henderson, NV. Members book bay time free — from $239/mo — plus priority booking and 24/7 access. Extra hours just $30/hr. Youth, corporate and late-night tiers available.",
 };
 
 export default function Memberships() {
@@ -18,7 +18,7 @@ export default function Memberships() {
       <PageHero
         eyebrow="Memberships & Pricing"
         title="Play more. Pay less. Skip the line."
-        intro="Members get the $30 bay rate anytime, priority booking and round-the-clock access. There's a tier for every kind of player."
+        intro="Members book their bay time free, with priority booking and round-the-clock access. Need extra hours? They're just $30/hr. There's a tier for every kind of player."
         image={img.bayLoveseat}
       />
 
@@ -71,8 +71,8 @@ export default function Memberships() {
             {[
               {
                 icon: Icon.target,
-                title: "Unlimited or by the hour",
-                body: "Go Unlimited for flat-rate play as often as you like, or keep the $30/hr member rate on pay-as-you-go tiers — always below the $40–$50 walk-in rate.",
+                title: "Book free, every time",
+                body: "Your bay time is included with membership — book online for free. Only need more? Extra hours are just $30/hr, well below the $40–$50 walk-in rate.",
               },
               {
                 icon: Icon.clock,
@@ -159,7 +159,7 @@ export default function Memberships() {
               Not ready to commit?
             </h2>
             <p className="mt-2 text-green-deep/80">
-              Book a bay first — you'll be back. Members start at $30/hr.
+              Book a bay first — you'll be back. Members book free.
             </p>
           </div>
           <ButtonLink href={business.booking} external variant="green" size="lg" withArrow>
