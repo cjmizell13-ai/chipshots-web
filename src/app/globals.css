@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
+/* ===========================================================================
+   Chip Shots — Augusta-refined design tokens
+   Deep green + gold + cream. Editorial serif display, clean sans body.
+   =========================================================================== */
+@theme {
+  --color-green: #1b4332;
+  --color-green-deep: #0f2a18;
+  --color-green-soft: #2c5a43;
+  --color-gold: #c9a84c;
+  --color-gold-soft: #d8be74;
+  --color-cream: #fbf8f0;
+  --color-cream-2: #f3eee1;
+  --color-ink: #1d2419;
+  --color-muted: #6f6d61;
+  --color-line: #e3dcc8;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  --shadow-soft: 0 18px 50px -20px rgba(20, 40, 25, 0.35);
+  --shadow-card: 0 10px 30px -16px rgba(20, 40, 25, 0.28);
+
+  --ease-out-soft: cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-green-deep);
+}
+
+/* Custom scrollbar (desktop) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 11px; }
+  ::-webkit-scrollbar-track { background: var(--color-cream-2); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-green-soft);
+    border-radius: 999px;
+    border: 3px solid var(--color-cream-2);
+  }
+}
+
+/* ---- Typographic helpers ---------------------------------------------- */
+.font-display { font-family: var(--font-display), Georgia, serif; }
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.display-balance { text-wrap: balance; }
+
+/* Thin gold rule */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* Gold underline that draws in on hover for links */
+.link-underline {
+  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s var(--ease-out-soft);
+}
+.link-underline:hover { background-size: 100% 1.5px; }
+
+/* Subtle grain/texture for hero overlays */
+.veil-green {
+  background:
+    linear-gradient(180deg, rgba(15, 42, 24, 0.35) 0%, rgba(15, 42, 24, 0.55) 45%, rgba(15, 42, 24, 0.88) 100%);
+}
+.veil-green-strong {
+  background:
+    linear-gradient(180deg, rgba(15, 42, 24, 0.55) 0%, rgba(15, 42, 24, 0.7) 50%, rgba(15, 42, 24, 0.95) 100%);
+}
+
+/* ---- Keyframe animations (CSS, reduced-motion aware) ------------------ */
+@keyframes shimmer-line {
+  0% { transform: scaleX(0); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 28s linear infinite; }
+
+.kenburns {
+  animation: kenburns 18s var(--ease-out-soft) both;
+}
+@keyframes kenburns {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .kenburns { transform: none !important; }
 }
