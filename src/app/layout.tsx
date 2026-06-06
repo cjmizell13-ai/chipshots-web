@@ -4,7 +4,6 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StickyBookBar from "@/components/StickyBookBar";
 import BackToTop from "@/components/BackToTop";
 import BookingProvider from "@/components/BookingProvider";
 import { business, hours } from "@/lib/site";
@@ -132,7 +131,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <StickyBookBar />
           <BackToTop />
         </BookingProvider>
       </body>
