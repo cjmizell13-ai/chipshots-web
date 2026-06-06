@@ -356,23 +356,4 @@ export const eventTypes = [
   { title: "Holiday Parties", desc: "Climate-controlled, festive and easy to host for groups of any size." },
 ];
 
-export const eventPackages = [
-  {
-    name: "The Front Nine",
-    price: "Reach out for details",
-    items: ["Private bay time for your group", "Shareables from the kitchen", "Drink options for the table", "Great for smaller get-togethers"],
-  },
-  {
-    name: "The Clubhouse",
-    price: "Reach out for details",
-    items: ["Extended private bay time", "Food spread + shareables", "Bar package options", "Reserved lounge seating"],
-    featured: true,
-  },
-  {
-    name: "The Masters Table",
-    price: "Reach out for details",
-    items: ["Full or partial venue buyout", "Curated food & bar package", "Hosted bar tab options", "Dedicated event captain"],
-  },
-];
-
 export const owners = "Mark, Roseanne & Cameron Mizell";

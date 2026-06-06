@@ -10,7 +10,6 @@ import {
   business,
   img,
   golf,
-  eventPackages,
   hoursSummary,
 } from "@/lib/site";
 
@@ -346,42 +345,11 @@ export default function Home() {
             <Reveal delay={0.14}>
               <p className="mt-5 leading-relaxed text-cream/75">
                 Private bays, catered food and a full bar make Chip Shots an easy
-                yes for groups. Pick a package or build your own.
+                yes for groups. Tell us what you're celebrating and we'll tailor
+                it to your party.
               </p>
             </Reveal>
           </div>
-
-          <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
-            {eventPackages.map((pkg) => (
-              <StaggerItem
-                key={pkg.name}
-                as="article"
-                className={`rounded-3xl border p-7 backdrop-blur ${
-                  pkg.featured
-                    ? "border-gold/60 bg-green-deep/70"
-                    : "border-cream/15 bg-green-deep/40"
-                }`}
-              >
-                {pkg.featured && (
-                  <span className="eyebrow inline-block rounded-full bg-gold px-3 py-1 text-[0.62rem] text-green-deep">
-                    Most popular
-                  </span>
-                )}
-                <h3 className="font-display mt-3 text-2xl text-cream">
-                  {pkg.name}
-                </h3>
-                <p className="mt-1 text-gold-soft">{pkg.price}</p>
-                <ul className="mt-5 space-y-2.5 text-sm text-cream/75">
-                  {pkg.items.map((it) => (
-                    <li key={it} className="flex gap-2.5">
-                      <Icon.check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </StaggerItem>
-            ))}
-          </Stagger>
 
           <Reveal delay={0.1}>
             <div className="mt-12">

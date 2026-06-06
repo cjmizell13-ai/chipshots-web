@@ -4,7 +4,7 @@ import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
-import { img, eventTypes, eventPackages } from "@/lib/site";
+import { img, eventTypes } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Events & Parties",
@@ -50,65 +50,6 @@ export default function Events() {
             </StaggerItem>
           ))}
         </Stagger>
-      </section>
-
-      {/* ============================================== PACKAGES ===== */}
-      <section className="relative overflow-hidden bg-green-deep text-cream">
-        <Image
-          src={img.diningRoom}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-15"
-        />
-        <div className="veil-green-strong absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-          <Reveal>
-            <div className="text-center">
-              <p className="eyebrow text-gold-soft">Packages</p>
-              <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                Pick a package, or build your own.
-              </h2>
-            </div>
-          </Reveal>
-          <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
-            {eventPackages.map((pkg) => (
-              <StaggerItem
-                key={pkg.name}
-                as="article"
-                className={`flex flex-col rounded-3xl border p-7 backdrop-blur ${
-                  pkg.featured
-                    ? "border-gold/60 bg-green-soft/25"
-                    : "border-cream/15 bg-green-deep/50"
-                }`}
-              >
-                {pkg.featured && (
-                  <span className="eyebrow inline-block w-fit rounded-full bg-gold px-3 py-1 text-[0.62rem] text-green-deep">
-                    Most popular
-                  </span>
-                )}
-                <h3 className="font-display mt-3 text-2xl text-cream">
-                  {pkg.name}
-                </h3>
-                <p className="mt-1 text-gold-soft">{pkg.price}</p>
-                <ul className="mt-5 flex-1 space-y-2.5 text-sm text-cream/75">
-                  {pkg.items.map((it) => (
-                    <li key={it} className="flex gap-2.5">
-                      <Icon.check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </StaggerItem>
-            ))}
-          </Stagger>
-          <Reveal delay={0.05}>
-            <p className="mt-10 text-center text-sm text-cream/55">
-              Packages are starting points — we'll tailor food, drink and timing
-              to your group.
-            </p>
-          </Reveal>
-        </div>
       </section>
 
       {/* ============================================== FORM ===== */}
