@@ -31,12 +31,12 @@ export default function PageHero({
       <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-44">
         <Reveal>
           <p className="eyebrow text-gold-soft">
-            <AmpText className="text-gold">{eyebrow}</AmpText>
+            <AmpText className="text-white">{eyebrow}</AmpText>
           </p>
         </Reveal>
         <Reveal delay={0.08}>
           <h1 className="font-display mt-4 max-w-3xl text-balance text-4xl font-light leading-tight text-cream sm:text-6xl">
-            <AmpText className="text-gold">{title}</AmpText>
+            <AmpText className="text-white">{title}</AmpText>
           </h1>
         </Reveal>
         {intro && (

@@ -1,12 +1,21 @@
 import { Fragment } from "react";
 
 /**
- * An elegant italic serif ampersand — a small typographic upgrade over a plain
- * "&". Defaults to gold; pass a className to override the color in context.
+ * A classic italic serif ampersand — a small typographic upgrade over a plain
+ * "&". Defaults to white; pass a className to override the color in context
+ * (e.g. on light backgrounds where white would be invisible).
  */
-export function Amp({ className = "text-gold" }: { className?: string }) {
+export function Amp({ className = "text-white" }: { className?: string }) {
   return (
-    <span className={`font-display italic font-normal ${className}`}>&amp;</span>
+    <span
+      className={`italic font-normal ${className}`}
+      style={{
+        fontFamily:
+          "Baskerville, 'Hoefler Text', 'Goudy Old Style', Garamond, 'Times New Roman', serif",
+      }}
+    >
+      &amp;
+    </span>
   );
 }
 

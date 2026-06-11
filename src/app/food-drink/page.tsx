@@ -241,7 +241,7 @@ export default function FoodDrink() {
                 <SimpleList items={drafts} />
               </div>
               <h3 className="font-display mt-8 text-2xl text-green-deep">
-                Bottles <Amp /> Cans
+                Bottles <Amp className="text-gold" /> Cans
               </h3>
               <div className="mt-3">
                 <SimpleList items={bottlesCans} />

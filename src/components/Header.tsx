@@ -59,7 +59,7 @@ export default function Header() {
                   active ? "text-gold" : "text-cream/85 hover:text-cream"
                 }`}
               >
-                <AmpText className="text-gold/90">{item.label}</AmpText>
+                <AmpText className="text-white">{item.label}</AmpText>
               </Link>
             );
           })}
@@ -132,7 +132,7 @@ export default function Header() {
                           active ? "text-gold" : "text-cream"
                         }`}
                       >
-                        <AmpText className="text-gold">{item.label}</AmpText>
+                        <AmpText className="text-white">{item.label}</AmpText>
                       </Link>
                     </motion.div>
                   );

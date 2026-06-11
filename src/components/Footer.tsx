@@ -35,7 +35,7 @@ export default function Footer() {
                     href={item.href}
                     className="link-underline pb-0.5 hover:text-cream"
                   >
-                    <AmpText className="text-gold-soft">{item.label}</AmpText>
+                    <AmpText className="text-white">{item.label}</AmpText>
                   </Link>
                 </li>
               ))}

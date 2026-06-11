@@ -71,7 +71,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="font-display mt-5 max-w-4xl text-balance text-5xl font-light leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
-              Golf, food <Amp className="text-gold" /> drinks{" "}
+              Golf, food <Amp className="text-white" /> drinks{" "}
               <span className="text-gold">under one roof.</span>
             </h1>
           </Reveal>
@@ -219,7 +219,7 @@ export default function Home() {
               <div className="mt-9 flex flex-wrap gap-4">
                 <BookButton variant="gold" withArrow />
                 <ButtonLink href="/golf-booking" variant="ghost-light">
-                  Rates <Amp className="text-gold-soft" /> details
+                  Rates <Amp className="text-white" /> details
                 </ButtonLink>
               </div>
             </Reveal>
@@ -256,7 +256,7 @@ export default function Home() {
           <div className="order-2 lg:order-1">
             <Reveal>
               <p className="eyebrow text-gold">
-                The kitchen <Amp /> bar
+                The kitchen <Amp className="text-gold" /> bar
               </p>
             </Reveal>
             <Reveal delay={0.08}>
