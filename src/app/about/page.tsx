@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "About & Contact",
   description:
     "Chip Shots Indoor Golf is a veteran-owned golf simulator, bar and restaurant in Henderson, NV — built by the Mizell family. Find our hours, location and contact info.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [
@@ -183,6 +184,15 @@ export default function About() {
                   className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
                 >
                   <Icon.facebook className="h-5 w-5" />
+                </a>
+                <a
+                  href={business.social.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chip Shots on TikTok"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
+                >
+                  <Icon.tiktok className="h-5 w-5" />
                 </a>
               </div>
 

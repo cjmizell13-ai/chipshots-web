@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Memberships & Pricing",
   description:
     "Join Chip Shots in Henderson, NV. Members book bay time free — from $239/mo — plus priority booking and 24/7 access. Extra hours just $30/hr. Youth, corporate and late-night tiers available.",
+  alternates: { canonical: "/memberships" },
 };
 
 export default function Memberships() {

@@ -110,6 +110,15 @@ export default function Footer() {
               >
                 <Icon.facebook className="h-5 w-5" />
               </a>
+              <a
+                href={business.social.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chip Shots on TikTok"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
+              >
+                <Icon.tiktok className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>

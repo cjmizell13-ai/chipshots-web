@@ -11,6 +11,7 @@ import {
   img,
   golf,
   hoursSummary,
+  leagues,
 } from "@/lib/site";
 
 const pillars = [
@@ -38,7 +39,7 @@ const pillars = [
     key: "drink",
     eyebrow: "Drink",
     title: "Full Bar & Cocktails",
-    body: "Cold drafts, an honest wine list and signature cocktails like the Transfusion and the Azalea. Happy hour weekdays, 3–6 PM — in the bays too.",
+    body: "Cold drafts, an honest wine list and signature cocktails like the Transfusion and the Azalea. Happy hour Mon–Fri, 3–6 PM — in the bays too.",
     image: img.cocktailsHighball,
     href: "/food-drink",
     cta: "See Drinks",
@@ -53,12 +54,12 @@ export default function Home() {
       <section className="relative flex min-h-[100svh] items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={img.heroBay}
-            alt="A TrackMan simulator bay at Chip Shots with lounge seating"
+            src={img.exterior2}
+            alt="The Chip Shots Indoor Golf Club storefront in Henderson, NV"
             fill
             priority
             sizes="100vw"
-            className="kenburns object-cover"
+            className="kenburns object-cover object-center"
           />
           <div className="veil-green absolute inset-0" />
         </div>
@@ -227,26 +228,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================================ BOOKING / PROMO ===== */}
-      <section className="bg-gold">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-14 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
-          <Reveal>
-            <div>
-              <p className="eyebrow text-green-deep/70">Grand-opening offer</p>
-              <h2 className="font-display mt-2 text-3xl text-green-deep sm:text-4xl">
-                Buy one hour, get one free.
-              </h2>
-              <p className="mt-2 text-green-deep/80">
-                Use code <span className="font-semibold">BOGO</span> at checkout
-                — buy one hour, get the second free.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <BookButton variant="green" size="lg" withArrow>
-              Reserve Now
-            </BookButton>
-          </Reveal>
+      {/* ============================================ LEAGUES ===== */}
+      <section className="bg-green-deep text-cream">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <Reveal>
+              <div>
+                <p className="eyebrow text-gold-soft">{leagues.eyebrow}</p>
+                <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
+                  {leagues.title}
+                </h2>
+                <p className="mt-5 max-w-md leading-relaxed text-cream/75">
+                  {leagues.intro}
+                </p>
+                <div className="mt-8">
+                  <ButtonLink href="/league" variant="gold" size="lg" withArrow>
+                    {leagues.cta}
+                  </ButtonLink>
+                </div>
+              </div>
+            </Reveal>
+            <Stagger className="grid gap-4">
+              {leagues.points.map((p) => (
+                <StaggerItem
+                  key={p.title}
+                  className="rounded-2xl border border-cream/12 bg-green-deep/60 p-6"
+                >
+                  <h3 className="font-display text-xl text-cream">{p.title}</h3>
+                  <p className="mt-1.5 text-sm text-cream/65">{p.desc}</p>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
         </div>
       </section>
 
@@ -266,10 +279,10 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-5 max-w-lg leading-relaxed text-muted">
-                Burgers, hand-breaded wings, loaded totchos and a Philly worth
+                Burgers, wings, loaded totchos and a Philly worth
                 the drive — plus sandwiches, wraps and salads. Pair it with a
                 cold draft, a glass of wine or a signature cocktail. Happy hour
-                runs weekdays 3–6 PM.
+                runs Mon–Fri, 3–6 PM.
               </p>
             </Reveal>
             <Stagger className="mt-8 flex flex-wrap gap-3">
@@ -297,8 +310,8 @@ export default function Home() {
             <Reveal>
               <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
                 <Image
-                  src={img.foodWings}
-                  alt="A basket of saucy bone-in wings"
+                  src={img.foodBurger}
+                  alt="A bacon cheeseburger with seasoned fries"
                   width={520}
                   height={640}
                   className="h-full w-full object-cover"
@@ -309,7 +322,7 @@ export default function Home() {
               <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
                 <Image
                   src={img.cocktailsHighball}
-                  alt="Signature highball cocktails on the bar"
+                  alt="A signature cocktail with a golf-ball garnish on the bar"
                   width={520}
                   height={640}
                   className="h-full w-full object-cover"

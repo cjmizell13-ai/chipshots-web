@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 
 const tierOptions = [
-  ...memberships.filter((m) => !m.soldOut).map((m) => m.tier),
+  ...memberships.map((m) => m.tier),
   "Range Card",
   "Not sure yet — help me choose",
 ];

@@ -10,20 +10,23 @@ import {
   img,
   foodMenu,
   foodMore,
+  desserts,
+  shakes,
+  shakes21,
   drafts,
   bottlesCans,
   wine,
   cocktails,
   spirits,
   happyHour,
-  lunch,
   type MenuItem,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Food & Drink — Burgers, Wings & Full Bar",
   description:
-    "Burgers, sandwiches, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour weekdays 3–6 PM in Henderson, NV.",
+    "Burgers, sandwiches, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM in Henderson, NV.",
+  alternates: { canonical: "/food-drink" },
 };
 
 function SimpleList({ items }: { items: MenuItem[] }) {
@@ -119,6 +122,53 @@ export default function FoodDrink() {
         </Reveal>
       </section>
 
+      {/* ============================================== SWEETS ===== */}
+      <section className="bg-cream-2">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+          <Reveal>
+            <div className="flex items-end justify-between gap-6">
+              <div>
+                <p className="eyebrow text-gold">Save room</p>
+                <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
+                  Desserts <Amp className="text-gold" /> shakes
+                </h2>
+              </div>
+              <span className="hidden text-sm text-muted sm:block">
+                Hand-spun shakes · spiked for 21+
+              </span>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid gap-x-12 gap-y-12 lg:grid-cols-2">
+            <Reveal>
+              <article className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]">
+                <h3 className="font-display text-2xl text-green-deep">Desserts</h3>
+                <div className="mt-4">
+                  <SimpleList items={desserts} />
+                </div>
+              </article>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <article className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]">
+                <h3 className="font-display text-2xl text-green-deep">Shakes</h3>
+                <div className="mt-4">
+                  <SimpleList items={shakes} />
+                </div>
+                <div className="mt-6 rounded-2xl border border-gold/30 bg-cream-2 p-5">
+                  <h4 className="eyebrow text-gold">
+                    Spiked Shakes <span className="text-muted">· 21+</span>
+                  </h4>
+                  <div className="mt-2">
+                    <SimpleList items={shakes21} />
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ============================================== HAPPY HOUR ===== */}
       <section className="bg-green-deep text-cream">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
@@ -182,19 +232,6 @@ export default function FoodDrink() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 rounded-2xl border border-gold/30 bg-green-soft/30 p-5">
-                    <p className="eyebrow text-gold-soft">Lunch · {lunch.window}</p>
-                    <ul className="mt-3 space-y-2 text-sm text-cream/80">
-                      {lunch.combos.map((c) => (
-                        <li key={c.name} className="flex justify-between gap-3">
-                          <span>{c.name}</span>
-                          <span className="font-display text-gold tabular-nums">
-                            {c.price}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </Reveal>
             </div>

@@ -36,6 +36,9 @@ export const Icon = {
   facebook: (p: SVGProps<SVGSVGElement>) => (
     <svg {...s(p)}><path d="M14.5 8.5h2V5.5h-2.4C12 5.5 11 7 11 9v1.5H9v3h2V21h3v-7.5h2.2l.5-3H14V9c0-.4.2-.5.5-.5z" fill="currentColor" stroke="none" /></svg>
   ),
+  tiktok: (p: SVGProps<SVGSVGElement>) => (
+    <svg {...s(p)}><path d="M14 4c.3 2.2 1.6 3.7 3.8 4v2.6c-1.4.1-2.7-.3-3.8-1v4.8a4.8 4.8 0 1 1-4.8-4.8c.3 0 .5 0 .8.1v2.7a2.1 2.1 0 1 0 1.5 2V4z" fill="currentColor" stroke="none" /></svg>
+  ),
   flag: (p: SVGProps<SVGSVGElement>) => (
     <svg {...s(p)}><path d="M6 21V4" /><path d="M6 4h9l-1.5 3L15 10H6" /></svg>
   ),

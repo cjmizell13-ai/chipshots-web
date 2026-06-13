@@ -29,6 +29,7 @@ export const business = {
   social: {
     instagram: "https://www.instagram.com/chipshotshenderson",
     facebook: "https://www.facebook.com/chipshotshenderson",
+    tiktok: "https://www.tiktok.com/@chipshotshenderson",
     instagramHandle: "@chipshotshenderson",
   },
   booking:
@@ -69,6 +70,7 @@ export type NavItem = { label: string; href: string };
 export const nav: NavItem[] = [
   { label: "Food & Drink", href: "/food-drink" },
   { label: "Golf & Booking", href: "/golf-booking" },
+  { label: "Leagues", href: "/league" },
   { label: "Memberships", href: "/memberships" },
   { label: "Events", href: "/events" },
   { label: "About", href: "/about" },
@@ -98,6 +100,7 @@ export const img = {
   // Food — real plates
   foodCheesesteak: "/images/cocktail-amber.jpg", // ACTUAL cheesesteak + pretzels
   foodWings: "/images/food-wings.jpg", // ACTUAL wings
+  foodBurger: "/images/food-burger.jpg", // ACTUAL bacon cheeseburger + fries
 
   // Drinks — real cocktails
   cocktailRed: "/images/cocktail-red.jpg",
@@ -124,22 +127,39 @@ export const golf = {
     { name: "Peak", price: "$50", unit: "/hr", note: "Mon–Thu 5–9p · Fri 4p–close · Sat all day · Sun 11a–2p" },
     { name: "Member", price: "$30", unit: "/hr", note: "Additional hours beyond your membership" },
   ],
-  promos: [
-    { title: "Buy One Hour, Get One Free", code: "BOGO", detail: "Grand-opening offer — booked through YourGolfBooking." },
+};
+
+// Leagues — recurring competitive play on TrackMan's competition suite.
+export const leagues = {
+  eyebrow: "Now forming",
+  title: "Find your league.",
+  intro:
+    "Henderson's indoor golf league season is officially here — three weekly nights on TrackMan, five bays, net scoring and handicaps so every match stays competitive. Week 0 is a free preview, and food and drinks come right to your bay. No 110° heat.",
+  nights: [
+    { title: "Open League", day: "Mondays", preview: "Free preview June 22" },
+    { title: "Ladies Night", day: "Wednesdays", preview: "Free preview June 24" },
+    { title: "Men's Night", day: "Sundays", preview: "Free preview June 28" },
   ],
+  points: [
+    { title: "Weekly league nights", desc: "Recurring play with live leaderboards and season-long standings." },
+    { title: "All skill levels", desc: "Handicapped, net scoring so every player has a real shot." },
+    { title: "Food & drinks also available", desc: "Burgers, wings and a full bar without leaving your bay." },
+  ],
+  cta: "Ask about leagues",
+  form: "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform?embedded=true",
+  formLink: "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform",
 };
 
 // Always-on promo banner shown at the very top of every page.
 export const promoBanner = {
-  code: "BOGO",
-  message: "Grand-opening offer — buy one hour, get one free",
-  cta: "Book a Bay",
+  message: "Weekly leagues now forming — all skill levels welcome",
+  cta: "Join a league",
+  href: "/league",
 };
 
 export const rangeCard = { price: "$350", detail: "10 hours of bay time" };
 
 export const memberships = [
-  { tier: "Founders", price: "$3,000", per: "/yr", note: "Limited to 10 spots — enrollment closed May 28, 2026.", soldOut: true },
   { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true },
   { tier: "Unlimited Monthly", price: "$239", per: "/mo", note: "Unlimited bay time, billed monthly." },
   { tier: "Chip Crew — Youth", price: "$159", per: "/mo", note: "Youth program for players 18 & under." },
@@ -166,182 +186,203 @@ export const foodMenu: MenuSection[] = [
   {
     title: "Shareables",
     items: [
-      { name: "Slider Trio", price: "$14" },
-      { name: "Loaded Totchos", price: "$14", desc: "Cheddar, bacon, green onion, ranch" },
-      { name: "Chicken Quesadilla", price: "$14" },
-      { name: "Buffalo Chicken Dip", price: "$13" },
-      { name: "Pretzel Bites", price: "$12", desc: "Warm, beer cheese & house golden sauce" },
-      { name: "Crispy Pickle Spears", price: "$12" },
-      { name: "Mozzarella Sticks", price: "$12" },
-      { name: "Mini Corn Dogs", price: "$12" },
-      { name: "Mac & Cheese Bites", price: "$12" },
-      { name: "Clubhouse Pimento Dip", price: "$12", desc: "Pork rinds or seasoned pita chips" },
+      { name: "Slider Trio", price: "$13", desc: "Mini cheeseburgers, American, pickles & house sauce" },
+      { name: "Loaded Totchos", price: "$13", desc: "Cheddar, bacon, green onions & ranch drizzle" },
+      { name: "Chicken Quesadilla", price: "$14", desc: "Grilled chicken, melted cheese, salsa & sour cream" },
+      { name: "Buffalo Chicken Dip", price: "$13", desc: "Warm, with pork rinds or pita chips" },
+      { name: "Crispy Pickle Spears", price: "$13", desc: "Fried dill pickle spears with ranch" },
+      { name: "Mac & Cheese Bites", price: "$13", desc: "With ranch, BBQ or buffalo sauce" },
+      { name: "Pretzel Bites", price: "$12", desc: "Warm, with beer cheese & house golden sauce" },
+      { name: "Pimento Cheese Dip", price: "$12", desc: "Warm & creamy, with pork rinds or pita chips" },
+      { name: "Mozzarella Sticks", price: "$12", desc: "Fried, with marinara" },
+      { name: "Mini Corn Dogs", price: "$11", desc: "Bite-sized, with mustard & ketchup" },
     ],
   },
   {
     title: "Wings & Tenders",
+    note: "Sauces, rubs & glazes",
     items: [
       { name: "Bone-In Wings", price: "$14 / $24", desc: "Six or twelve · choice of sauce or dry rub" },
-      { name: "Boneless Wings", price: "$12 / $21", desc: "Six or twelve · choice of sauce or dry rub" },
-      { name: "Crispy Chicken Tenders", price: "$13" },
+      { name: "Boneless Wings", price: "$12 / $19", desc: "Six or twelve · choice of sauce or dry rub" },
+      { name: "Crispy Chicken Tenders", price: "$13", desc: "Breaded, with your choice of sauce or rub" },
     ],
   },
   {
     title: "Salads & Wraps",
+    note: "Add chicken +$4",
     items: [
-      { name: "House Salad", price: "$9" },
-      { name: "Caesar Salad", price: "$10", desc: "Add grilled chicken +$5" },
-      { name: "BLT Avocado Chicken Salad", price: "$15" },
-      { name: "Buffalo Chicken Wrap", price: "$13" },
-      { name: "Chicken Caesar Wrap", price: "$13" },
-      { name: "Clubhouse Wrap", price: "$13" },
+      { name: "House Salad", price: "$9", desc: "Romaine, cheese, tomatoes & croutons" },
+      { name: "Caesar Salad", price: "$10", desc: "Romaine, parmesan & croutons" },
+      { name: "BLTA Salad", price: "$14", desc: "Bacon, tomato, avocado & croutons with ranch" },
+      { name: "Buffalo Chicken Wrap", price: "$13", desc: "Romaine, tomato & ranch, grilled or breaded" },
+      { name: "Chicken Caesar Wrap", price: "$13", desc: "Romaine, parmesan & Caesar dressing" },
+      { name: "Clubhouse Wrap", price: "$13", desc: "Turkey, bacon, lettuce, tomato & mayo" },
     ],
   },
   {
-    title: "Burgers",
-    note: "Served with fries",
+    title: "Signature Burgers",
+    note: "Served with fries or tots",
     items: [
-      { name: "The Chip Shots Classic", price: "$16" },
-      { name: "Mushroom & Swiss", price: "$17" },
-      { name: "The Mulligan Melt", price: "$17" },
-      { name: "BBQ Burger", price: "$18" },
-      { name: "Guacamole Burger", price: "$18" },
-      { name: "Beer Cheese Bacon Burger", price: "$19" },
-      { name: "Spicy Jalapeño Burger", price: "$19" },
+      { name: "The Chip Shots Classic", price: "$16", desc: "Cheddar, lettuce, tomato, pickles, onion & house sauce" },
+      { name: "The Mulligan Melt", price: "$17", desc: "Swiss, caramelized onions & Thousand Island on rye" },
+      { name: "BBQ Burger", price: "$17", desc: "BBQ, cheddar, bacon, onion rings & pickles" },
+      { name: "Mushroom & Swiss", price: "$18", desc: "Sautéed mushrooms & melted Swiss" },
+      { name: "Guacamole Burger", price: "$18", desc: "Guacamole, pepper jack & chipotle mayo" },
+      { name: "Beer Cheese Bacon Burger", price: "$18", desc: "Bacon, caramelized onions & pickles in warm beer cheese" },
+      { name: "Spicy Jalapeño Burger", price: "$18", desc: "Pepper jack, jalapeños, bacon & chipotle mayo" },
     ],
   },
   {
     title: "Classics",
-    note: "Served with fries",
+    note: "Served with fries or tots",
     items: [
-      { name: "All-Beef Hot Dog", price: "$9" },
-      { name: "Crispy Chicken Sandwich", price: "$14" },
-      { name: "Clubhouse Sandwich", price: "$14" },
-      { name: "Philly Cheesesteak", price: "$15" },
-      { name: "French Dip Sandwich", price: "$16" },
+      { name: "All-Beef Hot Dog", price: "$9", desc: "Grilled, with your choice of toppings" },
+      { name: "Clubhouse Sandwich", price: "$14", desc: "Turkey, bacon, lettuce, tomato & mayo" },
+      { name: "Crispy Chicken Sandwich", price: "$15", desc: "Breaded golden, with lettuce, tomato & mayo" },
+      { name: "Philly Cheesesteak", price: "$17", desc: "Thin-sliced beef, onions, peppers & provolone" },
+      { name: "French Dip Sandwich", price: "$17", desc: "Sliced beef & grilled onions with au jus" },
     ],
   },
 ];
 
+export const desserts: MenuItem[] = [
+  { name: "Chocolate Lava Cake", price: "$9", desc: "Warm molten center, vanilla ice cream & powdered sugar" },
+  { name: "Basque Cheesecake", price: "$10", desc: "Caramelized & velvety, with strawberry topping" },
+  { name: "S'mores Cake", price: "$12", desc: "Chocolate cake, marshmallow & graham with vanilla ice cream" },
+];
+
+export const shakes: MenuItem[] = [
+  { name: "Cookie Butter Crunch", price: "$10", desc: "Vanilla, cookie butter & cookie crumble" },
+  { name: "Fudge Brownie Bliss", price: "$10", desc: "Chocolate shake with brownie bites" },
+  { name: "Campfire S'mores", price: "$10", desc: "Chocolate-marshmallow with graham crumble" },
+  { name: "Strawberry Shortcake", price: "$10", desc: "Strawberry shake with cake crumbles" },
+  { name: "Peanut Butter Cup", price: "$10", desc: "Peanut butter & chocolate" },
+];
+
+export const shakes21: MenuItem[] = [
+  { name: "Peanut Butter Whiskey Cup", price: "$15", desc: "PB chocolate shake with peanut butter whiskey" },
+  { name: "Frozen Baileys Cream", price: "$15", desc: "Frozen Baileys & vanilla, chocolate drizzle" },
+  { name: "Strawberry Daiquiri", price: "$15", desc: "Strawberry shake blended with rum" },
+];
+
 export const foodMore =
-  "Kids Meals · Sides · Desserts · Milkshakes · Milkshakes 21+ — ask your server, or see the full menu at the bay.";
+  "Kids Meals & a la carte sides also available — just ask your server.";
 
 // -----------------------------------------------------------------------------
 // DRINK
 // -----------------------------------------------------------------------------
 export const drafts: MenuItem[] = [
-  { name: "Modelo Especial", price: "$7" },
-  { name: "Coors Light", price: "$7" },
+  { name: "Coors Light", price: "$6" },
   { name: "Blue Moon", price: "$7" },
+  { name: "Modelo Especial", price: "$7" },
   { name: "Firestone 805", price: "$8" },
-  { name: "Atomic Duck IPA", price: "$8" },
-  { name: "Angry Orchard", price: "$8", desc: "Hard cider" },
+  { name: "Angry Orchard Cider", price: "$8" },
+  { name: "Atomic Duck IPA", price: "$10", desc: "Able Baker Brewing — Las Vegas" },
 ];
 
 export const bottlesCans: MenuItem[] = [
-  { name: "Stella Artois", price: "$5" },
-  { name: "Guinness", price: "$6" },
-  { name: "Mike's Hard Lemonade", price: "$5" },
-  { name: "Heineken 0.0", price: "$4", desc: "Non-alcoholic" },
+  { name: "Miller Lite", price: "$5" },
+  { name: "Stella Artois", price: "$6" },
+  { name: "Mike's Hard Lemonade", price: "$6" },
+  { name: "Guinness", price: "$7" },
+  { name: "Long Drink", price: "$8", desc: "Peach · Pineapple · Traditional" },
+  { name: "Heineken 0.0", price: "$5", desc: "Non-alcoholic" },
 ];
 
 export const wine: MenuItem[] = [
-  { name: "Josh Cabernet Sauvignon", price: "$10 / $38", desc: "By the glass / bottle" },
-  { name: "19 Crimes Red", price: "$9", desc: "By the glass" },
-  { name: "SeaGlass Pinot Grigio", price: "$9", desc: "By the glass" },
-  { name: "Josh Rosé", price: "$9", desc: "By the glass" },
+  { name: "House Pours", price: "$9", desc: "19 Crimes Red · SeaGlass Pinot Grigio · Josh Rosé" },
+  { name: "Josh Cellars Cabernet", price: "$12" },
+  { name: "Kim Crawford Sauvignon Blanc", price: "$12" },
+  { name: "Ruffino Prosecco", price: "$12" },
+  { name: "La Crema Chardonnay", price: "$13" },
 ];
 
 export const cocktails: MenuItem[] = [
-  { name: "The Transfusion", price: "$11", desc: "Vodka, grape, ginger, lime — the clubhouse classic" },
-  { name: "The Azalea", price: "$11", desc: "Gin, lemon, pineapple, grenadine" },
-  { name: "Peach Palmer", price: "$11", desc: "Peach, tea & lemonade, spiked" },
-  { name: "Old Fashioned", price: "$12", desc: "Bourbon, bitters, orange" },
-  { name: "Espresso Martini", price: "$12", desc: "Vodka, espresso, coffee liqueur" },
+  { name: "Transfusion", price: "$12", desc: "Tito's vodka, grape juice & ginger ale — the golfer's classic" },
+  { name: "Azalea", price: "$12", desc: "Tito's vodka, lemonade & a grenadine sink" },
+  { name: "Peach Palmer", price: "$12", desc: "Tito's vodka, peach purée, lemonade & iced tea" },
+  { name: "Blue Lagoon", price: "$12", desc: "Tito's vodka, blue curaçao & lemonade" },
+  { name: "Crown Peach Mule", price: "$15", desc: "Crown Peach whiskey, lime, peach purée & ginger beer" },
+  { name: "Blueberry Blush", price: "$15", desc: "Stoli Blueberry vodka, lime & a splash of cranberry" },
+  { name: "Espresso Martini", price: "$15", desc: "Stoli Vanilla vodka, espresso liqueur & fresh espresso" },
+  { name: "Margarita", price: "$15", desc: "El Cristiano Silver tequila, lime & agave" },
+  { name: "Cucumber Paloma", price: "$15", desc: "El Cristiano Silver tequila, grapefruit, lime & cucumber" },
+  { name: "Raspberry Lemon Drop", price: "$14", desc: "Stoli Razz, fresh lemon & a sugar rim" },
+  { name: "Par Old Fashioned", price: "$14", desc: "Buffalo Trace bourbon, sugar & Angostura bitters" },
+  { name: "Birdie Old Fashioned", price: "$16", desc: "Woodford Reserve bourbon, sugar & Angostura bitters" },
+  { name: "Eagle Old Fashioned", price: "$16", desc: "Eagle Rare bourbon, sugar & orange bitters" },
+  { name: "Albatross Old Fashioned", price: "$25", desc: "El Cristiano Extra Añejo tequila, agave & orange bitters" },
 ];
 
 export type SpiritGroup = { type: string; items: MenuItem[] };
 export const spirits: SpiritGroup[] = [
   {
-    type: "Vodka",
+    type: "Bourbon & Whiskey",
     items: [
-      { name: "Tito's", price: "$10" }, { name: "Ketel One", price: "$10" },
-      { name: "Stoli Vanilla", price: "$10" }, { name: "Belvedere", price: "$10" },
-      { name: "Grey Goose", price: "$11" },
-    ],
-  },
-  {
-    type: "Gin",
-    items: [
-      { name: "Bombay Dry", price: "$9" }, { name: "Bombay Sapphire", price: "$10" },
-      { name: "Tanqueray", price: "$10" }, { name: "Hendrick's", price: "$12" },
+      { name: "Jack Daniel's", price: "$11" }, { name: "Jameson Irish", price: "$11" },
+      { name: "Crown Royal", price: "$11" }, { name: "Maker's Mark", price: "$11" },
+      { name: "Bulleit Bourbon", price: "$12" }, { name: "Woodford Reserve", price: "$13" },
+      { name: "Pendleton Midnight", price: "$13" }, { name: "Basil Hayden", price: "$14" },
+      { name: "Eagle Rare 10 Year", price: "$15" }, { name: "Blanton's Single Barrel", price: "$20" },
     ],
   },
   {
     type: "Tequila",
     items: [
-      { name: "Cuervo", price: "$9" }, { name: "Herradura", price: "$12" },
-      { name: "Patrón Silver", price: "$12" }, { name: "Casamigos Blanco", price: "$13" },
-      { name: "Don Julio Blanco", price: "$13" }, { name: "Casamigos Reposado", price: "$14" },
-      { name: "Don Julio Reposado", price: "$14" }, { name: "Clase Azul Reposado", price: "$30" },
-    ],
-  },
-  {
-    type: "Whiskey & Bourbon",
-    items: [
-      { name: "Jim Beam", price: "$9" }, { name: "Maker's Mark", price: "$9" },
-      { name: "Buffalo Trace", price: "$9" }, { name: "Jameson", price: "$9" },
-      { name: "Jack Daniel's", price: "$10" }, { name: "Bulleit Bourbon", price: "$10" },
-      { name: "Bulleit Rye", price: "$10" }, { name: "Crown Royal", price: "$10" },
-      { name: "Woodford Reserve", price: "$14" }, { name: "Eagle Rare", price: "$15" },
-      { name: "Basil Hayden", price: "$16" }, { name: "Blanton's", price: "$20" },
-      { name: "Fireball", price: "$7" },
+      { name: "Patrón Silver", price: "$13" }, { name: "Casamigos Blanco", price: "$13" },
+      { name: "Casamigos Reposado", price: "$14" }, { name: "Don Julio Blanco", price: "$14" },
+      { name: "Don Julio Reposado", price: "$15" }, { name: "Don Julio Añejo", price: "$17" },
+      { name: "El Cristiano Extra Añejo", price: "$22" }, { name: "Clase Azul Reposado", price: "$38" },
     ],
   },
   {
     type: "Scotch & Cognac",
     items: [
-      { name: "Dewar's White Label", price: "$8" }, { name: "Johnnie Walker Black", price: "$11" },
-      { name: "Hennessy", price: "$11" },
+      { name: "Dewar's White Label", price: "$10" }, { name: "Hennessy V.S.", price: "$12" },
+      { name: "Johnnie Walker Black", price: "$14" }, { name: "Macallan 12 Year", price: "$20" },
+      { name: "Johnnie Walker Blue", price: "$45" },
     ],
   },
   {
-    type: "Cordials & Liqueurs",
+    type: "Vodka",
     items: [
-      { name: "Kahlúa", price: "$9" }, { name: "Disaronno Amaretto", price: "$9" },
-      { name: "Baileys Irish Cream", price: "$9" }, { name: "Grand Marnier", price: "$10" },
+      { name: "Ketel One", price: "$11" }, { name: "Grey Goose", price: "$12" },
+      { name: "Belvedere", price: "$12" },
+    ],
+  },
+  {
+    type: "Gin",
+    items: [
+      { name: "Bombay Sapphire", price: "$10" }, { name: "Tanqueray", price: "$11" },
+    ],
+  },
+  {
+    type: "Rum",
+    items: [
+      { name: "Captain Morgan", price: "$8" }, { name: "Malibu", price: "$8" },
+      { name: "Sailor Jerry", price: "$9" },
     ],
   },
 ];
 
 // -----------------------------------------------------------------------------
-// Happy Hour & Lunch
+// Happy Hour
 // -----------------------------------------------------------------------------
 export const happyHour = {
-  window: "Monday – Friday · 3–6 PM",
+  window: "Mon–Fri · 3–6 PM",
   note: "Happy-hour pricing runs in the bays too — play, eat & drink without getting up.",
   drinks: [
-    { name: "Draft Beer", price: "$4", desc: "Coors Light · Blue Moon · Modelo Especial" },
-    { name: "Craft & Cider", price: "$6", desc: "Atomic Duck IPA · Firestone 805 · Angry Orchard" },
+    { name: "Draft Beer", price: "$4", desc: "Coors Light · Blue Moon · Modelo" },
+    { name: "Craft & Cider", price: "$6", desc: "Firestone 805 · Angry Orchard Cider" },
+    { name: "Atomic Duck IPA", price: "$7", desc: "Able Baker local pour — three off" },
     { name: "House Wine", price: "$6", desc: "19 Crimes Red · SeaGlass Pinot Grigio · Josh Rosé" },
-    { name: "Signature Cocktails", price: "$2 off", desc: "Transfusion, Azalea, Peach Palmer & more" },
+    { name: "House Cocktails", price: "$10", desc: "Transfusion, Azalea, Peach Palmer & Blue Lagoon" },
   ],
   bites: [
     { name: "Pretzel Bites", price: "$9" },
     { name: "Loaded Totchos", price: "$10" },
     { name: "Boneless Wings (6)", price: "$9" },
-    { name: "Bone-In Wings (6)", price: "$11" },
-    { name: "Clubhouse Pimento Dip", price: "$9" },
-  ],
-};
-
-export const lunch = {
-  window: "Weekdays · 11 AM – 3 PM",
-  combos: [
-    { name: "Burger Combo", price: "$15", desc: "Any burger + fries + a drink" },
-    { name: "Wrap & Salad Combo", price: "$14", desc: "Any wrap or salad — the lighter option" },
-    { name: "Wings & Shareables Combo", price: "$12", desc: "Boneless wings (6) or any shareable" },
-    { name: "Half Lunch", price: "$10", desc: "Half wrap + fries or side salad" },
+    { name: "Pimento Cheese Dip", price: "$9" },
   ],
 };
 

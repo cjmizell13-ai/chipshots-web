@@ -26,16 +26,11 @@ export default function MembershipTiers() {
               m.featured
                 ? "border-gold bg-green-soft/25 shadow-[var(--shadow-soft)]"
                 : "border-cream/12 bg-green-deep/50"
-            } ${m.soldOut ? "opacity-70" : ""}`}
+            }`}
           >
             {m.featured && (
               <span className="eyebrow absolute -top-3 left-7 rounded-full bg-gold px-3 py-1 text-[0.62rem] text-green-deep">
                 Best value
-              </span>
-            )}
-            {m.soldOut && (
-              <span className="eyebrow absolute -top-3 left-7 rounded-full bg-cream/90 px-3 py-1 text-[0.62rem] text-green-deep">
-                Sold out
               </span>
             )}
             <h3 className="font-display text-2xl text-cream">{m.tier}</h3>
@@ -49,19 +44,13 @@ export default function MembershipTiers() {
               {m.note}
             </p>
             <div className="mt-6">
-              {m.soldOut ? (
-                <span className="inline-flex w-full items-center justify-center rounded-full border border-cream/20 px-5 py-3 text-sm text-cream/50">
-                  Enrollment closed
-                </span>
-              ) : (
-                <Button
-                  onClick={() => openForm(m.tier)}
-                  variant={m.featured ? "gold" : "ghost-light"}
-                  className="w-full"
-                >
-                  Join now
-                </Button>
-              )}
+              <Button
+                onClick={() => openForm(m.tier)}
+                variant={m.featured ? "gold" : "ghost-light"}
+                className="w-full"
+              >
+                Join now
+              </Button>
             </div>
           </StaggerItem>
         ))}

@@ -46,15 +46,13 @@ export const metadata: Metadata = {
     title: "Chip Shots Indoor Golf Club — Golf • Food • Drinks",
     description:
       "Five TrackMan bays, a full bar and a full kitchen in the heart of Henderson, NV.",
-    images: [{ url: "/images/hero-bay-coastal.jpg", width: 1200, height: 800, alt: business.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Chip Shots Indoor Golf Club — Henderson, NV",
     description: "Golf simulators, a full kitchen and a full bar. Veteran-owned.",
-    images: ["/images/hero-bay-coastal.jpg"],
   },
-  alternates: { canonical: business.website },
+  alternates: { canonical: "/" },
 };
 
 const jsonLd = {
@@ -68,7 +66,9 @@ const jsonLd = {
   email: business.email,
   servesCuisine: ["American", "Burgers", "Bar food"],
   priceRange: "$$",
-  image: `${business.website}/images/hero-bay-coastal.jpg`,
+  acceptsReservations: true,
+  hasMenu: `${business.website}/food-drink`,
+  image: `${business.website}/opengraph-image`,
   address: {
     "@type": "PostalAddress",
     streetAddress: business.address.street,
@@ -82,13 +82,12 @@ const jsonLd = {
     latitude: business.geo.lat,
     longitude: business.geo.lng,
   },
-  sameAs: [business.social.instagram, business.social.facebook],
+  sameAs: [business.social.instagram, business.social.facebook, business.social.tiktok],
   openingHoursSpecification: hours.map((h) => ({
     "@type": "OpeningHoursSpecification",
     dayOfWeek: h.day,
-    opens: h.day === "Friday" || h.day === "Saturday" ? "11:00" : "11:00",
-    closes:
-      h.day === "Friday" || h.day === "Saturday" ? "00:00" : "22:00",
+    opens: "11:00",
+    closes: h.day === "Friday" || h.day === "Saturday" ? "23:59" : "22:00",
   })),
 };
 

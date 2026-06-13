@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Events & Parties",
   description:
     "Host birthdays, corporate team nights, leagues, bachelor/bachelorette parties and holiday gatherings at Chip Shots in Henderson, NV. Private bays, catered food and a full bar.",
+  alternates: { canonical: "/events" },
 };
 
 export default function Events() {

@@ -82,9 +82,7 @@ export default function BookingProvider({
                     Book a Bay
                   </p>
                   <p className="truncate text-xs text-cream/65">
-                    Use code{" "}
-                    <span className="font-semibold text-gold">BOGO</span> — buy
-                    one hour, get one free
+                    Pick your bay, day and time
                   </p>
                 </div>
                 <button

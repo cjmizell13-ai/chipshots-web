@@ -4,12 +4,13 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import Gallery from "@/components/Gallery";
-import { business, img, golf, rangeCard } from "@/lib/site";
+import { business, img, golf, rangeCard, leagues } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Golf & Booking — TrackMan Simulator Bays",
   description:
     "Five TrackMan simulator bays with 500+ courses in Henderson, NV. Up to four players, clubs provided. Book online — non-peak $40/hr, peak $50/hr, members book free.",
+  alternates: { canonical: "/golf-booking" },
 };
 
 const features = [
@@ -121,33 +122,37 @@ export default function GolfBooking() {
         </div>
       </section>
 
-      {/* ============================================== PROMOS ===== */}
+      {/* ============================================== LEAGUES ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
         <Reveal>
-          <p className="eyebrow text-gold">Grand-opening offer</p>
+          <p className="eyebrow text-gold">{leagues.eyebrow}</p>
           <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-            Buy one hour, get one free.
+            {leagues.title}
           </h2>
+          <p className="mt-5 max-w-2xl leading-relaxed text-muted">
+            {leagues.intro}
+          </p>
         </Reveal>
-        <Stagger className="mt-10 grid gap-6 md:grid-cols-2">
-          {golf.promos.map((p) => (
+        <Stagger className="mt-10 grid gap-6 md:grid-cols-3">
+          {leagues.points.map((p) => (
             <StaggerItem
-              key={p.code}
+              key={p.title}
               className="flex flex-col rounded-3xl border border-gold/40 bg-cream-2 p-8"
             >
               <h3 className="font-display text-2xl text-green-deep">
                 {p.title}
               </h3>
-              <p className="mt-2 flex-1 text-muted">{p.detail}</p>
-              <div className="mt-5 inline-flex w-fit items-center gap-3 rounded-full bg-green-deep px-5 py-2.5">
-                <span className="eyebrow text-gold-soft">Code</span>
-                <span className="font-display text-lg tracking-widest text-cream">
-                  {p.code}
-                </span>
-              </div>
+              <p className="mt-2 flex-1 text-muted">{p.desc}</p>
             </StaggerItem>
           ))}
         </Stagger>
+        <Reveal delay={0.05}>
+          <div className="mt-10">
+            <ButtonLink href="/league" variant="outline" withArrow>
+              {leagues.cta}
+            </ButtonLink>
+          </div>
+        </Reveal>
       </section>
 
       {/* ============================================== BOOK ===== */}
