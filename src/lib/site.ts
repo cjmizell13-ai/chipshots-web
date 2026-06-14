@@ -136,10 +136,112 @@ export const leagues = {
   intro:
     "Henderson's indoor golf league season is officially here — three weekly nights on TrackMan, five bays, net scoring and handicaps so every match stays competitive. Week 0 is a free preview, and food and drinks come right to your bay. No 110° heat.",
   nights: [
-    { title: "Open League", day: "Mondays", preview: "Free preview June 22" },
-    { title: "Ladies Night", day: "Wednesdays", preview: "Free preview June 24" },
-    { title: "Men's Night", day: "Sundays", preview: "Free preview June 28" },
+    {
+      title: "Open League",
+      day: "Mondays",
+      time: "5 PM & 7 PM",
+      who: "Mixed & casual — every skill level welcome.",
+      format: "Net Stableford, handicapped",
+      preview: "Free preview June 22",
+    },
+    {
+      title: "Ladies League",
+      day: "Wednesdays",
+      time: "5 PM & 7 PM",
+      who: "Henderson's women's league — handicapped so every match is a real fight.",
+      format: "Net Stableford · live leaderboard",
+      preview: "Free preview June 24",
+      competitive: true,
+    },
+    {
+      title: "Men's League",
+      day: "Sundays",
+      time: "5 PM & 7 PM",
+      who: "The serious night — handicapped so every skill level competes, with both a gross and a net champion crowned.",
+      format: "Net stroke, handicapped · gross + net winners",
+      preview: "Free preview June 28",
+      competitive: true,
+    },
   ],
+  // How a single season runs — Week 0 free, five-week race, then a finale.
+  season: {
+    eyebrow: "How a season works",
+    title: "Six weeks. One champion. Then we do it again.",
+    intro:
+      "The league never stops — it runs in themed seasons. Each one opens with a free Week 0, then a five-week points race where Open and the Ladies/Men's nights never play the same format in the same week — so it pays to play both. It all ends with a Club Championship.",
+    weeks: [
+      { tag: "Week 0", both: "Free Kickoff", desc: "Play on us — we set your handicap, no index needed." },
+      { tag: "Week 1", open: "Individual + Skins", league: "Team Scramble", desc: "Points race opens — every prize doubled.", highlight: true },
+      { tag: "Week 2", open: "Team Scramble", league: "Individual + Skins", desc: "The formats flip — so play both nights." },
+      { tag: "Week 3", open: "Individual + Skins", league: "Team Best Ball", desc: "Skins on Open, best ball on your league night." },
+      { tag: "Week 4", open: "Team Best Ball", league: "Individual + Skins", desc: "They flip again — never the same game twice." },
+      { tag: "Week 5", open: "Individual + Skins", league: "Team Scramble", desc: "Last week to climb your standings." },
+      { tag: "Finale", both: "Club Championship", desc: "Gross & net champions crowned — week of July 27." },
+    ] as {
+      tag: string;
+      both?: string;
+      open?: string;
+      league?: string;
+      desc: string;
+      highlight?: boolean;
+    }[],
+  },
+  // The three-tier hype ladder.
+  ladder: [
+    { title: "Every week", desc: "A weekly winner plus a skins pot up for grabs each individual night." },
+    { title: "Every season", desc: "Six weeks builds to a Club Championship — Ladies & Men's each crown a gross and a net champion." },
+    { title: "Every year", desc: "Season champs & weekly winners qualify for the year-end Tournament of Champions." },
+  ],
+  // Quick-reference details for the "how it works" strip.
+  details: [
+    { label: "The round", value: "18 holes, handicapped, in a 2-hour bay block" },
+    { label: "Scoring", value: "Handicapped, net scoring all season — gross & net champions crowned at the finale" },
+    { label: "Buy-in", value: "$40 a night · Week 0 free · members play every night free" },
+    { label: "The tech", value: "Auto-scored on TrackMan with live season leaderboards" },
+  ],
+  prizes: [
+    { title: "Weekly F&B credits", desc: "Win your night, eat & drink on us next week." },
+    { title: "Membership months", desc: "Season champions take home free membership months." },
+    { title: "Double Week 1", desc: "Every prize is doubled the first week of the season." },
+  ],
+  // League-night perks — happy-hour pricing all night to make league nights the place to be.
+  nightPerks: {
+    eyebrow: "Game night perks",
+    title: "Every league night is a party.",
+    intro:
+      "Show up to compete, stay for the night. Every league night has its own drink specials and shareables — all delivered right to your bay.",
+    perks: [
+      { title: "League drink specials", desc: "A featured draft and a signature league cocktail at a deal — and happy hour rolls right into your 5 PM tee." },
+      { title: "Win F&B credit", desc: "Take your night and bank a Chip Shots tab — eat & drink on us your next visit." },
+      { title: "Squad buckets & shareables", desc: "Beer buckets and foursome bites built to share, delivered straight to your bay." },
+    ],
+  },
+  // "Does membership pay for itself?" — uses real rates from `golf` + `memberships`.
+  membershipMath: {
+    eyebrow: "Do the math",
+    title: "For a weekly player, membership pays for itself.",
+    payg: {
+      title: "Pay per night",
+      lines: [
+        { label: "4 league nights", value: "$160/mo" },
+        { label: "Practice 1×/week (2 hrs)", value: "$320/mo" },
+        { label: "Food & drink", value: "Full price" },
+      ],
+      total: "≈ $480/mo to play & practice",
+    },
+    member: {
+      title: "Unlimited Member",
+      price: "$239/mo",
+      lines: [
+        { label: "Every league night", value: "Free" },
+        { label: "Unlimited bay time, any day", value: "Included" },
+        { label: "All food & drink", value: "10% off" },
+      ],
+      total: "One flat price — play all you want",
+    },
+    bottomLine:
+      "Even with zero practice, four league nights is $160/mo in buy-ins — two-thirds of a membership. Add any practice at all and Unlimited wins outright, saving a weekly player around $240 a month.",
+  },
   points: [
     { title: "Weekly league nights", desc: "Recurring play with live leaderboards and season-long standings." },
     { title: "All skill levels", desc: "Handicapped, net scoring so every player has a real shot." },
@@ -370,19 +472,25 @@ export const spirits: SpiritGroup[] = [
 // -----------------------------------------------------------------------------
 export const happyHour = {
   window: "Mon–Fri · 3–6 PM",
-  note: "Happy-hour pricing runs in the bays too — play, eat & drink without getting up.",
+  note: "No clubs, no tee time, no problem — pull up to the bar, grab a table, or take a bay. Happy-hour pricing runs in the bays too, so you can eat, drink and play without getting up.",
   drinks: [
-    { name: "Draft Beer", price: "$4", desc: "Coors Light · Blue Moon · Modelo" },
-    { name: "Craft & Cider", price: "$6", desc: "Firestone 805 · Angry Orchard Cider" },
-    { name: "Atomic Duck IPA", price: "$7", desc: "Able Baker local pour — three off" },
-    { name: "House Wine", price: "$6", desc: "19 Crimes Red · SeaGlass Pinot Grigio · Josh Rosé" },
-    { name: "House Cocktails", price: "$10", desc: "Transfusion, Azalea, Peach Palmer & Blue Lagoon" },
+    { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Blue Moon · Modelo" },
+    { name: "Well Drinks", price: "$6", desc: "Vodka · gin · tequila · rum · bourbon" },
+    { name: "Craft, Cider & Wine", price: "$7", desc: "Firestone 805 · Angry Orchard · House Wine" },
+    { name: "Signature Cocktails", price: "$10", desc: "Par Old Fashioned · Transfusion · Azalea · Peach Palmer · Blue Lagoon" },
   ],
   bites: [
-    { name: "Pretzel Bites", price: "$9" },
+    { name: "Pretzel Bites", price: "$7" },
+    { name: "Mozzarella Sticks", price: "$7" },
+    { name: "Mini Corn Dogs", price: "$7" },
+    { name: "Crispy Pickle Spears", price: "$7" },
+    { name: "Boneless Wings (6)", price: "$7" },
+    { name: "Pimento Cheese Dip", price: "$7" },
     { name: "Loaded Totchos", price: "$10" },
-    { name: "Boneless Wings (6)", price: "$9" },
-    { name: "Pimento Cheese Dip", price: "$9" },
+    { name: "Buffalo Chicken Dip", price: "$10" },
+    { name: "Slider Trio", price: "$10" },
+    { name: "Caddie's Combo · draft + 6 boneless wings", price: "$12" },
+    { name: "Add Fries or Tots to anything", price: "+$4" },
   ],
 };
 
