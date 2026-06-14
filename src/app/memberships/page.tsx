@@ -4,6 +4,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { Icon } from "@/components/ui/icons";
 import MembershipTiers from "@/components/MembershipTiers";
 import BookButton from "@/components/BookButton";
+import PixelEvent from "@/components/PixelEvent";
 import { business, img, memberBenefits } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function Memberships() {
   return (
     <>
+      <PixelEvent event="ViewContent" params={{ content_name: "Memberships" }} />
       <PageHero
         eyebrow="Memberships & Pricing"
         title="Play more. Pay less. Skip the line."
