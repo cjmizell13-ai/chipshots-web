@@ -209,6 +209,143 @@ export const posts: Post[] = [
       { type: "cta", label: "Plan your date night", href: business.booking, external: true },
     ],
   },
+  {
+    slug: "corporate-team-building-henderson",
+    title: "Corporate Team Building in Henderson: Why Indoor Golf Beats the Conference Room",
+    excerpt:
+      "Looking for a Henderson team-building idea that people actually enjoy? Private bays, real food and a little friendly competition do more for a team than a slideshow ever will.",
+    date: "2026-06-13",
+    readMinutes: 4,
+    category: "For Business",
+    image: img.bayRoomWide,
+    body: [
+      {
+        type: "p",
+        text: "The trust falls and the hotel ballroom haven't aged well. If you're planning a team night, a client outing or a quarterly off-site in Henderson, the bar for \"team building\" is simply that people have a good time and actually talk to each other. Indoor golf clears it easily — and you don't need a single person who knows how to play.",
+      },
+      { type: "h2", text: "Everyone plays, regardless of skill" },
+      {
+        type: "p",
+        text: "That's the whole trick. TrackMan handicaps the games and keeps score automatically, so the intern and the VP who golfs every weekend are on even footing. Closest-to-the-pin and long-drive games get the whole room cheering, and nobody's stuck on the sidelines. It's the rare activity that's genuinely fun whether someone's a scratch golfer or has never held a club.",
+      },
+      { type: "h2", text: "Private bays keep the group together" },
+      {
+        type: "p",
+        text: "We have five climate-controlled bays, each seating a group with its own screen and server. Book a block and your team stays together — rotating through games, grabbing drinks, talking shop or not. No 110° parking lot, no rented gear, no awkward downtime.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Five private bays, up to four players each",
+          "Auto-scored, handicapped games so everyone competes",
+          "Full kitchen and bar with catering to the bay",
+          "Climate-controlled — works any season, any weather",
+        ],
+      },
+      { type: "cta", label: "Plan a team event", href: "/events" },
+      { type: "h2", text: "The food and drinks are handled" },
+      {
+        type: "p",
+        text: "This is the part that sinks most off-sites. Here it's built in: signature burgers, a Philly cheesesteak, shareables and a full bar, all delivered straight to your bays. Run it as a happy-hour outing, an after-work team night or a half-day with catering — nobody has to leave to eat.",
+      },
+      { type: "cta", label: "See the menu", href: "/food-drink" },
+      { type: "h2", text: "Make it a standing thing" },
+      {
+        type: "p",
+        text: "If your team comes back, a Corporate Club membership ($449/mo) or Corporate Premier ($699/mo) makes recurring outings and client entertaining easy on the budget. But you don't need to commit to anything to book a one-off — just grab a few bays. We're at 1473 E Lake Mead Pkwy, Suite 110 in Henderson, open daily.",
+      },
+      { type: "cta", label: "Book your team night", href: business.booking, external: true },
+    ],
+  },
+  {
+    slug: "join-golf-league-henderson-first-timer",
+    title: "A First-Timer's Guide to Joining a Golf League in Henderson",
+    excerpt:
+      "Thinking about joining a league but worried you're not good enough? Here's exactly how Chip Shots' handicapped TrackMan leagues work — and why Week 0 is free.",
+    date: "2026-06-09",
+    readMinutes: 4,
+    category: "Leagues",
+    image: img.trackmanCompetitions,
+    body: [
+      {
+        type: "p",
+        text: "\"I'd join a league, but I'm not good enough.\" It's the single most common thing we hear — and it's exactly backwards. Our leagues are handicapped, which means they're built so that a beginner can beat a better golfer on any given night. If you've been on the fence about joining a golf league in Henderson, here's how it actually works.",
+      },
+      { type: "h2", text: "Handicaps mean everyone has a real shot" },
+      {
+        type: "p",
+        text: "Every league at Chip Shots uses net scoring with handicaps, so your score is measured against your own ability, not the best player in the room. A 20-handicapper and a 5-handicapper can finish neck and neck. That's the whole point — it keeps every match competitive and means skill level is never a reason to stay home.",
+      },
+      { type: "h2", text: "Three nights, every skill level" },
+      {
+        type: "p",
+        text: "We run three weekly nights on TrackMan: the Open League on Mondays (mixed and casual, every level welcome), the Ladies League on Wednesdays, and the Men's League on Sundays. Each plays 18 handicapped holes in a two-hour bay block, with live leaderboards and food and drinks delivered right to you.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Open League — Mondays, every skill level",
+          "Ladies League — Wednesdays",
+          "Men's League — Sundays",
+          "18 holes, handicapped, in a 2-hour bay block",
+        ],
+      },
+      { type: "h2", text: "Week 0 is free — try before you commit" },
+      {
+        type: "p",
+        text: "You don't have to sign up blind. Every season opens with a free Week 0 preview: you play on us, we set your handicap (no prior index needed), and you see exactly how a league night runs before paying a cent. After that it's just $40 a night, or free every night if you're a member.",
+      },
+      { type: "cta", label: "Find your league", href: "/league" },
+      { type: "h2", text: "How a season builds" },
+      {
+        type: "p",
+        text: "A season runs six weeks: a free kickoff, a four-week points race with a different game each week, then a Club Championship where gross and net champions are crowned. There are closest-to-the-pin and long-drive side pots every night, and weekly winners earn food-and-drink credit. It's competitive, social, and a genuinely good reason to get out of the house each week.",
+      },
+      { type: "cta", label: "Reserve your spot", href: "/league" },
+    ],
+  },
+  {
+    slug: "birthday-party-ideas-henderson",
+    title: "Birthday Party Ideas in Henderson That Aren't the Same Old Thing",
+    excerpt:
+      "Tired of the usual Henderson birthday spots? Throw it in a private golf bay — games everyone can play, burgers and shakes, and a full bar for the grown-ups.",
+    date: "2026-06-08",
+    readMinutes: 3,
+    category: "Henderson Guide",
+    image: img.foodBurger,
+    body: [
+      {
+        type: "p",
+        text: "There are only so many times you can do the same Henderson birthday. If you want something that's genuinely fun for the group — kids, adults, or a mix — a private golf bay hits differently: games anyone can play, food coming to the table, and zero planning headaches.",
+      },
+      { type: "h2", text: "Games everyone can actually play" },
+      {
+        type: "p",
+        text: "You don't need golfers in the group. TrackMan runs arcade-style games and handicapped scoring, so a ten-year-old and grandpa are on even footing and everyone's in on it. A private bay keeps your party together with its own screen and seating, and the games keep the energy up without anyone having to organize a thing.",
+      },
+      { type: "h2", text: "The food and cake are covered" },
+      {
+        type: "p",
+        text: "Our full kitchen runs slider trios, totchos, wings, signature burgers and a whole lineup of shakes — kid-friendly and crowd-friendly — all delivered to your bay. For the grown-ups, there's a full bar with cocktails and a weekday happy hour. Bring the cake; we'll handle the rest.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Private bay just for your group",
+          "Games for all ages, no golf skill needed",
+          "Burgers, shareables and shakes to the bay",
+          "Full bar for the adults",
+        ],
+      },
+      { type: "cta", label: "See party options", href: "/events" },
+      { type: "h2", text: "Easy to book, easy to host" },
+      {
+        type: "p",
+        text: "Kids' birthdays tie into our Chip Crew youth program, and adult parties — milestone birthdays, bachelor and bachelorette groups — fit right in too. We're open until midnight on weekends at 1473 E Lake Mead Pkwy, Suite 110 in Henderson. Grab a bay and throw the birthday nobody's done before.",
+      },
+      { type: "cta", label: "Plan a birthday", href: "/events" },
+    ],
+  },
 ];
 
 /** All posts, newest first. */
