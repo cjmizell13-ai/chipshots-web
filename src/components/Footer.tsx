@@ -49,6 +49,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/youth-golf"
+                  className="link-underline pb-0.5 hover:text-cream"
+                >
+                  Youth Golf
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/faq"
                   className="link-underline pb-0.5 hover:text-cream"
                 >
