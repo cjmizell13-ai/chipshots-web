@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/food-drink", priority: 0.9, changeFrequency: "monthly" },
     { path: "/golf-booking", priority: 0.9, changeFrequency: "monthly" },
     { path: "/league", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/gift-cards", priority: 0.7, changeFrequency: "monthly" },
     { path: "/memberships", priority: 0.8, changeFrequency: "monthly" },
     { path: "/events", priority: 0.8, changeFrequency: "monthly" },
     { path: "/about", priority: 0.6, changeFrequency: "yearly" },

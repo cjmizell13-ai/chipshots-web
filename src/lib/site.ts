@@ -34,6 +34,19 @@ export const business = {
   },
   booking:
     "https://www.yourgolfbooking.com/venues/chip-shots-henderson/booking/simulator-bays",
+  giftCards:
+    "https://order.toasttab.com/egiftcards/chip-shots-1473-east-lake-mead-parkway-suite-110",
+};
+
+// Father's Day eGift card promo. Bonus is fulfilled in-store on the first
+// visit (Toast can't auto-apply a bonus), which also drives a return trip.
+// Adjust the numbers/deadline here and they update everywhere.
+export const giftCardPromo = {
+  occasion: "Father's Day",
+  deadline: "Sunday, June 21",
+  threshold: 100,
+  bonus: 25,
+  url: "https://order.toasttab.com/egiftcards/chip-shots-1473-east-lake-mead-parkway-suite-110",
 };
 
 export const hours = [
@@ -166,16 +179,16 @@ export const leagues = {
   // How a single season runs — Week 0 free, five-week race, then a finale.
   season: {
     eyebrow: "How a season works",
-    title: "Six weeks. One champion. Then we do it again.",
+    title: "Six weeks. Champions crowned. Then we run it back.",
     intro:
-      "The league never stops — it runs in themed seasons. Each one opens with a free Week 0, then a five-week points race where Open and the Ladies/Men's nights never play the same format in the same week — so it pays to play both. It all ends with a Club Championship.",
+      "The league never stops — it runs in themed seasons. Each one opens with a free Week 0, then a five-week points race with a different game every week — and Open never plays the same one as the Ladies/Men's nights, so it pays to play both. It all ends with a Club Championship.",
     weeks: [
-      { tag: "Week 0", both: "Free Kickoff", desc: "Play on us — we set your handicap, no index needed." },
-      { tag: "Week 1", open: "Individual + Skins", league: "Team Scramble", desc: "Points race opens — every prize doubled.", highlight: true },
-      { tag: "Week 2", open: "Team Scramble", league: "Individual + Skins", desc: "The formats flip — so play both nights." },
-      { tag: "Week 3", open: "Individual + Skins", league: "Team Best Ball", desc: "Skins on Open, best ball on your league night." },
-      { tag: "Week 4", open: "Team Best Ball", league: "Individual + Skins", desc: "They flip again — never the same game twice." },
-      { tag: "Week 5", open: "Individual + Skins", league: "Team Scramble", desc: "Last week to climb your standings." },
+      { tag: "Week 0", both: "Free Kickoff", desc: "Individual stroke play — play on us, we set your handicap, no index needed." },
+      { tag: "Week 1", open: "Stableford", league: "Team Best Ball", desc: "Points race opens — every prize doubled.", highlight: true },
+      { tag: "Week 2", open: "Team Scramble", league: "Net Medal", desc: "The games flip — play both nights, never the same game." },
+      { tag: "Week 3", open: "Match Play", league: "Stableford", desc: "Bracket play on Open; points-race Stableford on league night." },
+      { tag: "Week 4", open: "Team Best Ball", league: "Skins", desc: "Best-ball teams on Open; skins shootout on your night." },
+      { tag: "Week 5", open: "Skins", league: "Team Scramble", desc: "Last week to climb the standings before the finale." },
       { tag: "Finale", both: "Club Championship", desc: "Gross & net champions crowned — week of July 27." },
     ] as {
       tag: string;
@@ -185,10 +198,14 @@ export const leagues = {
       desc: string;
       highlight?: boolean;
     }[],
+    sidePots: {
+      title: "Side pots every night",
+      desc: "On top of the main game, every league night runs a Closest-to-the-Pin and a Long-Drive pot — a few bucks in, winner takes the pile. All auto-scored on TrackMan, all skill levels welcome.",
+    },
   },
   // The three-tier hype ladder.
   ladder: [
-    { title: "Every week", desc: "A weekly winner plus a skins pot up for grabs each individual night." },
+    { title: "Every week", desc: "A weekly winner plus closest-to-pin and long-drive side pots up for grabs every night." },
     { title: "Every season", desc: "Six weeks builds to a Club Championship — Ladies & Men's each crown a gross and a net champion." },
     { title: "Every year", desc: "Season champs & weekly winners qualify for the year-end Tournament of Champions." },
   ],
@@ -204,14 +221,14 @@ export const leagues = {
     { title: "Membership months", desc: "Season champions take home free membership months." },
     { title: "Double Week 1", desc: "Every prize is doubled the first week of the season." },
   ],
-  // League-night perks — happy-hour pricing all night to make league nights the place to be.
+  // League-night perks — dedicated league-night drink specials + F&B to make league nights the place to be.
   nightPerks: {
     eyebrow: "Game night perks",
     title: "Every league night is a party.",
     intro:
       "Show up to compete, stay for the night. Every league night has its own drink specials and shareables — all delivered right to your bay.",
     perks: [
-      { title: "League drink specials", desc: "A featured draft and a signature league cocktail at a deal — and happy hour rolls right into your 5 PM tee." },
+      { title: "League drink specials", desc: "A featured draft and a signature league cocktail at a deal — running all league night, delivered straight to your bay." },
       { title: "Win F&B credit", desc: "Take your night and bank a Chip Shots tab — eat & drink on us your next visit." },
       { title: "Squad buckets & shareables", desc: "Beer buckets and foursome bites built to share, delivered straight to your bay." },
     ],
@@ -240,7 +257,7 @@ export const leagues = {
       total: "One flat price — play all you want",
     },
     bottomLine:
-      "Even with zero practice, four league nights is $160/mo in buy-ins — two-thirds of a membership. Add any practice at all and Unlimited wins outright, saving a weekly player around $240 a month.",
+      "Even with zero practice, four league nights is $160/mo in buy-ins — two-thirds of a membership. Play both your leagues — Open plus your league night — and you're at $320/mo in buy-ins alone, more than Unlimited costs. Add any practice and it's not close.",
   },
   points: [
     { title: "Weekly league nights", desc: "Recurring play with live leaderboards and season-long standings." },
