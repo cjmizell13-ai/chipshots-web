@@ -41,6 +41,14 @@ export default function Footer() {
               ))}
               <li>
                 <Link
+                  href="/faq"
+                  className="link-underline pb-0.5 hover:text-cream"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/food-drink"
                   className="link-underline pb-0.5 text-gold hover:text-gold-soft"
                 >

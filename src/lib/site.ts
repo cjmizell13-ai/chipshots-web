@@ -522,4 +522,61 @@ export const eventTypes = [
   { title: "Holiday Parties", desc: "Climate-controlled, festive and easy to host for groups of any size." },
 ];
 
+// -----------------------------------------------------------------------------
+// FAQ — answers the real questions people search before visiting. Rendered on
+// /faq and emitted as FAQPage structured data for "People Also Ask" / AI search.
+// -----------------------------------------------------------------------------
+export type Faq = { q: string; a: string };
+
+export const faqs: Faq[] = [
+  {
+    q: "Do I need to know how to golf?",
+    a: "Not at all. The TrackMan simulators read your swing, keep score and handicap the games automatically, so total beginners and seasoned golfers have a great time in the same group. Clubs are provided — just show up.",
+  },
+  {
+    q: "How much does a bay cost?",
+    a: "Bays are billed by the hour, not per person, and hold up to four players — so splitting one with friends is the most affordable way to play. Non-peak time is $40/hour and peak time is $50/hour. Members pay $30/hour for any hours beyond their plan.",
+  },
+  {
+    q: "How many people can play in one bay?",
+    a: "Up to four players per bay. We have five climate-controlled bays, each with its own screen, comfortable seating and a server who brings food and drinks right to you.",
+  },
+  {
+    q: "Do you provide golf clubs?",
+    a: "Yes — clubs are available to use at no extra charge, so you can come empty-handed. You're welcome to bring your own if you prefer.",
+  },
+  {
+    q: "Do you serve food and drinks?",
+    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday, 3–6 PM, with bays included.",
+  },
+  {
+    q: "Is Chip Shots family-friendly? Can kids play?",
+    a: "Yes. Indoor golf is great for all ages, and we host kids' birthday parties tied to our Chip Crew youth program. Families are welcome any time during open hours.",
+  },
+  {
+    q: "Do I need a reservation, or can I walk in?",
+    a: "Walk-ins are welcome whenever a bay is open, but booking ahead is the surest way to get the time you want — especially on evenings and weekends. You can reserve a bay online in about a minute.",
+  },
+  {
+    q: "What are your hours?",
+    a: "Sunday–Thursday, 11 AM–10 PM, and Friday–Saturday, 11 AM–midnight.",
+  },
+  {
+    q: "Where are you located?",
+    a: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015 — in the heart of Henderson, just off Lake Mead Parkway.",
+  },
+  {
+    q: "Do you host parties and corporate events?",
+    a: "Absolutely. Private bays, catered food and a full bar make Chip Shots an easy yes for birthdays, corporate team nights, bachelor/bachelorette groups and holiday parties. Tell us what you're celebrating and we'll tailor it.",
+  },
+  {
+    q: "What are the leagues and how do I join?",
+    a: "We run weekly handicapped leagues on TrackMan — Open (Mondays), Ladies (Wednesdays) and Men's (Sundays) — so every skill level competes. Each season opens with a free Week 0 preview; after that it's $40 a night, or free for members.",
+  },
+  {
+    q: "Is there a membership?",
+    a: "Yes. Unlimited bay time is $239/month or $2,390/year, plus youth, late-night and corporate tiers. Members get priority booking, 10% off food and drink, and play every league night free.",
+  },
+];
+
 export const owners = "Mark, Roseanne & Cameron Mizell";

@@ -355,6 +355,19 @@ export const getAllPosts = (): Post[] =>
 export const getPost = (slug: string): Post | undefined =>
   posts.find((p) => p.slug === slug);
 
+/**
+ * Up to `limit` other posts to suggest at the end of an article. Same-category
+ * posts come first (most relevant), then the newest remaining posts fill in.
+ */
+export const getRelatedPosts = (slug: string, limit = 2): Post[] => {
+  const current = getPost(slug);
+  const others = getAllPosts().filter((p) => p.slug !== slug);
+  if (!current) return others.slice(0, limit);
+  const sameCategory = others.filter((p) => p.category === current.category);
+  const rest = others.filter((p) => p.category !== current.category);
+  return [...sameCategory, ...rest].slice(0, limit);
+};
+
 /** Format an ISO post date for display. Runs at build time (static pages). */
 export const formatPostDate = (iso: string): string =>
   new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", {

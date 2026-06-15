@@ -15,6 +15,7 @@ import {
   leagues,
   giftCardPromo,
 } from "@/lib/site";
+import { getAllPosts, formatPostDate } from "@/lib/blog";
 
 const giftCardTotal = giftCardPromo.threshold + giftCardPromo.bonus;
 
@@ -52,6 +53,8 @@ const pillars = [
 ];
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <>
       {/* ===================================================== HERO ===== */}
@@ -400,6 +403,62 @@ export default function Home() {
               </ButtonLink>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ============================================ FROM THE BLOG ===== */}
+      <section className="bg-cream-2">
+        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <Reveal>
+                <p className="eyebrow text-gold">From the Clubhouse</p>
+              </Reveal>
+              <Reveal delay={0.08}>
+                <h2 className="font-display mt-4 text-balance text-4xl font-light text-green-deep sm:text-5xl">
+                  Local guides, golf tips & what's on.
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={0.12}>
+              <ButtonLink href="/blog" variant="outline" withArrow>
+                Read the blog
+              </ButtonLink>
+            </Reveal>
+          </div>
+
+          <Stagger className="mt-14 grid gap-7 md:grid-cols-3" gap={0.12}>
+            {latestPosts.map((post) => (
+              <StaggerItem key={post.slug} as="article">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-[var(--shadow-card)] transition-all duration-500 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-7">
+                    <p className="eyebrow text-gold">{post.category}</p>
+                    <h3 className="font-display mt-3 text-xl leading-snug text-green-deep">
+                      {post.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                      {post.excerpt}
+                    </p>
+                    <p className="mt-5 text-sm text-muted">
+                      {formatPostDate(post.date)} · {post.readMinutes} min read
+                    </p>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </section>
 
