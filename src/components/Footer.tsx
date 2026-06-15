@@ -41,6 +41,14 @@ export default function Footer() {
               ))}
               <li>
                 <Link
+                  href="/corporate-events"
+                  className="link-underline pb-0.5 hover:text-cream"
+                >
+                  Corporate Events
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/faq"
                   className="link-underline pb-0.5 hover:text-cream"
                 >

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
 import { img, eventTypes } from "@/lib/site";
@@ -51,6 +52,24 @@ export default function Events() {
             </StaggerItem>
           ))}
         </Stagger>
+
+        <Reveal>
+          <div className="mt-12 flex flex-col items-start gap-5 rounded-3xl border border-line bg-cream-2 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+            <div>
+              <h3 className="font-display text-2xl text-green-deep">
+                Planning a company event?
+              </h3>
+              <p className="mt-2 max-w-xl text-muted">
+                See how Chip Shots works for corporate team building, client
+                outings and holiday parties — plus corporate memberships for
+                regulars.
+              </p>
+            </div>
+            <ButtonLink href="/corporate-events" variant="green" size="lg" withArrow>
+              Corporate events
+            </ButtonLink>
+          </div>
+        </Reveal>
       </section>
 
       {/* ============================================== FORM ===== */}
