@@ -12,8 +12,8 @@ export const business = {
     street: "1473 E Lake Mead Pkwy, Suite 110",
     city: "Henderson",
     region: "NV",
-    postalCode: "89011",
-    full: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89011",
+    postalCode: "89015",
+    full: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015",
   },
   phone: "(725) 377-8872",
   phoneHref: "tel:+17253778872",
@@ -23,9 +23,9 @@ export const business = {
   founded: "Grand opening May 29, 2026",
   geo: { lat: 36.0398, lng: -114.9817 },
   mapEmbed:
-    "https://www.google.com/maps?q=1473+E+Lake+Mead+Pkwy+Suite+110+Henderson+NV+89011&output=embed",
+    "https://www.google.com/maps?q=1473+E+Lake+Mead+Pkwy+Suite+110+Henderson+NV+89015&output=embed",
   mapLink:
-    "https://www.google.com/maps/search/?api=1&query=1473+E+Lake+Mead+Pkwy+Suite+110+Henderson+NV+89011",
+    "https://www.google.com/maps/search/?api=1&query=1473+E+Lake+Mead+Pkwy+Suite+110+Henderson+NV+89015",
   social: {
     instagram: "https://www.instagram.com/chipshotshenderson",
     facebook: "https://www.facebook.com/chipshotshenderson",
@@ -86,6 +86,7 @@ export const nav: NavItem[] = [
   { label: "Leagues", href: "/league" },
   { label: "Memberships", href: "/memberships" },
   { label: "Events", href: "/events" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ];
 
@@ -176,19 +177,18 @@ export const leagues = {
       competitive: true,
     },
   ],
-  // How a single season runs — Week 0 free, five-week race, then a finale.
+  // How a single season runs — Week 0 free, four-week race, then a finale.
   season: {
     eyebrow: "How a season works",
     title: "Six weeks. Champions crowned. Then we run it back.",
     intro:
-      "The league never stops — it runs in themed seasons. Each one opens with a free Week 0, then a five-week points race with a different game every week — and Open never plays the same one as the Ladies/Men's nights, so it pays to play both. It all ends with a Club Championship.",
+      "The league never stops — it runs in themed seasons. Each one opens with a free Week 0, then a four-week points race with a different game every week — and Open never plays the same one as the Ladies/Men's nights, so it pays to play both. It all ends with a Club Championship.",
     weeks: [
       { tag: "Week 0", both: "Free Kickoff", desc: "Individual stroke play — play on us, we set your handicap, no index needed." },
       { tag: "Week 1", open: "Stableford", league: "Team Best Ball", desc: "Points race opens — every prize doubled.", highlight: true },
       { tag: "Week 2", open: "Team Scramble", league: "Net Medal", desc: "The games flip — play both nights, never the same game." },
       { tag: "Week 3", open: "Match Play", league: "Stableford", desc: "Bracket play on Open; points-race Stableford on league night." },
-      { tag: "Week 4", open: "Team Best Ball", league: "Skins", desc: "Best-ball teams on Open; skins shootout on your night." },
-      { tag: "Week 5", open: "Skins", league: "Team Scramble", desc: "Last week to climb the standings before the finale." },
+      { tag: "Week 4", open: "Team Best Ball", league: "Skins", desc: "Best-ball teams on Open, skins shootout on your night — last chance to climb before the finale." },
       { tag: "Finale", both: "Club Championship", desc: "Gross & net champions crowned — week of July 27." },
     ] as {
       tag: string;
