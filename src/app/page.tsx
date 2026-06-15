@@ -6,13 +6,17 @@ import { Icon } from "@/components/ui/icons";
 import { Amp, AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
 import Marquee from "@/components/home/Marquee";
+import TrackOnClick from "@/components/TrackOnClick";
 import {
   business,
   img,
   golf,
   hoursSummary,
   leagues,
+  giftCardPromo,
 } from "@/lib/site";
+
+const giftCardTotal = giftCardPromo.threshold + giftCardPromo.bonus;
 
 const pillars = [
   {
@@ -103,6 +107,31 @@ export default function Home() {
       </section>
 
       <Marquee />
+
+      {/* ============================================ GIFT CARD PROMO ===== */}
+      <section className="bg-gold">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 py-8 text-center sm:px-8 md:flex-row md:justify-between md:gap-8 md:text-left">
+          <div>
+            <p className="eyebrow text-green-deep/70">
+              {giftCardPromo.occasion} · Order by {giftCardPromo.deadline}
+            </p>
+            <h2 className="font-display mt-1.5 text-2xl text-green-deep sm:text-3xl">
+              {`Give Dad the good times — buy $${giftCardPromo.threshold}, get $${giftCardTotal}.`}
+            </h2>
+            <p className="mt-1.5 max-w-xl text-sm text-green-deep/80">
+              {`Every $${giftCardPromo.threshold} eGift card comes with a free $${giftCardPromo.bonus} bonus card. Delivered to your inbox instantly.`}
+            </p>
+          </div>
+          <TrackOnClick
+            event="InitiateCheckout"
+            params={{ content_name: "Gift card", content_category: "Father's Day", source: "home banner" }}
+          >
+            <ButtonLink href="/gift-cards" variant="green" size="lg" withArrow>
+              Shop Gift Cards
+            </ButtonLink>
+          </TrackOnClick>
+        </div>
+      </section>
 
       {/* =============================================== THREE PILLARS ===== */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
