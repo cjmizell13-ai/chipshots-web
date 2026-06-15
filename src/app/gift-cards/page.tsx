@@ -59,9 +59,7 @@ export default function GiftCards() {
               Buy ${giftCardPromo.threshold}, get ${total}.
             </h2>
             <p className="mt-2 max-w-xl text-green-deep/80">
-              Every ${giftCardPromo.threshold} eGift card comes with a free $
-              {giftCardPromo.bonus} bonus card — handed to you in-store on the
-              first visit. That&rsquo;s a built-in reason for Dad to come back.
+              {`Every $${giftCardPromo.threshold} eGift card comes with a free $${giftCardPromo.bonus} bonus card — handed to you in-store on the first visit. That's a built-in reason for Dad to come back.`}
             </p>
           </div>
           <TrackOnClick
@@ -151,9 +149,7 @@ export default function GiftCards() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mx-auto mt-5 max-w-xl leading-relaxed text-cream/75">
-              Order before {giftCardPromo.deadline} to lock in the $
-              {giftCardPromo.bonus} bonus. Delivered to your inbox the moment you
-              check out.
+              {`Order before ${giftCardPromo.deadline} to lock in the $${giftCardPromo.bonus} bonus. Delivered to your inbox the moment you check out.`}
             </p>
           </Reveal>
           <GoldRule className="mx-auto mt-7 w-40" />
