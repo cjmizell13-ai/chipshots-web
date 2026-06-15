@@ -434,10 +434,10 @@ export const wine: MenuItem[] = [
 ];
 
 export const cocktails: MenuItem[] = [
-  { name: "Transfusion", price: "$12", desc: "Tito's vodka, grape juice & ginger ale — the golfer's classic" },
-  { name: "Azalea", price: "$12", desc: "Tito's vodka, lemonade & a grenadine sink" },
-  { name: "Peach Palmer", price: "$12", desc: "Tito's vodka, peach purée, lemonade & iced tea" },
-  { name: "Blue Lagoon", price: "$12", desc: "Tito's vodka, blue curaçao & lemonade" },
+  { name: "Transfusion", price: "$12", desc: "Weber Ranch vodka, grape juice & ginger ale — the golfer's classic" },
+  { name: "Azalea", price: "$12", desc: "Weber Ranch vodka, lemonade & a grenadine sink" },
+  { name: "Peach Palmer", price: "$12", desc: "Weber Ranch vodka, peach purée, lemonade & iced tea" },
+  { name: "Blue Lagoon", price: "$12", desc: "Weber Ranch vodka, blue curaçao & lemonade" },
   { name: "Crown Peach Mule", price: "$15", desc: "Crown Peach whiskey, lime, peach purée & ginger beer" },
   { name: "Blueberry Blush", price: "$15", desc: "Stoli Blueberry vodka, lime & a splash of cranberry" },
   { name: "Espresso Martini", price: "$15", desc: "Stoli Vanilla vodka, espresso liqueur & fresh espresso" },
@@ -447,7 +447,7 @@ export const cocktails: MenuItem[] = [
   { name: "Par Old Fashioned", price: "$14", desc: "Buffalo Trace bourbon, sugar & Angostura bitters" },
   { name: "Birdie Old Fashioned", price: "$16", desc: "Woodford Reserve bourbon, sugar & Angostura bitters" },
   { name: "Eagle Old Fashioned", price: "$16", desc: "Eagle Rare bourbon, sugar & orange bitters" },
-  { name: "Albatross Old Fashioned", price: "$25", desc: "El Cristiano Extra Añejo tequila, agave & orange bitters" },
+  { name: "Albatross Old Fashioned", price: "$25", desc: "El Cristiano Extra Añejo tequila, agave & Angostura bitters" },
 ];
 
 export type SpiritGroup = { type: string; items: MenuItem[] };
@@ -511,15 +511,16 @@ export const happyHour = {
     { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Blue Moon · Modelo" },
     { name: "Well Drinks", price: "$6", desc: "Vodka · gin · tequila · rum · bourbon" },
     { name: "Craft, Cider & Wine", price: "$7", desc: "Firestone 805 · Angry Orchard · House Wine" },
-    { name: "Signature Cocktails", price: "$10", desc: "Par Old Fashioned · Transfusion · Azalea · Peach Palmer · Blue Lagoon" },
+    { name: "House Cocktails", price: "$10", desc: "Par Old Fashioned · Transfusion · Azalea · Peach Palmer · Blue Lagoon" },
+    { name: "All Other Cocktails", price: "$2 off", desc: "Crown Peach Mule, Espresso Martini, Margarita, Paloma & more" },
   ],
   bites: [
-    { name: "Pretzel Bites", price: "$7" },
-    { name: "Mozzarella Sticks", price: "$7" },
-    { name: "Mini Corn Dogs", price: "$7" },
-    { name: "Crispy Pickle Spears", price: "$7" },
-    { name: "Boneless Wings (6)", price: "$7" },
-    { name: "Pimento Cheese Dip", price: "$7" },
+    { name: "Pretzel Bites", price: "$8" },
+    { name: "Mozzarella Sticks", price: "$8" },
+    { name: "Mini Corn Dogs", price: "$8" },
+    { name: "Crispy Pickle Spears", price: "$8" },
+    { name: "Boneless Wings (6)", price: "$8" },
+    { name: "Pimento Cheese Dip", price: "$8" },
     { name: "Loaded Totchos", price: "$10" },
     { name: "Buffalo Chicken Dip", price: "$10" },
     { name: "Slider Trio", price: "$10" },
