@@ -4,6 +4,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import VipSignup from "@/components/forms/VipSignup";
 import BackToTop from "@/components/BackToTop";
 import BookingProvider from "@/components/BookingProvider";
 import { business, hours } from "@/lib/site";
@@ -154,6 +155,7 @@ export default function RootLayout({
           <main id="main" className="flex-1">
             {children}
           </main>
+          <VipSignup />
           <Footer />
           <BackToTop />
         </BookingProvider>

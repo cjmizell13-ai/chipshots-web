@@ -49,6 +49,23 @@ export const giftCardPromo = {
   url: "https://order.toasttab.com/egiftcards/chip-shots-1473-east-lake-mead-parkway-suite-110",
 };
 
+// VIP Crew email/SMS capture. Submissions POST to a Google Form whose
+// responses fill a Google Sheet — export that to CSV and import into Toast
+// Marketing (email + SMS). The consent text below is stored verbatim with
+// every signup as the TCPA opt-in record. To change fields, edit the Form,
+// then refresh these entry IDs from its live HTML (FB_PUBLIC_LOAD_DATA_).
+export const vipForm = {
+  action:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfcx5GdTCdF_SOHGtT5bBjEkYZnuLr02x-FnmmsntcGvC3Fjw/formResponse",
+  fields: {
+    email: "entry.1896220856",
+    phone: "entry.1122805014",
+    consent: "entry.319411053",
+  },
+  consentRecord:
+    "Opted in to marketing email + SMS via chipshotshenderson.com VIP Crew form",
+};
+
 export const hours = [
   { day: "Monday", time: "11:00 AM – 10:00 PM" },
   { day: "Tuesday", time: "11:00 AM – 10:00 PM" },
