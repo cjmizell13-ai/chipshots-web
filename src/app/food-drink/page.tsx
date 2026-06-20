@@ -115,6 +115,27 @@ export default function FoodDrink() {
           ))}
         </Stagger>
 
+        <Stagger className="mt-12 grid gap-5 sm:grid-cols-3">
+          {[
+            { src: img.foodBurger, alt: "Bacon cheeseburger with a side of fries" },
+            { src: img.foodWings, alt: "Crispy wings tossed and ready to share" },
+            { src: img.diningRoom, alt: "The Chip Shots dining room" },
+          ].map((p) => (
+            <StaggerItem
+              key={p.alt}
+              className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]"
+            >
+              <Image
+                src={p.src}
+                alt={p.alt}
+                width={520}
+                height={400}
+                className="h-60 w-full object-cover sm:h-64"
+              />
+            </StaggerItem>
+          ))}
+        </Stagger>
+
         <Reveal delay={0.05}>
           <p className="mt-10 rounded-2xl bg-cream-2 px-6 py-4 text-center text-sm text-muted">
             {foodMore}
@@ -266,6 +287,26 @@ export default function FoodDrink() {
                 </span>
               </div>
               {c.desc && <p className="mt-2 text-sm text-muted">{c.desc}</p>}
+            </StaggerItem>
+          ))}
+        </Stagger>
+
+        <Stagger className="mt-6 grid gap-5 sm:grid-cols-2">
+          {[
+            { src: img.cocktailRed, alt: "A ruby-red signature cocktail" },
+            { src: img.cocktailsHighball, alt: "Highball cocktails poured at the bar" },
+          ].map((p) => (
+            <StaggerItem
+              key={p.alt}
+              className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]"
+            >
+              <Image
+                src={p.src}
+                alt={p.alt}
+                width={680}
+                height={440}
+                className="h-64 w-full object-cover sm:h-72"
+              />
             </StaggerItem>
           ))}
         </Stagger>

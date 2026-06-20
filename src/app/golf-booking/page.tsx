@@ -46,6 +46,27 @@ export default function GolfBooking() {
         image={img.bayDesertData}
       />
 
+      {/* ============================================== QUICK BOOK ===== */}
+      <section className="bg-cream-2">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-8 sm:flex-row sm:justify-between sm:px-8">
+          <p className="text-center font-display text-xl text-green-deep sm:text-left">
+            Ready to play? Reserve your bay now.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <ButtonLink href={business.booking} external variant="gold" size="lg" withArrow>
+              Book a bay
+            </ButtonLink>
+            <a
+              href={business.phoneHref}
+              className="inline-flex items-center gap-2 text-green-deep"
+            >
+              <Icon.phone className="h-4 w-4 text-gold" />
+              {business.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ============================================== FEATURES ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
