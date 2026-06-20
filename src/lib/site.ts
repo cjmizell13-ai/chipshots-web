@@ -289,12 +289,6 @@ export const leagues = {
 // Always-on promo banner shown at the very top of every page.
 export const promoBanners = [
   {
-    code: "BOGO",
-    message: "Buy one hour, get one free — through July 2",
-    cta: "Book a Bay",
-    href: "/golf-booking",
-  },
-  {
     message: "Weekly leagues now forming — all skill levels welcome",
     cta: "Join a league",
     href: "/league",
