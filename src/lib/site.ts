@@ -162,51 +162,47 @@ export const golf = {
 
 // Leagues — recurring competitive play on TrackMan's competition suite.
 export const leagues = {
-  eyebrow: "Now forming",
-  title: "Find your league.",
+  eyebrow: "Weekly at Chip Shots",
+  title: "Your night to play.",
   intro:
-    "Henderson's indoor golf league season is officially here — three weekly nights on TrackMan, five bays, net scoring and handicaps so every match stays competitive. Week 0 is a free preview, and food and drinks come right to your bay. No 110° heat.",
+    "Need a reason to get out and play? Pick your night. Three standing weekly clubs on TrackMan — Men's, Ladies and Open — a regular time to come hit, hang out and make it social. Each club crowns its own weekly winner, and one Weekly League runs across all three nights so every player lands on one combined leaderboard. Net scoring keeps it fair for every skill level, and food and drinks come right to your bay. No 110° heat.",
   nights: [
     {
-      title: "Open League",
-      day: "Mondays",
-      time: "5 PM & 7 PM",
-      who: "Mixed & casual — every skill level welcome.",
-      format: "Net Stableford, handicapped",
-      preview: "Free preview June 22",
-    },
-    {
-      title: "Ladies League",
-      day: "Wednesdays",
-      time: "5 PM & 7 PM",
-      who: "Henderson's women's league — handicapped so every match is a real fight.",
-      format: "Net Stableford · live leaderboard",
-      preview: "Free preview June 24",
-      competitive: true,
-    },
-    {
-      title: "Men's League",
+      title: "Men's Club",
       day: "Sundays",
       time: "5 PM & 7 PM",
-      who: "The serious night — handicapped so every skill level competes, with both a gross and a net champion crowned.",
-      format: "Net stroke, handicapped · gross + net winners",
-      preview: "Free preview June 28",
-      competitive: true,
+      who: "The guys' standing night out — come play, talk a little trash, grab a beer. All skill levels.",
+      format: "Weekly · its own winner each week",
+      preview: "Win your night",
+    },
+    {
+      title: "Open",
+      day: "Mondays",
+      time: "5 PM & 7 PM",
+      who: "Mixed & casual — a quick, easy 9 with generous gimmes. Total first-timers welcome.",
+      format: "Weekly · its own winner each week",
+      preview: "Newcomers start here",
+    },
+    {
+      title: "Ladies Club",
+      day: "Wednesdays",
+      time: "5 PM & 7 PM",
+      who: "Henderson's women's night out — come play, bring friends, make it a thing. All skill levels.",
+      format: "Weekly · its own winner each week",
+      preview: "Win your night",
     },
   ],
-  // How a single season runs — Week 0 free, four-week race, then a finale.
+  // The combined Weekly League that runs across all three club nights.
   season: {
-    eyebrow: "How a season works",
-    title: "Six weeks. Champions crowned. Then we run it back.",
+    eyebrow: "The Weekly League",
+    title: "One league. Every player. Every week.",
     intro:
-      "The league never stops — it runs in themed seasons. Each one opens with a free Week 0, then a four-week points race with a different game every week — and Open never plays the same one as the Ladies/Men's nights, so it pays to play both. It all ends with a Club Championship.",
+      "Each club crowns its own weekly winner — the Weekly League is the reason to come back every week. Play any club night and you're automatically in one combined Weekly League: the same quick-9 challenge, net Stableford so every skill level competes on one board across all three nights. Top net score that week eats and drinks on us.",
     weeks: [
-      { tag: "Week 0", both: "Free Kickoff", desc: "Individual stroke play — play on us, we set your handicap, no index needed." },
-      { tag: "Week 1", open: "Stableford", league: "Team Best Ball", desc: "Points race opens — every prize doubled.", highlight: true },
-      { tag: "Week 2", open: "Team Scramble", league: "Net Medal", desc: "The games flip — play both nights, never the same game." },
-      { tag: "Week 3", open: "Match Play", league: "Stableford", desc: "Bracket play on Open; points-race Stableford on league night." },
-      { tag: "Week 4", open: "Team Best Ball", league: "Skins", desc: "Best-ball teams on Open, skins shootout on your night — last chance to climb before the finale." },
-      { tag: "Finale", both: "Club Championship", desc: "Gross & net champions crowned — week of July 27." },
+      { tag: "Same challenge", both: "A standardized quick 9", desc: "Everyone plays the same course, net Stableford — so a Sunday score and a Wednesday score go head to head fairly." },
+      { tag: "Any night", both: "Sunday, Monday or Wednesday", desc: "Play whichever club fits your week. However you get there, your score lands in the same Weekly League." },
+      { tag: "One board", both: "Everyone competes together", desc: "Men's, Ladies and Open all feed one combined Weekly League leaderboard — auto-scored live on TrackMan." },
+      { tag: "Win", both: "Food & drink credit", desc: "Top net score each week wins the Weekly League and a Chip Shots F&B credit. Fresh board, new shot, every week.", highlight: true },
     ] as {
       tag: string;
       both?: string;
@@ -216,37 +212,37 @@ export const leagues = {
       highlight?: boolean;
     }[],
     sidePots: {
-      title: "Side pots every night",
-      desc: "On top of the main game, every league night runs a Closest-to-the-Pin and a Long-Drive pot — a few bucks in, winner takes the pile. All auto-scored on TrackMan, all skill levels welcome.",
+      title: "House-sponsored skill prizes",
+      desc: "Some nights we post a closest-to-the-pin or long-drive prize on the house — small optional entry, a set prize Chip Shots puts up, winner takes it. Auto-tracked on TrackMan, all skill levels welcome.",
     },
   },
   // The three-tier hype ladder.
   ladder: [
-    { title: "Every week", desc: "A weekly winner plus closest-to-pin and long-drive side pots up for grabs every night." },
-    { title: "Every season", desc: "Six weeks builds to a Club Championship — Ladies & Men's each crown a gross and a net champion." },
-    { title: "Every year", desc: "Season champs & weekly winners qualify for the year-end Tournament of Champions." },
+    { title: "Every week", desc: "One combined Weekly League across all three nights — top net score wins a food & drink credit." },
+    { title: "Every night", desc: "Your club, your crowd — a standing weekly night with its own weekly winner, win or lose." },
+    { title: "Every visit", desc: "No buy-in, no sign-up fee — just book a bay at the regular rate and play. Members play on their membership." },
   ],
   // Quick-reference details for the "how it works" strip.
   details: [
-    { label: "The round", value: "18 holes, handicapped, in a 2-hour bay block" },
-    { label: "Scoring", value: "Handicapped, net scoring all season — gross & net champions crowned at the finale" },
-    { label: "Buy-in", value: "$40 a night · Week 0 free · members play every night free" },
-    { label: "The tech", value: "Auto-scored on TrackMan with live season leaderboards" },
+    { label: "The clubs", value: "Men's (Sun), Open (Mon), Ladies (Wed) — each its own weekly competition and winner, all skill levels" },
+    { label: "The round", value: "A quick, easy 9 — net Stableford, handicapped, generous gimmes" },
+    { label: "The Weekly League", value: "One combined leaderboard across all three nights — top net score wins" },
+    { label: "How to play", value: "Just book a bay at the regular rate — members play on their membership" },
   ],
   prizes: [
-    { title: "Weekly F&B credits", desc: "Win your night, eat & drink on us next week." },
-    { title: "Membership months", desc: "Season champions take home free membership months." },
-    { title: "Double Week 1", desc: "Every prize is doubled the first week of the season." },
+    { title: "Weekly F&B credit", desc: "Top the Weekly League and eat & drink on us your next visit." },
+    { title: "Bragging rights", desc: "Win your club night, then chase the Weekly League board — be the name at the top this week." },
+    { title: "Members play free", desc: "Every club night, every week, no buy-in for members." },
   ],
-  // League-night perks — dedicated league-night drink specials + F&B to make league nights the place to be.
+  // Club-night perks — dedicated drink specials + F&B to make the social nights the place to be.
   nightPerks: {
-    eyebrow: "Game night perks",
-    title: "Every league night is a party.",
+    eyebrow: "Club night perks",
+    title: "Every club night is a hang.",
     intro:
-      "Show up to compete, stay for the night. Every league night has its own drink specials and shareables — all delivered right to your bay.",
+      "Come for a time to play, stay for the night. Every club night has its own drink specials and shareables — all delivered right to your bay.",
     perks: [
-      { title: "League drink specials", desc: "A featured draft and a signature league cocktail at a deal — running all league night, delivered straight to your bay." },
-      { title: "Win F&B credit", desc: "Take your night and bank a Chip Shots tab — eat & drink on us your next visit." },
+      { title: "Club drink specials", desc: "A featured draft and a signature cocktail at a deal — running all club night, delivered straight to your bay." },
+      { title: "Win F&B credit", desc: "Top the Weekly League and bank a Chip Shots tab — eat & drink on us your next visit." },
       { title: "Squad buckets & shareables", desc: "Beer buckets and foursome bites built to share, delivered straight to your bay." },
     ],
   },
@@ -255,33 +251,33 @@ export const leagues = {
     eyebrow: "Do the math",
     title: "For a weekly player, membership pays for itself.",
     payg: {
-      title: "Pay per night",
+      title: "Pay per visit",
       lines: [
-        { label: "4 league nights", value: "$160/mo" },
-        { label: "Practice 1×/week (2 hrs)", value: "$320/mo" },
+        { label: "Weekly club night (2-hr bay)", value: "≈ $400/mo" },
+        { label: "Practice 1×/week (2 hrs)", value: "≈ $320/mo" },
         { label: "Food & drink", value: "Full price" },
       ],
-      total: "≈ $480/mo to play & practice",
+      total: "≈ $720/mo to play & practice",
     },
     member: {
       title: "Unlimited Member",
       price: "$239/mo",
       lines: [
-        { label: "Every league night", value: "Free" },
+        { label: "Every club night", value: "Free" },
         { label: "Unlimited bay time, any day", value: "Included" },
         { label: "All food & drink", value: "10% off" },
       ],
       total: "One flat price — play all you want",
     },
     bottomLine:
-      "Even with zero practice, four league nights is $160/mo in buy-ins — two-thirds of a membership. Play both your leagues — Open plus your league night — and you're at $320/mo in buy-ins alone, more than Unlimited costs. Add any practice and it's not close.",
+      "Club nights are just a normal bay booking at the regular rate — and Monday & Wednesday evenings fall in the $50/hr peak window. Book a bay most weeks and Unlimited ($239/mo) pays for itself fast. Members play every club night on their membership and chase the Weekly League every week.",
   },
   points: [
-    { title: "Weekly league nights", desc: "Recurring play with live leaderboards and season-long standings." },
-    { title: "All skill levels", desc: "Handicapped, net scoring so every player has a real shot." },
+    { title: "Weekly club nights", desc: "A standing time to come play, get social and land on the weekly leaderboard." },
+    { title: "All skill levels", desc: "Handicapped, net scoring so every player has a real shot at the Weekly League." },
     { title: "Food & drinks also available", desc: "Burgers, wings and a full bar without leaving your bay." },
   ],
-  cta: "Ask about leagues",
+  cta: "Ask about club nights",
   form: "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform?embedded=true",
   formLink: "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform",
 };
@@ -294,8 +290,8 @@ export const promoBanners: {
   href: string;
 }[] = [
   {
-    message: "Weekly leagues now forming — all skill levels welcome",
-    cta: "Join a league",
+    message: "Weekly club nights + a combined Weekly League — all skill levels welcome",
+    cta: "Find your night",
     href: "/league",
   },
 ];
@@ -595,12 +591,12 @@ export const faqs: Faq[] = [
     a: "Absolutely. Private bays, catered food and a full bar make Chip Shots an easy yes for birthdays, corporate team nights, bachelor/bachelorette groups and holiday parties. Tell us what you're celebrating and we'll tailor it.",
   },
   {
-    q: "What are the leagues and how do I join?",
-    a: "We run weekly handicapped leagues on TrackMan — Open (Mondays), Ladies (Wednesdays) and Men's (Sundays) — so every skill level competes. Each season opens with a free Week 0 preview; after that it's $40 a night, or free for members.",
+    q: "What are the club nights and how do I join?",
+    a: "We run three standing weekly club nights on TrackMan — Men's (Sundays), Open (Mondays) and Ladies (Wednesdays) — a regular, social time to come play, each with its own weekly winner. Whichever night you play, you're also in one combined Weekly League with a food & drink credit for the top net score across all three nights. No buy-in: just book a bay at the regular rate to play, or play on your membership. Sign up below to get on the list.",
   },
   {
     q: "Is there a membership?",
-    a: "Yes. Unlimited bay time is $239/month or $2,390/year, plus youth, late-night and corporate tiers. Members get priority booking, 10% off food and drink, and play every league night free.",
+    a: "Yes. Unlimited bay time is $239/month or $2,390/year, plus youth, late-night and corporate tiers. Members get priority booking, 10% off food and drink, and play every club night free.",
   },
 ];
 
