@@ -27,18 +27,19 @@ export default function League() {
       <section className="bg-gold">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-10 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
           <div>
-            <p className="eyebrow text-green-deep/70">Henderson&rsquo;s Indoor Golf League</p>
+            <p className="eyebrow text-green-deep/70">Henderson&rsquo;s Weekly Golf Nights</p>
             <h2 className="font-display mt-2 text-3xl text-green-deep sm:text-4xl">
-              Free Preview Nights
+              Come Play Your Night
             </h2>
             <p className="mt-2 max-w-xl text-green-deep/80">
-              Try the league before you commit — come play a free Week&nbsp;0 on us
-              and see what a season at Chip Shots is all about.
+              No pressure, no buy-in, no season to commit to — just a standing
+              weekly time to get out, play a quick 9 and hang. Book a bay at the
+              regular rate, or play on your membership.
             </p>
           </div>
           <TrackOnClick event="Lead" params={{ content_name: "League sign-up" }}>
             <ButtonLink href="#signup" variant="green" size="lg" withArrow>
-              Reserve a preview night
+              Save your spot
             </ButtonLink>
           </TrackOnClick>
         </div>
@@ -48,14 +49,14 @@ export default function League() {
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="eyebrow text-gold">Three league nights</p>
+            <p className="eyebrow text-gold">Three weekly nights</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
               Pick your night.
             </h2>
             <p className="mt-5 leading-relaxed text-muted">
-              Five bays, weekly play and a free Week&nbsp;0 to try it out. Each
-              night has its own crowd and format — pick where you fit. Spots are
-              limited, so grab yours below.
+              Need a time to play? Come on your night. Each one is a standing
+              weekly hang with its own crowd — a regular reason to get out, hit a
+              quick 9 and make it social. Five bays, food and drinks to your bay.
             </p>
           </div>
         </Reveal>
@@ -69,12 +70,6 @@ export default function League() {
                 <span className="inline-flex w-fit items-center rounded-full bg-green-deep px-3 py-1 text-xs font-medium uppercase tracking-wide text-gold">
                   {n.day}
                 </span>
-                {n.competitive && (
-                  <span className="inline-flex w-fit items-center gap-1 rounded-full bg-gold px-3 py-1 text-xs font-medium uppercase tracking-wide text-green-deep">
-                    <Icon.star className="h-3 w-3" />
-                    Competitive
-                  </span>
-                )}
               </div>
               <h3 className="font-display mt-4 text-2xl text-green-deep">
                 {n.title}
