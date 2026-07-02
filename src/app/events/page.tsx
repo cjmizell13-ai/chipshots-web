@@ -5,7 +5,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
-import { img, eventTypes } from "@/lib/site";
+import { img, eventTypes, trivia } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Events & Parties",
@@ -70,6 +70,56 @@ export default function Events() {
             </ButtonLink>
           </div>
         </Reveal>
+      </section>
+
+      {/* ============================================== TRIVIA NIGHT ===== */}
+      <section className="bg-green-deep text-cream">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <Reveal>
+              <div>
+                <p className="eyebrow text-gold-soft">{trivia.eyebrow}</p>
+                <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
+                  {trivia.title}
+                </h2>
+                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-gold">
+                  <span className="inline-flex items-center gap-2 font-medium">
+                    <Icon.clock className="h-5 w-5" />
+                    {trivia.day} · {trivia.time}
+                  </span>
+                  <span className="text-cream/50">{trivia.host}</span>
+                </div>
+                <p className="mt-5 max-w-md leading-relaxed text-cream/75">
+                  {trivia.intro}
+                </p>
+                <p className="mt-6 text-xs uppercase tracking-wider text-cream/50">
+                  {trivia.note}
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="rounded-3xl border border-gold/25 bg-green-deep/60 p-8 shadow-[var(--shadow-soft)] sm:p-10">
+                <p className="eyebrow text-center text-cream/60">— The Prizes —</p>
+                <Stagger className="mt-7 grid gap-4">
+                  {trivia.prizes.map((p) => (
+                    <StaggerItem
+                      key={p.place}
+                      className="flex items-baseline gap-4"
+                    >
+                      <span className="font-display w-16 shrink-0 text-2xl text-gold">
+                        {p.place}
+                      </span>
+                      <span className="font-medium text-cream">{p.label}</span>
+                      <span className="mx-3 flex-1 border-b border-dotted border-gold/40" />
+                      <span className="shrink-0 text-cream/90">{p.reward}</span>
+                    </StaggerItem>
+                  ))}
+                </Stagger>
+              </div>
+            </Reveal>
+          </div>
+        </div>
       </section>
 
       {/* ============================================== FORM ===== */}

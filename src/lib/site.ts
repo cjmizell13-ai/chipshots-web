@@ -551,6 +551,25 @@ export const happyHour = {
 };
 
 // -----------------------------------------------------------------------------
+// Trivia Night — recurring weekly event, hosted by RobotBrain every Tuesday.
+// Prize ladder matches the in-store promo (see /trivia-story marketing asset).
+// -----------------------------------------------------------------------------
+export const trivia = {
+  eyebrow: "Every Tuesday Night",
+  title: "Trivia Night",
+  host: "Hosted by RobotBrain",
+  day: "Tuesday",
+  time: "6 PM",
+  intro:
+    "Grab your team and settle in — free live trivia every Tuesday at 6 PM, hosted by RobotBrain. Full bar, full kitchen and no golf required. No cover, no sign-up: just show up early and grab a table.",
+  prizes: [
+    { place: "1st", label: "Winner", reward: "$50 Gift Card" },
+    { place: "2nd", label: "Runner-Up", reward: "$25 Gift Card" },
+  ],
+  note: "Full bar · Kitchen open · No golf required",
+};
+
+// -----------------------------------------------------------------------------
 // Events
 // -----------------------------------------------------------------------------
 export const eventTypes = [
