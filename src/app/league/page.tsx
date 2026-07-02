@@ -27,14 +27,15 @@ export default function League() {
       <section className="bg-gold">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-10 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
           <div>
-            <p className="eyebrow text-green-deep/70">Henderson&rsquo;s Weekly Golf Nights</p>
+            <p className="eyebrow text-green-deep/70">Henderson&rsquo;s Weekly Golf Clubs</p>
             <h2 className="font-display mt-2 text-3xl text-green-deep sm:text-4xl">
-              Come Play Your Night
+              Come Play Your Club
             </h2>
             <p className="mt-2 max-w-xl text-green-deep/80">
               No pressure, no buy-in, no season to commit to — just a standing
-              weekly time to get out, play a quick 9 and hang. Book a bay at the
-              regular rate, or play on your membership.
+              weekly club with a fresh leaderboard every week and happy hour live
+              the whole time you play. Book a bay at the regular rate, or play on
+              your membership.
             </p>
           </div>
           <TrackOnClick event="Lead" params={{ content_name: "League sign-up" }}>
@@ -49,14 +50,15 @@ export default function League() {
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="eyebrow text-gold">Three weekly nights</p>
+            <p className="eyebrow text-gold">Three weekly clubs</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Pick your night.
+              Pick your club.
             </h2>
             <p className="mt-5 leading-relaxed text-muted">
-              Need a time to play? Come on your night. Each one is a standing
-              weekly hang with its own crowd — a regular reason to get out, hit a
-              quick 9 and make it social. Five bays, food and drinks to your bay.
+              Need a time to play? Come to your club. Each one is a standing
+              weekly hang with its own crowd — Men&rsquo;s and Ladies play a full
+              18, Open Night is an easy 9. Five bays, happy hour and food to your
+              bay.
             </p>
           </div>
         </Reveal>
@@ -327,7 +329,7 @@ export default function League() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">Play for something</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Win your night.
+              Play for F&amp;B credit.
             </h2>
           </div>
         </Reveal>
@@ -356,13 +358,13 @@ export default function League() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Save your spot in the league.
+                Save your spot at the club.
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mx-auto mt-4 max-w-xl text-muted">
                 Fill out the form below and our team will be in touch with your
-                league night, start date and details.
+                club night, times and details.
               </p>
             </Reveal>
             <GoldRule className="mx-auto mt-7 w-40" />

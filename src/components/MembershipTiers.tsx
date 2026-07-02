@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Stagger, StaggerItem } from "@/components/ui/motion";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonLink } from "@/components/ui/button";
 import MembershipForm from "@/components/forms/MembershipForm";
 import { memberships, rangeCard } from "@/lib/site";
 
@@ -44,13 +44,24 @@ export default function MembershipTiers() {
               {m.note}
             </p>
             <div className="mt-6">
-              <Button
-                onClick={() => openForm(m.tier)}
-                variant={m.featured ? "gold" : "ghost-light"}
-                className="w-full"
-              >
-                Join now
-              </Button>
+              {m.joinUrl ? (
+                <ButtonLink
+                  href={m.joinUrl}
+                  external
+                  variant={m.featured ? "gold" : "ghost-light"}
+                  className="w-full"
+                >
+                  Join &amp; pay online
+                </ButtonLink>
+              ) : (
+                <Button
+                  onClick={() => openForm(m.tier)}
+                  variant={m.featured ? "gold" : "ghost-light"}
+                  className="w-full"
+                >
+                  Request info
+                </Button>
+              )}
             </div>
           </StaggerItem>
         ))}
