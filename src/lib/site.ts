@@ -34,6 +34,9 @@ export const business = {
   },
   booking:
     "https://www.yourgolfbooking.com/venues/chip-shots-henderson/booking/simulator-bays",
+  // Public YGB booking landing that lists every bookable event — the club
+  // nights (Men's / Open / Ladies) plus "Book a Trackman Bay".
+  events: "https://www.yourgolfbooking.com/venues/chip-shots-henderson/booking",
   // Public YGB membership signup + checkout (card on file). Only the $239/mo
   // "Member" tier is offered here; other tiers are set up by us on request.
   membershipJoin:
@@ -104,7 +107,7 @@ export type NavItem = { label: string; href: string };
 export const nav: NavItem[] = [
   { label: "Food & Drink", href: "/food-drink" },
   { label: "Golf & Booking", href: "/golf-booking" },
-  { label: "Leagues", href: "/league" },
+  { label: "Clubs & Leagues", href: "/league" },
   { label: "Memberships", href: "/memberships" },
   { label: "Events", href: "/events" },
   { label: "Blog", href: "/blog" },
@@ -282,8 +285,6 @@ export const leagues = {
     { title: "Food & drinks also available", desc: "Burgers, wings and a full bar without leaving your bay." },
   ],
   cta: "Ask about the clubs",
-  form: "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform?embedded=true",
-  formLink: "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform",
 };
 
 // Always-on promo banner shown at the very top of every page.
@@ -294,8 +295,8 @@ export const promoBanners: {
   href: string;
 }[] = [
   {
-    message: "Weekly club nights + a fresh leaderboard every week — all skill levels welcome",
-    cta: "Find your club",
+    message: "Club nights are live — Men's (Sun), Ladies (Wed) & Open (Mon), all skill levels",
+    cta: "See the club nights",
     href: "/league",
   },
 ];
@@ -304,7 +305,8 @@ export const rangeCard = { price: "$350", detail: "10 hours of bay time" };
 
 // `joinUrl` (optional): tiers that can be purchased + paid for online link
 // straight to the YGB signup/checkout. Tiers without it open the inquiry form
-// (we set those up by hand). Only the $239/mo tier is self-serve on YGB today.
+// (we set those up by hand). Unlimited Monthly, Unlimited Annual, and Chippin'
+// After Dark are self-serve on YGB; Youth + Corporate are inquiry-only.
 export type Membership = {
   tier: string;
   price: string;
@@ -315,10 +317,10 @@ export type Membership = {
 };
 
 export const memberships: Membership[] = [
-  { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true },
+  { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true, joinUrl: business.membershipJoin },
   { tier: "Unlimited Monthly", price: "$239", per: "/mo", note: "Unlimited bay time, billed monthly.", joinUrl: business.membershipJoin },
   { tier: "Chip Crew — Youth", price: "$159", per: "/mo", note: "Youth program for players 18 & under." },
-  { tier: "Chippin' After Dark", price: "$119", per: "/mo", note: "Evening-focused late-night tier." },
+  { tier: "Chippin' After Dark", price: "$119", per: "/mo", note: "Evening-focused late-night tier.", joinUrl: business.membershipJoin },
   { tier: "Corporate Club", price: "$449", per: "/mo", note: "Business membership for teams." },
   { tier: "Corporate Premier", price: "$699", per: "/mo", note: "Premium business membership." },
 ];

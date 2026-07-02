@@ -38,9 +38,9 @@ export default function League() {
               your membership.
             </p>
           </div>
-          <TrackOnClick event="Lead" params={{ content_name: "League sign-up" }}>
+          <TrackOnClick event="Lead" params={{ content_name: "Club night booking" }}>
             <ButtonLink href="#signup" variant="green" size="lg" withArrow>
-              Save your spot
+              Book your club night
             </ButtonLink>
           </TrackOnClick>
         </div>
@@ -349,46 +349,38 @@ export default function League() {
         </Stagger>
       </section>
 
-      {/* ============================================== SIGN-UP FORM ===== */}
+      {/* ============================================== BOOK ===== */}
       <section id="signup" className="bg-cream-2">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
           <div className="text-center">
             <Reveal>
-              <p className="eyebrow text-gold">Sign up</p>
+              <p className="eyebrow text-gold">Book now</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Save your spot at the club.
+                Book your club night.
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mx-auto mt-4 max-w-xl text-muted">
-                Fill out the form below and our team will be in touch with your
-                club night, times and details.
+                Pick your night, grab a bay and you&rsquo;re in — book online in
+                seconds. No buy-in, no sign-up fee. Members play free on their
+                membership.
               </p>
             </Reveal>
             <GoldRule className="mx-auto mt-7 w-40" />
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-3xl border border-line bg-white shadow-[var(--shadow-soft)]">
-              <iframe
-                src={leagues.form}
-                title="Join a league at Chip Shots"
-                loading="lazy"
-                className="h-[1100px] w-full"
-              />
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.05}>
-            <div className="mt-8 flex flex-col items-center gap-4">
-              <p className="text-sm text-muted">Trouble with the form?</p>
-              <TrackOnClick event="Lead" params={{ content_name: "League sign-up" }}>
-                <ButtonLink href={leagues.formLink} external variant="gold" size="lg" withArrow>
-                  Open the form in a new tab
+            <div className="mt-10 flex flex-col items-center gap-5">
+              <TrackOnClick event="Lead" params={{ content_name: "Club night booking" }}>
+                <ButtonLink href={business.events} external variant="gold" size="lg" withArrow>
+                  Book a club night
                 </ButtonLink>
               </TrackOnClick>
+              <p className="text-sm text-muted">
+                Opens YourGolfBooking — pick Men&rsquo;s, Ladies or Open Night.
+              </p>
               <a
                 href={business.phoneHref}
                 className="inline-flex items-center gap-2 text-green-deep"
