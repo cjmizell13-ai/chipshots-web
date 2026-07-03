@@ -118,6 +118,33 @@ export default function Home() {
 
       <Marquee />
 
+      {/* ============================================ FIRST-TIMER OFFER ===== */}
+      <section className="border-y border-gold/25 bg-green-deep text-cream">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-10 text-center sm:px-8 md:flex-row md:justify-between md:gap-10 md:text-left">
+          <div>
+            <p className="eyebrow text-gold-soft">New here? First round's on us</p>
+            <h2 className="font-display mt-1.5 text-3xl font-light sm:text-4xl">
+              Book your first hour, your second is{" "}
+              <span className="text-gold">free.</span>
+            </h2>
+            <p className="mt-2 max-w-xl text-sm text-cream/70">
+              First-time guests get a free second hour on the bay — clubs
+              included, up to {golf.players} players. Non-peak hours, one per
+              group. Just mention it when you book or at the counter.
+            </p>
+          </div>
+          <ButtonLink
+            href={business.booking}
+            external
+            variant="gold"
+            size="lg"
+            withArrow
+          >
+            Claim your free hour
+          </ButtonLink>
+        </div>
+      </section>
+
       {/* =============================================== THREE PILLARS ===== */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
         <div className="mx-auto max-w-2xl text-center">
