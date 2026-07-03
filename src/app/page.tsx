@@ -131,7 +131,7 @@ export default function Home() {
               First-time guests get a free second hour on the bay — clubs
               included, up to {golf.players} players. Book online and use code{" "}
               <span className="font-semibold text-gold">BOGO</span> at checkout.
-              Non-peak hours, one per group.
+              Good all day, every day through July 31 — one per group.
             </p>
           </div>
           <ButtonLink
