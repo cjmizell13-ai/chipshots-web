@@ -58,8 +58,8 @@ export default function Home() {
       <section className="relative flex min-h-[100svh] items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={img.exterior2}
-            alt="The Chip Shots Indoor Golf Club storefront in Henderson, NV"
+            src={img.bayCinematic}
+            alt="A TrackMan simulator bay with lounge seating at Chip Shots Indoor Golf Club in Henderson, NV"
             fill
             priority
             sizes="100vw"
@@ -85,6 +85,16 @@ export default function Home() {
               Five TrackMan simulator bays, a full bar and a full kitchen in
               the heart of Henderson. Come for the food, stay for the game —
               or just the game.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="mt-5 text-sm text-cream/75">
+              Bays from{" "}
+              <span className="font-medium text-gold">
+                {golf.rates[0].price}
+                {golf.rates[0].unit}
+              </span>{" "}
+              · up to {golf.players} players · clubs included
             </p>
           </Reveal>
           <Reveal delay={0.24}>
