@@ -129,8 +129,9 @@ export default function Home() {
             </h2>
             <p className="mt-2 max-w-xl text-sm text-cream/70">
               First-time guests get a free second hour on the bay — clubs
-              included, up to {golf.players} players. Non-peak hours, one per
-              group. Just mention it when you book or at the counter.
+              included, up to {golf.players} players. Book online and use code{" "}
+              <span className="font-semibold text-gold">BOGO</span> at checkout.
+              Non-peak hours, one per group.
             </p>
           </div>
           <ButtonLink
