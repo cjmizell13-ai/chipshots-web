@@ -14,6 +14,7 @@ import {
   hoursSummary,
   leagues,
   giftCardPromo,
+  trivia,
 } from "@/lib/site";
 import { getAllPosts, formatPostDate } from "@/lib/blog";
 
@@ -403,6 +404,28 @@ export default function Home() {
               </ButtonLink>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ============================================ TRIVIA NIGHT ===== */}
+      <section className="bg-gold">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-10 text-center sm:px-8 md:flex-row md:justify-between md:gap-8 md:text-left">
+          <div>
+            <p className="eyebrow text-green-deep/70">
+              {trivia.eyebrow} · {trivia.host}
+            </p>
+            <h2 className="font-display mt-1.5 text-3xl text-green-deep sm:text-4xl">
+              {trivia.title} — {trivia.day}s at {trivia.time}
+            </h2>
+            <p className="mt-1.5 max-w-xl text-sm text-green-deep/80">
+              Free to play, no sign-up — grab your team and win a $
+              {trivia.prizes[0].reward.replace(/[^0-9]/g, "")} gift card.{" "}
+              {trivia.note}.
+            </p>
+          </div>
+          <ButtonLink href="/events" variant="green" size="lg" withArrow>
+            Grab your team
+          </ButtonLink>
         </div>
       </section>
 

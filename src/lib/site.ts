@@ -299,6 +299,11 @@ export const promoBanners: {
     cta: "See the club nights",
     href: "/league",
   },
+  {
+    message: "Trivia Night every Tuesday at 6 PM — free to play, hosted by RobotBrain",
+    cta: "Grab your team",
+    href: "/events",
+  },
 ];
 
 export const rangeCard = { price: "$350", detail: "10 hours of bay time" };
