@@ -45,17 +45,6 @@ export const business = {
     "https://order.toasttab.com/egiftcards/chip-shots-1473-east-lake-mead-parkway-suite-110",
 };
 
-// Father's Day eGift card promo. Bonus is fulfilled in-store on the first
-// visit (Toast can't auto-apply a bonus), which also drives a return trip.
-// Adjust the numbers/deadline here and they update everywhere.
-export const giftCardPromo = {
-  occasion: "Father's Day",
-  deadline: "Sunday, June 21",
-  threshold: 100,
-  bonus: 25,
-  url: "https://order.toasttab.com/egiftcards/chip-shots-1473-east-lake-mead-parkway-suite-110",
-};
-
 // VIP Crew email/SMS capture. Submissions POST to a Google Form whose
 // responses fill a Google Sheet — export that to CSV and import into Toast
 // Marketing (email + SMS). The consent text below is stored verbatim with

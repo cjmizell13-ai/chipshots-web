@@ -4,13 +4,12 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import TrackOnClick from "@/components/TrackOnClick";
-import { business, img, giftCardPromo } from "@/lib/site";
-
-const total = giftCardPromo.threshold + giftCardPromo.bonus;
+import { business, img } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Father's Day Gift Cards",
-  description: `Give Dad golf, food and drinks at Chip Shots in Henderson, NV. Buy a $${giftCardPromo.threshold} eGift card before ${giftCardPromo.deadline} and we'll add a $${giftCardPromo.bonus} bonus card. Delivered instantly by email.`,
+  title: "Gift Cards",
+  description:
+    "Give golf, food and drinks at Chip Shots in Henderson, NV. Pick any amount — an eGift card delivered instantly by email, good toward bay time, the kitchen and the bar.",
   alternates: { canonical: "/gift-cards" },
 };
 
@@ -23,12 +22,12 @@ const steps = [
   {
     icon: "mail" as const,
     title: "Delivered instantly",
-    desc: "The eGift card lands in your inbox right away — print it or forward it to Dad.",
+    desc: "The eGift card lands in the inbox right away — print it or forward it on.",
   },
   {
     icon: "star" as const,
-    title: "Get the bonus in-store",
-    desc: `Spend $${giftCardPromo.threshold}+ and we'll hand over a $${giftCardPromo.bonus} bonus card on the first visit.`,
+    title: "Spend it any time",
+    desc: "Good toward bay time, food, drinks and events — whenever they drop in.",
   },
 ];
 
@@ -42,36 +41,11 @@ export default function GiftCards() {
   return (
     <>
       <PageHero
-        eyebrow={`${giftCardPromo.occasion} · Order by ${giftCardPromo.deadline}`}
-        title="Give Dad the good times."
-        intro={`Skip the tie. A Chip Shots gift card is golf, great food and a cold drink in his favorite spot — no 110° heat. Buy a $${giftCardPromo.threshold} eGift card before ${giftCardPromo.deadline} and we'll add a $${giftCardPromo.bonus} bonus card on us.`}
+        eyebrow="Gift Cards"
+        title="The gift that always fits."
+        intro="A Chip Shots gift card is golf, great food and a cold drink in one of Henderson's best spots — no 110° heat. Pick any amount, delivered instantly by email."
         image={img.bayMoody}
       />
-
-      {/* ============================================== OFFER ===== */}
-      <section className="bg-gold">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-12 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
-          <div>
-            <p className="eyebrow text-green-deep/70">
-              {giftCardPromo.occasion} bonus · ends {giftCardPromo.deadline}
-            </p>
-            <h2 className="font-display mt-2 text-3xl text-green-deep sm:text-4xl">
-              Buy ${giftCardPromo.threshold}, get ${total}.
-            </h2>
-            <p className="mt-2 max-w-xl text-green-deep/80">
-              {`Every $${giftCardPromo.threshold} eGift card comes with a free $${giftCardPromo.bonus} bonus card — handed to you in-store on the first visit. That's a built-in reason for Dad to come back.`}
-            </p>
-          </div>
-          <TrackOnClick
-            event="InitiateCheckout"
-            params={{ content_name: "Gift card", content_category: "Father's Day" }}
-          >
-            <ButtonLink href={business.giftCards} external variant="green" size="lg" withArrow>
-              Buy Dad a Card
-            </ButtonLink>
-          </TrackOnClick>
-        </div>
-      </section>
 
       {/* ============================================== HOW IT WORKS ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
@@ -103,12 +77,12 @@ export default function GiftCards() {
         </Stagger>
       </section>
 
-      {/* ============================================== WHAT DAD GETS ===== */}
+      {/* ============================================== WHAT IT COVERS ===== */}
       <section className="bg-cream-2">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
           <Reveal>
             <div className="max-w-2xl">
-              <p className="eyebrow text-gold">What he can spend it on</p>
+              <p className="eyebrow text-gold">What it covers</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
                 More than golf.
               </h2>
@@ -138,25 +112,24 @@ export default function GiftCards() {
       <section className="bg-green-deep text-cream">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-28">
           <Reveal>
-            <p className="eyebrow text-gold-soft">
-              {giftCardPromo.occasion} · {giftCardPromo.deadline}
-            </p>
+            <p className="eyebrow text-gold-soft">Chip Shots Gift Cards</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-              The gift Dad actually wants.
+              Give the good times.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mx-auto mt-5 max-w-xl leading-relaxed text-cream/75">
-              {`Order before ${giftCardPromo.deadline} to lock in the $${giftCardPromo.bonus} bonus. Delivered to your inbox the moment you check out.`}
+              Pick any amount and it's delivered to your inbox the moment you
+              check out — ready to print or forward on.
             </p>
           </Reveal>
           <GoldRule className="mx-auto mt-7 w-40" />
           <div className="mt-9 flex flex-col items-center gap-4">
             <TrackOnClick
               event="InitiateCheckout"
-              params={{ content_name: "Gift card", content_category: "Father's Day" }}
+              params={{ content_name: "Gift card", content_category: "Gift card" }}
             >
               <ButtonLink href={business.giftCards} external variant="gold" size="lg" withArrow>
                 Buy a Gift Card
