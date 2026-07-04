@@ -45,21 +45,26 @@ export const business = {
     "https://order.toasttab.com/egiftcards/chip-shots-1473-east-lake-mead-parkway-suite-110",
 };
 
-// VIP Crew email/SMS capture. Submissions POST to a Google Form whose
-// responses fill a Google Sheet — export that to CSV and import into Toast
-// Marketing (email + SMS). The consent text below is stored verbatim with
-// every signup as the TCPA opt-in record. To change fields, edit the Form,
-// then refresh these entry IDs from its live HTML (FB_PUBLIC_LOAD_DATA_).
-export const vipForm = {
-  action:
-    "https://docs.google.com/forms/d/e/1FAIpQLSfcx5GdTCdF_SOHGtT5bBjEkYZnuLr02x-FnmmsntcGvC3Fjw/formResponse",
-  fields: {
-    email: "entry.1896220856",
-    phone: "entry.1122805014",
-    consent: "entry.319411053",
+// VIP Crew capture routes straight into Toast Marketing — no manual CSV step.
+// Email: Toast's hosted, branded signup page adds subscribers to the
+// "Chip Shots Group" email list. SMS: TCPA opt-ins must be collected by Toast
+// itself, so guests join by texting the keyword to the toll-free number
+// (mobile = click-to-text link, desktop = scan the QR at the qr path below).
+// Email signup URL lives in Toast Web: Marketing → Email marketing →
+// Subscribers → Settings → "Email Marketing Signup link". SMS number/keyword
+// live under Marketing → SMS marketing.
+export const toastSignup = {
+  emailUrl:
+    "https://www.toasttab.com/chip-shots-1473-east-lake-mead-parkway-suite-110/marketing-signup",
+  sms: {
+    number: "+18335011238",
+    display: "1-833-501-1238",
+    keyword: "JOIN",
+    // Prefilled click-to-text link for mobile visitors.
+    href: "sms:+18335011238?&body=JOIN",
+    // Scan-to-text QR (encodes SMSTO:+18335011238:JOIN) for desktop visitors.
+    qr: "/images/sms-join-qr.png",
   },
-  consentRecord:
-    "Opted in to marketing email + SMS via chipshotshenderson.com VIP Crew form",
 };
 
 export const hours = [

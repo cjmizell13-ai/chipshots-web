@@ -49,6 +49,7 @@ export function ButtonLink({
   withArrow = false,
   external = false,
   className = "",
+  onClick,
 }: {
   href: string;
   children: ReactNode;
@@ -57,18 +58,25 @@ export function ButtonLink({
   withArrow?: boolean;
   external?: boolean;
   className?: string;
+  onClick?: () => void;
 }) {
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cls}
+        onClick={onClick}
+      >
         {children}
         {withArrow && <Arrow />}
       </a>
     );
   }
   return (
-    <Link href={href} className={cls}>
+    <Link href={href} className={cls} onClick={onClick}>
       {children}
       {withArrow && <Arrow />}
     </Link>
