@@ -67,6 +67,39 @@ export default function GolfBooking() {
         </div>
       </section>
 
+      {/* ============================================== BOGO OFFER ===== */}
+      <section className="bg-green-deep text-cream">
+        <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12">
+          <Reveal>
+            <div className="rounded-3xl border border-gold/40 bg-green-soft/25 p-8 sm:p-10">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="eyebrow text-gold-soft">First visit</p>
+                  <h2 className="font-display mt-3 text-3xl font-light sm:text-4xl">
+                    Your second hour is on us.
+                  </h2>
+                  <p className="mt-4 max-w-xl leading-relaxed text-cream/75">
+                    New to Chip Shots? Book a{" "}
+                    <span className="text-gold">2-hour</span> bay, enter code{" "}
+                    <span className="font-semibold text-gold">BOGO</span> at
+                    checkout, and pay for just one hour. First-time guests, one
+                    per guest, through July 31.
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <span className="inline-flex items-center gap-3 rounded-2xl border border-gold/40 bg-green-deep/60 px-6 py-4">
+                    <span className="text-sm uppercase tracking-wide text-cream/60">
+                      Code
+                    </span>
+                    <span className="font-display text-3xl text-gold">BOGO</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ============================================== FEATURES ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -289,6 +289,12 @@ export const promoBanners: {
   href: string;
 }[] = [
   {
+    code: "BOGO",
+    message: "First visit? Book a 2-hour bay and the second hour's on us — through July 31",
+    cta: "Redeem the offer",
+    href: "/golf-booking",
+  },
+  {
     message: "Club nights are live — Men's (Sun), Ladies (Wed) & Open (Mon), all skill levels",
     cta: "See the club nights",
     href: "/league",
