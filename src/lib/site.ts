@@ -306,7 +306,12 @@ export const promoBanners: {
   },
 ];
 
-export const rangeCard = { price: "$350", detail: "$400 of bay credit" };
+export const rangeCard = {
+  price: "$350",
+  detail: "$400 of bay credit",
+  // Public YGB topup purchase page — the Range Card topup is customer-visible there.
+  buyUrl: "https://www.yourgolfbooking.com/venues/chip-shots-henderson/topups",
+};
 
 // `joinUrl` (optional): tiers that can be purchased + paid for online link
 // straight to the YGB signup/checkout. Tiers without it open the inquiry form

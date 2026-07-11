@@ -78,13 +78,14 @@ export default function MembershipTiers() {
             membership required, never expires.
           </p>
           <div className="mt-6">
-            <Button
-              onClick={() => openForm("Range Card")}
+            <ButtonLink
+              href={rangeCard.buyUrl}
+              external
               variant="ghost-light"
               className="w-full"
             >
-              Request a card
-            </Button>
+              Buy online
+            </ButtonLink>
           </div>
         </StaggerItem>
       </Stagger>
