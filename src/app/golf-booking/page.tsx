@@ -145,7 +145,7 @@ export default function GolfBooking() {
                   <p className="font-display mt-2 text-3xl text-gold">
                     {rangeCard.price}
                     <span className="ml-2 text-base font-sans text-cream/70">
-                      {rangeCard.detail}
+                      for {rangeCard.detail}
                     </span>
                   </p>
                   <p className="mt-2 text-sm text-cream/60">

@@ -74,8 +74,8 @@ export default function MembershipTiers() {
           <h3 className="font-display text-2xl text-cream">Range Card</h3>
           <p className="mt-3 font-display text-4xl text-gold">{rangeCard.price}</p>
           <p className="mt-4 flex-1 text-sm leading-relaxed text-cream/70">
-            {rangeCard.detail} of pre-paid bay time at a discount — no membership
-            required, never expires.
+            {rangeCard.detail} — good for 10 hours of non-peak bay time. No
+            membership required, never expires.
           </p>
           <div className="mt-6">
             <Button

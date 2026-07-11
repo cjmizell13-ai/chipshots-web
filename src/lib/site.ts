@@ -306,7 +306,7 @@ export const promoBanners: {
   },
 ];
 
-export const rangeCard = { price: "$350", detail: "10 hours of bay time" };
+export const rangeCard = { price: "$350", detail: "$400 of bay credit" };
 
 // `joinUrl` (optional): tiers that can be purchased + paid for online link
 // straight to the YGB signup/checkout. Tiers without it open the inquiry form
