@@ -331,8 +331,8 @@ export const memberships: Membership[] = [
   { tier: "Unlimited Monthly", price: "$239", per: "/mo", note: "Unlimited bay time, billed monthly.", joinUrl: business.membershipJoin },
   { tier: "Chip Crew — Youth", price: "$159", per: "/mo", note: "Youth program for players 18 & under." },
   { tier: "Chippin' After Dark", price: "$119", per: "/mo", note: "Evening-focused late-night tier.", joinUrl: business.membershipJoin },
-  { tier: "Corporate Club", price: "$449", per: "/mo", note: "Up to 3 users with unlimited shared bay sessions, 10% off F&B." },
-  { tier: "Corporate Premier", price: "$699", per: "/mo", note: "Up to 5 users, three-hour sessions, a monthly team outing, 15% off F&B." },
+  { tier: "Corporate Club", price: "$449", per: "/mo", note: "Up to 3 users, unlimited three-hour bay sessions, 10% off F&B." },
+  { tier: "Corporate Premier", price: "$699", per: "/mo", note: "Up to 5 users, four-hour sessions, a monthly team outing, 15% off F&B." },
 ];
 
 export const memberBenefits = [
