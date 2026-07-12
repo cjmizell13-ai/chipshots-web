@@ -31,6 +31,54 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "topgolf-alternative-henderson",
+    title: "Searching for Topgolf Near Henderson? There's a Closer Way to Play",
+    excerpt:
+      "Topgolf Las Vegas is a great night — and a Strip trip. If you're in Henderson and want golf, dinner and drinks without the drive, here's what an indoor golf club offers instead.",
+    date: "2026-07-12",
+    readMinutes: 4,
+    category: "Henderson Guide",
+    image: img.heroBay,
+    body: [
+      {
+        type: "p",
+        text: "Every week, people in Henderson search for a Topgolf nearby — and end up looking at a drive to the Strip. Topgolf Las Vegas is genuinely fun, but it's also a production: the traffic, the parking, the wait for a bay on a weekend. If what you actually want is to hit golf balls with friends over dinner and drinks, there's a different kind of place five minutes from downtown Henderson — and it plays a different game entirely.",
+      },
+      { type: "h2", text: "Driving range entertainment vs. playing actual golf" },
+      {
+        type: "p",
+        text: "Topgolf is a driving-range game: you hit balls at targets in an open field and score points. A TrackMan simulator bay is the course itself. At Chip Shots you play real rounds on 500+ real courses — Pebble Beach, St Andrews, Torrey Pines — with radar tracking every shot to the foot. There are casual arcade-style games too, so a group of non-golfers has just as much fun. The difference is that when you want to actually play golf, you can.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Five private TrackMan bays — the tech tour pros train on",
+          "500+ real courses, plus games for groups and beginners",
+          "Climate-controlled, private bays — no outdoor hitting line in July heat",
+          "Clubs provided, up to four players per bay, billed by the hour not per person",
+        ],
+      },
+      { type: "h2", text: "A restaurant and bar, not a concession stand" },
+      {
+        type: "p",
+        text: "The kitchen at Chip Shots stands on its own — signature burgers, a Philly cheesesteak, wings, shareables — and the bar pours hand-built old fashioneds, signature cocktails and cold drafts, all delivered to your bay. Happy hour runs Monday through Friday, 3–6 PM, and the pricing follows you into the bays.",
+      },
+      { type: "cta", label: "See the menu", href: "/food-drink" },
+      { type: "h2", text: "Five minutes, not forty-five" },
+      {
+        type: "p",
+        text: "This is the practical part: we're at 1473 E Lake Mead Pkwy, Suite 110 — in the heart of Henderson, minutes from Water Street. Book a bay online, walk in, play. No Strip traffic, no parking garage, and a bay that's yours for the hour rather than a spot in a line.",
+      },
+      { type: "cta", label: "Book a bay in Henderson", href: business.booking, external: true },
+      { type: "h2", text: "The short version" },
+      {
+        type: "p",
+        text: "Topgolf is a destination night out, and there's a time for it. But if you're in Henderson and the plan is golf, dinner and drinks with your people — a private TrackMan bay down the street gets you more golf, better food and none of the drive. Come see for yourself.",
+      },
+      { type: "cta", label: "Reserve your bay", href: business.booking, external: true },
+    ],
+  },
+  {
     slug: "happy-hour-henderson-guide",
     title: "The Happy Hour in Henderson Worth Leaving Work Early For",
     excerpt:
