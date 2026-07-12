@@ -3,6 +3,7 @@ import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { Icon } from "@/components/ui/icons";
 import MembershipTiers from "@/components/MembershipTiers";
+import MembershipMath from "@/components/MembershipMath";
 import BookButton from "@/components/BookButton";
 import PixelEvent from "@/components/PixelEvent";
 import { business, img, memberBenefits } from "@/lib/site";
@@ -153,6 +154,11 @@ export default function Memberships() {
           </Reveal>
         </div>
       </section>
+
+      {/* ============================================== DO THE MATH ===== */}
+      <MembershipMath
+        cta={{ href: business.membershipJoin, label: "Join online", external: true }}
+      />
 
       {/* ============================================== CTA ===== */}
       <section className="bg-gold">

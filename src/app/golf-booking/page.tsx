@@ -4,7 +4,10 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import Gallery from "@/components/Gallery";
-import { business, img, golf, rangeCard, leagues } from "@/lib/site";
+import { business, img, golf, rangeCard, leagues, bogoUntil, promoActive } from "@/lib/site";
+
+// Re-render daily so the date-gated BOGO section retires itself after Jul 31.
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Golf & Booking — TrackMan Simulator Bays",
@@ -67,7 +70,8 @@ export default function GolfBooking() {
         </div>
       </section>
 
-      {/* ============================================== BOGO OFFER ===== */}
+      {/* ================================= BOGO OFFER (auto-expires) ===== */}
+      {promoActive(bogoUntil) && (
       <section className="bg-green-deep text-cream">
         <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12">
           <Reveal>
@@ -99,6 +103,7 @@ export default function GolfBooking() {
           </Reveal>
         </div>
       </section>
+      )}
 
       {/* ============================================== FEATURES ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">

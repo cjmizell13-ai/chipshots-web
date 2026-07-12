@@ -283,18 +283,33 @@ export const leagues = {
   cta: "Ask about the clubs",
 };
 
+// Last day (inclusive, venue time) the BOGO first-visit offer is valid.
+// The announcement banner and the /golf-booking callout both key off this,
+// so the promo retires itself on Aug 1 with no site edit needed.
+export const bogoUntil = "2026-07-31";
+
+/** True while a promo with an `until` date (YYYY-MM-DD, inclusive) is live in venue time. */
+export const promoActive = (until?: string): boolean => {
+  if (!until) return true;
+  // en-CA formats as YYYY-MM-DD, so plain string compare is date compare.
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: timezone }).format(new Date());
+  return today <= until;
+};
+
 // Always-on promo banner shown at the very top of every page.
 export const promoBanners: {
   code?: string;
   message: string;
   cta: string;
   href: string;
+  until?: string;
 }[] = [
   {
     code: "BOGO",
     message: "First visit? Book a 2-hour bay and the second hour's on us — through July 31",
     cta: "Redeem the offer",
     href: "/golf-booking",
+    until: bogoUntil,
   },
   {
     message: "Club nights are live — Men's (Sun), Ladies (Wed) & Open (Mon), all skill levels",

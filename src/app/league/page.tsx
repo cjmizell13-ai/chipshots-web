@@ -4,6 +4,7 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import TrackOnClick from "@/components/TrackOnClick";
+import MembershipMath from "@/components/MembershipMath";
 import { business, img, leagues } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -281,90 +282,7 @@ export default function League() {
       </section>
 
       {/* ============================================== MEMBERSHIP MATH ===== */}
-      <section className="bg-cream-2">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-          <Reveal>
-            <div className="max-w-2xl">
-              <p className="eyebrow text-gold">{leagues.membershipMath.eyebrow}</p>
-              <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                {leagues.membershipMath.title}
-              </h2>
-            </div>
-          </Reveal>
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {/* Pay as you go */}
-            <Reveal>
-              <div className="flex h-full flex-col rounded-3xl border border-line bg-white p-8">
-                <h3 className="font-display text-2xl text-green-deep">
-                  {leagues.membershipMath.payg.title}
-                </h3>
-                <dl className="mt-6 flex-1 divide-y divide-line/70">
-                  {leagues.membershipMath.payg.lines.map((line) => (
-                    <div
-                      key={line.label}
-                      className="flex items-baseline justify-between gap-4 py-3"
-                    >
-                      <dt className="text-muted">{line.label}</dt>
-                      <dd className="font-display tabular-nums text-green-deep">
-                        {line.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className="mt-6 font-display text-xl text-green-deep/70">
-                  {leagues.membershipMath.payg.total}
-                </p>
-              </div>
-            </Reveal>
-
-            {/* Member — featured */}
-            <Reveal delay={0.1}>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-gold bg-green-deep p-8 text-cream shadow-[var(--shadow-soft)]">
-                <span className="absolute right-6 top-6 rounded-full bg-gold px-3 py-1 text-xs font-medium uppercase tracking-wide text-green-deep">
-                  Best value
-                </span>
-                <h3 className="font-display text-2xl">
-                  {leagues.membershipMath.member.title}
-                </h3>
-                <p className="font-display mt-1 text-3xl text-gold">
-                  {leagues.membershipMath.member.price}
-                </p>
-                <dl className="mt-5 flex-1 divide-y divide-cream/12">
-                  {leagues.membershipMath.member.lines.map((line) => (
-                    <div
-                      key={line.label}
-                      className="flex items-center justify-between gap-4 py-3"
-                    >
-                      <dt className="flex items-center gap-2 text-cream/80">
-                        <Icon.check className="h-4 w-4 shrink-0 text-gold" />
-                        {line.label}
-                      </dt>
-                      <dd className="font-display tabular-nums text-gold">
-                        {line.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className="mt-6 font-display text-xl">
-                  {leagues.membershipMath.member.total}
-                </p>
-              </div>
-            </Reveal>
-          </div>
-
-          <Reveal delay={0.05}>
-            <div className="mt-8 flex flex-col items-start gap-5 rounded-3xl border border-gold/40 bg-white p-7 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-2xl leading-relaxed text-green-deep">
-                {leagues.membershipMath.bottomLine}
-              </p>
-              <ButtonLink href="/memberships" variant="gold" size="lg" withArrow>
-                See memberships
-              </ButtonLink>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <MembershipMath cta={{ href: "/memberships", label: "See memberships" }} />
 
       {/* ============================================== PRIZES ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">

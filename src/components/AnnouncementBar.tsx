@@ -2,23 +2,31 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { promoBanners } from "@/lib/site";
+import { promoBanners, promoActive } from "@/lib/site";
 import { Icon } from "@/components/ui/icons";
 
 /** Slim, always-visible promo strip pinned above the header. Rotates promos. */
 export default function AnnouncementBar() {
   const [index, setIndex] = useState(0);
+  // SSR renders the full list; expired promos drop after mount so the
+  // static HTML never mismatches hydration.
+  const [banners, setBanners] = useState(promoBanners);
 
   useEffect(() => {
-    if (promoBanners.length < 2) return;
+    setBanners(promoBanners.filter((b) => promoActive(b.until)));
+  }, []);
+
+  useEffect(() => {
+    if (banners.length < 2) return;
     const id = setInterval(
-      () => setIndex((i) => (i + 1) % promoBanners.length),
+      () => setIndex((i) => (i + 1) % banners.length),
       5000,
     );
     return () => clearInterval(id);
-  }, []);
+  }, [banners.length]);
 
-  const promo = promoBanners[index];
+  if (banners.length === 0) return null;
+  const promo = banners[index % banners.length];
 
   return (
     <Link
