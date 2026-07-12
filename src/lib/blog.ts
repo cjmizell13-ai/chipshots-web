@@ -31,6 +31,88 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "happy-hour-henderson-guide",
+    title: "The Happy Hour in Henderson Worth Leaving Work Early For",
+    excerpt:
+      "Monday through Friday, 3–6 PM: $5 drafts, $6 wells, $8 bites — and the pricing runs in the golf bays too. Here's the full Chip Shots happy hour, item by item.",
+    date: "2026-07-12",
+    readMinutes: 3,
+    category: "Food & Drink",
+    image: img.cocktailsHighball,
+    body: [
+      {
+        type: "p",
+        text: "A good happy hour is simple: real food, honest pours, prices that make 4 PM feel like a reward. Ours runs Monday through Friday from 3 to 6 PM — at the bar, at a table, or in a TrackMan bay, because happy-hour pricing runs in the bays too. That last part matters: nowhere else in Henderson does your five-dollar draft come with a par three at Pebble Beach.",
+      },
+      { type: "h2", text: "The drinks" },
+      {
+        type: "ul",
+        items: [
+          "$5 domestic drafts — Coors Light, Blue Moon, Modelo",
+          "$6 well drinks — vodka, gin, tequila, rum, bourbon",
+          "$7 craft, cider & wine — Firestone 805, Angry Orchard, house pours",
+          "$10 house cocktails — Par Old Fashioned, Transfusion, Azalea, Peach Palmer, Blue Lagoon",
+          "$2 off every other cocktail on the list",
+        ],
+      },
+      { type: "h2", text: "The bites" },
+      {
+        type: "p",
+        text: "The kitchen runs a dedicated happy-hour list: pretzel bites, mozzarella sticks, mini corn dogs, crispy pickle spears and pimento cheese dip at $8, loaded totchos, buffalo chicken dip and the slider trio at $10. The sleeper pick is the Caddie's Combo — a draft and six boneless wings for $12. Add fries or tots to anything for four bucks.",
+      },
+      { type: "cta", label: "See the full menu", href: "/food-drink" },
+      { type: "h2", text: "Take it to a bay" },
+      {
+        type: "p",
+        text: "This is the part first-timers don't expect: book a bay between 3 and 6 on a weekday and the happy-hour pricing follows you in. Order from your seat, play a few holes between rounds of drinks, and let the server keep them coming. It turns a quick after-work drink into the best two hours of the day — no logistics, no second stop.",
+      },
+      { type: "cta", label: "Book a bay for happy hour", href: business.booking, external: true },
+      { type: "h2", text: "Where to find us" },
+      {
+        type: "p",
+        text: "Chip Shots is at 1473 E Lake Mead Pkwy, Suite 110 in Henderson — minutes from Water Street and the 95. Walk-ins are always welcome at the bar; bays are worth booking ahead on Thursday and Friday afternoons. See you at three.",
+      },
+    ],
+  },
+  {
+    slug: "trivia-night-henderson-tuesdays",
+    title: "Trivia Night in Henderson: Free to Play, Every Tuesday at 6",
+    excerpt:
+      "Live trivia hosted by RobotBrain, every Tuesday at 6 PM — no cover, no sign-up, gift cards for the top teams, and a full kitchen and bar while you play.",
+    date: "2026-07-11",
+    readMinutes: 3,
+    category: "Henderson Guide",
+    image: img.diningRoom,
+    body: [
+      {
+        type: "p",
+        text: "Every Tuesday at 6 PM, the dining room at Chip Shots turns into Henderson's most comfortable trivia night. It's live, it's free, and it's hosted by RobotBrain — which means real rounds, good pacing and questions that reward a well-balanced team over a phone under the table. No cover, no sign-up sheet: show up a little early, grab a table and pick a team name you won't regret.",
+      },
+      { type: "h2", text: "How it works" },
+      {
+        type: "ul",
+        items: [
+          "Every Tuesday, 6 PM — arrive early for a good table",
+          "Free to play, no sign-up required",
+          "1st place wins a $50 gift card, runner-up takes $25",
+          "Full kitchen and bar running all night",
+        ],
+      },
+      { type: "h2", text: "Come for trivia, stay for dinner" },
+      {
+        type: "p",
+        text: "Trivia is better with a table full of food. The kitchen runs the full menu all night — signature burgers, wings, shareables built for a team to argue over — and the bar pours everything from cold drafts to hand-built old fashioneds. No golf required, though the bays are right there if your team wants to settle a tiebreaker properly.",
+      },
+      { type: "cta", label: "See the menu", href: "/food-drink" },
+      { type: "h2", text: "Make Tuesday the standing plan" },
+      {
+        type: "p",
+        text: "Henderson has plenty of places to eat on a Tuesday. Very few of them hand you a live game, a shot at next week's dinner and a room this comfortable to lose gracefully in. We're at 1473 E Lake Mead Pkwy, Suite 110 — doors open at 11 AM, trivia at 6. Bring the smart friend.",
+      },
+      { type: "cta", label: "Plan your visit", href: "/events" },
+    ],
+  },
+  {
     slug: "indoor-things-to-do-henderson-summer",
     title: "Beat the Vegas Heat: 6 Indoor Things to Do in Henderson This Summer",
     excerpt:
@@ -62,12 +144,12 @@ export const posts: Post[] = [
         text: "Monday through Friday, 3–6 PM, happy hour means $5 domestic drafts, $6 well drinks and $7 craft, cider and wine — plus discounted bites. Best part: happy-hour pricing runs in the bays too, so you can eat, drink and play without getting up. It's the most relaxed way to wait out the hottest part of the day.",
       },
       { type: "cta", label: "See happy hour", href: "/food-drink" },
-      { type: "h2", text: "4. Join a weekly league" },
+      { type: "h2", text: "4. Make a club night your standing plan" },
       {
         type: "p",
-        text: "If you want something on the calendar all summer, our weekly leagues run three nights a week on TrackMan — all skill levels, handicapped so every match stays competitive. Each league opens with a free Week 0 preview, and food and drinks come straight to your bay. It's a low-pressure way to meet other Henderson golfers and keep your swing sharp through the off-season.",
+        text: "If you want something on the calendar all summer, our weekly club nights run three nights a week on TrackMan — Men's Club on Sundays, Open Night on Mondays and Ladies Club on Wednesdays, all handicapped so every skill level competes on the same board. There's no season and no buy-in: book a bay, play, and the top three net scores each week bank a food-and-drink credit. It's a low-pressure way to meet other Henderson golfers and keep your swing sharp through the off-season.",
       },
-      { type: "cta", label: "Find your league", href: "/league" },
+      { type: "cta", label: "See the club nights", href: "/league" },
       { type: "h2", text: "5. Host the party indoors" },
       {
         type: "p",
@@ -259,49 +341,49 @@ export const posts: Post[] = [
   },
   {
     slug: "join-golf-league-henderson-first-timer",
-    title: "A First-Timer's Guide to Joining a Golf League in Henderson",
+    title: "Looking for a Golf League in Henderson? Try a Weekly Club Night Instead",
     excerpt:
-      "Thinking about joining a league but worried you're not good enough? Here's exactly how Chip Shots' handicapped TrackMan leagues work — and why Week 0 is free.",
-    date: "2026-06-09",
+      "No season to commit to, no buy-in, no skill requirement. Here's how Chip Shots' weekly club nights work — a fresh leaderboard every week, with dinner and drinks brought to your bay.",
+    date: "2026-07-12",
     readMinutes: 4,
-    category: "Leagues",
+    category: "Clubs & Leagues",
     image: img.trackmanCompetitions,
     body: [
       {
         type: "p",
-        text: "\"I'd join a league, but I'm not good enough.\" It's the single most common thing we hear — and it's exactly backwards. Our leagues are handicapped, which means they're built so that a beginner can beat a better golfer on any given night. If you've been on the fence about joining a golf league in Henderson, here's how it actually works.",
+        text: "\"I'd join a league, but I'm not good enough.\" It's the single most common thing we hear — and it's exactly backwards. Our club nights are handicapped, which means they're built so a beginner can beat a better golfer on any given night. And unlike a traditional league, there's no season to sign up for at all. If you've been searching for a golf league in Henderson, here's why a weekly club night might suit you better.",
       },
-      { type: "h2", text: "Handicaps mean everyone has a real shot" },
+      { type: "h2", text: "A club, not a league — here's the difference" },
       {
         type: "p",
-        text: "Every league at Chip Shots uses net scoring with handicaps, so your score is measured against your own ability, not the best player in the room. A 20-handicapper and a 5-handicapper can finish neck and neck. That's the whole point — it keeps every match competitive and means skill level is never a reason to stay home.",
+        text: "A league asks you to commit to a season and chase standings for weeks. A club night is simpler: a standing weekly time to come play, hang out and land on that week's leaderboard. The board resets every week, so there's nothing to fall behind on — miss a month and you're still one good night from the top spot. Come every week or come when you can.",
       },
       { type: "h2", text: "Three nights, every skill level" },
       {
         type: "p",
-        text: "We run three weekly nights on TrackMan: the Open League on Mondays (mixed and casual, every level welcome), the Ladies League on Wednesdays, and the Men's League on Sundays. Each plays 18 handicapped holes in a two-hour bay block, with live leaderboards and food and drinks delivered right to you.",
+        text: "We run three weekly club nights on TrackMan, all with tee-offs at 5 and 7 PM. Men's Club on Sundays and Ladies Club on Wednesdays each play a full 18. Open Night on Mondays is the newcomer's night — an easy 9 holes with generous gimmes, mixed and casual. Net Stableford scoring with handicaps keeps every skill level competitive on the same board.",
       },
       {
         type: "ul",
         items: [
-          "Open League — Mondays, every skill level",
-          "Ladies League — Wednesdays",
-          "Men's League — Sundays",
-          "18 holes, handicapped, in a 2-hour bay block",
+          "Men's Club — Sundays, 5 & 7 PM · full 18",
+          "Open Night — Mondays, 5 & 7 PM · easy 9, beginner-friendly",
+          "Ladies Club — Wednesdays, 5 & 7 PM · full 18",
+          "Net Stableford, handicapped — auto-scored live on TrackMan",
         ],
       },
-      { type: "h2", text: "Week 0 is free — try before you commit" },
+      { type: "h2", text: "No buy-in, no sign-up fee" },
       {
         type: "p",
-        text: "You don't have to sign up blind. Every season opens with a free Week 0 preview: you play on us, we set your handicap (no prior index needed), and you see exactly how a league night runs before paying a cent. After that it's just $40 a night, or free every night if you're a member.",
+        text: "There's nothing to join and nothing extra to pay. Book a bay at the regular hourly rate for the night you want to play, show up, and your net score lands on that week's combined leaderboard. Members simply play on their membership — every club night, every week. No handicap index needed; TrackMan sets and tracks it for you.",
       },
-      { type: "cta", label: "Find your league", href: "/league" },
-      { type: "h2", text: "How a season builds" },
+      { type: "cta", label: "See the club nights", href: "/league" },
+      { type: "h2", text: "Dinner, drinks and a shot at the board" },
       {
         type: "p",
-        text: "A season runs six weeks: a free kickoff, a four-week points race with a different game each week, then a Club Championship where gross and net champions are crowned. There are closest-to-the-pin and long-drive side pots every night, and weekly winners earn food-and-drink credit. It's competitive, social, and a genuinely good reason to get out of the house each week.",
+        text: "Happy hour runs live the whole time you play — a featured draft and a signature cocktail, delivered straight to your bay along with anything from the kitchen. Each week, the top three net scores across all three nights bank a Chip Shots food-and-drink credit: $50 for first, $25 for second, $15 for third. Some nights we post a closest-to-the-pin or long-drive prize on the house, too.",
       },
-      { type: "cta", label: "Reserve your spot", href: "/league" },
+      { type: "cta", label: "Pick your night", href: "/league" },
     ],
   },
   {

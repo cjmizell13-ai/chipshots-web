@@ -32,6 +32,8 @@ export const business = {
     tiktok: "https://www.tiktok.com/@chipshotshenderson",
     instagramHandle: "@chipshotshenderson",
   },
+  // Official GBP review short link (review dialog opens directly).
+  reviewUrl: "https://g.page/r/CamJDL5vhQqMEBM/review",
   booking:
     "https://www.yourgolfbooking.com/venues/chip-shots-henderson/booking/simulator-bays",
   // Public YGB booking landing that lists every bookable event — the club

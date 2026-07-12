@@ -36,7 +36,7 @@ export default function VipSignup() {
               First to know. First in the bay.
             </h2>
             <p className="mt-4 max-w-md leading-relaxed text-cream/75">
-              Members-only deals, event invites, league openings and the
+              Members-only deals, event invites, club-night news and the
               occasional free-play perk — straight to your inbox and phone. No
               spam, just the good stuff.
             </p>
@@ -52,7 +52,7 @@ export default function VipSignup() {
                 Email updates
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-cream/70">
-                Deals, events and league news in your inbox. Takes ten seconds.
+                Deals, events and club-night news in your inbox. Takes ten seconds.
               </p>
               <div className="mt-6">
                 <ButtonLink

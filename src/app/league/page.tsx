@@ -7,15 +7,58 @@ import TrackOnClick from "@/components/TrackOnClick";
 import { business, img, leagues } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Leagues & Tournaments",
+  title: "Weekly Golf Clubs & League Nights",
   description:
-    "Join a weekly TrackMan golf league at Chip Shots in Henderson, NV. Net scoring and handicaps keep every match competitive for all skill levels. Sign up below.",
+    "Henderson's weekly golf club nights on TrackMan — Men's Club Sundays, Open Night Mondays, Ladies Club Wednesdays at 5 & 7 PM. Net scoring, fresh weekly leaderboard, no season, no buy-in.",
   alternates: { canonical: "/league" },
 };
+
+// The three weekly club nights as recurring schema.org Events — feeds
+// "golf league near me" / "things to do Henderson" event surfaces.
+const clubNightSchedules = [
+  { name: "Men's Club", day: "https://schema.org/Sunday", detail: "a full 18, net Stableford" },
+  { name: "Open Night", day: "https://schema.org/Monday", detail: "an easy 9, beginner-friendly" },
+  { name: "Ladies Club", day: "https://schema.org/Wednesday", detail: "a full 18, net Stableford" },
+];
+
+const clubNightsJsonLd = clubNightSchedules.map((n) => ({
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: `${n.name} at ${business.shortName}`,
+  description: `Weekly golf club night on TrackMan — ${n.detail}, handicapped for all skill levels. Fresh leaderboard every week; top three net scores bank a food & drink credit. No season, no buy-in: book a bay at the regular rate or play on your membership.`,
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  eventSchedule: {
+    "@type": "Schedule",
+    byDay: n.day,
+    startTime: "17:00",
+    scheduleTimezone: "America/Los_Angeles",
+    repeatFrequency: "P1W",
+  },
+  location: {
+    "@type": "Place",
+    name: business.name,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: business.address.street,
+      addressLocality: business.address.city,
+      addressRegion: business.address.region,
+      postalCode: business.address.postalCode,
+      addressCountry: "US",
+    },
+  },
+  organizer: { "@type": "Organization", name: business.name, url: business.website },
+  image: `${business.website}/opengraph-image`,
+  url: `${business.website}/league`,
+}));
 
 export default function League() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(clubNightsJsonLd) }}
+      />
       <PageHero
         eyebrow={leagues.eyebrow}
         title={leagues.title}

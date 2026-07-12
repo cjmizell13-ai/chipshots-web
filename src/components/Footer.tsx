@@ -99,6 +99,19 @@ export default function Footer() {
                   {business.email}
                 </a>
               </li>
+              <li className="flex gap-3">
+                <Icon.star className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <a
+                  href={business.reviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cream"
+                >
+                  Been in to see us?
+                  <br />
+                  Leave us a Google review
+                </a>
+              </li>
             </ul>
           </div>
 

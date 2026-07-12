@@ -5,7 +5,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
-import { img, eventTypes, trivia } from "@/lib/site";
+import { business, img, eventTypes, trivia } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Events & Parties",
@@ -14,9 +14,47 @@ export const metadata: Metadata = {
   alternates: { canonical: "/events" },
 };
 
+// Weekly Trivia Night as a recurring schema.org Event — feeds Google's
+// "events near me" / rich results for "trivia night Henderson" searches.
+const triviaJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: `Trivia Night at ${business.shortName}`,
+  description: `Free live trivia every ${trivia.day} at ${trivia.time}, hosted by RobotBrain. No cover, no sign-up — full kitchen and bar. 1st place wins a $50 gift card, runner-up $25.`,
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  isAccessibleForFree: true,
+  eventSchedule: {
+    "@type": "Schedule",
+    byDay: "https://schema.org/Tuesday",
+    startTime: "18:00",
+    scheduleTimezone: "America/Los_Angeles",
+    repeatFrequency: "P1W",
+  },
+  location: {
+    "@type": "Place",
+    name: business.name,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: business.address.street,
+      addressLocality: business.address.city,
+      addressRegion: business.address.region,
+      postalCode: business.address.postalCode,
+      addressCountry: "US",
+    },
+  },
+  organizer: { "@type": "Organization", name: business.name, url: business.website },
+  image: `${business.website}/opengraph-image`,
+  url: `${business.website}/events`,
+};
+
 export default function Events() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(triviaJsonLd) }}
+      />
       <PageHero
         eyebrow="Events & Parties"
         title="The easiest yes on the group-chat."
