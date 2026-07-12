@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
@@ -132,6 +133,16 @@ export default function Events() {
                 </p>
                 <p className="mt-6 text-xs uppercase tracking-wider text-cream/50">
                   {trivia.note}
+                </p>
+                <p className="mt-5 text-sm text-cream/60">
+                  First time?{" "}
+                  <Link
+                    href="/blog/trivia-night-henderson-tuesdays"
+                    className="link-underline pb-0.5 text-gold hover:text-gold-soft"
+                  >
+                    Here&rsquo;s how trivia night works
+                  </Link>
+                  .
                 </p>
               </div>
             </Reveal>

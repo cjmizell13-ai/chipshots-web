@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
@@ -202,6 +203,16 @@ export default function FoodDrink() {
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
                   {happyHour.note}
+                </p>
+                <p className="mt-4 text-sm text-cream/60">
+                  New here?{" "}
+                  <Link
+                    href="/blog/happy-hour-henderson-guide"
+                    className="link-underline pb-0.5 text-gold hover:text-gold-soft"
+                  >
+                    Read our full guide to happy hour
+                  </Link>
+                  .
                 </p>
                 <div className="mt-8 overflow-hidden rounded-3xl shadow-[var(--shadow-soft)]">
                   <Image
