@@ -103,7 +103,7 @@ export type NavItem = { label: string; href: string };
 export const nav: NavItem[] = [
   { label: "Food & Drink", href: "/food-drink" },
   { label: "Golf & Booking", href: "/golf-booking" },
-  { label: "Clubs & Leagues", href: "/league" },
+  { label: "Weekly Nights", href: "/league" },
   { label: "Memberships", href: "/memberships" },
   { label: "Events", href: "/events" },
   { label: "Blog", href: "/blog" },
@@ -166,12 +166,12 @@ export const golf = {
 // Leagues — recurring competitive play on TrackMan's competition suite.
 export const leagues = {
   eyebrow: "Weekly at Chip Shots",
-  title: "Your club to play.",
+  title: "Your night to play.",
   intro:
-    "Need a reason to get out and play? Pick your club. Three standing weekly nights on TrackMan — Men's Club (Sundays), Ladies Club (Wednesdays) and Open Night (Mondays), all at 5 & 7 PM. It's a weekly club, not a season-long league: a standing time to come hit, hang out and make it social, with a fresh leaderboard every week and no season standings to chase. Men's and Ladies Clubs play a full 18; Open Night is an easy 9 for newcomers. Happy hour is live the whole time you play — a featured draft and signature cocktail delivered right to your bay. Net scoring keeps it fair for every skill level. No 110° heat.",
+    "Need a reason to get out and play? Pick your night. Three standing weekly nights on TrackMan — Men's Night (Sundays), Ladies Night (Wednesdays) and Open Night (Mondays), all at 5 & 7 PM. It's a standing weekly night, not a season-long league: a standing time to come hit, hang out and make it social, with a fresh leaderboard every week and no season standings to chase. Men's and Ladies Nights play a full 18; Open Night is an easy 9 for newcomers. Happy hour is live the whole time you play — a featured draft and signature cocktail delivered right to your bay. Net scoring keeps it fair for every skill level. No 110° heat.",
   nights: [
     {
-      title: "Men's Club",
+      title: "Men's Night",
       day: "Sundays",
       time: "5 PM & 7 PM",
       who: "The guys' standing night out — come play, talk a little trash, grab a beer. All skill levels.",
@@ -187,7 +187,7 @@ export const leagues = {
       preview: "Newcomers start here",
     },
     {
-      title: "Ladies Club",
+      title: "Ladies Night",
       day: "Wednesdays",
       time: "5 PM & 7 PM",
       who: "Henderson's women's night out — come play, bring friends, make it a thing. All skill levels.",
@@ -195,15 +195,15 @@ export const leagues = {
       preview: "Bank F&B credit",
     },
   ],
-  // The fresh weekly leaderboard that runs across all three club nights.
+  // The fresh weekly leaderboard that runs across all three weekly nights.
   season: {
     eyebrow: "The weekly board",
     title: "Fresh leaderboard. Every week.",
     intro:
-      "This is a weekly club, not a season-long league — nothing to chase all season, just a fresh board every week. Play any club night and your net score lands on that week's combined leaderboard. Net Stableford keeps every skill level and every night fair. Top three net scores each week bank a Chip Shots F&B credit — 🥇 $50, 🥈 $25, 🥉 $15.",
+      "This is a standing weekly night, not a season-long league — nothing to chase all season, just a fresh board every week. Play any night and your net score lands on that week's combined leaderboard. Net Stableford keeps every skill level and every night fair. Top three net scores each week bank a Chip Shots F&B credit — 🥇 $50, 🥈 $25, 🥉 $15.",
     weeks: [
       { tag: "Every week", both: "A fresh leaderboard", desc: "No season standings to chase — a clean board every week, so this week's game is the only one that matters." },
-      { tag: "Any night", both: "Sunday, Monday or Wednesday", desc: "Play whichever club fits your week — Men's and Ladies play a full 18, Open plays an easy 9." },
+      { tag: "Any night", both: "Sunday, Monday or Wednesday", desc: "Play whichever night fits your week — Men's and Ladies play a full 18, Open plays an easy 9." },
       { tag: "Fair for all", both: "Net Stableford, handicapped", desc: "Net scoring levels every skill level and every night onto one weekly leaderboard — auto-scored live on TrackMan." },
       { tag: "Win", both: "F&B credit — $50 / $25 / $15", desc: "Top three net scores each week bank a Chip Shots food & drink credit. Fresh board, new shot, every week.", highlight: true },
     ] as {
@@ -222,20 +222,20 @@ export const leagues = {
   // The three-tier hype ladder.
   ladder: [
     { title: "Every week", desc: "A fresh combined leaderboard — top three net scores bank F&B credit ($50 / $25 / $15)." },
-    { title: "Every night", desc: "Your club, your crowd — a standing weekly hang with happy hour live the whole time you play." },
+    { title: "Every night", desc: "Your night, your crowd — a standing weekly hang with happy hour live the whole time you play." },
     { title: "Every visit", desc: "No buy-in, no sign-up fee — just book a bay at the regular rate and play. Members play on their membership." },
   ],
   // Quick-reference details for the "how it works" strip.
   details: [
-    { label: "The clubs", value: "Men's Club (Sun), Ladies Club (Wed), Open Night (Mon) — all 5 & 7 PM, all skill levels" },
+    { label: "The nights", value: "Men's Night (Sun), Ladies Night (Wed), Open Night (Mon) — all 5 & 7 PM, all skill levels" },
     { label: "The round", value: "Men's & Ladies play a full 18 · Open plays an easy 9 — net Stableford, handicapped, generous gimmes" },
     { label: "The prize", value: "Top three net scores each week: $50 / $25 / $15 F&B credit" },
     { label: "Happy hour", value: "Live the whole time you play — featured draft + signature cocktail to your bay" },
   ],
   prizes: [
     { title: "Weekly F&B credit", desc: "Top three net scores each week bank a Chip Shots tab — $50 / $25 / $15 to eat & drink on us." },
-    { title: "Happy hour, live", desc: "A featured draft and signature cocktail to your bay the whole time you play — every club night." },
-    { title: "Members play free", desc: "Every club night, every week, no buy-in for members." },
+    { title: "Happy hour, live", desc: "A featured draft and signature cocktail to your bay the whole time you play — every night." },
+    { title: "Members play free", desc: "Every night, every week, no buy-in for members." },
   ],
   // Night perks — dedicated drink specials + F&B to make the social nights the place to be.
   nightPerks: {
@@ -273,10 +273,10 @@ export const leagues = {
       total: "One flat price — play all you want",
     },
     bottomLine:
-      "The club nights are just a normal bay booking at the regular rate — and Sunday, Monday & Wednesday evenings fall in the $50/hr peak window. Book a bay most weeks and Unlimited ($239/mo) pays for itself fast. Members play every club night on their membership and chase the weekly board every week.",
+      "The weekly nights are just a normal bay booking at the regular rate — and Sunday, Monday & Wednesday evenings fall in the $50/hr peak window. Book a bay most weeks and Unlimited ($239/mo) pays for itself fast. Members play every night on their membership and chase the weekly board every week.",
   },
   points: [
-    { title: "Weekly clubs", desc: "A standing time to come play, get social and land on the weekly leaderboard." },
+    { title: "Weekly nights", desc: "A standing time to come play, get social and land on the weekly leaderboard." },
     { title: "All skill levels", desc: "Handicapped, net scoring so every player has a real shot at the weekly board." },
     { title: "Food & drinks also available", desc: "Burgers, wings and a full bar without leaving your bay." },
   ],
@@ -318,8 +318,8 @@ export const promoBanners: {
     until: bogoUntil,
   },
   {
-    message: "Club nights are live — Men's (Sun), Ladies (Wed) & Open (Mon), all skill levels",
-    cta: "See the club nights",
+    message: "Weekly nights are live — Men's (Sun), Ladies (Wed) & Open (Mon), all skill levels",
+    cta: "See the nights",
     href: "/league",
   },
   {
@@ -662,7 +662,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What are the weekly clubs and how do I join?",
-    a: "We run three standing weekly nights on TrackMan — Men's Club (Sundays) and Ladies Club (Wednesdays) play a full 18, and Open Night (Mondays) is an easy 9 for newcomers, all at 5 & 7 PM. It's a weekly club, not a season-long league — a fresh leaderboard every week, nothing to chase all season. Happy hour is live the whole time you play. Play any club night and your net score lands on that week's combined board; the top three net scores each week bank a Chip Shots F&B credit ($50 / $25 / $15). No buy-in: just book a bay at the regular rate to play, or play on your membership. Sign up below to get on the list.",
+    a: "We run three standing weekly nights on TrackMan — Men's Night (Sundays) and Ladies Night (Wednesdays) play a full 18, and Open Night (Mondays) is an easy 9 for newcomers, all at 5 & 7 PM. It's a standing weekly night, not a season-long league — a fresh leaderboard every week, nothing to chase all season. Happy hour is live the whole time you play. Play any night and your net score lands on that week's combined board; the top three net scores each week bank a Chip Shots F&B credit ($50 / $25 / $15). No buy-in: just book a bay at the regular rate to play, or play on your membership. Sign up below to get on the list.",
   },
   {
     q: "Is there a membership?",

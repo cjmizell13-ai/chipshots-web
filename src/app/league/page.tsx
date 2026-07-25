@@ -10,23 +10,23 @@ import { business, img, leagues } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Weekly Golf Clubs & League Nights",
   description:
-    "Henderson's weekly golf club nights on TrackMan — Men's Club Sundays, Open Night Mondays, Ladies Club Wednesdays at 5 & 7 PM. Net scoring, fresh weekly leaderboard, no season, no buy-in.",
+    "Henderson's weekly golf weekly nights on TrackMan — Men's Night Sundays, Open Night Mondays, Ladies Night Wednesdays at 5 & 7 PM. Net scoring, fresh weekly leaderboard, no season, no buy-in.",
   alternates: { canonical: "/league" },
 };
 
-// The three weekly club nights as recurring schema.org Events — feeds
+// The three weekly weekly nights as recurring schema.org Events — feeds
 // "golf league near me" / "things to do Henderson" event surfaces.
 const clubNightSchedules = [
-  { name: "Men's Club", day: "https://schema.org/Sunday", detail: "a full 18, net Stableford" },
+  { name: "Men's Night", day: "https://schema.org/Sunday", detail: "a full 18, net Stableford" },
   { name: "Open Night", day: "https://schema.org/Monday", detail: "an easy 9, beginner-friendly" },
-  { name: "Ladies Club", day: "https://schema.org/Wednesday", detail: "a full 18, net Stableford" },
+  { name: "Ladies Night", day: "https://schema.org/Wednesday", detail: "a full 18, net Stableford" },
 ];
 
 const clubNightsJsonLd = clubNightSchedules.map((n) => ({
   "@context": "https://schema.org",
   "@type": "Event",
   name: `${n.name} at ${business.shortName}`,
-  description: `Weekly golf club night on TrackMan — ${n.detail}, handicapped for all skill levels. Fresh leaderboard every week; top three net scores bank a food & drink credit. No season, no buy-in: book a bay at the regular rate or play on your membership.`,
+  description: `Weekly golf night on TrackMan — ${n.detail}, handicapped for all skill levels. Fresh leaderboard every week; top three net scores bank a food & drink credit. No season, no buy-in: book a bay at the regular rate or play on your membership.`,
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   eventSchedule: {
@@ -73,18 +73,18 @@ export default function League() {
           <div>
             <p className="eyebrow text-green-deep/70">Henderson&rsquo;s Weekly Golf Clubs</p>
             <h2 className="font-display mt-2 text-3xl text-green-deep sm:text-4xl">
-              Come Play Your Club
+              Come Play Your Night
             </h2>
             <p className="mt-2 max-w-xl text-green-deep/80">
               No pressure, no buy-in, no season to commit to — just a standing
-              weekly club with a fresh leaderboard every week and happy hour live
+              weekly night with a fresh leaderboard every week and happy hour live
               the whole time you play. Book a bay at the regular rate, or play on
               your membership.
             </p>
           </div>
-          <TrackOnClick event="Lead" params={{ content_name: "Club night booking" }}>
+          <TrackOnClick event="Lead" params={{ content_name: "Night booking" }}>
             <ButtonLink href="#signup" variant="green" size="lg" withArrow>
-              Book your club night
+              Book your night
             </ButtonLink>
           </TrackOnClick>
         </div>
@@ -96,10 +96,10 @@ export default function League() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">Three weekly clubs</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Pick your club.
+              Pick your night.
             </h2>
             <p className="mt-5 leading-relaxed text-muted">
-              Need a time to play? Come to your club. Each one is a standing
+              Need a time to play? Come to your night. Each one is a standing
               weekly hang with its own crowd — Men&rsquo;s and Ladies play a full
               18, Open Night is an easy 9. Five bays, happy hour and food to your
               bay.
@@ -319,7 +319,7 @@ export default function League() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Book your club night.
+                Book your night.
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
@@ -334,9 +334,9 @@ export default function League() {
 
           <Reveal delay={0.1}>
             <div className="mt-10 flex flex-col items-center gap-5">
-              <TrackOnClick event="Lead" params={{ content_name: "Club night booking" }}>
+              <TrackOnClick event="Lead" params={{ content_name: "Night booking" }}>
                 <ButtonLink href={business.events} external variant="gold" size="lg" withArrow>
-                  Book a club night
+                  Book a night
                 </ButtonLink>
               </TrackOnClick>
               <p className="text-sm text-muted">
