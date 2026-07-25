@@ -305,6 +305,12 @@ export const promoBanners: {
   until?: string;
 }[] = [
   {
+    message: "Ribbon Cutting & Opening Celebration — Thursday, July 30, 4–7 PM. A free hour of golf for every guest",
+    cta: "RSVP on Facebook",
+    href: "https://www.facebook.com/events/914533917674160/",
+    until: "2026-07-30",
+  },
+  {
     code: "BOGO",
     message: "First visit? Book a 2-hour bay and the second hour's on us — through July 31",
     cta: "Redeem the offer",
