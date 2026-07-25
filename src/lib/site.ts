@@ -560,7 +560,8 @@ export const spirits: SpiritGroup[] = [
 // -----------------------------------------------------------------------------
 export const happyHour = {
   window: "Mon–Fri · 3–6 PM",
-  note: "No clubs, no tee time, no problem — pull up to the bar, grab a table, or take a bay. Happy-hour pricing runs in the bays too, so you can eat, drink and play without getting up.",
+  lateWindow: "The Night Cap · Sun–Wed · 8 PM–close",
+  note: "No clubs, no tee time, no problem — pull up to the bar, grab a table, or take a bay. Happy-hour pricing runs in the bays too, so you can eat, drink and play without getting up. And it comes back around late: The Night Cap runs the same happy-hour pricing Sunday through Wednesday from 8 PM to close — the second session of every weekly night rolls straight into it.",
   drinks: [
     { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Blue Moon · Modelo" },
     { name: "Well Drinks", price: "$6", desc: "Vodka · gin · tequila · rum · bourbon" },
@@ -638,7 +639,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you serve food and drinks?",
-    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday, 3–6 PM, with bays included.",
+    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday 3–6 PM, plus The Night Cap — the same happy-hour pricing Sunday–Wednesday from 8 PM to close. Bays included, both windows.",
   },
   {
     q: "Is Chip Shots family-friendly? Can kids play?",

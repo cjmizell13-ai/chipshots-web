@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = {
   title: "Food & Drink — Burgers, Wings & Full Bar",
   description:
-    "Burgers, sandwiches, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM in Henderson, NV.",
+    "Burgers, sandwiches, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM plus late-night Sun–Wed 8 PM–close in Henderson, NV.",
   alternates: { canonical: "/food-drink" },
 };
 
@@ -201,6 +201,9 @@ export default function FoodDrink() {
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
                   {happyHour.window}
                 </h2>
+                <p className="font-display mt-2 text-2xl font-light text-gold-soft sm:text-3xl">
+                  {happyHour.lateWindow}
+                </p>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
                   {happyHour.note}
                 </p>
