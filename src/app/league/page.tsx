@@ -335,12 +335,13 @@ export default function League() {
           <Reveal delay={0.1}>
             <div className="mt-10 flex flex-col items-center gap-5">
               <TrackOnClick event="Lead" params={{ content_name: "Night booking" }}>
-                <ButtonLink href={business.events} external variant="gold" size="lg" withArrow>
-                  Book a night
+                <ButtonLink href={business.nightsRsvp} external variant="gold" size="lg" withArrow>
+                  RSVP for a night
                 </ButtonLink>
               </TrackOnClick>
               <p className="text-sm text-muted">
-                Opens YourGolfBooking — pick Men&rsquo;s, Ladies or Open Night.
+                Takes 30 seconds — no account, no payment. We&rsquo;ll text you a
+                confirmation.
               </p>
               <a
                 href={business.phoneHref}

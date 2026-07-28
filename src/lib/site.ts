@@ -39,6 +39,11 @@ export const business = {
   // Public YGB booking landing that lists every bookable event — the club
   // nights (Men's / Open / Ladies) plus "Book a Trackman Bay".
   events: "https://www.yourgolfbooking.com/venues/chip-shots-henderson/booking",
+  // Free Weekly Nights RSVP (Google Form). One screen, no account — the
+  // cold-start funnel decision (playbook §2): form now, deposits later.
+  // This is the rebranded league form; it feeds the auto tee sheet.
+  nightsRsvp:
+    "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform",
   // Public YGB membership signup + checkout (card on file). Only the $239/mo
   // "Member" tier is offered here; other tiers are set up by us on request.
   membershipJoin:
@@ -663,7 +668,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What are the weekly clubs and how do I join?",
-    a: "We run three standing weekly nights on TrackMan — Men's Night (Sundays) and Ladies Night (Wednesdays) play a full 18, and Open Night (Mondays) is an easy 9 for newcomers, all at 5 & 7 PM. It's a standing weekly night, not a season-long league — a fresh leaderboard every week, nothing to chase all season. Happy hour is live the whole time you play. Play any night and your net score lands on that week's combined board; the top three net scores each week bank a Chip Shots F&B credit ($50 / $25 / $15). No buy-in: just book a bay at the regular rate to play, or play on your membership. Sign up below to get on the list.",
+    a: "We run three standing weekly nights on TrackMan — Men's Night (Sundays) and Ladies Night (Wednesdays) play a full 18, and Open Night (Mondays) is an easy 9 for newcomers, all at 5 & 7 PM. It's a standing weekly night, not a season-long league — a fresh leaderboard every week, nothing to chase all season. Happy hour is live the whole time you play. Play any night and your net score lands on that week's combined board; the top three net scores each week bank a Chip Shots F&B credit ($50 / $25 / $15). No buy-in and nothing to prepay — RSVP free and we'll have a bay ready; members play on their membership.",
   },
   {
     q: "Is there a membership?",
