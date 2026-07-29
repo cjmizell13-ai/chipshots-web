@@ -227,11 +227,12 @@ export const leagues = {
   ladder: [
     { title: "Every week", desc: "A fresh combined leaderboard — top three net scores bank F&B credit ($50 / $25 / $15)." },
     { title: "Every night", desc: "Your night, your crowd — a standing weekly hang with happy hour live the whole time you play." },
-    { title: "Every visit", desc: "No buy-in, no sign-up fee — just book a bay at the regular rate and play. Members play on their membership." },
+    { title: "Every visit", desc: "$40 a player for the night, bay time included — nothing to prepay, just RSVP. Members play free on their membership." },
   ],
   // Quick-reference details for the "how it works" strip.
   details: [
     { label: "The nights", value: "Men's Night (Sun), Ladies Night (Wed), Open Night (Mon) — all 5 & 7 PM, all skill levels" },
+    { label: "The cost", value: "$40 per player, bay time included — members play free. RSVP free, pay when you get here." },
     { label: "The round", value: "Men's & Ladies play a full 18 · Open plays an easy 9 — net Stableford, handicapped, generous gimmes" },
     { label: "The prize", value: "Top three net scores each week: $50 / $25 / $15 F&B credit" },
     { label: "Happy hour", value: "Live the whole time you play — featured draft + signature cocktail to your bay" },
@@ -239,7 +240,7 @@ export const leagues = {
   prizes: [
     { title: "Weekly F&B credit", desc: "Top three net scores each week bank a Chip Shots tab — $50 / $25 / $15 to eat & drink on us." },
     { title: "Happy hour, live", desc: "A featured draft and signature cocktail to your bay the whole time you play — every night." },
-    { title: "Members play free", desc: "Every night, every week, no buy-in for members." },
+    { title: "Members play free", desc: "Every night, every week — the $40 is waived on your membership." },
   ],
   // Night perks — dedicated drink specials + F&B to make the social nights the place to be.
   nightPerks: {
@@ -277,7 +278,7 @@ export const leagues = {
       total: "One flat price — play all you want",
     },
     bottomLine:
-      "The weekly nights are just a normal bay booking at the regular rate — and Sunday, Monday & Wednesday evenings fall in the $50/hr peak window. Book a bay most weeks and Unlimited ($239/mo) pays for itself fast. Members play every night on their membership and chase the weekly board every week.",
+      "The weekly nights are $40 a player. Play two nights a week and that's $320 a month — Unlimited is $239 and covers every night free, plus unlimited bay time any day and 10% off food and drink. Members play every night on their membership and chase the weekly board every week.",
   },
   points: [
     { title: "Weekly nights", desc: "A standing time to come play, get social and land on the weekly leaderboard." },
@@ -667,7 +668,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What are the weekly clubs and how do I join?",
-    a: "We run three standing weekly nights on TrackMan — Men's Night (Sundays) and Ladies Night (Wednesdays) play a full 18, and Open Night (Mondays) is an easy 9 for newcomers, all at 5 & 7 PM. It's a standing weekly night, not a season-long league — a fresh leaderboard every week, nothing to chase all season. Happy hour is live the whole time you play. Play any night and your net score lands on that week's combined board; the top three net scores each week bank a Chip Shots F&B credit ($50 / $25 / $15). No buy-in and nothing to prepay — RSVP free and we'll have a bay ready; members play on their membership.",
+    a: "We run three standing weekly nights on TrackMan — Men's Night (Sundays) and Ladies Night (Wednesdays) play a full 18, and Open Night (Mondays) is an easy 9 for newcomers, all at 5 & 7 PM. It's a standing weekly night, not a season-long league — a fresh leaderboard every week, nothing to chase all season. Happy hour is live the whole time you play. Play any night and your net score lands on that week's combined board; the top three net scores each week bank a Chip Shots F&B credit ($50 / $25 / $15). It's $40 per player for the night with your bay time included — RSVP free and pay when you get here; members play free on their membership.",
   },
   {
     q: "Is there a membership?",

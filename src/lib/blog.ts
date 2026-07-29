@@ -195,7 +195,7 @@ export const posts: Post[] = [
       { type: "h2", text: "4. Make a club night your standing plan" },
       {
         type: "p",
-        text: "If you want something on the calendar all summer, our weekly club nights run three nights a week on TrackMan — Men's Club on Sundays, Open Night on Mondays and Ladies Club on Wednesdays, all handicapped so every skill level competes on the same board. There's no season and no buy-in: book a bay, play, and the top three net scores each week bank a food-and-drink credit. It's a low-pressure way to meet other Henderson golfers and keep your swing sharp through the off-season.",
+        text: "If you want something on the calendar all summer, our weekly club nights run three nights a week on TrackMan — Men's Club on Sundays, Open Night on Mondays and Ladies Club on Wednesdays, all handicapped so every skill level competes on the same board. There's no season to commit to — $40 a player with your bay time included, or free on a membership — and the top three net scores each week bank a food-and-drink credit. It's a low-pressure way to meet other Henderson golfers and keep your swing sharp through the off-season.",
       },
       { type: "cta", label: "See the club nights", href: "/league" },
       { type: "h2", text: "5. Host the party indoors" },
@@ -391,7 +391,7 @@ export const posts: Post[] = [
     slug: "join-golf-league-henderson-first-timer",
     title: "Looking for a Golf League in Henderson? Try a Weekly Club Night Instead",
     excerpt:
-      "No season to commit to, no buy-in, no skill requirement. Here's how Chip Shots' weekly club nights work — a fresh leaderboard every week, with dinner and drinks brought to your bay.",
+      "No season to commit to and no skill requirement — $40 a player, members free. Here's how Chip Shots' weekly club nights work: a fresh leaderboard every week, with dinner and drinks brought to your bay.",
     date: "2026-07-12",
     readMinutes: 4,
     category: "Clubs & Leagues",
@@ -420,10 +420,10 @@ export const posts: Post[] = [
           "Net Stableford, handicapped — auto-scored live on TrackMan",
         ],
       },
-      { type: "h2", text: "No buy-in, no sign-up fee" },
+      { type: "h2", text: "No season, no sign-up fee" },
       {
         type: "p",
-        text: "There's nothing to join and nothing extra to pay. Book a bay at the regular hourly rate for the night you want to play, show up, and your net score lands on that week's combined leaderboard. Members simply play on their membership — every club night, every week. No handicap index needed; TrackMan sets and tracks it for you.",
+        text: "There's nothing to join and no season to commit to. It's $40 a player for the night with your bay time included — RSVP free and pay when you get here. Show up, and your net score lands on that week's combined leaderboard. Members simply play on their membership — every night, every week, no charge. No handicap index needed; TrackMan sets and tracks it for you.",
       },
       { type: "cta", label: "See the club nights", href: "/league" },
       { type: "h2", text: "Dinner, drinks and a shot at the board" },

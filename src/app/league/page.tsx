@@ -10,7 +10,7 @@ import { business, img, leagues } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Weekly Golf Clubs & League Nights",
   description:
-    "Henderson's weekly golf weekly nights on TrackMan — Men's Night Sundays, Open Night Mondays, Ladies Night Wednesdays at 5 & 7 PM. Net scoring, fresh weekly leaderboard, no season, no buy-in.",
+    "Henderson's weekly golf nights on TrackMan — Men's Night Sundays, Open Night Mondays, Ladies Night Wednesdays at 5 & 7 PM. Net scoring, fresh weekly leaderboard, no season. $40 a player, members free.",
   alternates: { canonical: "/league" },
 };
 
@@ -26,7 +26,7 @@ const clubNightsJsonLd = clubNightSchedules.map((n) => ({
   "@context": "https://schema.org",
   "@type": "Event",
   name: `${n.name} at ${business.shortName}`,
-  description: `Weekly golf night on TrackMan — ${n.detail}, handicapped for all skill levels. Fresh leaderboard every week; top three net scores bank a food & drink credit. No season, no buy-in: book a bay at the regular rate or play on your membership.`,
+  description: `Weekly golf night on TrackMan — ${n.detail}, handicapped for all skill levels. Fresh leaderboard every week; top three net scores bank a food & drink credit. No season to commit to — $40 a player with bay time included, or play free on your membership.`,
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   eventSchedule: {
@@ -76,10 +76,10 @@ export default function League() {
               Come Play Your Night
             </h2>
             <p className="mt-2 max-w-xl text-green-deep/80">
-              No pressure, no buy-in, no season to commit to — just a standing
-              weekly night with a fresh leaderboard every week and happy hour live
-              the whole time you play. Book a bay at the regular rate, or play on
-              your membership.
+              No pressure and no season to commit to — just a standing weekly
+              night with a fresh leaderboard every week and happy hour live the
+              whole time you play. $40 a player with your bay time included, or
+              play free on your membership.
             </p>
           </div>
           <TrackOnClick event="Lead" params={{ content_name: "Night booking" }}>
@@ -324,9 +324,9 @@ export default function League() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mx-auto mt-4 max-w-xl text-muted">
-                Pick your night, grab a bay and you&rsquo;re in — book online in
-                seconds. No buy-in, no sign-up fee. Members play free on their
-                membership.
+                Pick your night and you&rsquo;re in — takes seconds. $40 a
+                player with your bay time included, nothing to prepay. Members
+                play free on their membership.
               </p>
             </Reveal>
             <GoldRule className="mx-auto mt-7 w-40" />
