@@ -300,7 +300,7 @@ export const posts: Post[] = [
       { type: "h2", text: "Make a watch party out of it" },
       {
         type: "p",
-        text: "Majors weekend, a Ryder Cup, the Masters — grab a bay with a group, keep the broadcast up, and rotate through a round of your own while you watch. Food and drinks come straight to the bay, so nobody misses a putt on a beer run. We're open until midnight on Fridays and Saturdays at 1473 E Lake Mead Pkwy, Suite 110 in Henderson.",
+        text: "Majors weekend, a Ryder Cup, the Masters — grab a bay with a group, keep the broadcast up, and rotate through a round of your own while you watch. Food and drinks come straight to the bay, so nobody misses a putt on a beer run. We're open every day until 10 PM at 1473 E Lake Mead Pkwy, Suite 110 in Henderson.",
       },
       { type: "cta", label: "Book a bay", href: business.booking, external: true },
     ],
@@ -334,7 +334,7 @@ export const posts: Post[] = [
       { type: "h2", text: "Smarter than dinner-and-a-movie" },
       {
         type: "p",
-        text: "An hour in a bay is billed per bay, not per person, so a date night here is easy on the wallet and long on fun. Time it with happy hour, 3–6 PM on weekdays, and it's an even easier yes. We're open late on weekends at 1473 E Lake Mead Pkwy, Suite 110 in Henderson — book a bay and try the date night nobody else has thought of yet.",
+        text: "An hour in a bay is billed per bay, not per person, so a date night here is easy on the wallet and long on fun. Time it with happy hour, 3–6 PM on weekdays, and it's an even easier yes. We're open every day until 10 PM at 1473 E Lake Mead Pkwy, Suite 110 in Henderson — book a bay and try the date night nobody else has thought of yet.",
       },
       { type: "cta", label: "Plan your date night", href: business.booking, external: true },
     ],
@@ -471,7 +471,7 @@ export const posts: Post[] = [
       { type: "h2", text: "Easy to book, easy to host" },
       {
         type: "p",
-        text: "Kids' birthdays tie into our Chip Crew youth program, and adult parties — milestone birthdays, bachelor and bachelorette groups — fit right in too. We're open until midnight on weekends at 1473 E Lake Mead Pkwy, Suite 110 in Henderson. Grab a bay and throw the birthday nobody's done before.",
+        text: "Kids' birthdays tie into our Chip Crew youth program, and adult parties — milestone birthdays, bachelor and bachelorette groups — fit right in too. We're open every day until 10 PM at 1473 E Lake Mead Pkwy, Suite 110 in Henderson. Grab a bay and throw the birthday nobody's done before.",
       },
       { type: "cta", label: "Plan a birthday", href: "/events" },
     ],

@@ -88,7 +88,7 @@ const jsonLd = {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: h.day,
     opens: "11:00",
-    closes: h.day === "Friday" || h.day === "Saturday" ? "23:59" : "22:00",
+    closes: "22:00",
   })),
 };
 

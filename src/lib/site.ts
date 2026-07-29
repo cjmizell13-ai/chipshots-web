@@ -79,14 +79,13 @@ export const hours = [
   { day: "Tuesday", time: "11:00 AM – 10:00 PM" },
   { day: "Wednesday", time: "11:00 AM – 10:00 PM" },
   { day: "Thursday", time: "11:00 AM – 10:00 PM" },
-  { day: "Friday", time: "11:00 AM – 12:00 AM" },
-  { day: "Saturday", time: "11:00 AM – 12:00 AM" },
+  { day: "Friday", time: "11:00 AM – 10:00 PM" },
+  { day: "Saturday", time: "11:00 AM – 10:00 PM" },
   { day: "Sunday", time: "11:00 AM – 10:00 PM" },
 ];
 
 export const hoursSummary = [
-  { label: "Sun – Thu", time: "11 AM – 10 PM" },
-  { label: "Fri – Sat", time: "11 AM – Midnight" },
+  { label: "Every day", time: "11 AM – 10 PM" },
 ];
 
 // Machine-readable opening hours for the live "Open now" badge.
@@ -99,8 +98,8 @@ export const schedule: { open: number; close: number }[] = [
   { open: 11, close: 22 }, // Tue
   { open: 11, close: 22 }, // Wed
   { open: 11, close: 22 }, // Thu
-  { open: 11, close: 24 }, // Fri
-  { open: 11, close: 24 }, // Sat
+  { open: 11, close: 22 }, // Fri
+  { open: 11, close: 22 }, // Sat
 ];
 
 export type NavItem = { label: string; href: string };
@@ -656,7 +655,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What are your hours?",
-    a: "Sunday–Thursday, 11 AM–10 PM, and Friday–Saturday, 11 AM–midnight.",
+    a: "We're open every day, 11 AM–10 PM.",
   },
   {
     q: "Where are you located?",
