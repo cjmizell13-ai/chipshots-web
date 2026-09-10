@@ -96,9 +96,9 @@ export const posts: Post[] = [
       {
         type: "ul",
         items: [
-          "$5 domestic drafts — Coors Light, Blue Moon, Modelo",
+          "$5 domestic drafts — Coors Light, Modelo, Cali Squeeze",
           "$6 well drinks — vodka, gin, tequila, rum, bourbon",
-          "$7 craft, cider & wine — Firestone 805, Angry Orchard, house pours",
+          "$7 craft, cider & wine — 805, Angry Orchard, house pours",
           "$10 house cocktails — Par Old Fashioned, Transfusion, Azalea, Peach Palmer, Blue Lagoon",
           "$2 off every other cocktail on the list",
         ],
@@ -106,7 +106,7 @@ export const posts: Post[] = [
       { type: "h2", text: "The bites" },
       {
         type: "p",
-        text: "The kitchen runs a dedicated happy-hour list: pretzel bites, mozzarella sticks, mini corn dogs, crispy pickle spears and pimento cheese dip at $8, loaded totchos, buffalo chicken dip and the slider trio at $10. The sleeper pick is the Caddie's Combo — a draft and six boneless wings for $12. Add fries or tots to anything for four bucks.",
+        text: "The kitchen runs a dedicated happy-hour list: pretzel bites, mozzarella sticks, mini corn dogs, crispy pickle spears and clubhouse pimento dip at $8, loaded totchos, buffalo chicken dip and the slider trio at $10. The sleeper pick is the Caddie's Combo — a draft and six boneless wings for $12. Add fries or tots to anything for four bucks.",
       },
       { type: "cta", label: "See the full menu", href: "/food-drink" },
       { type: "h2", text: "Take it to a bay" },

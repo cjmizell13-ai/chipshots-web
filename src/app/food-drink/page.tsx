@@ -15,8 +15,10 @@ import {
   shakes,
   shakes21,
   drafts,
+  pitchers,
   bottlesCans,
   wine,
+  wineBottles,
   cocktails,
   spirits,
   happyHour,
@@ -332,6 +334,12 @@ export default function FoodDrink() {
               <div className="mt-3">
                 <SimpleList items={drafts} />
               </div>
+              <div className="mt-6 rounded-2xl border border-gold/30 bg-cream-2 p-5">
+                <h4 className="eyebrow text-gold">Pitchers</h4>
+                <div className="mt-2">
+                  <SimpleList items={pitchers} />
+                </div>
+              </div>
               <h3 className="font-display mt-8 text-2xl text-green-deep">
                 Bottles <Amp className="text-gold" /> Cans
               </h3>
@@ -343,6 +351,14 @@ export default function FoodDrink() {
               </h3>
               <div className="mt-3">
                 <SimpleList items={wine} />
+              </div>
+              <div className="mt-6 rounded-2xl border border-gold/30 bg-cream-2 p-5">
+                <h4 className="eyebrow text-gold">
+                  By the Bottle
+                </h4>
+                <div className="mt-2">
+                  <SimpleList items={wineBottles} />
+                </div>
               </div>
             </div>
           </Reveal>
