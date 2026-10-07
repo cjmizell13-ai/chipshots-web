@@ -55,7 +55,10 @@ Aesthetic: Augusta National–inspired (deep green + gold + cream).
 ## Brand copy rules (learned from user)
 - Brand name is "Chip Shots Indoor Golf Club".
 - NOT "smash burgers", NOT a "from-scratch kitchen" — say "a full kitchen".
-- Food is broader than burgers: burgers, sandwiches, wings, shareables, salads, totchos, Philly.
+- Food is broader than burgers: breakfast all day, burgers, handhelds, wings,
+  shareables, salads & wraps, soups, totchos, Philly.
+- "Smashburger" is a menu item name on the printed menu — that's fine. The
+  "NOT smash burgers" rule above is about describing the kitchen, not item names.
 - Say "one building", not "one room" ("under one roof" is fine).
 - Signature/unique cocktails to highlight: The Transfusion, The Azalea, Peach Palmer.
 
