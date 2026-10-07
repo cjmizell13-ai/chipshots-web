@@ -11,7 +11,8 @@ import {
   img,
   foodMenu,
   foodMore,
-  desserts,
+  foodAdvisory,
+  dessertsNote,
   shakes,
   shakes21,
   drafts,
@@ -26,9 +27,9 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Drink — Burgers, Wings & Full Bar",
+  title: "Food & Drink — Breakfast All Day, Burgers, Wings & Full Bar",
   description:
-    "Burgers, sandwiches, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM plus late-night Sun–Wed 8 PM–close in Henderson, NV.",
+    "Breakfast served all day, burgers, handhelds, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM plus late-night Sun–Wed 8 PM–close in Henderson, NV.",
   alternates: { canonical: "/food-drink" },
 };
 
@@ -74,12 +75,14 @@ export default function FoodDrink() {
               </h2>
             </div>
             <span className="hidden text-sm text-muted sm:block">
-              Burgers, sandwiches & shareables · made to order
+              Breakfast all day · burgers, handhelds & shareables
             </span>
           </div>
         </Reveal>
 
-        <Stagger className="mt-12 grid gap-x-12 gap-y-12 md:grid-cols-2">
+        {/* items-start so short sections (Breakfast, Soups) size to their
+            content instead of stretching to the tallest card in the row. */}
+        <Stagger className="mt-12 grid items-start gap-x-12 gap-y-12 md:grid-cols-2">
           {foodMenu.map((section) => (
             <StaggerItem
               key={section.title}
@@ -96,6 +99,9 @@ export default function FoodDrink() {
                   </span>
                 )}
               </div>
+              {section.blurb && (
+                <p className="mt-2 text-sm text-muted">{section.blurb}</p>
+              )}
               <div className="mt-4 divide-y divide-line/70">
                 {section.items.map((it) => (
                   <div key={it.name} className="py-3">
@@ -140,9 +146,10 @@ export default function FoodDrink() {
         </Stagger>
 
         <Reveal delay={0.05}>
-          <p className="mt-10 rounded-2xl bg-cream-2 px-6 py-4 text-center text-sm text-muted">
-            {foodMore}
-          </p>
+          <div className="mt-10 rounded-2xl bg-cream-2 px-6 py-4 text-center">
+            <p className="text-sm text-muted">{foodMore}</p>
+            <p className="mt-2 text-xs text-muted/80">{foodAdvisory}</p>
+          </div>
         </Reveal>
       </section>
 
@@ -166,30 +173,31 @@ export default function FoodDrink() {
           <div className="mt-12 grid gap-x-12 gap-y-12 lg:grid-cols-2">
             <Reveal>
               <article className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]">
-                <h3 className="font-display text-2xl text-green-deep">Desserts</h3>
+                <h3 className="font-display text-2xl text-green-deep">Shakes</h3>
                 <div className="mt-4">
-                  <SimpleList items={desserts} />
+                  <SimpleList items={shakes} />
                 </div>
               </article>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <article className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]">
-                <h3 className="font-display text-2xl text-green-deep">Shakes</h3>
+              <article className="rounded-3xl border border-gold/30 bg-white p-7 shadow-[var(--shadow-card)]">
+                <h3 className="font-display text-2xl text-green-deep">
+                  Spiked Shakes <span className="text-muted">· 21+</span>
+                </h3>
                 <div className="mt-4">
-                  <SimpleList items={shakes} />
-                </div>
-                <div className="mt-6 rounded-2xl border border-gold/30 bg-cream-2 p-5">
-                  <h4 className="eyebrow text-gold">
-                    Spiked Shakes <span className="text-muted">· 21+</span>
-                  </h4>
-                  <div className="mt-2">
-                    <SimpleList items={shakes21} />
-                  </div>
+                  <SimpleList items={shakes21} />
                 </div>
               </article>
             </Reveal>
           </div>
+
+          <Reveal delay={0.05}>
+            <div className="mt-8 rounded-3xl border border-line bg-white px-7 py-6 text-center">
+              <h3 className="font-display text-2xl text-green-deep">Desserts</h3>
+              <p className="mt-2 text-muted">{dessertsNote}</p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

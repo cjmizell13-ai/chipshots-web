@@ -384,136 +384,150 @@ export const memberBenefits = [
 ];
 
 // -----------------------------------------------------------------------------
-// FOOD — captured from Toast (prices match the register)
+// FOOD — matches the printed "Chip Shots Menu" (prices match the register)
 // -----------------------------------------------------------------------------
 export type MenuItem = { name: string; price: string; desc?: string };
-export type MenuSection = { title: string; note?: string; items: MenuItem[] };
+// `note` is the short label beside the section heading; `blurb` is the longer
+// line under it (sauce lists, side upgrades) that doesn't fit on one row.
+export type MenuSection = {
+  title: string;
+  note?: string;
+  blurb?: string;
+  items: MenuItem[];
+};
 
 export const foodMenu: MenuSection[] = [
   {
+    title: "Breakfast All Day",
+    items: [
+      { name: "Breakfast Burrito", price: "$13", desc: "Scrambled eggs, cheddar, your choice of bacon or sausage & potatoes O'Brien in a warm flour tortilla, with salsa & sour cream. Add guacamole $2." },
+      { name: "Chicken & Waffles", price: "$16", desc: "Crispy chicken tenders over waffles with butter & maple syrup. Hot honey on request." },
+      { name: "Breakfast Burger", price: "$17", desc: "Beef patty with bacon, cheddar, a fried egg & crispy smashed tater tots on a toasted bun" },
+    ],
+  },
+  {
     title: "Shareables",
     items: [
-      { name: "Slider Trio", price: "$13", desc: "Mini cheeseburgers, American, pickles & house sauce" },
-      { name: "Loaded Totchos", price: "$13", desc: "Cheddar, bacon, green onions & ranch drizzle" },
-      { name: "Chicken Quesadilla", price: "$14", desc: "Grilled chicken, melted cheese, salsa & sour cream" },
-      { name: "Buffalo Chicken Dip", price: "$13", desc: "Warm, with pork rinds or pita chips" },
-      { name: "Taco Trio", price: "$13" },
-      { name: "Crispy Pickle Spears", price: "$13", desc: "Fried dill pickle spears with ranch" },
-      { name: "Mac & Cheese Bites", price: "$13", desc: "With ranch, BBQ or buffalo sauce" },
-      { name: "Nachos", price: "$14" },
-      { name: "Pretzel Bites", price: "$12", desc: "Warm, with beer cheese & house golden sauce" },
-      { name: "Clubhouse Pimento Dip", price: "$12", desc: "Warm & creamy, with pork rinds or pita chips" },
-      { name: "Potato Skins", price: "$12" },
-      { name: "Mozzarella Sticks", price: "$12", desc: "Fried, with marinara" },
       { name: "Mini Corn Dogs", price: "$11", desc: "Bite-sized, with mustard & ketchup" },
+      { name: "Potato Skins", price: "$12", desc: "Bacon-oil-brushed & fried golden, topped with bacon, cheddar & green onion, with sour cream" },
+      { name: "Pretzel Bites", price: "$12", desc: "Warm, with beer cheese & house golden sauce" },
+      { name: "Pimento Cheese Dip", price: "$12", desc: "Creamy, with pork rinds or pita chips" },
+      { name: "Mozzarella Sticks", price: "$12", desc: "Fried, with marinara" },
+      { name: "Slider Trio", price: "$13", desc: "Three mini cheeseburgers with melted American, pickles & house sauce on toasted buns" },
+      { name: "Loaded Totchos", price: "$13", desc: "Crispy tots with nacho cheese, bacon, green onions & ranch drizzle. Pico on request. Add chicken $4 or steak $5." },
+      { name: "Buffalo Chicken Dip", price: "$13", desc: "Warm, with pork rinds or pita chips" },
+      { name: "Crispy Pickle Spears", price: "$13", desc: "Fried dill pickle spears with ranch" },
+      { name: "Taco Trio", price: "$14", desc: "Three tacos with your choice of grilled or battered cod, steak, chicken or shrimp" },
+      { name: "Chicken Quesadilla", price: "$14", desc: "Grilled chicken, melted cheese & pico in a toasted tortilla, with salsa & sour cream" },
+      { name: "Nachos", price: "$15", desc: "Fresh-fried chips with nacho cheese, pico, salsa & sour cream, with grilled chicken or seasoned ground beef. Upgrade to steak +$4." },
+    ],
+  },
+  {
+    title: "Salads & Wraps",
+    items: [
+      { name: "House Salad", price: "$9", desc: "Romaine, cheese, tomatoes, red onion & croutons with your choice of dressing. Add chicken $4 or hard-boiled egg $1." },
+      { name: "Caesar Salad", price: "$10", desc: "Romaine, parmesan & croutons in creamy Caesar. Add chicken $4, salmon $9 or shrimp $6." },
+      { name: "Steakhouse Chopped Salad", price: "$17", desc: "Romaine with sliced steak, crispy bacon, tomatoes, blue cheese crumbles & crispy onions" },
+      { name: "Warm Spinach Salad", price: "$14", desc: "Spinach in housemade bacon dressing with steak strips, red onion & blue cheese crumbles" },
+      { name: "Buffalo Chicken Wrap", price: "$13", desc: "Romaine, tomato & ranch with grilled or breaded buffalo chicken in a soft tortilla" },
+      { name: "Caesar Chicken Wrap", price: "$13", desc: "Romaine, parmesan & Caesar with grilled or breaded chicken in a soft tortilla" },
+    ],
+  },
+  {
+    title: "Soups",
+    note: "Cup / bowl",
+    items: [
+      { name: "New England Clam Chowder", price: "$7 / $13", desc: "Creamy New England-style, with tender clams & potatoes" },
+      { name: "Soup of the Day", price: "$6 / $10", desc: "Ask your server about today's selection" },
     ],
   },
   {
     title: "Wings & Tenders",
     note: "Sauces, rubs & glazes",
+    blurb: "Sauces — Buffalo · BBQ · Honey BBQ · Sweet Chili · Garlic Parm · Mango Habanero · Thai BBQ · Sweet Teriyaki · Hot Honey · Sweet Tea Lemon Glaze. Rubs — Lemon Pepper · Honey Chipotle · Honey Garlic.",
     items: [
-      { name: "Bone-In Wings", price: "$14 / $24", desc: "Six or twelve · choice of sauce or dry rub" },
-      { name: "Boneless Wings", price: "$12 / $16", desc: "Six or twelve · choice of sauce or dry rub" },
-      { name: "Crispy Chicken Tenders", price: "$16", desc: "Breaded, with your choice of sauce or rub" },
-    ],
-  },
-  {
-    title: "Salads",
-    items: [
-      { name: "House Salad", price: "$9", desc: "Romaine, cheese, tomatoes & croutons" },
-      { name: "Caesar Salad", price: "$10", desc: "Romaine, parmesan & croutons" },
-      { name: "Warm Spinach Salad", price: "$13" },
-      { name: "Caprese Salad", price: "$16" },
-      { name: "Clubhouse Salad", price: "$16" },
-      { name: "Ahi Tuna Salad", price: "$18" },
+      { name: "Boneless Wings", price: "$12 / $20", desc: "Six or twelve · crispy all-white chicken bites tossed in your choice of sauce or dry rub" },
+      { name: "Bone-In Wings", price: "$14 / $24", desc: "Six or twelve · crispy, juicy wings tossed in your choice of sauce or dry rub" },
+      { name: "Crispy Chicken Tenders", price: "$16", desc: "Breaded, with your choice of sauce or dry rub" },
     ],
   },
   {
     title: "Signature Burgers",
-    note: "Served with fries or tots",
+    note: "Served with a standard side",
+    blurb: "Upgrade to a premium side $2 · substitute a veggie patty $3",
     items: [
-      { name: "The Chip Shots Classic", price: "$16", desc: "Cheddar, lettuce, tomato, pickles, onion & house sauce" },
-      { name: "The Mulligan Melt", price: "$17", desc: "Swiss, caramelized onions & Thousand Island on rye" },
-      { name: "BBQ Burger", price: "$17", desc: "BBQ, cheddar, bacon, onion rings & pickles" },
-      { name: "Mushroom & Swiss", price: "$18", desc: "Sautéed mushrooms & melted Swiss" },
-      { name: "Guacamole Burger", price: "$18", desc: "Guacamole, pepper jack & chipotle mayo" },
-      { name: "Beer Cheese Bacon Burger", price: "$18", desc: "Bacon, caramelized onions & pickles in warm beer cheese" },
-      { name: "Spicy Jalapeño Burger", price: "$18", desc: "Pepper jack, jalapeños, bacon & chipotle mayo" },
+      { name: "The Chip Shots Classic", price: "$16", desc: "Melted cheddar, lettuce, tomato, pickles, onion & house sauce" },
+      { name: "The Mulligan Melt", price: "$17", desc: "Provolone, caramelized onions & Thousand Island on toasted rye" },
+      { name: "BBQ Burger", price: "$17", desc: "BBQ sauce, cheddar, bacon, onion rings & pickles" },
+      { name: "Mushroom Burger", price: "$18", desc: "Sautéed mushrooms & melted provolone with lettuce, tomato & mayo" },
+      { name: "Guacamole Burger", price: "$18", desc: "Guacamole, pepper jack, lettuce, tomato & chipotle mayo" },
+      { name: "Spicy Jalapeño Burger", price: "$18", desc: "Pepper jack, jalapeños, bacon, lettuce, tomato & chipotle mayo" },
+      { name: "Smashburger", price: "$16", desc: "Two beef patties, American cheese, grilled onions, Thousand Island & pickles" },
     ],
   },
   {
-    title: "Steaks & Entrées",
+    title: "Classics",
     items: [
-      { name: "Fish & Chips", price: "$16" },
-      { name: "Pasta Alfredo", price: "$16" },
-      { name: "Boneless Pork Chop", price: "$21" },
-      { name: "Baby Back Ribs (Half)", price: "$22" },
-      { name: "Chicken Parmesan", price: "$19" },
-      { name: "Salmon", price: "$23" },
-      { name: "Shrimp Scampi", price: "$21" },
-      { name: "Baby Back Ribs (Full)", price: "$32" },
-      { name: "Filet Mignon 6oz", price: "$39" },
-      { name: "Filet Mignon 8oz", price: "$45" },
+      { name: "Fish & Chips", price: "$18", desc: "Beer-battered cod fried golden, with fries, coleslaw & fresh dill tartar sauce" },
+      { name: "Baby Back Ribs", price: "$22", desc: "Slow-roasted & glazed with hickory BBQ, with hickory ranch-style beans & coleslaw" },
+      { name: "Sweet Tea Lemon Glazed Salmon", price: "$23", desc: "Grilled salmon brushed with our sweet tea lemon glaze, with broccoli & rice" },
+      { name: "Chicken Parmesan", price: "$19", desc: "Golden pan-fried chicken with marinara, mozzarella & parmesan on a bed of pasta" },
+      { name: "Fettuccine Alfredo", price: "$16", desc: "Creamy garlic parmesan sauce finished with cracked black pepper. Add chicken $4 or shrimp $6." },
+      { name: "Ribeye", price: "$26", desc: "10 oz grilled to order with garlic herb butter, a baked potato & broccoli" },
+      { name: "Loaded Baked Potato", price: "$9", desc: "Cheddar, bacon, green onion, butter & sour cream. Add chicken $4 or steak $7." },
     ],
   },
   {
-    title: "Sandwiches",
-    note: "Served with fries or tots",
+    title: "Handhelds",
+    note: "Served with a standard side",
+    blurb: "Upgrade to a premium side $2",
     items: [
-      { name: "Clubhouse Sandwich", price: "$14", desc: "Turkey, bacon, lettuce, tomato & mayo" },
-      { name: "Crispy Chicken Sandwich", price: "$15", desc: "Breaded golden, with lettuce, tomato & mayo" },
-      { name: "Philly Cheesesteak", price: "$17", desc: "Thin-sliced beef, onions, peppers & provolone" },
-      { name: "French Dip Sandwich", price: "$17", desc: "Sliced beef & grilled onions with au jus" },
+      { name: "Clubhouse Sandwich", price: "$14", desc: "Turkey, crispy bacon, cheddar, lettuce, tomato & mayo on sourdough" },
+      { name: "Crispy Chicken Sandwich", price: "$15", desc: "Breaded golden with lettuce, tomato & mayo. Toss it in your favorite wing sauce at no charge." },
+      { name: "Philly Cheesesteak", price: "$17", desc: "Thin-sliced beef, grilled onions, peppers, mushrooms, provolone & American on a hoagie · substitute chicken at no charge" },
+      { name: "French Dip Sandwich", price: "$17", desc: "Sliced beef, grilled onions & provolone on a hoagie, served with au jus" },
+      { name: "Grilled Cheese", price: "$12", desc: "Cheddar & provolone melted with sliced tomato on grilled sourdough" },
     ],
   },
   {
-    title: "Sides",
+    title: "A La Carte Sides",
+    note: "Standard $5 · premium $7",
     items: [
-      { name: "Fries", price: "$5" },
+      { name: "Seasoned Fries", price: "$5" },
       { name: "Tater Tots", price: "$5" },
-      { name: "Cinnamon Buttered Apples", price: "$5" },
       { name: "Hickory Ranch-Style Beans", price: "$5" },
+      { name: "Rice", price: "$5" },
+      { name: "Broccoli", price: "$5" },
       { name: "Sweet Potato Fries", price: "$7" },
       { name: "Onion Rings", price: "$7" },
       { name: "Side Salad", price: "$7" },
-      { name: "Housemade Potato Salad", price: "$7" },
       { name: "Baked Potato", price: "$7" },
     ],
   },
-  {
-    title: "Kids Meals",
-    items: [
-      { name: "Kids Mac & Cheese", price: "$8" },
-      { name: "Kids Chicken Tenders", price: "$8" },
-      { name: "Kids Mini Corn Dogs", price: "$8" },
-    ],
-  },
 ];
 
-export const desserts: MenuItem[] = [
-  { name: "Chocolate Lava Cake", price: "$9", desc: "Warm molten center, vanilla ice cream & powdered sugar" },
-  { name: "Chocolate Brownie Sundae", price: "$9" },
-  { name: "Banana Split", price: "$9" },
-  { name: "Basque Cheesecake", price: "$10", desc: "Caramelized & velvety, with strawberry topping" },
-  { name: "Bananas Foster", price: "$11" },
-  { name: "S'mores Cake", price: "$12", desc: "Chocolate cake, marshmallow & graham with vanilla ice cream" },
-];
+// The printed menu lists no fixed dessert selection — it rotates daily.
+export const dessertsNote = "Ask your server about today's selection.";
 
 export const shakes: MenuItem[] = [
-  { name: "Cookie Butter Crunch", price: "$10", desc: "Vanilla, cookie butter & cookie crumble" },
-  { name: "Fudge Brownie Bliss", price: "$10", desc: "Chocolate shake with brownie bites" },
-  { name: "Campfire S'mores", price: "$10", desc: "Chocolate-marshmallow with graham crumble" },
-  { name: "Strawberry Shortcake", price: "$10", desc: "Strawberry shake with cake crumbles" },
-  { name: "Peanut Butter Cup", price: "$10", desc: "Peanut butter & chocolate" },
+  { name: "Classic Shake", price: "$8", desc: "Vanilla, strawberry or chocolate" },
+  { name: "Fudge Brownie Bliss", price: "$10", desc: "Chocolate shake with brownie bites, whipped cream & chocolate drizzle" },
+  { name: "Campfire S'mores", price: "$10", desc: "Chocolate-marshmallow shake with graham crumble, whipped cream & chocolate drizzle" },
+  { name: "Peanut Butter Cup", price: "$10", desc: "Vanilla shake blended with peanut butter cups & chocolate, whipped cream & chocolate drizzle" },
 ];
 
 export const shakes21: MenuItem[] = [
-  { name: "Peanut Butter Whiskey Cup", price: "$15", desc: "PB chocolate shake with peanut butter whiskey" },
-  { name: "Frozen Baileys Cream Shake", price: "$15", desc: "Frozen Baileys & vanilla, chocolate drizzle" },
-  { name: "Strawberry Daiquiri Shake", price: "$15", desc: "Strawberry shake blended with rum" },
+  { name: "Peanut Butter Whiskey", price: "$15", desc: "Vanilla shake blended with peanut butter whiskey & chocolate peanut butter cups" },
+  { name: "Frozen Baileys Cream Shake", price: "$15", desc: "A smooth frozen blend of Baileys & vanilla, whipped cream & chocolate drizzle" },
+  { name: "Strawberry Daiquiri Shake", price: "$15", desc: "Strawberry shake blended with rum, whipped cream & strawberry drizzle" },
 ];
 
-export const foodMore = "Ask your server about daily specials.";
+export const foodMore =
+  "Ask your server about today's specials. Parties of 8 or more are charged a 20% service fee · prices do not include tax.";
+
+// Health-department consumer advisory (the * items on the printed menu).
+export const foodAdvisory =
+  "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.";
 
 // -----------------------------------------------------------------------------
 // DRINK
@@ -669,7 +683,7 @@ export const happyHour = {
     { name: "Mini Corn Dogs", price: "$8" },
     { name: "Crispy Pickle Spears", price: "$8" },
     { name: "Boneless Wings (6)", price: "$8" },
-    { name: "Clubhouse Pimento Dip", price: "$8" },
+    { name: "Pimento Cheese Dip", price: "$8" },
     { name: "Loaded Totchos", price: "$10" },
     { name: "Buffalo Chicken Dip", price: "$10" },
     { name: "Slider Trio", price: "$10" },
