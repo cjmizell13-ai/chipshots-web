@@ -139,12 +139,23 @@ export default function FoodDrink() {
                     ))}
                   </ul>
 
-                  <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-                    <BookButton variant="gold" size="lg" withArrow />
-                    <p className="text-sm text-cream/55">
-                      Walk-ins welcome — or grab a bay and make a morning of it.
-                    </p>
+                  <div className="mt-9 flex items-start gap-4 rounded-2xl border border-gold/25 bg-white/5 px-6 py-5">
+                    <Icon.tv className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                    <div>
+                      <p className="font-display text-xl font-light text-cream">
+                        {brunch.football.headline}
+                      </p>
+                      <p className="mt-1 text-cream/70">
+                        {brunch.football.detail}
+                      </p>
+                      <p className="mt-1 text-sm uppercase tracking-wider text-gold-soft">
+                        {brunch.football.note}
+                      </p>
+                    </div>
                   </div>
+                  <p className="mt-5 text-sm text-cream/55">
+                    Walk-ins welcome.
+                  </p>
                 </div>
               </div>
             </div>

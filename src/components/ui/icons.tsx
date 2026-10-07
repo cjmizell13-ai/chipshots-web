@@ -24,6 +24,9 @@ export const Icon = {
   pin: (p: SVGProps<SVGSVGElement>) => (
     <svg {...s(p)}><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z" /><circle cx="12" cy="10" r="2.6" /></svg>
   ),
+  tv: (p: SVGProps<SVGSVGElement>) => (
+    <svg {...s(p)}><rect x="2.5" y="5" width="19" height="12.5" rx="2" /><path d="M8.5 21h7M12 17.5V21" /></svg>
+  ),
   clock: (p: SVGProps<SVGSVGElement>) => (
     <svg {...s(p)}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 1.8" /></svg>
   ),

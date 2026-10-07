@@ -577,6 +577,13 @@ export const brunch = {
     { label: "Kids 6–12", price: "$17" },
     { label: "Kids 5 & under", price: "Free" },
   ],
+  // Brunch runs straight through the weekend football windows, so the TVs are
+  // part of the pitch — and the buffet is a family table, not a bar crowd.
+  football: {
+    headline: "Football on the TVs",
+    detail: "College on Saturdays · NFL on Sundays",
+    note: "All ages welcome",
+  },
 };
 
 // Health-department consumer advisory (the * items on the printed menu).
