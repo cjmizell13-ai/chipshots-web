@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { GoldRule, Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { Amp, AmpText } from "@/components/ui/amp";
@@ -72,59 +72,80 @@ export default function FoodDrink() {
       >
         <Reveal>
           <div className="overflow-hidden rounded-3xl bg-green-deep text-cream shadow-[var(--shadow-soft)]">
-            <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
-              <div>
-                <p className="eyebrow text-gold-soft">New · weekends</p>
-                <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
+            <div className="grid lg:grid-cols-[0.92fr_1.08fr]">
+              {/* Carving station — full-bleed on the card's left edge */}
+              <div className="relative min-h-64 lg:min-h-full">
+                <Image
+                  src={img.brunchPrimeRib}
+                  alt="Carved prime rib on the brunch buffet carving station, with fresh fruit and roasted vegetables behind"
+                  fill
+                  sizes="(min-width: 1024px) 46vw, 100vw"
+                  className="object-cover object-[50%_42%]"
+                />
+                {/* Soften the seam where the photo meets the card */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-green-deep/70 via-green-deep/10 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-green-deep/10 lg:to-green-deep/80"
+                />
+              </div>
+
+              <div className="p-8 sm:p-12 lg:py-14 lg:pl-12 lg:pr-14">
+                <p className="eyebrow text-gold-soft">Weekends</p>
+                <h2 className="font-display mt-3 text-4xl font-light leading-tight sm:text-5xl">
                   <AmpText className="text-gold">{brunch.title}</AmpText>
                 </h2>
-                <p className="font-display mt-2 text-2xl font-light text-gold-soft sm:text-3xl">
+                <p className="font-display mt-3 text-xl font-light italic text-gold-soft sm:text-2xl">
                   {brunch.days} · {brunch.time}
                 </p>
-                <p className="mt-5 max-w-xl leading-relaxed text-cream/75">
+                <GoldRule className="mt-7 w-24" />
+                <p className="mt-6 max-w-xl leading-relaxed text-cream/75">
                   {brunch.intro}
                 </p>
 
-                <h3 className="eyebrow mt-8 text-gold">On the buffet</h3>
-                <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                <h3 className="eyebrow mt-9 text-gold">On the buffet</h3>
+                <ul className="mt-4 gap-x-10 sm:columns-2">
                   {brunch.spread.map((dish) => (
-                    <li key={dish} className="flex items-start gap-2.5">
-                      <Icon.check className="mt-1 h-4 w-4 shrink-0 text-gold" />
-                      <span className="text-cream/90">{dish}</span>
+                    <li
+                      key={dish}
+                      className="break-inside-avoid py-1.5 font-display text-lg font-light text-cream/90"
+                    >
+                      {dish}
                     </li>
                   ))}
                 </ul>
-                <p className="mt-3 text-sm italic text-cream/55">
+                <p className="mt-2 font-display text-lg font-light italic text-cream/45">
                   {brunch.spreadMore}
                 </p>
-              </div>
 
-              <div className="rounded-3xl border border-gold/30 bg-white/5 p-7">
-                <h3 className="eyebrow text-gold">Buffet pricing</h3>
-                <ul className="mt-4 divide-y divide-cream/12">
-                  {brunch.pricing.map((tier) => (
-                    <li key={tier.label} className="py-4">
-                      <div className="flex items-baseline gap-3">
-                        <span className="font-medium text-cream">
-                          {tier.label}
-                        </span>
-                        <span className="mx-1 flex-1 border-b border-dotted border-cream/20" />
-                        <span className="shrink-0 font-display text-xl text-gold tabular-nums">
-                          {tier.price}
-                        </span>
-                      </div>
-                      {tier.note && (
-                        <p className="mt-1 text-sm text-cream/55">{tier.note}</p>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7">
-                  <BookButton variant="gold" size="lg" withArrow />
+                <div className="mt-10 border-t border-cream/15 pt-8">
+                  <ul className="grid gap-x-12 gap-y-5 sm:grid-cols-2">
+                    {brunch.pricing.map((tier) => (
+                      <li key={tier.label}>
+                        <div className="flex items-baseline gap-3">
+                          <span className="text-sm uppercase tracking-wider text-cream/70">
+                            {tier.label}
+                          </span>
+                          <span className="mx-1 flex-1 border-b border-dotted border-cream/15" />
+                          <span className="shrink-0 font-display text-2xl font-light text-gold tabular-nums">
+                            {tier.price}
+                          </span>
+                        </div>
+                        {tier.note && (
+                          <p className="mt-1 text-sm italic text-cream/50">
+                            {tier.note}
+                          </p>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+                    <BookButton variant="gold" size="lg" withArrow />
+                    <p className="text-sm text-cream/55">
+                      Walk-ins welcome — or grab a bay and make a morning of it.
+                    </p>
+                  </div>
                 </div>
-                <p className="mt-4 text-sm text-cream/55">
-                  Walk-ins welcome — or grab a bay and make a morning of it.
-                </p>
               </div>
             </div>
           </div>

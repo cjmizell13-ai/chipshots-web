@@ -150,6 +150,7 @@ export const img = {
   trackmanCompetitions: "/images/trackman-competitions.jpg",
 
   // Food — real plates
+  brunchPrimeRib: "/images/brunch-prime-rib.jpg", // ACTUAL carving station, brunch buffet
   foodCheesesteak: "/images/cocktail-amber.jpg", // ACTUAL cheesesteak + pretzels
   foodWings: "/images/food-wings.jpg", // ACTUAL wings
   foodBurger: "/images/food-burger.jpg", // ACTUAL bacon cheeseburger + fries
