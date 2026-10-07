@@ -9,6 +9,7 @@ import { Amp, AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
 import {
   img,
+  brunch,
   foodMenu,
   foodMore,
   foodAdvisory,
@@ -27,9 +28,9 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Drink — Breakfast All Day, Burgers, Wings & Full Bar",
+  title: "Food & Drink — Weekend Brunch Buffet, Burgers, Wings & Full Bar",
   description:
-    "Breakfast served all day, burgers, handhelds, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM plus late-night Sun–Wed 8 PM–close in Henderson, NV.",
+    "Weekend brunch buffet Sat & Sun 10 AM–1 PM with prime rib, omelets to order and bottomless mimosas. Plus breakfast all day, burgers, handhelds, wings and a full bar. Happy hour Mon–Fri 3–6 PM and late-night Sun–Wed 8 PM–close in Henderson, NV.",
   alternates: { canonical: "/food-drink" },
 };
 
@@ -64,6 +65,72 @@ export default function FoodDrink() {
         image={img.foodCheesesteak}
       />
 
+      {/* ============================================== BRUNCH ===== */}
+      <section
+        id="brunch"
+        className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-20 sm:px-8 sm:pt-28"
+      >
+        <Reveal>
+          <div className="overflow-hidden rounded-3xl bg-green-deep text-cream shadow-[var(--shadow-soft)]">
+            <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+              <div>
+                <p className="eyebrow text-gold-soft">New · weekends</p>
+                <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
+                  <AmpText className="text-gold">{brunch.title}</AmpText>
+                </h2>
+                <p className="font-display mt-2 text-2xl font-light text-gold-soft sm:text-3xl">
+                  {brunch.days} · {brunch.time}
+                </p>
+                <p className="mt-5 max-w-xl leading-relaxed text-cream/75">
+                  {brunch.intro}
+                </p>
+
+                <h3 className="eyebrow mt-8 text-gold">On the buffet</h3>
+                <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                  {brunch.spread.map((dish) => (
+                    <li key={dish} className="flex items-start gap-2.5">
+                      <Icon.check className="mt-1 h-4 w-4 shrink-0 text-gold" />
+                      <span className="text-cream/90">{dish}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-sm italic text-cream/55">
+                  {brunch.spreadMore}
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-gold/30 bg-white/5 p-7">
+                <h3 className="eyebrow text-gold">Buffet pricing</h3>
+                <ul className="mt-4 divide-y divide-cream/12">
+                  {brunch.pricing.map((tier) => (
+                    <li key={tier.label} className="py-4">
+                      <div className="flex items-baseline gap-3">
+                        <span className="font-medium text-cream">
+                          {tier.label}
+                        </span>
+                        <span className="mx-1 flex-1 border-b border-dotted border-cream/20" />
+                        <span className="shrink-0 font-display text-xl text-gold tabular-nums">
+                          {tier.price}
+                        </span>
+                      </div>
+                      {tier.note && (
+                        <p className="mt-1 text-sm text-cream/55">{tier.note}</p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-7">
+                  <BookButton variant="gold" size="lg" withArrow />
+                </div>
+                <p className="mt-4 text-sm text-cream/55">
+                  Walk-ins welcome — or grab a bay and make a morning of it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* ============================================== FOOD MENU ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
@@ -80,14 +147,15 @@ export default function FoodDrink() {
           </div>
         </Reveal>
 
-        {/* items-start so short sections (Breakfast, Soups) size to their
-            content instead of stretching to the tallest card in the row. */}
-        <Stagger className="mt-12 grid items-start gap-x-12 gap-y-12 md:grid-cols-2">
+        {/* CSS columns, not a grid: sections are wildly uneven in height
+            (Soups has 2 items, Shareables has 12) and a grid would leave a
+            blank gap under every short card. Columns let them pack tight. */}
+        <Stagger className="mt-12 gap-12 md:columns-2">
           {foodMenu.map((section) => (
             <StaggerItem
               key={section.title}
               as="article"
-              className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]"
+              className="mb-12 break-inside-avoid rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]"
             >
               <div className="flex items-baseline justify-between">
                 <h3 className="font-display text-2xl text-green-deep">
@@ -124,29 +192,8 @@ export default function FoodDrink() {
           ))}
         </Stagger>
 
-        <Stagger className="mt-12 grid gap-5 sm:grid-cols-3">
-          {[
-            { src: img.foodBurger, alt: "Bacon cheeseburger with a side of fries" },
-            { src: img.foodWings, alt: "Crispy wings tossed and ready to share" },
-            { src: img.diningRoom, alt: "The Chip Shots dining room" },
-          ].map((p) => (
-            <StaggerItem
-              key={p.alt}
-              className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]"
-            >
-              <Image
-                src={p.src}
-                alt={p.alt}
-                width={520}
-                height={400}
-                className="h-60 w-full object-cover sm:h-64"
-              />
-            </StaggerItem>
-          ))}
-        </Stagger>
-
         <Reveal delay={0.05}>
-          <div className="mt-10 rounded-2xl bg-cream-2 px-6 py-4 text-center">
+          <div className="rounded-2xl bg-cream-2 px-6 py-4 text-center">
             <p className="text-sm text-muted">{foodMore}</p>
             <p className="mt-2 text-xs text-muted/80">{foodAdvisory}</p>
           </div>

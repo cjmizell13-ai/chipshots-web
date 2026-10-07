@@ -86,18 +86,20 @@ export const toastSignup = {
   },
 };
 
+// Sat & Sun open an hour early for the Weekend Brunch Buffet (10 AM–1 PM).
 export const hours = [
   { day: "Monday", time: "11:00 AM – 10:00 PM" },
   { day: "Tuesday", time: "11:00 AM – 10:00 PM" },
   { day: "Wednesday", time: "11:00 AM – 10:00 PM" },
   { day: "Thursday", time: "11:00 AM – 10:00 PM" },
   { day: "Friday", time: "11:00 AM – 10:00 PM" },
-  { day: "Saturday", time: "11:00 AM – 10:00 PM" },
-  { day: "Sunday", time: "11:00 AM – 10:00 PM" },
+  { day: "Saturday", time: "10:00 AM – 10:00 PM" },
+  { day: "Sunday", time: "10:00 AM – 10:00 PM" },
 ];
 
 export const hoursSummary = [
-  { label: "Every day", time: "11 AM – 10 PM" },
+  { label: "Mon – Fri", time: "11 AM – 10 PM" },
+  { label: "Sat & Sun", time: "10 AM – 10 PM" },
 ];
 
 // Machine-readable opening hours for the live "Open now" badge.
@@ -105,13 +107,13 @@ export const hoursSummary = [
 // time (America/Los_Angeles). close = 24 means midnight (end of that day).
 export const timezone = "America/Los_Angeles";
 export const schedule: { open: number; close: number }[] = [
-  { open: 11, close: 22 }, // Sun
+  { open: 10, close: 22 }, // Sun — brunch buffet from 10
   { open: 11, close: 22 }, // Mon
   { open: 11, close: 22 }, // Tue
   { open: 11, close: 22 }, // Wed
   { open: 11, close: 22 }, // Thu
   { open: 11, close: 22 }, // Fri
-  { open: 11, close: 22 }, // Sat
+  { open: 10, close: 22 }, // Sat — brunch buffet from 10
 ];
 
 export type NavItem = { label: string; href: string };
@@ -344,6 +346,11 @@ export const promoBanners: {
     cta: "Grab your team",
     href: "/events",
   },
+  {
+    message: "Weekend Brunch Buffet — Sat & Sun 10 AM–1 PM · prime rib, omelets to order & bottomless mimosas",
+    cta: "See the buffet",
+    href: "/food-drink#brunch",
+  },
 ];
 
 export const rangeCard = {
@@ -504,6 +511,17 @@ export const foodMenu: MenuSection[] = [
       { name: "Baked Potato", price: "$7" },
     ],
   },
+  {
+    title: "Kids Meals",
+    note: "Ages 12 & under",
+    blurb: "Every kids meal includes a juice box & applesauce. Upgrade to a standard side $2 · substitute a fountain drink $2.",
+    items: [
+      { name: "Grilled Cheese Sandwich", price: "$8" },
+      { name: "Chicken Tenders", price: "$8" },
+      { name: "Mini Corn Dogs", price: "$8" },
+      { name: "Pasta Alfredo", price: "$8" },
+    ],
+  },
 ];
 
 // The printed menu lists no fixed dessert selection — it rotates daily.
@@ -524,6 +542,41 @@ export const shakes21: MenuItem[] = [
 
 export const foodMore =
   "Ask your server about today's specials. Parties of 8 or more are charged a 20% service fee · prices do not include tax.";
+
+// -----------------------------------------------------------------------------
+// WEEKEND BRUNCH BUFFET — Sat & Sun, 10 AM–1 PM. Featured at the top of
+// /food-drink and in the sitewide promo banner rotation.
+// -----------------------------------------------------------------------------
+export const brunch = {
+  title: "Weekend Brunch Buffet",
+  days: "Saturday & Sunday",
+  time: "10 AM – 1 PM",
+  intro:
+    "Carved prime rib, omelets made to order and a shrimp cocktail bar — every Saturday and Sunday morning. Add bottomless mimosas and Bloody Marys and stay for the back nine.",
+  spread: [
+    "Prime Rib",
+    "Made-to-Order Omelets",
+    "Chicken & Waffles",
+    "Scrambled Eggs",
+    "Bacon",
+    "Sausage",
+    "Breakfast Potatoes",
+    "Shrimp Cocktail",
+    "Fresh Fruit",
+    "Pastries",
+  ],
+  spreadMore: "and more",
+  pricing: [
+    { label: "Adult Buffet", price: "$35" },
+    {
+      label: "Adult Bottomless Buffet",
+      price: "$50",
+      note: "Includes unlimited mimosas & Bloody Marys",
+    },
+    { label: "Kids 6–12", price: "$17" },
+    { label: "Kids 5 & under", price: "Free" },
+  ],
+};
 
 // Health-department consumer advisory (the * items on the printed menu).
 export const foodAdvisory =
