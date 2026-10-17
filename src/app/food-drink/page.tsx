@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
-import { GoldRule, Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { Amp, AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
 import {
   img,
-  brunch,
+  football,
   foodMenu,
   foodMore,
   foodAdvisory,
@@ -28,9 +28,9 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Drink — Weekend Brunch Buffet, Burgers, Wings & Full Bar",
+  title: "Food & Drink — Breakfast All Day, Burgers, Wings & Full Bar",
   description:
-    "Weekend brunch buffet Sat & Sun 10 AM–1 PM with prime rib, omelets to order and bottomless mimosas. Plus breakfast all day, burgers, handhelds, wings and a full bar. Happy hour Mon–Fri 3–6 PM and late-night Sun–Wed 8 PM–close in Henderson, NV.",
+    "Breakfast served all day, burgers, handhelds, wings, shareables and salads plus a full bar — cold drafts, wine, signature cocktails and spirits. College and NFL football on the TVs. Happy hour Mon–Fri 3–6 PM and late-night Sun–Wed 8 PM–close in Henderson, NV.",
   alternates: { canonical: "/food-drink" },
 };
 
@@ -65,100 +65,21 @@ export default function FoodDrink() {
         image={img.foodCheesesteak}
       />
 
-      {/* ============================================== BRUNCH ===== */}
-      <section
-        id="brunch"
-        className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-20 sm:px-8 sm:pt-28"
-      >
+      {/* ============================================== FOOTBALL ===== */}
+      <section className="mx-auto max-w-7xl px-5 pt-16 sm:px-8 sm:pt-20">
         <Reveal>
-          <div className="overflow-hidden rounded-3xl bg-green-deep text-cream shadow-[var(--shadow-soft)]">
-            <div className="grid lg:grid-cols-[0.92fr_1.08fr]">
-              {/* Carving station — full-bleed on the card's left edge */}
-              <div className="relative min-h-64 lg:min-h-full">
-                <Image
-                  src={img.brunchPrimeRib}
-                  alt="Carved prime rib on the brunch buffet carving station, with fresh fruit and roasted vegetables behind"
-                  fill
-                  sizes="(min-width: 1024px) 46vw, 100vw"
-                  className="object-cover object-[50%_42%]"
-                />
-                {/* Soften the seam where the photo meets the card */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 bg-gradient-to-t from-green-deep/70 via-green-deep/10 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-green-deep/10 lg:to-green-deep/80"
-                />
-              </div>
-
-              <div className="p-8 sm:p-12 lg:py-14 lg:pl-12 lg:pr-14">
-                <p className="eyebrow text-gold-soft">Weekends</p>
-                <h2 className="font-display mt-3 text-4xl font-light leading-tight sm:text-5xl">
-                  <AmpText className="text-gold">{brunch.title}</AmpText>
-                </h2>
-                <p className="font-display mt-3 text-xl font-light italic text-gold-soft sm:text-2xl">
-                  {brunch.days} · {brunch.time}
-                </p>
-                <GoldRule className="mt-7 w-24" />
-                <p className="mt-6 max-w-xl leading-relaxed text-cream/75">
-                  {brunch.intro}
-                </p>
-
-                <h3 className="eyebrow mt-9 text-gold">On the buffet</h3>
-                <ul className="mt-4 gap-x-10 sm:columns-2">
-                  {brunch.spread.map((dish) => (
-                    <li
-                      key={dish}
-                      className="break-inside-avoid py-1.5 font-display text-lg font-light text-cream/90"
-                    >
-                      {dish}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-2 font-display text-lg font-light italic text-cream/45">
-                  {brunch.spreadMore}
-                </p>
-
-                <div className="mt-10 border-t border-cream/15 pt-8">
-                  <ul className="grid gap-x-12 gap-y-5 sm:grid-cols-2">
-                    {brunch.pricing.map((tier) => (
-                      <li key={tier.label}>
-                        <div className="flex items-baseline gap-3">
-                          <span className="text-sm uppercase tracking-wider text-cream/70">
-                            {tier.label}
-                          </span>
-                          <span className="mx-1 flex-1 border-b border-dotted border-cream/15" />
-                          <span className="shrink-0 font-display text-2xl font-light text-gold tabular-nums">
-                            {tier.price}
-                          </span>
-                        </div>
-                        {tier.note && (
-                          <p className="mt-1 text-sm italic text-cream/50">
-                            {tier.note}
-                          </p>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-9 flex items-start gap-4 rounded-2xl border border-gold/25 bg-white/5 px-6 py-5">
-                    <Icon.tv className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                    <div>
-                      <p className="font-display text-xl font-light text-cream">
-                        {brunch.football.headline}
-                      </p>
-                      <p className="mt-1 text-cream/70">
-                        {brunch.football.detail}
-                      </p>
-                      <p className="mt-1 text-sm uppercase tracking-wider text-gold-soft">
-                        {brunch.football.note}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="mt-5 text-sm text-cream/55">
-                    Walk-ins welcome.
-                  </p>
-                </div>
-              </div>
+          <div className="flex flex-col items-center gap-5 rounded-3xl border border-gold/35 bg-cream-2 px-8 py-7 text-center sm:flex-row sm:justify-center sm:gap-7 sm:text-left">
+            <Icon.tv className="h-7 w-7 shrink-0 text-gold" />
+            <div>
+              <p className="font-display text-2xl font-light text-green-deep">
+                {football.headline}
+              </p>
+              <p className="mt-1 text-muted">{football.detail}</p>
             </div>
+            <span className="hidden h-12 w-px bg-line sm:block" />
+            <p className="text-sm uppercase tracking-wider text-gold">
+              {football.note}
+            </p>
           </div>
         </Reveal>
       </section>

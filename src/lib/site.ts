@@ -86,20 +86,18 @@ export const toastSignup = {
   },
 };
 
-// Sat & Sun open an hour early for the Weekend Brunch Buffet (10 AM–1 PM).
 export const hours = [
   { day: "Monday", time: "11:00 AM – 10:00 PM" },
   { day: "Tuesday", time: "11:00 AM – 10:00 PM" },
   { day: "Wednesday", time: "11:00 AM – 10:00 PM" },
   { day: "Thursday", time: "11:00 AM – 10:00 PM" },
   { day: "Friday", time: "11:00 AM – 10:00 PM" },
-  { day: "Saturday", time: "10:00 AM – 10:00 PM" },
-  { day: "Sunday", time: "10:00 AM – 10:00 PM" },
+  { day: "Saturday", time: "11:00 AM – 10:00 PM" },
+  { day: "Sunday", time: "11:00 AM – 10:00 PM" },
 ];
 
 export const hoursSummary = [
-  { label: "Mon – Fri", time: "11 AM – 10 PM" },
-  { label: "Sat & Sun", time: "10 AM – 10 PM" },
+  { label: "Every day", time: "11 AM – 10 PM" },
 ];
 
 // Machine-readable opening hours for the live "Open now" badge.
@@ -107,13 +105,13 @@ export const hoursSummary = [
 // time (America/Los_Angeles). close = 24 means midnight (end of that day).
 export const timezone = "America/Los_Angeles";
 export const schedule: { open: number; close: number }[] = [
-  { open: 10, close: 22 }, // Sun — brunch buffet from 10
+  { open: 11, close: 22 }, // Sun
   { open: 11, close: 22 }, // Mon
   { open: 11, close: 22 }, // Tue
   { open: 11, close: 22 }, // Wed
   { open: 11, close: 22 }, // Thu
   { open: 11, close: 22 }, // Fri
-  { open: 10, close: 22 }, // Sat — brunch buffet from 10
+  { open: 11, close: 22 }, // Sat
 ];
 
 export type NavItem = { label: string; href: string };
@@ -150,7 +148,6 @@ export const img = {
   trackmanCompetitions: "/images/trackman-competitions.jpg",
 
   // Food — real plates
-  brunchPrimeRib: "/images/brunch-prime-rib.jpg", // ACTUAL carving station, brunch buffet
   foodCheesesteak: "/images/cocktail-amber.jpg", // ACTUAL cheesesteak + pretzels
   foodWings: "/images/food-wings.jpg", // ACTUAL wings
   foodBurger: "/images/food-burger.jpg", // ACTUAL bacon cheeseburger + fries
@@ -347,11 +344,6 @@ export const promoBanners: {
     cta: "Grab your team",
     href: "/events",
   },
-  {
-    message: "Weekend Brunch Buffet — Sat & Sun 10 AM–1 PM · prime rib, omelets to order & bottomless mimosas",
-    cta: "See the buffet",
-    href: "/food-drink#brunch",
-  },
 ];
 
 export const rangeCard = {
@@ -544,46 +536,11 @@ export const shakes21: MenuItem[] = [
 export const foodMore =
   "Ask your server about today's specials. Parties of 8 or more are charged a 20% service fee · prices do not include tax.";
 
-// -----------------------------------------------------------------------------
-// WEEKEND BRUNCH BUFFET — Sat & Sun, 10 AM–1 PM. Featured at the top of
-// /food-drink and in the sitewide promo banner rotation.
-// -----------------------------------------------------------------------------
-export const brunch = {
-  title: "Weekend Brunch Buffet",
-  days: "Saturday & Sunday",
-  time: "10 AM – 1 PM",
-  intro:
-    "Carved prime rib, omelets made to order and a shrimp cocktail bar — every Saturday and Sunday morning. Add bottomless mimosas and Bloody Marys and stay for the back nine.",
-  spread: [
-    "Prime Rib",
-    "Made-to-Order Omelets",
-    "Chicken & Waffles",
-    "Scrambled Eggs",
-    "Bacon",
-    "Sausage",
-    "Breakfast Potatoes",
-    "Shrimp Cocktail",
-    "Fresh Fruit",
-    "Pastries",
-  ],
-  spreadMore: "and more",
-  pricing: [
-    { label: "Adult Buffet", price: "$35" },
-    {
-      label: "Adult Bottomless Buffet",
-      price: "$50",
-      note: "Includes unlimited mimosas & Bloody Marys",
-    },
-    { label: "Kids 6–12", price: "$17" },
-    { label: "Kids 5 & under", price: "Free" },
-  ],
-  // Brunch runs straight through the weekend football windows, so the TVs are
-  // part of the pitch — and the buffet is a family table, not a bar crowd.
-  football: {
-    headline: "Football on the TVs",
-    detail: "College on Saturdays · NFL on Sundays",
-    note: "All ages welcome",
-  },
+// Weekend football on the TVs — a standing draw, not tied to any one service.
+export const football = {
+  headline: "Football on the TVs",
+  detail: "College on Saturdays · NFL on Sundays",
+  note: "All ages welcome",
 };
 
 // Health-department consumer advisory (the * items on the printed menu).
