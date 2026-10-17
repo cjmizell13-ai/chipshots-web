@@ -47,7 +47,13 @@ function computeStatus(): Status {
       label: `Closed · opens ${((opensAt + 11) % 12) + 1} ${opensAt >= 12 ? "PM" : "AM"}`,
     };
   }
-  return { open: false, label: "Closed · opens 11 AM" };
+  // Past close for today — the next opening is tomorrow's, which is not the
+  // same every day now that weekends open at 10.
+  const tomorrow = schedule[(day + 1) % 7].open;
+  return {
+    open: false,
+    label: `Closed · opens ${((tomorrow + 11) % 12) + 1} ${tomorrow >= 12 ? "PM" : "AM"}`,
+  };
 }
 
 export default function OpenStatus({ className = "" }: { className?: string }) {

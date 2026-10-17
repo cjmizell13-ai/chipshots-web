@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import VipSignup from "@/components/forms/VipSignup";
 import BackToTop from "@/components/BackToTop";
 import BookingProvider from "@/components/BookingProvider";
-import { business, hours } from "@/lib/site";
+import { business, schedule } from "@/lib/site";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -56,6 +56,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const DAY_NAMES = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+] as const;
+
+/** 24h hour number to a schema.org "HH:MM" time. */
+const hourLabel = (h: number) => `${String(h).padStart(2, "0")}:00`;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["Restaurant", "BarOrPub", "SportsActivityLocation"],
@@ -84,11 +97,14 @@ const jsonLd = {
     longitude: business.geo.lng,
   },
   sameAs: [business.social.instagram, business.social.facebook, business.social.tiktok],
-  openingHoursSpecification: hours.map((h) => ({
+  // Built from `schedule`, which is indexed by JS getDay() — 0 = Sunday. The
+  // times have to come from the data: weekends open an hour earlier than the
+  // weekdays, and a hardcoded pair would publish the wrong hours to Google.
+  openingHoursSpecification: schedule.map((s, i) => ({
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: h.day,
-    opens: "11:00",
-    closes: "22:00",
+    dayOfWeek: DAY_NAMES[i],
+    opens: hourLabel(s.open),
+    closes: hourLabel(s.close % 24),
   })),
 };
 

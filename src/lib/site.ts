@@ -86,18 +86,20 @@ export const toastSignup = {
   },
 };
 
+// The club opens an hour early on weekends — 10 AM Saturday and Sunday.
 export const hours = [
   { day: "Monday", time: "11:00 AM – 10:00 PM" },
   { day: "Tuesday", time: "11:00 AM – 10:00 PM" },
   { day: "Wednesday", time: "11:00 AM – 10:00 PM" },
   { day: "Thursday", time: "11:00 AM – 10:00 PM" },
   { day: "Friday", time: "11:00 AM – 10:00 PM" },
-  { day: "Saturday", time: "11:00 AM – 10:00 PM" },
-  { day: "Sunday", time: "11:00 AM – 10:00 PM" },
+  { day: "Saturday", time: "10:00 AM – 10:00 PM" },
+  { day: "Sunday", time: "10:00 AM – 10:00 PM" },
 ];
 
 export const hoursSummary = [
-  { label: "Every day", time: "11 AM – 10 PM" },
+  { label: "Mon – Fri", time: "11 AM – 10 PM" },
+  { label: "Sat & Sun", time: "10 AM – 10 PM" },
 ];
 
 // Machine-readable opening hours for the live "Open now" badge.
@@ -105,13 +107,13 @@ export const hoursSummary = [
 // time (America/Los_Angeles). close = 24 means midnight (end of that day).
 export const timezone = "America/Los_Angeles";
 export const schedule: { open: number; close: number }[] = [
-  { open: 11, close: 22 }, // Sun
+  { open: 10, close: 22 }, // Sun
   { open: 11, close: 22 }, // Mon
   { open: 11, close: 22 }, // Tue
   { open: 11, close: 22 }, // Wed
   { open: 11, close: 22 }, // Thu
   { open: 11, close: 22 }, // Fri
-  { open: 11, close: 22 }, // Sat
+  { open: 10, close: 22 }, // Sat
 ];
 
 export type NavItem = { label: string; href: string };
