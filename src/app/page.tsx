@@ -396,7 +396,7 @@ export default function Home() {
               {trivia.eyebrow} · {trivia.host}
             </p>
             <h2 className="font-display mt-1.5 text-3xl text-green-deep sm:text-4xl">
-              {trivia.title} — {trivia.day}s at {trivia.time}
+              {trivia.title} — {trivia.day}s, {trivia.time}
             </h2>
             <p className="mt-1.5 max-w-xl text-sm text-green-deep/80">
               Free to play, no sign-up — grab your team and win a $

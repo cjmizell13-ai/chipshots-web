@@ -6,7 +6,14 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
-import { business, img, eventTypes, trivia } from "@/lib/site";
+import UntilDate from "@/components/ui/UntilDate";
+import {
+  business,
+  img,
+  eventTypes,
+  timezone,
+  trivia,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Events & Parties",
@@ -21,15 +28,17 @@ const triviaJsonLd = {
   "@context": "https://schema.org",
   "@type": "Event",
   name: `Trivia Night at ${business.shortName}`,
-  description: `Free live trivia every ${trivia.day} at ${trivia.time}, hosted by RobotBrain. No cover, no sign-up — full kitchen and bar. 1st place wins a $50 gift card, runner-up $25.`,
+  description: `Free live trivia every ${trivia.day}, ${trivia.time}, hosted in house. Mini challenges between rounds and more ways to win. No cover, no sign-up — full kitchen and bar. 1st place wins a ${trivia.prizes[0].reward}, runner-up a ${trivia.prizes[1].reward}.`,
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   isAccessibleForFree: true,
   eventSchedule: {
     "@type": "Schedule",
     byDay: "https://schema.org/Tuesday",
-    startTime: "18:00",
-    scheduleTimezone: "America/Los_Angeles",
+    startTime: trivia.startTime,
+    endTime: trivia.endTime,
+    startDate: trivia.returnsOn,
+    scheduleTimezone: timezone,
     repeatFrequency: "P1W",
   },
   location: {
@@ -121,6 +130,11 @@ export default function Events() {
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
                   {trivia.title}
                 </h2>
+                <UntilDate until={trivia.returnsOn}>
+                  <p className="mt-4 inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm text-gold">
+                    {trivia.returnsLabel}
+                  </p>
+                </UntilDate>
                 <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-gold">
                   <span className="inline-flex items-center gap-2 font-medium">
                     <Icon.clock className="h-5 w-5" />
@@ -131,6 +145,14 @@ export default function Events() {
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
                   {trivia.intro}
                 </p>
+                <ul className="mt-6 space-y-2">
+                  {trivia.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2.5">
+                      <Icon.check className="mt-1 h-4 w-4 shrink-0 text-gold" />
+                      <span className="text-cream/85">{h}</span>
+                    </li>
+                  ))}
+                </ul>
                 <p className="mt-6 text-xs uppercase tracking-wider text-cream/50">
                   {trivia.note}
                 </p>

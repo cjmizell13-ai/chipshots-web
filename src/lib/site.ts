@@ -342,7 +342,7 @@ export const promoBanners: {
     href: "/league",
   },
   {
-    message: "Trivia Night every Tuesday at 6 PM — free to play, hosted by RobotBrain",
+    message: "Trivia is back — Tuesdays 6:30–8 PM, hosted in house with mini challenges and more ways to win",
     cta: "Grab your team",
     href: "/events",
   },
@@ -713,17 +713,30 @@ export const happyHour = {
 };
 
 // -----------------------------------------------------------------------------
-// Trivia Night — recurring weekly event, hosted by RobotBrain every Tuesday.
-// Prize ladder matches the in-store promo (see /trivia-story marketing asset).
+// Trivia Night — recurring weekly event, hosted in house every Tuesday.
+// Returns Oct 20, 2026 in a new format: 6:30–8 PM, our own host, and mini
+// challenges between rounds. Prize ladder matches the in-store promo (see
+// /trivia-story marketing asset).
 // -----------------------------------------------------------------------------
 export const trivia = {
   eyebrow: "Every Tuesday Night",
   title: "Trivia Night",
-  host: "Hosted by RobotBrain",
+  host: "Hosted in house",
   day: "Tuesday",
-  time: "6 PM",
+  time: "6:30 – 8 PM",
+  // 24h start/end, for the schema.org Event feed.
+  startTime: "18:30",
+  endTime: "20:00",
+  // The "back on" line retires itself the day after, via promoActive().
+  returnsOn: "2026-10-20",
+  returnsLabel: "Back Tuesday, October 20",
   intro:
-    "Grab your team and settle in — free live trivia every Tuesday at 6 PM, hosted by RobotBrain. Full bar, full kitchen and no golf required. No cover, no sign-up: just show up early and grab a table.",
+    "Grab your team and settle in — free live trivia every Tuesday from 6:30 to 8 PM, hosted by our own crew. Mini challenges run between the rounds, so there are more ways to win than the final scoreboard. Full bar, full kitchen and no golf required. No cover, no sign-up: just show up early and grab a table.",
+  highlights: [
+    "Hosted in house — our crew, our questions",
+    "Mini challenges throughout the night",
+    "More ways to win than the final score",
+  ],
   prizes: [
     { place: "1st", label: "Winner", reward: "$50 Gift Card" },
     { place: "2nd", label: "Runner-Up", reward: "$25 Gift Card" },
