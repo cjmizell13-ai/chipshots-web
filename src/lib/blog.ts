@@ -124,9 +124,9 @@ export const posts: Post[] = [
   },
   {
     slug: "trivia-night-henderson-tuesdays",
-    title: "Trivia Night in Henderson: Free to Play, Every Tuesday at 6",
+    title: "Trivia Night in Henderson: Free to Play, Every Tuesday at 6:30",
     excerpt:
-      "Live trivia hosted by RobotBrain, every Tuesday at 6 PM — no cover, no sign-up, gift cards for the top teams, and a full kitchen and bar while you play.",
+      "Live trivia hosted in house, every Tuesday from 6:30 to 8 PM — mini challenges between rounds, no cover, no sign-up, gift cards for the top teams, and a full kitchen and bar while you play.",
     date: "2026-07-11",
     readMinutes: 3,
     category: "Henderson Guide",
@@ -134,15 +134,16 @@ export const posts: Post[] = [
     body: [
       {
         type: "p",
-        text: "Every Tuesday at 6 PM, the dining room at Chip Shots turns into Henderson's most comfortable trivia night. It's live, it's free, and it's hosted by RobotBrain — which means real rounds, good pacing and questions that reward a well-balanced team over a phone under the table. No cover, no sign-up sheet: show up a little early, grab a table and pick a team name you won't regret.",
+        text: "Every Tuesday from 6:30 to 8 PM, the dining room at Chip Shots turns into Henderson's most comfortable trivia night. It's live, it's free, and it's hosted by our own crew — real rounds, good pacing and questions that reward a well-balanced team over a phone under the table. Mini challenges run between the rounds, so a team that misses a round can still walk out with something. No cover, no sign-up sheet: show up a little early, grab a table and pick a team name you won't regret.",
       },
       { type: "h2", text: "How it works" },
       {
         type: "ul",
         items: [
-          "Every Tuesday, 6 PM — arrive early for a good table",
+          "Every Tuesday, 6:30–8 PM — arrive early for a good table",
           "Free to play, no sign-up required",
           "1st place wins a $50 gift card, runner-up takes $25",
+          "Mini challenges between rounds — more ways to win than the final score",
           "Full kitchen and bar running all night",
         ],
       },
@@ -155,7 +156,7 @@ export const posts: Post[] = [
       { type: "h2", text: "Make Tuesday the standing plan" },
       {
         type: "p",
-        text: "Henderson has plenty of places to eat on a Tuesday. Very few of them hand you a live game, a shot at next week's dinner and a room this comfortable to lose gracefully in. We're at 1473 E Lake Mead Pkwy, Suite 110 — doors open at 11 AM, trivia at 6. Bring the smart friend.",
+        text: "Henderson has plenty of places to eat on a Tuesday. Very few of them hand you a live game, a shot at next week's dinner and a room this comfortable to lose gracefully in. We're at 1473 E Lake Mead Pkwy, Suite 110 — doors open at 11 AM, trivia at 6:30. Bring the smart friend.",
       },
       { type: "cta", label: "Plan your visit", href: "/events" },
     ],
