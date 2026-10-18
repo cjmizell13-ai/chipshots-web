@@ -6,6 +6,7 @@ import { Icon } from "@/components/ui/icons";
 import { Amp, AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
 import Marquee from "@/components/home/Marquee";
+import UntilDate from "@/components/ui/UntilDate";
 import {
   business,
   img,
@@ -398,14 +399,23 @@ export default function Home() {
             <h2 className="font-display mt-1.5 text-3xl text-green-deep sm:text-4xl">
               {trivia.title} — {trivia.day}s, {trivia.time}
             </h2>
-            <p className="mt-1.5 max-w-xl text-sm text-green-deep/80">
-              Free to play, no sign-up — grab your team and win a $
-              {trivia.prizes[0].reward.replace(/[^0-9]/g, "")} gift card.{" "}
-              {trivia.note}.
+            <UntilDate until={trivia.returnsOn}>
+              <p className="mt-2 inline-block rounded-full bg-green-deep/10 px-3 py-1 text-sm font-medium text-green-deep">
+                {trivia.returnsLabel}
+              </p>
+            </UntilDate>
+            <p className="mt-2 max-w-xl text-sm text-green-deep/80">
+              Free to play, no sign-up — {trivia.highlights[1].toLowerCase()}, so
+              there are more ways to win than the final score. {trivia.note}.
             </p>
           </div>
-          <ButtonLink href="/events" variant="green" size="lg" withArrow>
-            Grab your team
+          <ButtonLink
+            href="/blog/trivia-night-henderson-tuesdays"
+            variant="green"
+            size="lg"
+            withArrow
+          >
+            How it works
           </ButtonLink>
         </div>
       </section>

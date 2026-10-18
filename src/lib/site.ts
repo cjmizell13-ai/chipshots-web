@@ -342,7 +342,7 @@ export const promoBanners: {
     href: "/league",
   },
   {
-    message: "Trivia is back — Tuesdays 6:30–8 PM, hosted in house with mini challenges and more ways to win",
+    message: "Trivia is back — Tuesdays 6:30–8 PM · hosted in house, mini challenges all night",
     cta: "Grab your team",
     href: "/events",
   },
@@ -713,10 +713,9 @@ export const happyHour = {
 };
 
 // -----------------------------------------------------------------------------
-// Trivia Night — recurring weekly event, hosted in house every Tuesday.
+// Trivia Night — standing weekly night, hosted in house every Tuesday.
 // Returns Oct 20, 2026 in a new format: 6:30–8 PM, our own host, and mini
-// challenges between rounds. Prize ladder matches the in-store promo (see
-// /trivia-story marketing asset).
+// challenges between rounds. Prizes are deliberately not listed on the site.
 // -----------------------------------------------------------------------------
 export const trivia = {
   eyebrow: "Every Tuesday Night",
@@ -736,10 +735,6 @@ export const trivia = {
     "Hosted in house — our crew, our questions",
     "Mini challenges throughout the night",
     "More ways to win than the final score",
-  ],
-  prizes: [
-    { place: "1st", label: "Winner", reward: "$50 Gift Card" },
-    { place: "2nd", label: "Runner-Up", reward: "$25 Gift Card" },
   ],
   note: "Full bar · Kitchen open · No golf required",
 };
