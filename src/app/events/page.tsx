@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
-import UntilDate from "@/components/ui/UntilDate";
-import {
-  business,
-  img,
-  eventTypes,
-  timezone,
-  trivia,
-} from "@/lib/site";
+import { img, eventTypes } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Events & Parties",
@@ -22,49 +14,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/events" },
 };
 
-// Weekly Trivia Night as a recurring schema.org Event — feeds Google's
-// "events near me" / rich results for "trivia night Henderson" searches.
-const triviaJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  name: `Trivia Night at ${business.shortName}`,
-  description: `Free live trivia every ${trivia.day}, ${trivia.time}, hosted in house. Mini challenges between rounds and more ways to win. No cover, no sign-up — full kitchen and bar. 1st place wins a ${trivia.prizes[0].reward}, runner-up a ${trivia.prizes[1].reward}.`,
-  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-  eventStatus: "https://schema.org/EventScheduled",
-  isAccessibleForFree: true,
-  eventSchedule: {
-    "@type": "Schedule",
-    byDay: "https://schema.org/Tuesday",
-    startTime: trivia.startTime,
-    endTime: trivia.endTime,
-    startDate: trivia.returnsOn,
-    scheduleTimezone: timezone,
-    repeatFrequency: "P1W",
-  },
-  location: {
-    "@type": "Place",
-    name: business.name,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: business.address.street,
-      addressLocality: business.address.city,
-      addressRegion: business.address.region,
-      postalCode: business.address.postalCode,
-      addressCountry: "US",
-    },
-  },
-  organizer: { "@type": "Organization", name: business.name, url: business.website },
-  image: `${business.website}/opengraph-image`,
-  url: `${business.website}/events`,
-};
-
 export default function Events() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(triviaJsonLd) }}
-      />
       <PageHero
         eyebrow="Events & Parties"
         title="The easiest yes on the group-chat."
@@ -118,79 +70,6 @@ export default function Events() {
             </ButtonLink>
           </div>
         </Reveal>
-      </section>
-
-      {/* ============================================== TRIVIA NIGHT ===== */}
-      <section className="bg-green-deep text-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <Reveal>
-              <div>
-                <p className="eyebrow text-gold-soft">{trivia.eyebrow}</p>
-                <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  {trivia.title}
-                </h2>
-                <UntilDate until={trivia.returnsOn}>
-                  <p className="mt-4 inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm text-gold">
-                    {trivia.returnsLabel}
-                  </p>
-                </UntilDate>
-                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-gold">
-                  <span className="inline-flex items-center gap-2 font-medium">
-                    <Icon.clock className="h-5 w-5" />
-                    {trivia.day} · {trivia.time}
-                  </span>
-                  <span className="text-cream/50">{trivia.host}</span>
-                </div>
-                <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-                  {trivia.intro}
-                </p>
-                <ul className="mt-6 space-y-2">
-                  {trivia.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2.5">
-                      <Icon.check className="mt-1 h-4 w-4 shrink-0 text-gold" />
-                      <span className="text-cream/85">{h}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 text-xs uppercase tracking-wider text-cream/50">
-                  {trivia.note}
-                </p>
-                <p className="mt-5 text-sm text-cream/60">
-                  First time?{" "}
-                  <Link
-                    href="/blog/trivia-night-henderson-tuesdays"
-                    className="link-underline pb-0.5 text-gold hover:text-gold-soft"
-                  >
-                    Here&rsquo;s how trivia night works
-                  </Link>
-                  .
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="rounded-3xl border border-gold/25 bg-green-deep/60 p-8 shadow-[var(--shadow-soft)] sm:p-10">
-                <p className="eyebrow text-center text-cream/60">— The Prizes —</p>
-                <Stagger className="mt-7 grid gap-4">
-                  {trivia.prizes.map((p) => (
-                    <StaggerItem
-                      key={p.place}
-                      className="flex items-baseline gap-4"
-                    >
-                      <span className="font-display w-16 shrink-0 text-2xl text-gold">
-                        {p.place}
-                      </span>
-                      <span className="font-medium text-cream">{p.label}</span>
-                      <span className="mx-3 flex-1 border-b border-dotted border-gold/40" />
-                      <span className="shrink-0 text-cream/90">{p.reward}</span>
-                    </StaggerItem>
-                  ))}
-                </Stagger>
-              </div>
-            </Reveal>
-          </div>
-        </div>
       </section>
 
       {/* ============================================== FORM ===== */}

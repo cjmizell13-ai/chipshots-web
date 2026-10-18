@@ -126,7 +126,7 @@ export const posts: Post[] = [
     slug: "trivia-night-henderson-tuesdays",
     title: "Trivia Night in Henderson: Free to Play, Every Tuesday at 6:30",
     excerpt:
-      "Live trivia hosted in house, every Tuesday from 6:30 to 8 PM — mini challenges between rounds, no cover, no sign-up, gift cards for the top teams, and a full kitchen and bar while you play.",
+      "Live trivia hosted in house, every Tuesday from 6:30 to 8 PM — mini challenges between rounds, no cover, no sign-up, and a full kitchen and bar while you play.",
     date: "2026-07-11",
     readMinutes: 3,
     category: "Henderson Guide",
@@ -142,7 +142,6 @@ export const posts: Post[] = [
         items: [
           "Every Tuesday, 6:30–8 PM — arrive early for a good table",
           "Free to play, no sign-up required",
-          "1st place wins a $50 gift card, runner-up takes $25",
           "Mini challenges between rounds — more ways to win than the final score",
           "Full kitchen and bar running all night",
         ],
