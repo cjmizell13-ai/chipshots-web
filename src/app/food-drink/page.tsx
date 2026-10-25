@@ -96,27 +96,33 @@ export default function FoodDrink() {
               </h2>
             </div>
             <span className="hidden text-sm text-muted sm:block">
-              Plus prime rib brunch the first Sunday of every month
+              Plus prime rib brunch the first Sunday of every month, 10 AM–1 PM
             </span>
           </div>
         </Reveal>
 
-        <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {dailySpecials.map((s) => (
-            <StaggerItem
-              key={s.day}
-              as="article"
-              className="rounded-3xl border border-gold/30 bg-white p-7 shadow-[var(--shadow-card)]"
-            >
-              <p className="eyebrow text-gold">{s.day}</p>
-              <h3 className="font-display mt-2 text-2xl text-green-deep">
-                <AmpText className="text-gold">{s.title}</AmpText>
-              </h3>
-              <div className="mt-3">
-                <SimpleList items={s.items} />
-              </div>
-            </StaggerItem>
-          ))}
+        <Stagger className="mt-12 space-y-4">
+          {dailySpecials.map((s) => {
+            const SpecialIcon = Icon[s.icon];
+            return (
+              <StaggerItem
+                key={s.day}
+                className="flex flex-col items-center gap-4 rounded-3xl border border-gold/35 bg-cream-2 px-8 py-6 text-center sm:flex-row sm:gap-7 sm:text-left"
+              >
+                <SpecialIcon className="h-7 w-7 shrink-0 text-gold" />
+                <div className="flex-1">
+                  <p className="font-display text-2xl font-light text-green-deep">
+                    {s.headline}
+                  </p>
+                  <p className="mt-1 text-muted">{s.detail}</p>
+                </div>
+                <span className="hidden h-12 w-px bg-line sm:block" />
+                <p className="text-sm uppercase tracking-wider text-gold sm:w-48">
+                  {s.day}
+                </p>
+              </StaggerItem>
+            );
+          })}
         </Stagger>
       </section>
 

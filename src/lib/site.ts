@@ -532,61 +532,54 @@ export const football = {
   note: "All ages welcome",
 };
 
-// Daily specials, shown above the menu on /food-drink. Sunday brunch runs
-// the first Sunday of each month only.
-export type DailySpecial = { day: string; title: string; items: MenuItem[] };
+// Daily specials, shown above the menu on /food-drink as banners styled like
+// the football one. Sunday brunch runs the first Sunday of each month only.
+export type DailySpecial = {
+  day: string;
+  headline: string;
+  detail: string;
+  icon: "burger" | "glass" | "star" | "clock";
+};
 export const dailySpecials: DailySpecial[] = [
   {
     day: "Monday",
-    title: "Prime Rib Dip",
-    items: [{ name: "Prime Rib Dip Sandwich + Side", price: "$18" }],
+    headline: "Prime Rib Dip",
+    detail: "Prime rib dip sandwich + side · $18",
+    icon: "burger",
   },
   {
     day: "Tuesday",
-    title: "Taco Tuesday",
-    items: [
-      {
-        name: "Tacos",
-        price: "$4 each",
-        desc: "Steak, chicken, shrimp or fish (grilled or fried)",
-      },
-      { name: "Margaritas", price: "$6" },
-    ],
+    headline: "Taco Tuesday",
+    detail:
+      "$4 tacos — steak, chicken, shrimp or fish (grilled or fried) · $6 margaritas",
+    icon: "star",
   },
   {
     day: "Wednesday",
-    title: "Wing Wednesday",
-    items: [
-      {
-        name: "Buy One, Get One 50% Off",
-        price: "BOGO 50%",
-        desc: "6- or 12-piece, bone-in or boneless",
-      },
-    ],
+    headline: "Wing Wednesday",
+    detail:
+      "Buy one, get one 50% off · 6- or 12-piece, bone-in or boneless",
+    icon: "star",
   },
   {
     day: "Thursday",
-    title: "Burger Thursday",
-    items: [{ name: "All Burgers", price: "$3 off" }],
+    headline: "Burger Thursday",
+    detail: "$3 off all burgers",
+    icon: "burger",
   },
   {
     day: "Friday",
-    title: "Fish Friday",
-    items: [
-      { name: "Fish & Chips", price: "$16" },
-      { name: "Clam Chowder", price: "$7" },
-      { name: "Fish & Chips + Clam Chowder Combo", price: "$21" },
-    ],
+    headline: "Fish Friday",
+    detail:
+      "Fish & chips $16 · Clam chowder $7 · Fish & chips + chowder combo $21",
+    icon: "star",
   },
   {
-    day: "1st Sunday monthly",
-    title: "Prime Rib Brunch",
-    items: [
-      { name: "Adults", price: "$35" },
-      { name: "Children 6–12", price: "$17" },
-      { name: "Kids 5 & under", price: "Free" },
-      { name: "Bottomless Mimosas & Bloody Marys", price: "$15" },
-    ],
+    day: "1st Sunday · 10 AM–1 PM",
+    headline: "Prime Rib Brunch",
+    detail:
+      "Adults $35 · Kids 6–12 $17 · 5 & under free · Bottomless mimosas & Bloody Marys $15",
+    icon: "glass",
   },
 ];
 
