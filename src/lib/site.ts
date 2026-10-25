@@ -532,6 +532,27 @@ export const football = {
   note: "All ages welcome",
 };
 
+// Upcoming events calendar at the top of /events. `date` is YYYY-MM-DD;
+// each row hides itself the day after via <UntilDate>, so past events drop
+// off without a redeploy. Add new months to the end of the list.
+export type ScheduledEvent = { date: string; title: string; time: string };
+export const upcomingEvents: ScheduledEvent[] = [
+  { date: "2026-10-30", title: "Nevada Day — BOGO 50% Off Bays", time: "All day" },
+  { date: "2026-10-31", title: "Halloween Bingo", time: "3–5 PM" },
+  { date: "2026-11-01", title: "Sunday Prime Rib Brunch", time: "10 AM–1 PM" },
+  { date: "2026-11-03", title: "Trivia Tuesday", time: "6–8 PM" },
+  { date: "2026-11-04", title: "Fall Cocktail Class", time: "6–7:30 PM" },
+  { date: "2026-11-05", title: "Sip & Swing Social", time: "6–8 PM" },
+  { date: "2026-11-10", title: "Trivia Tuesday", time: "6:30–8 PM" },
+  { date: "2026-11-11", title: "Veterans Day Meals", time: "11 AM–4 PM" },
+  { date: "2026-11-13", title: "Wine Tasting", time: "6–8 PM" },
+  { date: "2026-11-17", title: "Trivia Tuesday", time: "6:30–8 PM" },
+  { date: "2026-11-19", title: "Music Bingo", time: "6:30–8 PM" },
+  { date: "2026-11-24", title: "Trivia Tuesday", time: "6:30–8 PM" },
+  { date: "2026-11-26", title: "Thanksgiving Buffet", time: "10 AM–4 PM" },
+  { date: "2026-11-28", title: "Holiday Market", time: "10 AM–2 PM" },
+];
+
 // Daily specials, shown above the menu on /food-drink as banners styled like
 // the football one. Sunday brunch runs the first Sunday of each month only.
 export type DailySpecial = {
