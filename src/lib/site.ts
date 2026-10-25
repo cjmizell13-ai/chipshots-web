@@ -541,6 +541,8 @@ export type ScheduledEvent = {
   title: string;
   time: string;
   desc: string;
+  /** Optional registration link, shown as a button on the card. */
+  signup?: string;
 };
 export const upcomingEventsIntro =
   "From trivia nights and music bingo to cocktail classes, holiday celebrations and special dining experiences, there\u2019s always something happening at Chip Shots!";
@@ -574,12 +576,14 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Fall Cocktail Making Class",
     time: "6:00–7:30 PM",
     desc: "Shake, sip and celebrate fall! Learn to make three delicious fall-inspired mini cocktails during this hands-on experience. $35 per person, ages 21+. Advance registration required.",
+    signup: "https://pci.jotform.com/form/262976326726065",
   },
   {
     date: "2026-11-05",
     title: "Sip & Swing Ladies Night",
     time: "6:00–8:00 PM",
     desc: "Ladies, grab your girlfriends and join us for a fun evening of sipping, swinging and socializing! Enjoy great drinks, good company and a little indoor golf in a relaxed, welcoming atmosphere. No golf experience necessary — just come ready to have fun!",
+    signup: "https://pci.jotform.com/form/262977354628169",
   },
   {
     date: "2026-11-10",
