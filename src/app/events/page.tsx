@@ -6,7 +6,13 @@ import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
 import UntilDate from "@/components/ui/UntilDate";
-import { img, eventTypes, upcomingEvents } from "@/lib/site";
+import {
+  img,
+  eventTypes,
+  upcomingEvents,
+  upcomingEventsIntro,
+  type ScheduledEvent,
+} from "@/lib/site";
 
 // Dates are plain YYYY-MM-DD; parse at noon UTC so the month/day/weekday
 // never shift across a timezone boundary.
@@ -17,8 +23,21 @@ function dateParts(ymd: string) {
   return {
     month: fmt({ month: "short" }),
     day: fmt({ day: "numeric" }),
-    weekday: fmt({ weekday: "short" }),
+    weekday: fmt({ weekday: "long" }),
+    monthYear: fmt({ month: "long", year: "numeric" }),
   };
+}
+
+// Groups the (date-sorted) events under month headings like "October 2026".
+function byMonth(events: ScheduledEvent[]) {
+  const groups: { label: string; events: ScheduledEvent[] }[] = [];
+  for (const e of events) {
+    const label = dateParts(e.date).monthYear;
+    const last = groups[groups.length - 1];
+    if (last?.label === label) last.events.push(e);
+    else groups.push({ label, events: [e] });
+  }
+  return groups;
 }
 
 export const metadata: Metadata = {
@@ -42,39 +61,55 @@ export default function Events() {
       <section className="mx-auto max-w-7xl px-5 pt-20 sm:px-8 sm:pt-28">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="eyebrow text-gold">On the calendar</p>
+            <p className="eyebrow text-gold">Upcoming events at Chip Shots</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Upcoming events
+              More than just golf!
             </h2>
+            <p className="mt-4 leading-relaxed text-muted">
+              {upcomingEventsIntro}
+            </p>
           </div>
         </Reveal>
-        <ul className="mt-12 grid gap-4 md:grid-cols-2">
-          {upcomingEvents.map((e) => {
-            const { month, day, weekday } = dateParts(e.date);
-            return (
-              <UntilDate key={e.date + e.title} until={e.date}>
-                <li className="flex items-center gap-5 rounded-3xl border border-gold/35 bg-cream-2 px-6 py-5">
-                  <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-2xl bg-green-deep text-cream">
-                    <span className="text-[0.65rem] uppercase tracking-widest text-gold">
-                      {month}
-                    </span>
-                    <span className="font-display text-2xl leading-none">
-                      {day}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-display text-xl text-green-deep">
-                      {e.title}
-                    </p>
-                    <p className="mt-0.5 text-sm text-muted">
-                      {weekday} · {e.time}
-                    </p>
-                  </div>
-                </li>
-              </UntilDate>
-            );
-          })}
-        </ul>
+        {byMonth(upcomingEvents).map((group) => (
+          <UntilDate
+            key={group.label}
+            until={group.events[group.events.length - 1].date}
+          >
+            <div className="mt-12">
+              <h3 className="eyebrow text-gold">{group.label}</h3>
+              <ul className="mt-5 grid gap-4 md:grid-cols-2">
+                {group.events.map((e) => {
+                  const { month, day, weekday } = dateParts(e.date);
+                  return (
+                    <UntilDate key={e.date + e.title} until={e.date}>
+                      <li className="flex gap-5 rounded-3xl border border-gold/35 bg-cream-2 p-6">
+                        <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-2xl bg-green-deep text-cream">
+                          <span className="text-[0.65rem] uppercase tracking-widest text-gold">
+                            {month}
+                          </span>
+                          <span className="font-display text-2xl leading-none">
+                            {day}
+                          </span>
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-display text-xl text-green-deep">
+                            {e.title}
+                          </p>
+                          <p className="mt-0.5 text-sm font-medium text-gold">
+                            {weekday} · {e.time}
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-muted">
+                            {e.desc}
+                          </p>
+                        </div>
+                      </li>
+                    </UntilDate>
+                  );
+                })}
+              </ul>
+            </div>
+          </UntilDate>
+        ))}
       </section>
 
       {/* ============================================== EVENT TYPES ===== */}

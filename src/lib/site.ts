@@ -532,25 +532,103 @@ export const football = {
   note: "All ages welcome",
 };
 
-// Upcoming events calendar at the top of /events. `date` is YYYY-MM-DD;
-// each row hides itself the day after via <UntilDate>, so past events drop
-// off without a redeploy. Add new months to the end of the list.
-export type ScheduledEvent = { date: string; title: string; time: string };
+// Upcoming events calendar at the top of /events, grouped by month on the
+// page. `date` is YYYY-MM-DD; each event (and each month heading, once all its
+// events are done) hides itself the day after via <UntilDate>, so past events
+// drop off without a redeploy. Add new months to the end of the list.
+export type ScheduledEvent = {
+  date: string;
+  title: string;
+  time: string;
+  desc: string;
+};
+export const upcomingEventsIntro =
+  "From trivia nights and music bingo to cocktail classes, holiday celebrations and special dining experiences, there\u2019s always something happening at Chip Shots!";
 export const upcomingEvents: ScheduledEvent[] = [
-  { date: "2026-10-30", title: "Nevada Day — BOGO 50% Off Bays", time: "All day" },
-  { date: "2026-10-31", title: "Halloween Bingo", time: "3–5 PM" },
-  { date: "2026-11-01", title: "Sunday Prime Rib Brunch", time: "10 AM–1 PM" },
-  { date: "2026-11-03", title: "Trivia Tuesday", time: "6–8 PM" },
-  { date: "2026-11-04", title: "Fall Cocktail Class", time: "6–7:30 PM" },
-  { date: "2026-11-05", title: "Sip & Swing Social", time: "6–8 PM" },
-  { date: "2026-11-10", title: "Trivia Tuesday", time: "6:30–8 PM" },
-  { date: "2026-11-11", title: "Veterans Day Meals", time: "11 AM–4 PM" },
-  { date: "2026-11-13", title: "Wine Tasting", time: "6–8 PM" },
-  { date: "2026-11-17", title: "Trivia Tuesday", time: "6:30–8 PM" },
-  { date: "2026-11-19", title: "Music Bingo", time: "6:30–8 PM" },
-  { date: "2026-11-24", title: "Trivia Tuesday", time: "6:30–8 PM" },
-  { date: "2026-11-26", title: "Thanksgiving Buffet", time: "10 AM–4 PM" },
-  { date: "2026-11-28", title: "Holiday Market", time: "10 AM–2 PM" },
+  {
+    date: "2026-10-30",
+    title: "Nevada Day – BOGO 50% Off Bays",
+    time: "All day",
+    desc: "Celebrate Nevada Day with indoor golf and fun for the whole family! Book one hour in a TrackMan bay and get your second hour 50% off. Available all day!",
+  },
+  {
+    date: "2026-10-31",
+    title: "Halloween Bingo",
+    time: "3:00–5:00 PM",
+    desc: "Get into the Halloween spirit with an afternoon of bingo, prizes and festive fun! Bring your friends and family, grab some food and drinks, and join the fun. All ages welcome!",
+  },
+  {
+    date: "2026-11-01",
+    title: "Sunday Prime Rib Brunch",
+    time: "10:00 AM–1:00 PM",
+    desc: "Join us for our monthly Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots.",
+  },
+  {
+    date: "2026-11-03",
+    title: "Trivia Tuesday",
+    time: "6:30–8:00 PM",
+    desc: "Gather your team and put your knowledge to the test! Enjoy a fun evening of trivia, mini challenges, prizes, and great food and drinks. All skill levels welcome!",
+  },
+  {
+    date: "2026-11-04",
+    title: "Fall Cocktail Making Class",
+    time: "6:00–7:30 PM",
+    desc: "Shake, sip and celebrate fall! Learn to make three delicious fall-inspired mini cocktails during this hands-on experience. $35 per person, ages 21+. Advance registration required.",
+  },
+  {
+    date: "2026-11-05",
+    title: "Sip & Swing Ladies Night",
+    time: "6:00–8:00 PM",
+    desc: "Ladies, grab your girlfriends and join us for a fun evening of sipping, swinging and socializing! Enjoy great drinks, good company and a little indoor golf in a relaxed, welcoming atmosphere. No golf experience necessary — just come ready to have fun!",
+  },
+  {
+    date: "2026-11-10",
+    title: "Trivia Tuesday",
+    time: "6:30–8:00 PM",
+    desc: "Think you\u2019ve got what it takes? Round up your friends for an entertaining evening of trivia, friendly competition, mini challenges and chances to win!",
+  },
+  {
+    date: "2026-11-11",
+    title: "Veterans Day Meals",
+    time: "11:00 AM–4:00 PM",
+    desc: "Join us as we honor those who have served! We\u2019re celebrating Veterans Day with special meal offerings and an opportunity to show appreciation for our military community.",
+  },
+  {
+    date: "2026-11-13",
+    title: "Wine Tasting Night",
+    time: "6:00–8:00 PM",
+    desc: "Unwind with an evening of wine tasting, conversation and good company! Explore a selection of wines in a relaxed, welcoming atmosphere. Perfect for date night or an evening with friends. Ages 21+.",
+  },
+  {
+    date: "2026-11-17",
+    title: "Trivia Tuesday",
+    time: "6:30–8:00 PM",
+    desc: "Make Tuesday your trivia night! Bring your team, enjoy delicious food and drinks, and compete in fun rounds of trivia with prizes and surprises along the way.",
+  },
+  {
+    date: "2026-11-19",
+    title: "Music Bingo",
+    time: "6:30–8:00 PM",
+    desc: "It\u2019s bingo with a musical twist! Listen to familiar songs, mark your card and compete for prizes. No music expertise required — just come ready for a fun night out!",
+  },
+  {
+    date: "2026-11-24",
+    title: "Trivia Tuesday",
+    time: "6:30–8:00 PM",
+    desc: "Kick off Thanksgiving week with trivia, laughter and a little friendly competition! Grab your friends, enjoy dinner and drinks, and see if your team can take home a win.",
+  },
+  {
+    date: "2026-11-26",
+    title: "Thanksgiving Buffet",
+    time: "10:00 AM–4:00 PM",
+    desc: "Spend Thanksgiving with us and leave the cooking to Chip Shots! Enjoy a holiday buffet with family and friends in a welcoming, relaxed atmosphere. More menu details coming soon!",
+  },
+  {
+    date: "2026-11-28",
+    title: "Small Business Saturday Holiday Market",
+    time: "10:00 AM–2:00 PM",
+    desc: "Shop small and celebrate the season! Browse unique gifts and handmade items from local vendors while enjoying food, drinks and holiday cheer at Chip Shots.",
+  },
 ];
 
 // Daily specials, shown above the menu on /food-drink as banners styled like
