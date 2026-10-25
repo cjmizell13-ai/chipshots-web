@@ -52,8 +52,11 @@ export default function Events() {
     <>
       <PageHero
         eyebrow="Events & Parties"
-        title="The easiest yes on the group-chat."
-        intro="Private bays, food from the kitchen and a full bar — under one roof and out of the heat. Tell us what you're celebrating and we'll handle the rest."
+        title="Good Times. Great Company. Unforgettable Gatherings."
+        intro={[
+          "From private celebrations and corporate outings to trivia nights, cocktail classes and community events, there\u2019s always a reason to get together at Chip Shots.",
+          "Enjoy great food, a full bar, indoor golf and a spacious patio — all in one place.",
+        ]}
         image={img.bayRoomWide}
       />
 
