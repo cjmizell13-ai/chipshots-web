@@ -69,7 +69,7 @@ export default function Home() {
           <div className="veil-green absolute inset-0" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-36 sm:px-8 sm:pb-28">
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-44 sm:px-8 sm:pb-28">
           <Reveal>
             <p className="eyebrow text-gold-soft">
               Veteran-Owned · Henderson, NV · {business.status}
