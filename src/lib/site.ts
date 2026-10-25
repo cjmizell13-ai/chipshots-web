@@ -532,6 +532,64 @@ export const football = {
   note: "All ages welcome",
 };
 
+// Daily specials, shown above the menu on /food-drink. Sunday brunch runs
+// the first Sunday of each month only.
+export type DailySpecial = { day: string; title: string; items: MenuItem[] };
+export const dailySpecials: DailySpecial[] = [
+  {
+    day: "Monday",
+    title: "Prime Rib Dip",
+    items: [{ name: "Prime Rib Dip Sandwich + Side", price: "$18" }],
+  },
+  {
+    day: "Tuesday",
+    title: "Taco Tuesday",
+    items: [
+      {
+        name: "Tacos",
+        price: "$4 each",
+        desc: "Steak, chicken, shrimp or fish (grilled or fried)",
+      },
+      { name: "Margaritas", price: "$6" },
+    ],
+  },
+  {
+    day: "Wednesday",
+    title: "Wing Wednesday",
+    items: [
+      {
+        name: "Buy One, Get One 50% Off",
+        price: "BOGO 50%",
+        desc: "6- or 12-piece, bone-in or boneless",
+      },
+    ],
+  },
+  {
+    day: "Thursday",
+    title: "Burger Thursday",
+    items: [{ name: "All Burgers", price: "$3 off" }],
+  },
+  {
+    day: "Friday",
+    title: "Fish Friday",
+    items: [
+      { name: "Fish & Chips", price: "$16" },
+      { name: "Clam Chowder", price: "$7" },
+      { name: "Fish & Chips + Clam Chowder Combo", price: "$21" },
+    ],
+  },
+  {
+    day: "1st Sunday monthly",
+    title: "Prime Rib Brunch",
+    items: [
+      { name: "Adults", price: "$35" },
+      { name: "Children 6–12", price: "$17" },
+      { name: "Kids 5 & under", price: "Free" },
+      { name: "Bottomless Mimosas & Bloody Marys", price: "$15" },
+    ],
+  },
+];
+
 // Health-department consumer advisory (the * items on the printed menu).
 export const foodAdvisory =
   "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.";

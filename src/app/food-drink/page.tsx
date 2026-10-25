@@ -10,6 +10,7 @@ import BookButton from "@/components/BookButton";
 import {
   img,
   football,
+  dailySpecials,
   foodMenu,
   foodMore,
   foodAdvisory,
@@ -82,6 +83,41 @@ export default function FoodDrink() {
             </p>
           </div>
         </Reveal>
+      </section>
+
+      {/* ============================================== DAILY SPECIALS ===== */}
+      <section className="mx-auto max-w-7xl px-5 pt-20 sm:px-8 sm:pt-28">
+        <Reveal>
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow text-gold">Every day&apos;s a deal</p>
+              <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
+                Daily specials
+              </h2>
+            </div>
+            <span className="hidden text-sm text-muted sm:block">
+              Plus prime rib brunch the first Sunday of every month
+            </span>
+          </div>
+        </Reveal>
+
+        <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {dailySpecials.map((s) => (
+            <StaggerItem
+              key={s.day}
+              as="article"
+              className="rounded-3xl border border-gold/30 bg-white p-7 shadow-[var(--shadow-card)]"
+            >
+              <p className="eyebrow text-gold">{s.day}</p>
+              <h3 className="font-display mt-2 text-2xl text-green-deep">
+                <AmpText className="text-gold">{s.title}</AmpText>
+              </h3>
+              <div className="mt-3">
+                <SimpleList items={s.items} />
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </section>
 
       {/* ============================================== FOOD MENU ===== */}
