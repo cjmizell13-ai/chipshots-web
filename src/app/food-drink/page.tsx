@@ -10,6 +10,7 @@ import BookButton from "@/components/BookButton";
 import {
   img,
   football,
+  dailySpecials,
   foodMenu,
   foodMore,
   foodAdvisory,
@@ -82,6 +83,47 @@ export default function FoodDrink() {
             </p>
           </div>
         </Reveal>
+      </section>
+
+      {/* ============================================== DAILY SPECIALS ===== */}
+      <section className="mx-auto max-w-7xl px-5 pt-20 sm:px-8 sm:pt-28">
+        <Reveal>
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow text-gold">Every day&apos;s a deal</p>
+              <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
+                Daily specials
+              </h2>
+            </div>
+            <span className="hidden text-sm text-muted sm:block">
+              Plus prime rib brunch the first Sunday of every month, 10 AM–1 PM
+            </span>
+          </div>
+        </Reveal>
+
+        <Stagger className="mt-12 space-y-4">
+          {dailySpecials.map((s) => {
+            const SpecialIcon = Icon[s.icon];
+            return (
+              <StaggerItem
+                key={s.day}
+                className="flex flex-col items-center gap-4 rounded-3xl border border-gold/35 bg-cream-2 px-8 py-6 text-center sm:flex-row sm:gap-7 sm:text-left"
+              >
+                <SpecialIcon className="h-7 w-7 shrink-0 text-gold" />
+                <div className="flex-1">
+                  <p className="font-display text-2xl font-light text-green-deep">
+                    {s.headline}
+                  </p>
+                  <p className="mt-1 text-muted">{s.detail}</p>
+                </div>
+                <span className="hidden h-12 w-px bg-line sm:block" />
+                <p className="text-sm uppercase tracking-wider text-gold sm:w-48">
+                  {s.day}
+                </p>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
       </section>
 
       {/* ============================================== FOOD MENU ===== */}

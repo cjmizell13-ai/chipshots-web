@@ -532,6 +532,57 @@ export const football = {
   note: "All ages welcome",
 };
 
+// Daily specials, shown above the menu on /food-drink as banners styled like
+// the football one. Sunday brunch runs the first Sunday of each month only.
+export type DailySpecial = {
+  day: string;
+  headline: string;
+  detail: string;
+  icon: "burger" | "glass" | "star" | "clock";
+};
+export const dailySpecials: DailySpecial[] = [
+  {
+    day: "Monday",
+    headline: "Prime Rib Dip",
+    detail: "Prime rib dip sandwich + side · $18",
+    icon: "burger",
+  },
+  {
+    day: "Tuesday",
+    headline: "Taco Tuesday",
+    detail:
+      "$4 tacos — steak, chicken, shrimp or fish (grilled or fried) · $6 margaritas",
+    icon: "star",
+  },
+  {
+    day: "Wednesday",
+    headline: "Wing Wednesday",
+    detail:
+      "Buy one, get one 50% off · 6- or 12-piece, bone-in or boneless",
+    icon: "star",
+  },
+  {
+    day: "Thursday",
+    headline: "Burger Thursday",
+    detail: "$3 off all burgers",
+    icon: "burger",
+  },
+  {
+    day: "Friday",
+    headline: "Fish Friday",
+    detail:
+      "Fish & chips $16 · Clam chowder $7 · Fish & chips + chowder combo $21",
+    icon: "star",
+  },
+  {
+    day: "1st Sunday · 10 AM–1 PM",
+    headline: "Prime Rib Brunch",
+    detail:
+      "Adults $35 · Kids 6–12 $17 · 5 & under free · Bottomless mimosas & Bloody Marys $15",
+    icon: "glass",
+  },
+];
+
 // Health-department consumer advisory (the * items on the printed menu).
 export const foodAdvisory =
   "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.";
