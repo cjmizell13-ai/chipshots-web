@@ -113,7 +113,7 @@ export default function Events() {
                                 size="md"
                                 withArrow
                               >
-                                Sign up
+                                {e.signupLabel ?? "Sign up"}
                               </ButtonLink>
                             </div>
                           )}

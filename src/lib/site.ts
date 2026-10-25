@@ -543,7 +543,10 @@ export type ScheduledEvent = {
   desc: string;
   /** Optional registration link, shown as a button on the card. */
   signup?: string;
+  /** Button text for `signup`; defaults to "Sign up". */
+  signupLabel?: string;
 };
+const triviaRsvp = "https://form.jotform.com/262977444520059";
 export const upcomingEventsIntro =
   "From trivia nights and music bingo to cocktail classes, holiday celebrations and special dining experiences, there\u2019s always something happening at Chip Shots!";
 export const upcomingEvents: ScheduledEvent[] = [
@@ -570,6 +573,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
     desc: "Gather your team and put your knowledge to the test! Enjoy a fun evening of trivia, mini challenges, prizes, and great food and drinks. All skill levels welcome!",
+    signup: triviaRsvp,
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-04",
@@ -590,6 +595,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
     desc: "Think you\u2019ve got what it takes? Round up your friends for an entertaining evening of trivia, friendly competition, mini challenges and chances to win!",
+    signup: triviaRsvp,
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-11",
@@ -608,6 +615,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
     desc: "Make Tuesday your trivia night! Bring your team, enjoy delicious food and drinks, and compete in fun rounds of trivia with prizes and surprises along the way.",
+    signup: triviaRsvp,
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-19",
@@ -620,6 +629,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
     desc: "Kick off Thanksgiving week with trivia, laughter and a little friendly competition! Grab your friends, enjoy dinner and drinks, and see if your team can take home a win.",
+    signup: triviaRsvp,
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-26",
