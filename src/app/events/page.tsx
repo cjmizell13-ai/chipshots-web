@@ -5,7 +5,21 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import EventForm from "@/components/forms/EventForm";
-import { img, eventTypes } from "@/lib/site";
+import UntilDate from "@/components/ui/UntilDate";
+import { img, eventTypes, upcomingEvents } from "@/lib/site";
+
+// Dates are plain YYYY-MM-DD; parse at noon UTC so the month/day/weekday
+// never shift across a timezone boundary.
+function dateParts(ymd: string) {
+  const d = new Date(`${ymd}T12:00:00Z`);
+  const fmt = (o: Intl.DateTimeFormatOptions) =>
+    new Intl.DateTimeFormat("en-US", { ...o, timeZone: "UTC" }).format(d);
+  return {
+    month: fmt({ month: "short" }),
+    day: fmt({ day: "numeric" }),
+    weekday: fmt({ weekday: "short" }),
+  };
+}
 
 export const metadata: Metadata = {
   title: "Events & Parties",
@@ -23,6 +37,45 @@ export default function Events() {
         intro="Private bays, food from the kitchen and a full bar — under one roof and out of the heat. Tell us what you're celebrating and we'll handle the rest."
         image={img.bayRoomWide}
       />
+
+      {/* ============================================== UPCOMING ===== */}
+      <section className="mx-auto max-w-7xl px-5 pt-20 sm:px-8 sm:pt-28">
+        <Reveal>
+          <div className="max-w-2xl">
+            <p className="eyebrow text-gold">On the calendar</p>
+            <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
+              Upcoming events
+            </h2>
+          </div>
+        </Reveal>
+        <ul className="mt-12 grid gap-4 md:grid-cols-2">
+          {upcomingEvents.map((e) => {
+            const { month, day, weekday } = dateParts(e.date);
+            return (
+              <UntilDate key={e.date + e.title} until={e.date}>
+                <li className="flex items-center gap-5 rounded-3xl border border-gold/35 bg-cream-2 px-6 py-5">
+                  <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-2xl bg-green-deep text-cream">
+                    <span className="text-[0.65rem] uppercase tracking-widest text-gold">
+                      {month}
+                    </span>
+                    <span className="font-display text-2xl leading-none">
+                      {day}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-display text-xl text-green-deep">
+                      {e.title}
+                    </p>
+                    <p className="mt-0.5 text-sm text-muted">
+                      {weekday} · {e.time}
+                    </p>
+                  </div>
+                </li>
+              </UntilDate>
+            );
+          })}
+        </ul>
+      </section>
 
       {/* ============================================== EVENT TYPES ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
