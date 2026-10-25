@@ -567,6 +567,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Sunday Prime Rib Brunch",
     time: "10:00 AM–1:00 PM",
     desc: "Join us for our monthly Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots.",
+    signup: "https://form.jotform.com/262977660757071",
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-03",
