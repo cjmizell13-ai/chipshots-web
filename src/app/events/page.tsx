@@ -104,6 +104,19 @@ export default function Events() {
                           <p className="mt-2 text-sm leading-relaxed text-muted">
                             {e.desc}
                           </p>
+                          {e.signup && (
+                            <div className="mt-4">
+                              <ButtonLink
+                                href={e.signup}
+                                external
+                                variant="green"
+                                size="md"
+                                withArrow
+                              >
+                                Sign up
+                              </ButtonLink>
+                            </div>
+                          )}
                         </div>
                       </li>
                     </UntilDate>
