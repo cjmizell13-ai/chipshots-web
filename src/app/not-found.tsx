@@ -5,7 +5,7 @@ import { business } from "@/lib/site";
 export default function NotFound() {
   return (
     <section className="bg-green-deep text-cream">
-      <div className="mx-auto flex min-h-[70svh] max-w-3xl flex-col items-center justify-center px-5 pb-24 pt-44 text-center sm:px-8">
+      <div className="mx-auto flex min-h-[70svh] max-w-3xl flex-col items-center justify-center px-5 pb-24 pt-52 text-center sm:px-8">
         <p className="eyebrow text-gold-soft">Out of bounds</p>
         <h1 className="font-display mt-4 text-5xl font-light sm:text-6xl">
           That one sailed the green.

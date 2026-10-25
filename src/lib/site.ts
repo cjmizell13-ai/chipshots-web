@@ -65,25 +65,12 @@ export const business = {
 export const orderOnlineLive = false;
 
 // VIP Crew capture routes straight into Toast Marketing — no manual CSV step.
-// Email: Toast's hosted, branded signup page adds subscribers to the
-// "Chip Shots Group" email list. SMS: TCPA opt-ins must be collected by Toast
-// itself, so guests join by texting the keyword to the toll-free number
-// (mobile = click-to-text link, desktop = scan the QR at the qr path below).
-// Email signup URL lives in Toast Web: Marketing → Email marketing →
-// Subscribers → Settings → "Email Marketing Signup link". SMS number/keyword
-// live under Marketing → SMS marketing.
+// Toast's hosted, branded signup page adds subscribers to the
+// "Chip Shots Group" email list. The URL lives in Toast Web: Marketing →
+// Email marketing → Subscribers → Settings → "Email Marketing Signup link".
 export const toastSignup = {
   emailUrl:
     "https://www.toasttab.com/chip-shots-1473-east-lake-mead-parkway-suite-110/marketing-signup",
-  sms: {
-    number: "+18335011238",
-    display: "1-833-501-1238",
-    keyword: "JOIN",
-    // Prefilled click-to-text link for mobile visitors.
-    href: "sms:+18335011238?&body=JOIN",
-    // Scan-to-text QR (encodes SMSTO:+18335011238:JOIN) for desktop visitors.
-    qr: "/images/sms-join-qr.png",
-  },
 };
 
 // The club opens an hour early on weekends — 10 AM Saturday and Sunday.

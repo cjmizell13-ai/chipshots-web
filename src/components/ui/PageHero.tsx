@@ -28,7 +28,7 @@ export default function PageHero({
         className="object-cover opacity-30"
       />
       <div className="veil-green absolute inset-0" />
-      <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-44">
+      <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-44 sm:px-8 sm:pb-20 sm:pt-52">
         <Reveal>
           <p className="eyebrow text-gold-soft">
             <AmpText className="text-white">{eyebrow}</AmpText>
