@@ -583,6 +583,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Sip & Swing Ladies Night",
     time: "6:00–8:00 PM",
     desc: "Ladies, grab your girlfriends and join us for a fun evening of sipping, swinging and socializing! Enjoy great drinks, good company and a little indoor golf in a relaxed, welcoming atmosphere. No golf experience necessary — just come ready to have fun!",
+    signup: "https://pci.jotform.com/form/262977354628169",
   },
   {
     date: "2026-11-10",
