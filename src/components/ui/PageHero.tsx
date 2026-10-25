@@ -14,7 +14,8 @@ export default function PageHero({
 }: {
   eyebrow: string;
   title: string;
-  intro?: string;
+  /** One paragraph, or several. */
+  intro?: string | string[];
   image: string;
 }) {
   return (
@@ -41,7 +42,11 @@ export default function PageHero({
         </Reveal>
         {intro && (
           <Reveal delay={0.14}>
-            <p className="mt-5 max-w-xl leading-relaxed text-cream/75">{intro}</p>
+            <div className="mt-5 max-w-xl space-y-3 leading-relaxed text-cream/75">
+              {(Array.isArray(intro) ? intro : [intro]).map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </div>
           </Reveal>
         )}
         <GoldRule className="mt-8 w-32" />
