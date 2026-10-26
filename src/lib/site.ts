@@ -561,6 +561,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Halloween Bingo",
     time: "3:00–5:00 PM",
     desc: "Get into the Halloween spirit with an afternoon of bingo, prizes and festive fun! Bring your friends and family, grab some food and drinks, and join the fun. All ages welcome!",
+    signup: "https://form.jotform.com/262978213821159",
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-01",
