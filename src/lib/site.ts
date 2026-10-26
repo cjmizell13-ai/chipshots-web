@@ -612,7 +612,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-13",
     title: "Wine Tasting Night",
     time: "6:00–8:00 PM",
-    desc: "Unwind with an evening of wine tasting, conversation and good company! Explore a selection of wines in a relaxed, welcoming atmosphere. Perfect for date night or an evening with friends. Ages 21+.",
+    desc: "An evening of sipping, savoring and socializing! Explore four wines paired with delicious small bites during a relaxed, guided tasting experience at Chip Shots. $35 per person, ages 21+. Advance registration required.",
+    signup: "https://pci.jotform.com/form/262979400496166",
   },
   {
     date: "2026-11-17",
