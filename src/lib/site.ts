@@ -650,6 +650,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Small Business Saturday Holiday Market",
     time: "10:00 AM–2:00 PM",
     desc: "Shop small and celebrate the season! Browse unique gifts and handmade items from local vendors while enjoying food, drinks and holiday cheer at Chip Shots.",
+    signup: "https://form.jotform.com/262980906700056",
+    signupLabel: "Vendor Interest Form",
   },
 ];
 
