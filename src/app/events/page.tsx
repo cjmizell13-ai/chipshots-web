@@ -101,7 +101,7 @@ export default function Events() {
                           <p className="mt-0.5 text-sm font-medium text-gold">
                             {weekday} · {e.time}
                           </p>
-                          <p className="mt-2 text-sm leading-relaxed text-muted">
+                          <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-muted">
                             {e.desc}
                           </p>
                           {e.signup && (
