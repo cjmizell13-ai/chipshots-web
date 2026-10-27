@@ -554,7 +554,9 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-10-30",
     title: "Nevada Day – BOGO 50% Off Bays",
     time: "All day",
-    desc: "Celebrate Nevada Day with indoor golf and fun for the whole family! Book one hour in a TrackMan bay and get your second hour 50% off. Available all day!",
+    desc: "Celebrate Nevada Day with indoor golf and fun for the whole family! Book two hours in a TrackMan bay and get your second hour 50% off!\n\nOnline bookings only! Reserve your two-hour session and enter promo code NVDAY26 at checkout to receive your discount.\n\nOffer valid October 30 only. Promo code required. Up to 4 golfers per bay.",
+    signup: business.booking,
+    signupLabel: "Book Now",
   },
   {
     date: "2026-10-31",
