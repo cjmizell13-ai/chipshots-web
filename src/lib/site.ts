@@ -551,6 +551,14 @@ export const upcomingEventsIntro =
   "From trivia nights and music bingo to cocktail classes, holiday celebrations and special dining experiences, there\u2019s always something happening at Chip Shots!";
 export const upcomingEvents: ScheduledEvent[] = [
   {
+    date: "2026-10-27",
+    title: "Trivia Tuesday",
+    time: "6:30–8:00 PM",
+    desc: "Grab your crew and test your knowledge! Enjoy a fun night of trivia, mini challenges, prizes, and great food and drinks. All skill levels welcome! No cost to play!",
+    signup: triviaRsvp,
+    signupLabel: "RSVP",
+  },
+  {
     date: "2026-10-29",
     title: "Ladies of Henderson Networking Mixer",
     time: "6:00–8:00 PM",
