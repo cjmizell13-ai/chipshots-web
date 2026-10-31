@@ -644,6 +644,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Music Bingo",
     time: "6:30–8:00 PM",
     desc: "It\u2019s bingo with a musical twist! Listen to familiar songs, mark your card and compete for prizes. No music expertise required — just come ready for a fun night out! No cost to play!",
+    signup: "https://form.jotform.com/263028484906160",
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-24",
