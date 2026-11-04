@@ -47,6 +47,18 @@ export default function EventForm() {
       details,
     ].join("\n");
 
+    // Conversion tracking: GA4 event, imported into Google Ads as the
+    // "Event inquiry" conversion. Kept distinct from generate_lead so VIP
+    // email signups are never counted as party leads.
+    const w = window as typeof window & {
+      gtag?: (...a: unknown[]) => void;
+    };
+    w.gtag?.("event", "event_inquiry", {
+      event_type: type || "unspecified",
+      guests: Number(guests) || undefined,
+      page_path: window.location.pathname,
+    });
+
     window.location.href = `mailto:${business.email}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
