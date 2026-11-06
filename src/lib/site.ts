@@ -657,9 +657,11 @@ export const upcomingEvents: ScheduledEvent[] = [
   },
   {
     date: "2026-11-26",
-    title: "Thanksgiving Buffet",
-    time: "10:00 AM–4:00 PM",
-    desc: "Spend Thanksgiving with us and leave the cooking to Chip Shots! Enjoy a holiday buffet with family and friends in a welcoming, relaxed atmosphere. More menu details coming soon!",
+    title: "Thanksgiving Day Buffet",
+    time: "11:00 AM–5:00 PM",
+    desc: "Skip the cooking and cleanup! Enjoy a traditional Thanksgiving feast with turkey, ham, all your favorite sides, and desserts while watching football on our big screens.\n\nAdults $39 | Bottomless $54 | Kids 6–12 $19 | Ages 5 & under FREE\n\nPlus tax and 18% gratuity. Seating at 11 AM, 1 PM, and 3 PM. Advance prepaid reservations encouraged. Walk-ins welcome as space permits!",
+    signup: "https://pci.jotform.com/form/263094656829168",
+    signupLabel: "Purchase Tickets",
   },
   {
     date: "2026-11-28",
