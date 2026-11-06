@@ -622,7 +622,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-11",
     title: "Veterans Day Meals",
     time: "11:00 AM–4:00 PM",
-    desc: "Join us as we honor those who have served! We\u2019re celebrating Veterans Day with special meal offerings and an opportunity to show appreciation for our military community.",
+    desc: "Join us as we honor those who served! Veterans and active-duty military receive a FREE meal from our special Veterans Day menu.\n\nChip Shots is proudly veteran-owned, and we\u2019re donating 10% of the day\u2019s profits to Folds of Honor.\n\nEveryone is welcome! Come enjoy a great meal, support our veterans, and help us give back.",
   },
   {
     date: "2026-11-13",
