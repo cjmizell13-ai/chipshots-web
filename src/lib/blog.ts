@@ -192,12 +192,12 @@ export const posts: Post[] = [
         text: "Monday through Friday, 3–6 PM, happy hour means $5 domestic drafts, $6 well drinks and $7 craft, cider and wine — plus discounted bites. Best part: happy-hour pricing runs in the bays too, so you can eat, drink and play without getting up. It's the most relaxed way to wait out the hottest part of the day.",
       },
       { type: "cta", label: "See happy hour", href: "/food-drink" },
-      { type: "h2", text: "4. Make a club night your standing plan" },
+      { type: "h2", text: "4. Make it a regular with a membership" },
       {
         type: "p",
-        text: "If you want something on the calendar all summer, our weekly club nights run three nights a week on TrackMan — Men's Club on Sundays, Open Night on Mondays and Ladies Club on Wednesdays, all handicapped so every skill level competes on the same board. There's no season to commit to — $40 a player with your bay time included, or free on a membership — and the top three net scores each week bank a food-and-drink credit. It's a low-pressure way to meet other Henderson golfers and keep your swing sharp through the off-season.",
+        text: "If you know you'll be back, an Unlimited membership is $239 a month for unlimited bay time any day, plus priority booking and 10% off food and drink. It's the easiest way to keep your swing sharp through the hot months without watching the clock.",
       },
-      { type: "cta", label: "See the club nights", href: "/league" },
+      { type: "cta", label: "See memberships", href: "/memberships" },
       { type: "h2", text: "5. Host the party indoors" },
       {
         type: "p",
@@ -385,53 +385,6 @@ export const posts: Post[] = [
         text: "If your team comes back, a Corporate Club membership ($449/mo) or Corporate Premier ($699/mo) makes recurring outings and client entertaining easy on the budget. But you don't need to commit to anything to book a one-off — just grab a few bays. We're at 1473 E Lake Mead Pkwy, Suite 110 in Henderson, open daily.",
       },
       { type: "cta", label: "Book your team night", href: business.booking, external: true },
-    ],
-  },
-  {
-    slug: "join-golf-league-henderson-first-timer",
-    title: "Looking for a Golf League in Henderson? Try a Weekly Club Night Instead",
-    excerpt:
-      "No season to commit to and no skill requirement — $40 a player, members free. Here's how Chip Shots' weekly club nights work: a fresh leaderboard every week, with dinner and drinks brought to your bay.",
-    date: "2026-07-12",
-    readMinutes: 4,
-    category: "Clubs & Leagues",
-    image: img.trackmanCompetitions,
-    body: [
-      {
-        type: "p",
-        text: "\"I'd join a league, but I'm not good enough.\" It's the single most common thing we hear — and it's exactly backwards. Our club nights are handicapped, which means they're built so a beginner can beat a better golfer on any given night. And unlike a traditional league, there's no season to sign up for at all. If you've been searching for a golf league in Henderson, here's why a weekly club night might suit you better.",
-      },
-      { type: "h2", text: "A club, not a league — here's the difference" },
-      {
-        type: "p",
-        text: "A league asks you to commit to a season and chase standings for weeks. A club night is simpler: a standing weekly time to come play, hang out and land on that week's leaderboard. The board resets every week, so there's nothing to fall behind on — miss a month and you're still one good night from the top spot. Come every week or come when you can.",
-      },
-      { type: "h2", text: "Three nights, every skill level" },
-      {
-        type: "p",
-        text: "We run three weekly club nights on TrackMan, all with tee-offs at 5 and 7 PM. Men's Club on Sundays and Ladies Club on Wednesdays each play a full 18. Open Night on Mondays is the newcomer's night — an easy 9 holes with generous gimmes, mixed and casual. Net Stableford scoring with handicaps keeps every skill level competitive on the same board.",
-      },
-      {
-        type: "ul",
-        items: [
-          "Men's Club — Sundays, 5 & 7 PM · full 18",
-          "Open Night — Mondays, 5 & 7 PM · easy 9, beginner-friendly",
-          "Ladies Club — Wednesdays, 5 & 7 PM · full 18",
-          "Net Stableford, handicapped — auto-scored live on TrackMan",
-        ],
-      },
-      { type: "h2", text: "No season, no sign-up fee" },
-      {
-        type: "p",
-        text: "There's nothing to join and no season to commit to. It's $40 a player for the night with your bay time included — RSVP free and pay when you get here. Show up, and your net score lands on that week's combined leaderboard. Members simply play on their membership — every night, every week, no charge. No handicap index needed; TrackMan sets and tracks it for you.",
-      },
-      { type: "cta", label: "See the club nights", href: "/league" },
-      { type: "h2", text: "Dinner, drinks and a shot at the board" },
-      {
-        type: "p",
-        text: "Happy hour runs live the whole time you play — a featured draft and a signature cocktail, delivered straight to your bay along with anything from the kitchen. Each week, the top three net scores across all three nights bank a Chip Shots food-and-drink credit: $50 for first, $25 for second, $15 for third. Some nights we post a closest-to-the-pin or long-drive prize on the house, too.",
-      },
-      { type: "cta", label: "Pick your night", href: "/league" },
     ],
   },
   {

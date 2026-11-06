@@ -108,7 +108,6 @@ export type NavItem = { label: string; href: string };
 export const nav: NavItem[] = [
   { label: "Food & Drink", href: "/food-drink" },
   { label: "Golf & Booking", href: "/golf-booking" },
-  { label: "Weekly Nights", href: "/league" },
   { label: "Memberships", href: "/memberships" },
   { label: "Events", href: "/events" },
   { label: "Blog", href: "/blog" },
@@ -262,7 +261,7 @@ export const leagues = {
     payg: {
       title: "Pay per visit",
       lines: [
-        { label: "Weekly night out (2-hr bay)", value: "≈ $400/mo" },
+        { label: "Weekend round 1×/week (2-hr bay, peak)", value: "≈ $400/mo" },
         { label: "Practice 1×/week (2 hrs)", value: "≈ $320/mo" },
         { label: "Food & drink", value: "Full price" },
       ],
@@ -272,14 +271,14 @@ export const leagues = {
       title: "Unlimited Member",
       price: "$239/mo",
       lines: [
-        { label: "Every night", value: "Free" },
+        { label: "Priority booking", value: "Included" },
         { label: "Unlimited bay time, any day", value: "Included" },
         { label: "All food & drink", value: "10% off" },
       ],
       total: "One flat price — play all you want",
     },
     bottomLine:
-      "The weekly nights are $40 a player. Play two nights a week and that's $320 a month — Unlimited is $239 and covers every night free, plus unlimited bay time any day and 10% off food and drink. Members play every night on their membership and chase the weekly board every week.",
+      "Two 2-hour sessions a week at the hourly rate runs about $720 a month. Unlimited is $239 and covers all of your bay time, any day, plus 10% off food and drink.",
   },
   points: [
     { title: "Weekly nights", desc: "A standing time to come play, get social and land on the weekly leaderboard." },
@@ -322,11 +321,6 @@ export const promoBanners: {
     cta: "Redeem the offer",
     href: "/golf-booking",
     until: bogoUntil,
-  },
-  {
-    message: "Weekly nights are live — Men's (Sun), Ladies (Wed) & Open (Mon), all skill levels",
-    cta: "See the nights",
-    href: "/league",
   },
   {
     message: "Trivia is back — Tuesdays 6:30–8 PM · hosted in house, mini challenges all night",
@@ -924,7 +918,6 @@ export const trivia = {
 export const eventTypes = [
   { title: "Birthday Parties", desc: "Adults and kids alike — bays, burgers and cake. Ties to our Chip Crew youth program." },
   { title: "Corporate & Team Building", desc: "Off-sites, client outings and team nights with private bays and catering." },
-  { title: "Leagues & Tournaments", desc: "Weekly leagues and bracketed tournaments on TrackMan’s competition suite." },
   { title: "Bachelor & Bachelorette", desc: "A standout stop on the celebration circuit — drinks, golf and good company." },
   { title: "Holiday Parties", desc: "Climate-controlled, festive and easy to host for groups of any size." },
 ];
@@ -977,12 +970,8 @@ export const faqs: Faq[] = [
     a: "Absolutely. Private bays, catered food and a full bar make Chip Shots an easy yes for birthdays, corporate team nights, bachelor/bachelorette groups and holiday parties. Tell us what you're celebrating and we'll tailor it.",
   },
   {
-    q: "What are the weekly clubs and how do I join?",
-    a: "We run three standing weekly nights on TrackMan — Men's Night (Sundays) and Ladies Night (Wednesdays) play a full 18, and Open Night (Mondays) is an easy 9 for newcomers, all at 5 & 7 PM. It's a standing weekly night, not a season-long league — a fresh leaderboard every week, nothing to chase all season. Happy hour is live the whole time you play. Play any night and your net score lands on that week's combined board; the top three net scores each week bank a Chip Shots F&B credit ($50 / $25 / $15). It's $40 per player for the night with your bay time included — RSVP free and pay when you get here; members play free on their membership.",
-  },
-  {
     q: "Is there a membership?",
-    a: "Yes. Unlimited bay time is $239/month or $2,390/year, plus youth, late-night and corporate tiers. Members get priority booking, 10% off food and drink, and play every night free.",
+    a: "Yes. Unlimited bay time is $239/month or $2,390/year, plus youth, late-night and corporate tiers. Members get priority booking and 10% off food and drink.",
   },
 ];
 

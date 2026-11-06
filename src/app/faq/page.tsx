@@ -7,7 +7,7 @@ import { business, img, faqs } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Everything you need to know before visiting Chip Shots Indoor Golf Club in Henderson, NV — bay pricing, golf experience, food & drink, group size, hours, leagues and more.",
+    "Everything you need to know before visiting Chip Shots Indoor Golf Club in Henderson, NV — bay pricing, golf experience, food & drink, group size, hours and more.",
   alternates: { canonical: "/faq" },
 };
 

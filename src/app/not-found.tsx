@@ -28,8 +28,8 @@ export default function NotFound() {
             The menu
           </Link>
           {" · "}
-          <Link href="/league" className="link-underline pb-0.5 text-gold hover:text-gold-soft">
-            Club nights
+          <Link href="/events" className="link-underline pb-0.5 text-gold hover:text-gold-soft">
+            Events
           </Link>
           {" · "}
           <Link href="/faq" className="link-underline pb-0.5 text-gold hover:text-gold-soft">

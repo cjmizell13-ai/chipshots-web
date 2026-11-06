@@ -12,7 +12,6 @@ import {
   img,
   golf,
   hoursSummary,
-  leagues,
   trivia,
 } from "@/lib/site";
 import { getAllPosts, formatPostDate } from "@/lib/blog";
@@ -239,41 +238,6 @@ export default function Home() {
                 </ButtonLink>
               </div>
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================ LEAGUES ===== */}
-      <section className="bg-green-deep text-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <Reveal>
-              <div>
-                <p className="eyebrow text-gold-soft">{leagues.eyebrow}</p>
-                <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  {leagues.title}
-                </h2>
-                <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-                  {leagues.intro}
-                </p>
-                <div className="mt-8">
-                  <ButtonLink href="/league" variant="gold" size="lg" withArrow>
-                    {leagues.cta}
-                  </ButtonLink>
-                </div>
-              </div>
-            </Reveal>
-            <Stagger className="grid gap-4">
-              {leagues.points.map((p) => (
-                <StaggerItem
-                  key={p.title}
-                  className="rounded-2xl border border-cream/12 bg-green-deep/60 p-6"
-                >
-                  <h3 className="font-display text-xl text-cream">{p.title}</h3>
-                  <p className="mt-1.5 text-sm text-cream/65">{p.desc}</p>
-                </StaggerItem>
-              ))}
-            </Stagger>
           </div>
         </div>
       </section>

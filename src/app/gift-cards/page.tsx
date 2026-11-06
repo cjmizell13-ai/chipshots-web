@@ -34,7 +34,7 @@ const steps = [
 const uses = [
   { icon: "flag" as const, title: "Bay time", desc: "TrackMan simulators — play 500+ courses or dial in your swing, any skill level." },
   { icon: "glass" as const, title: "Food & drinks", desc: "Burgers, wings, cheesesteaks and a full bar, brought right to the bay." },
-  { icon: "users" as const, title: "Events & club nights", desc: "Put it toward a watch party, a private event or a weekly club night." },
+  { icon: "users" as const, title: "Events & parties", desc: "Put it toward a watch party, a private event or a holiday party." },
 ];
 
 export default function GiftCards() {
