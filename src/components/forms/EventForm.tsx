@@ -8,7 +8,7 @@ import { Icon } from "@/components/ui/icons";
 const eventOptions = [
   "Birthday Party",
   "Corporate / Team Building",
-  "League or Tournament",
+  "Tournament",
   "Bachelor / Bachelorette",
   "Holiday Party",
   "Something else",

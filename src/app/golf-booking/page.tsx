@@ -4,7 +4,7 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import Gallery from "@/components/Gallery";
-import { business, img, golf, rangeCard, leagues, bogoUntil, promoActive } from "@/lib/site";
+import { business, img, golf, rangeCard, bogoUntil, promoActive } from "@/lib/site";
 
 // Re-render daily so the date-gated BOGO section retires itself after Jul 31.
 export const revalidate = 86400;
@@ -179,39 +179,6 @@ export default function GolfBooking() {
             </Stagger>
           </div>
         </div>
-      </section>
-
-      {/* ============================================== LEAGUES ===== */}
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
-        <Reveal>
-          <p className="eyebrow text-gold">{leagues.eyebrow}</p>
-          <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-            {leagues.title}
-          </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-muted">
-            {leagues.intro}
-          </p>
-        </Reveal>
-        <Stagger className="mt-10 grid gap-6 md:grid-cols-3">
-          {leagues.points.map((p) => (
-            <StaggerItem
-              key={p.title}
-              className="flex flex-col rounded-3xl border border-gold/40 bg-cream-2 p-8"
-            >
-              <h3 className="font-display text-2xl text-green-deep">
-                {p.title}
-              </h3>
-              <p className="mt-2 flex-1 text-muted">{p.desc}</p>
-            </StaggerItem>
-          ))}
-        </Stagger>
-        <Reveal delay={0.05}>
-          <div className="mt-10">
-            <ButtonLink href="/league" variant="outline" withArrow>
-              {leagues.cta}
-            </ButtonLink>
-          </div>
-        </Reveal>
       </section>
 
       {/* ============================================== BOOK ===== */}

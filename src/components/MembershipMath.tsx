@@ -4,7 +4,7 @@ import { Icon } from "@/components/ui/icons";
 import { leagues } from "@/lib/site";
 
 /**
- * The "does membership pay for itself?" comparison. Shared by /league and
+ * The "does membership pay for itself?" comparison. Used on
  * /memberships — pass a cta to point the bottom line somewhere useful for
  * that page (omit it to show the text alone).
  */

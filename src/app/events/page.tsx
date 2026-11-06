@@ -43,7 +43,7 @@ function byMonth(events: ScheduledEvent[]) {
 export const metadata: Metadata = {
   title: "Events & Parties",
   description:
-    "Host birthdays, corporate team nights, leagues, bachelor/bachelorette parties and holiday gatherings at Chip Shots in Henderson, NV. Private bays, catered food and a full bar.",
+    "Host birthdays, corporate team nights, bachelor/bachelorette parties and holiday gatherings at Chip Shots in Henderson, NV. Private bays, catered food and a full bar.",
   alternates: { canonical: "/events" },
 };
 
