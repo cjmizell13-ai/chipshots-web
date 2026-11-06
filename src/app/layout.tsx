@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import VipSignup from "@/components/forms/VipSignup";
 import BackToTop from "@/components/BackToTop";
 import BookingProvider from "@/components/BookingProvider";
+import BookingTracker from "@/components/BookingTracker";
 import { business, schedule } from "@/lib/site";
 
 const fraunces = Fraunces({
@@ -181,6 +182,7 @@ export default function RootLayout({
           <VipSignup />
           <Footer />
           <BackToTop />
+          <BookingTracker />
         </BookingProvider>
       </body>
     </html>

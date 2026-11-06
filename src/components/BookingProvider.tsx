@@ -10,6 +10,7 @@ import {
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { business } from "@/lib/site";
 import { Icon } from "@/components/ui/icons";
+import { trackBookingStart } from "@/lib/analytics";
 
 type BookingContextValue = { open: () => void; close: () => void };
 
@@ -35,7 +36,10 @@ export default function BookingProvider({
   const [isOpen, setIsOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  const open = useCallback(() => setIsOpen(true), []);
+  const open = useCallback(() => {
+    setIsOpen(true);
+    trackBookingStart("bay", "modal");
+  }, []);
   const close = useCallback(() => setIsOpen(false), []);
 
   useEffect(() => {
@@ -104,6 +108,7 @@ export default function BookingProvider({
                 <iframe
                   src={business.booking}
                   title="Book a simulator bay at Chip Shots"
+                  data-booking-source="modal"
                   onLoad={() => setLoaded(true)}
                   className="h-full w-full"
                 />
@@ -119,6 +124,7 @@ export default function BookingProvider({
                 </a>
                 <a
                   href={business.booking}
+                  data-no-booking-track
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-muted hover:text-green-deep"
