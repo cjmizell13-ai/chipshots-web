@@ -169,9 +169,14 @@ export default function Events() {
                 regulars.
               </p>
             </div>
-            <ButtonLink href="/corporate-events" variant="green" size="lg" withArrow>
-              Corporate events
-            </ButtonLink>
+            <div className="flex flex-wrap gap-3">
+              <ButtonLink href="/holiday-parties" variant="green" size="lg" withArrow>
+                Holiday parties
+              </ButtonLink>
+              <ButtonLink href="/corporate-events" variant="green" size="lg" withArrow>
+                Corporate events
+              </ButtonLink>
+            </div>
           </div>
         </Reveal>
       </section>
