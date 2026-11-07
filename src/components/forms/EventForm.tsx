@@ -56,17 +56,25 @@ export default function EventForm() {
     ].join("\n");
 
     // Conversion tracking: GA4 event, imported into Google Ads as the
-    // "Event inquiry" conversion. Kept distinct from generate_lead so VIP
+    // "Event inquiry" conversion, plus a Meta EventInquiry custom event. Kept distinct from generate_lead so VIP
     // email signups are never counted as party leads.
     const trackInquiry = (method: string) => {
       const w = window as typeof window & {
         gtag?: (...a: unknown[]) => void;
+        fbq?: (...a: unknown[]) => void;
       };
       w.gtag?.("event", "event_inquiry", {
         event_type: type || "unspecified",
         guests: Number(guests) || undefined,
         method,
         page_path: window.location.pathname,
+      });
+      // Meta: custom event (not "Lead", which VIP email signups use) so the
+      // party campaign optimizes on real event inquiries only.
+      w.fbq?.("trackCustom", "EventInquiry", {
+        content_category: type || "unspecified",
+        num_items: Number(guests) || undefined,
+        content_name: method,
       });
     };
 
