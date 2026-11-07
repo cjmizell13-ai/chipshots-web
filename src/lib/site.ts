@@ -57,12 +57,10 @@ export const business = {
     "https://order.toasttab.com/online/chip-shots-1473-east-lake-mead-parkway-suite-110",
 };
 
-// Toast Online Ordering is fully configured but the master toggle in Toast is
-// OFF, so the ordering page reads "Currently not accepting online orders."
-// Flip this to true the same day that toggle goes on — it reveals the
-// "Order Online" CTA in the header and mobile menu. Never turn it on first:
-// a live button pointing at a closed ordering page is worse than no button.
-export const orderOnlineLive = false;
+// Toast Online Ordering (pickup). This reveals the "Order Pickup" button in the
+// header and mobile menu. Only keep it true while the Toast ordering toggle is
+// ON: a live button pointing at a closed ordering page is worse than no button.
+export const orderOnlineLive = true;
 
 // VIP Crew capture routes straight into Toast Marketing — no manual CSV step.
 // Toast's hosted, branded signup page adds subscribers to the
