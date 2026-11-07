@@ -7,6 +7,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { Amp, AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
+import OrderOptions from "@/components/OrderOptions";
 import {
   img,
   football,
@@ -65,6 +66,9 @@ export default function FoodDrink() {
         intro="Real food made to order, an honest pour and a happy hour that runs right into the bays. Golf optional."
         image={img.foodCheesesteak}
       />
+
+      {/* ============================================== ORDER ONLINE ===== */}
+      <OrderOptions source="food_drink" />
 
       {/* ============================================== FOOTBALL ===== */}
       <section className="mx-auto max-w-7xl px-5 pt-16 sm:px-8 sm:pt-20">

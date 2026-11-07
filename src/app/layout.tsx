@@ -8,7 +8,7 @@ import VipSignup from "@/components/forms/VipSignup";
 import BackToTop from "@/components/BackToTop";
 import BookingProvider from "@/components/BookingProvider";
 import BookingTracker from "@/components/BookingTracker";
-import { business, schedule } from "@/lib/site";
+import { business, liveDelivery, orderOnlineLive, schedule } from "@/lib/site";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -83,6 +83,28 @@ const jsonLd = {
   priceRange: "$$",
   acceptsReservations: true,
   hasMenu: `${business.website}/food-drink`,
+  // Lets Google show an "Order online" action on the listing / rich results.
+  ...(orderOnlineLive && {
+    potentialAction: {
+      "@type": "OrderAction",
+      target: [business.orderOnline, ...liveDelivery.map((d) => d.href)].map(
+        (urlTemplate) => ({
+          "@type": "EntryPoint",
+          urlTemplate,
+          actionPlatform: [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform",
+          ],
+        }),
+      ),
+      deliveryMethod: [
+        "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+        ...(liveDelivery.length
+          ? ["http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"]
+          : []),
+      ],
+    },
+  }),
   image: `${business.website}/opengraph-image`,
   address: {
     "@type": "PostalAddress",

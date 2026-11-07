@@ -12,6 +12,8 @@ import {
   img,
   golf,
   hoursSummary,
+  liveDelivery,
+  orderOnlineLive,
   trivia,
 } from "@/lib/site";
 import { getAllPosts, formatPostDate } from "@/lib/blog";
@@ -277,10 +279,15 @@ export default function Home() {
               )}
             </Stagger>
             <Reveal delay={0.1}>
-              <div className="mt-9">
+              <div className="mt-9 flex flex-wrap gap-3">
                 <ButtonLink href="/food-drink" variant="outline" size="lg" withArrow>
                   Explore the full menu
                 </ButtonLink>
+                {orderOnlineLive && (
+                  <ButtonLink href="/food-drink#order" variant="green" size="lg">
+                    {liveDelivery.length ? "Order pickup or delivery" : "Order pickup"}
+                  </ButtonLink>
+                )}
               </div>
             </Reveal>
           </div>

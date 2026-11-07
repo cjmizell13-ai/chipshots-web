@@ -62,6 +62,38 @@ export const business = {
 // ON: a live button pointing at a closed ordering page is worse than no button.
 export const orderOnlineLive = true;
 
+// Hours Toast accepts online orders (last order 30 min before close).
+export const orderHours = "11 AM – 9:30 PM weekdays · 10 AM – 9:30 PM weekends";
+
+// Delivery marketplaces. Both run off the Toast "Delivery Menu" at +15% to
+// cover the apps' commission, so pickup through Toast stays the best price for
+// the guest and the best margin for us — the site leads with pickup and lists
+// delivery second. Flip a flag to false to hide that app's link everywhere
+// (e.g. if the store is paused or delivery radius isn't set up).
+export const delivery: {
+  key: "doordash" | "ubereats";
+  name: string;
+  href: string;
+  live: boolean;
+}[] = [
+  {
+    key: "doordash",
+    name: "DoorDash",
+    href: "https://www.doordash.com/store/chip-shots-henderson-51888884/",
+    // Off until DoorDash takes orders (Toast integration review pending).
+    live: false,
+  },
+  {
+    key: "ubereats",
+    name: "Uber Eats",
+    href: "https://www.ubereats.com/store/chip-shots/s6QUaqG7RWG4PP9Cz21sjA",
+    // Off until the store is back online in Uber Eats Manager.
+    live: false,
+  },
+];
+
+export const liveDelivery = delivery.filter((d) => d.live);
+
 // VIP Crew capture routes straight into Toast Marketing — no manual CSV step.
 // Toast's hosted, branded signup page adds subscribers to the
 // "Chip Shots Group" email list. The URL lives in Toast Web: Marketing →
