@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { business, nav, orderOnlineLive } from "@/lib/site";
+import { business, liveDelivery, nav, orderOnlineLive } from "@/lib/site";
+import { trackOrderClick } from "@/lib/analytics";
 import { Wordmark } from "@/components/ui/brand";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
@@ -13,15 +14,6 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import VipBar from "@/components/VipBar";
 import BookButton from "@/components/BookButton";
 import { useBooking } from "@/components/BookingProvider";
-
-function trackOrderClick() {
-  const w = window as unknown as {
-    gtag?: (...a: unknown[]) => void;
-    fbq?: (...a: unknown[]) => void;
-  };
-  w.gtag?.("event", "order_online_click");
-  w.fbq?.("trackCustom", "OrderOnlineClick");
-}
 
 export default function Header() {
   const pathname = usePathname();
@@ -84,7 +76,7 @@ export default function Header() {
                 external
                 variant="ghost-light"
                 size="md"
-                onClick={trackOrderClick}
+                onClick={() => trackOrderClick("pickup", "header")}
               >
                 Order Pickup
               </ButtonLink>
@@ -183,11 +175,33 @@ export default function Header() {
                     size="lg"
                     onClick={() => {
                       setOpen(false);
-                      trackOrderClick();
+                      trackOrderClick("pickup", "mobile_menu");
                     }}
                   >
                     Order Food for Pickup
                   </ButtonLink>
+                )}
+                {orderOnlineLive && liveDelivery.length > 0 && (
+                  <p className="text-center text-sm text-cream/70">
+                    Delivery on{" "}
+                    {liveDelivery.map((d, i) => (
+                      <span key={d.key}>
+                        {i > 0 && " or "}
+                        <a
+                          href={d.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => {
+                            setOpen(false);
+                            trackOrderClick(d.key, "mobile_menu");
+                          }}
+                          className="text-cream underline decoration-gold/60 underline-offset-4 hover:text-gold"
+                        >
+                          {d.name}
+                        </a>
+                      </span>
+                    ))}
+                  </p>
                 )}
                 <a
                   href={business.phoneHref}

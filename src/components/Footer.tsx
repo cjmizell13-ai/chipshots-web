@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { business, hoursSummary, nav } from "@/lib/site";
+import { business, hoursSummary, liveDelivery, nav, orderOnlineLive } from "@/lib/site";
 import { Wordmark } from "@/components/ui/brand";
 import { Icon } from "@/components/ui/icons";
 import { AmpText } from "@/components/ui/amp";
@@ -71,6 +71,31 @@ export default function Footer() {
                   View the Menu
                 </Link>
               </li>
+              {orderOnlineLive && (
+                <li>
+                  <a
+                    href={business.orderOnline}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline pb-0.5 text-gold hover:text-gold-soft"
+                  >
+                    Order Pickup
+                  </a>
+                </li>
+              )}
+              {orderOnlineLive &&
+                liveDelivery.map((d) => (
+                  <li key={d.key}>
+                    <a
+                      href={d.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-underline pb-0.5 hover:text-cream"
+                    >
+                      Delivery on {d.name}
+                    </a>
+                  </li>
+                ))}
             </ul>
           </nav>
 

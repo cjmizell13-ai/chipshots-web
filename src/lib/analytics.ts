@@ -60,6 +60,21 @@ export function trackBookingStart(product: BookingProduct, source: BookingSource
   });
 }
 
+export type OrderChannel = "pickup" | "doordash" | "ubereats";
+
+/** Someone clicked through to order food (Toast pickup or a delivery app). */
+export function trackOrderClick(channel: OrderChannel, source: string) {
+  const { gtag, fbq } = tools();
+  gtag?.("event", "order_online_click", {
+    order_channel: channel,
+    order_source: source,
+  });
+  fbq?.("trackCustom", "OrderOnlineClick", {
+    content_category: channel,
+    content_name: source,
+  });
+}
+
 const engaged = new Set<string>();
 
 /** Someone clicked inside a YGB booking widget. Fires once per widget per page. */
