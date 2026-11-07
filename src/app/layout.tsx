@@ -155,7 +155,17 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-QN5SXFND95');
+            // Referral-spam sessions (bot traffic posing as referrals) are
+            // tagged traffic_type=internal so GA4's "Internal Traffic" data
+            // filter drops them. The flag is kept for the whole session because
+            // only the landing page carries the referrer.
+            var spamRef = /clickbaitpays\\.me/i;
+            var isSpam = false;
+            try {
+              isSpam = spamRef.test(document.referrer) || sessionStorage.getItem('cs_spam') === '1';
+              if (isSpam) sessionStorage.setItem('cs_spam', '1');
+            } catch (e) { isSpam = spamRef.test(document.referrer); }
+            gtag('config', 'G-QN5SXFND95', isSpam ? { traffic_type: 'internal' } : {});
           `}
         </Script>
         {/* Meta Pixel */}
