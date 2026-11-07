@@ -80,8 +80,8 @@ export const delivery: {
     key: "doordash",
     name: "DoorDash",
     href: "https://www.doordash.com/store/chip-shots-henderson-51888884/",
-    // Off until DoorDash takes orders (Toast integration review pending).
-    live: false,
+    // Live Nov 7: store is open on DoorDash with delivery and pickup.
+    live: true,
   },
   {
     key: "ubereats",
