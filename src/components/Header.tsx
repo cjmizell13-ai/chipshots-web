@@ -4,15 +4,24 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { business, nav } from "@/lib/site";
+import { business, nav, orderOnlineLive } from "@/lib/site";
 import { Wordmark } from "@/components/ui/brand";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { AmpText } from "@/components/ui/amp";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import VipBar from "@/components/VipBar";
 import BookButton from "@/components/BookButton";
 import { useBooking } from "@/components/BookingProvider";
+
+function trackOrderClick() {
+  const w = window as unknown as {
+    gtag?: (...a: unknown[]) => void;
+    fbq?: (...a: unknown[]) => void;
+  };
+  w.gtag?.("event", "order_online_click");
+  w.fbq?.("trackCustom", "OrderOnlineClick");
+}
 
 export default function Header() {
   const pathname = usePathname();
@@ -68,6 +77,19 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-3">
+          {orderOnlineLive && (
+            <span className="hidden whitespace-nowrap md:block lg:hidden xl:block">
+              <ButtonLink
+                href={business.orderOnline}
+                external
+                variant="ghost-light"
+                size="md"
+                onClick={trackOrderClick}
+              >
+                Order Pickup
+              </ButtonLink>
+            </span>
+          )}
           <span className="hidden sm:block">
             <BookButton variant="gold" size="md" />
           </span>
@@ -153,6 +175,20 @@ export default function Header() {
                 >
                   Book a Bay
                 </Button>
+                {orderOnlineLive && (
+                  <ButtonLink
+                    href={business.orderOnline}
+                    external
+                    variant="ghost-light"
+                    size="lg"
+                    onClick={() => {
+                      setOpen(false);
+                      trackOrderClick();
+                    }}
+                  >
+                    Order Food for Pickup
+                  </ButtonLink>
+                )}
                 <a
                   href={business.phoneHref}
                   className="inline-flex items-center gap-2 text-cream/80"
