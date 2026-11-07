@@ -171,16 +171,28 @@ export default function RootLayout({
         {/* Meta Pixel */}
         <Script id="fb-pixel" strategy="afterInteractive">
           {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1704567684030290');
-            fbq('track', 'PageView');
+            // Referral-spam sessions never load the pixel, so bots stay out of
+            // Meta's website-visitor audiences and conversion counts. A no-op
+            // fbq keeps the site's tracking calls safe. Checked here as well as
+            // in gtag-init so it doesn't depend on script order.
+            var fbSpam = false;
+            try {
+              fbSpam = /clickbaitpays\\.me/i.test(document.referrer) || sessionStorage.getItem('cs_spam') === '1';
+            } catch (e) { fbSpam = /clickbaitpays\\.me/i.test(document.referrer); }
+            if (fbSpam) {
+              window.fbq = function(){};
+            } else {
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1704567684030290');
+              fbq('track', 'PageView');
+            }
           `}
         </Script>
         {/* Metricool tracker */}
