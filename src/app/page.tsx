@@ -1,518 +1,489 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
+import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
-import { Icon } from "@/components/ui/icons";
-import { Amp, AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
-import Marquee from "@/components/home/Marquee";
 import UntilDate from "@/components/ui/UntilDate";
 import {
   business,
   img,
   golf,
-  hoursSummary,
+  hours,
   liveDelivery,
   orderOnlineLive,
-  trivia,
+  promoActive,
+  upcomingEvents,
 } from "@/lib/site";
-import { getAllPosts, formatPostDate } from "@/lib/blog";
 
-const pillars = [
+const rooms = [
   {
-    key: "play",
-    eyebrow: "Play",
-    title: "Five TrackMan Bays",
-    body: "State-of-the-art simulators with 500+ courses, closest-to-pin games and on-screen competitions. Up to four players, clubs provided, no 6 AM tee time required.",
-    image: img.bayCinematic,
+    no: "01",
+    title: "Dine",
+    body: "A full kitchen that cooks like a restaurant, because it is one. Burgers, ribs, steaks and salads at lunch and dinner, and a prime rib brunch on the first and third Sundays.",
+    image: img.clubService,
+    alt: "A server carrying plates of nachos and wings through the dining room at Chip Shots",
+    href: "/food-drink",
+    cta: "See the menu",
+  },
+  {
+    no: "02",
+    title: "Play",
+    body: `Five private TrackMan bays with ${golf.courses} courses. Play eighteen at a course you know, work on your wedges, or hit a few between bites. Clubs are here if you need them.`,
+    image: img.clubGolfer,
+    alt: "A guest mid-swing in a private TrackMan simulator bay at Chip Shots",
     href: "/golf-booking",
-    cta: "Book a Bay",
-    icon: Icon.target,
+    cta: "See the bays",
   },
   {
-    key: "eat",
-    eyebrow: "Eat",
-    title: "A Full Kitchen & More",
-    body: "Burgers, sandwiches, wings, loaded shareables and salads — a full kitchen turning out real food worth showing up for. Golf optional.",
-    image: img.foodCheesesteak,
-    href: "/food-drink",
-    cta: "View the Menu",
-    icon: Icon.burger,
-  },
-  {
-    key: "drink",
-    eyebrow: "Drink",
-    title: "Full Bar & Cocktails",
-    body: "Cold drafts, an honest wine list and signature cocktails like the Transfusion and the Azalea. Happy hour Mon–Fri, 3–6 PM — in the bays too.",
-    image: img.cocktailsHighball,
-    href: "/food-drink",
-    cta: "See Drinks",
-    icon: Icon.glass,
+    no: "03",
+    title: "Watch",
+    body: "Screens over the bar, a TV in every bay and NFL Sunday Ticket. Saturday and Sunday are built around the games, with breakfast from the first kickoff.",
+    image: img.clubGuests,
+    alt: "Guests at the bar watching a game at Chip Shots",
+    href: "/events",
+    cta: "What's on",
   },
 ];
 
+const occasions = [
+  { title: "Holiday parties", href: "/holiday-parties" },
+  { title: "Corporate outings", href: "/corporate-events" },
+  { title: "Birthdays", href: "/events" },
+  { title: "Bachelor & bachelorette", href: "/events" },
+  { title: "Client entertaining", href: "/corporate-events" },
+  { title: "Full buyouts", href: "/events" },
+];
+
+const neighborhoods = ["Lake Las Vegas", "Cadence", "Tuscany", "Calico Ridge"];
+
+function formatEventDate(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const date = new Date(Date.UTC(y, m - 1, d));
+  return {
+    weekday: date.toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" }),
+    day: date.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" }),
+  };
+}
+
 export default function Home() {
-  const latestPosts = getAllPosts().slice(0, 3);
+  const next = upcomingEvents.filter((e) => promoActive(e.date)).slice(0, 4);
+  const nonPeak = golf.rates[0];
 
   return (
     <>
       {/* ===================================================== HERO ===== */}
-      <section className="relative flex min-h-[100svh] items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={img.bayCinematic}
-            alt="A TrackMan simulator bay with lounge seating at Chip Shots Indoor Golf Club in Henderson, NV"
-            fill
-            priority
-            sizes="100vw"
-            className="kenburns object-cover object-center"
-          />
-          <div className="veil-green absolute inset-0" />
-        </div>
+      <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-green-deep">
+        <Image
+          src={img.clubRoom}
+          alt="The dining room and bar at Chip Shots Indoor Golf Club in Henderson, Nevada"
+          fill
+          priority
+          sizes="100vw"
+          className="kenburns object-cover object-center opacity-70"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/45 to-green-deep/60" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-44 sm:px-8 sm:pb-28">
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-10 pt-44 sm:px-8">
           <Reveal>
-            <p className="eyebrow text-gold-soft">
-              Veteran-Owned · Henderson, NV · {business.status}
+            <p className="kicker text-gold-soft">
+              Henderson, Nevada · {business.address.street}
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="font-display mt-5 max-w-4xl text-balance text-5xl font-light leading-[1.02] text-cream sm:text-6xl lg:text-7xl">
-              Golf, food <Amp className="text-white" /> drinks{" "}
-              <span className="text-gold">under one roof.</span>
+            <h1 className="font-display mt-7 max-w-4xl text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-7xl">
+              The clubhouse
+              <br />
+              is open <span className="text-gold-soft">to everyone.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">
-              Five TrackMan simulator bays, a full bar and a full kitchen in
-              the heart of Henderson. Come for the food, stay for the game —
-              or just the game.
+            <p className="mt-7 max-w-xl text-lg text-cream/75">
+              A restaurant, a full bar and five private golf bays under
+              one roof. No membership needed and no tee time at dawn.
             </p>
           </Reveal>
-          <Reveal delay={0.2}>
-            <p className="mt-5 text-sm text-cream/75">
-              Bays from{" "}
-              <span className="font-medium text-gold">
-                {golf.rates[0].price}
-                {golf.rates[0].unit}
-              </span>{" "}
-              · up to {golf.players} players · clubs included
-            </p>
-          </Reveal>
-          <Reveal delay={0.24}>
+          <Reveal delay={0.22}>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <ButtonLink
-                href={business.booking}
-                external
-                variant="gold"
-                size="lg"
-                withArrow
-              >
-                Book a Bay
-              </ButtonLink>
+              <BookButton variant="gold" size="lg" withArrow />
               <ButtonLink href="/food-drink" variant="ghost-light" size="lg">
-                View the Menu
+                See the menu
               </ButtonLink>
             </div>
           </Reveal>
+
+          <dl className="mt-16 grid grid-cols-1 border-t border-cream/15 sm:grid-cols-3">
+            {[
+              { k: "Private bays", v: String(golf.bays) },
+              { k: "Rates from", v: `${nonPeak.price}`, u: nonPeak.unit },
+              { k: "Open daily until", v: "10 PM" },
+            ].map((f, i) => (
+              <div
+                key={f.k}
+                className={`py-6 sm:py-7 ${i > 0 ? "border-t border-cream/15 sm:border-l sm:border-t-0 sm:pl-8" : ""}`}
+              >
+                <dt className="eyebrow text-cream/55">{f.k}</dt>
+                <dd className="font-display mt-2 text-3xl font-semibold text-cream">
+                  {f.v}
+                  {f.u && <span className="ml-1 text-sm font-light text-cream/60">{f.u}</span>}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
-      <Marquee />
-
-      {/* =============================================== THREE PILLARS ===== */}
+      {/* ============================================ UNDER ONE ROOF ===== */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto max-w-2xl text-center">
-          <Reveal>
-            <p className="eyebrow text-gold">Three reasons to come in</p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="font-display mt-4 text-balance text-4xl font-light text-green-deep sm:text-5xl">
-              One building. Three ways to enjoy it.
-            </h2>
-          </Reveal>
-          <GoldRule className="mx-auto mt-7 w-40" />
-        </div>
+        <Reveal>
+          <p className="kicker text-muted">01 · Under one roof</p>
+          <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
+            Come for dinner, a round after work,{" "}
+            <span className="text-green-soft">or Sunday&rsquo;s game.</span>
+          </h2>
+        </Reveal>
 
-        <Stagger className="mt-16 grid gap-7 md:grid-cols-3" gap={0.12}>
-          {pillars.map((p) => {
-            const PillarIcon = p.icon;
-            return (
-              <StaggerItem key={p.key} as="article">
-                <Link
-                  href={p.href}
-                  className="group block h-full overflow-hidden rounded-3xl border border-line bg-white shadow-[var(--shadow-card)] transition-all duration-500 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
-                >
-                  <div className="relative h-60 overflow-hidden">
-                    <Image
-                      src={p.image}
-                      alt={p.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-green-deep/55 to-transparent" />
-                    <span className="absolute left-5 top-5 inline-flex h-11 w-11 items-center justify-center rounded-full bg-cream/95 text-green-deep shadow-sm">
-                      <PillarIcon className="h-5 w-5" />
-                    </span>
-                  </div>
-                  <div className="p-7">
-                    <p className="eyebrow text-gold">{p.eyebrow}</p>
-                    <h3 className="font-display mt-2 text-2xl text-green-deep">
-                      <AmpText className="text-gold">{p.title}</AmpText>
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">
-                      {p.body}
-                    </p>
-                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green transition-colors group-hover:text-gold">
-                      {p.cta}
-                      <Icon.arrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                </Link>
-              </StaggerItem>
-            );
-          })}
+        <Stagger className="mt-16 grid gap-12 md:grid-cols-3 md:gap-9">
+          {rooms.map((r) => (
+            <StaggerItem key={r.title}>
+              <Link href={r.href} className="group block">
+                <div className="relative aspect-[3/2] overflow-hidden bg-green-deep">
+                  <Image
+                    src={r.image}
+                    alt={r.alt}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  />
+                  <span className="absolute left-4 top-4 border border-cream/50 bg-green-deep/40 px-2.5 py-1 text-[0.65rem] tracking-[0.2em] text-cream backdrop-blur-sm">
+                    {r.no}
+                  </span>
+                </div>
+                <h3 className="font-display mt-7 text-4xl font-semibold text-ink">
+                  {r.title}
+                </h3>
+                <p className="mt-4 text-ink/75">{r.body}</p>
+                <span className="text-cta mt-6 text-ink">
+                  {r.cta} <span aria-hidden>→</span>
+                </span>
+              </Link>
+            </StaggerItem>
+          ))}
         </Stagger>
       </section>
 
-      {/* ============================================ FEATURED / GOLF ===== */}
+      {/* ================================================== THE BAYS ===== */}
       <section className="bg-green-deep text-cream">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-24 sm:px-8 lg:grid-cols-2 lg:py-32">
-          <Reveal className="relative">
-            <div className="relative overflow-hidden rounded-3xl shadow-[var(--shadow-soft)]">
-              <Image
-                src={img.trackmanCompetitions}
-                alt="TrackMan competition leaderboard on a simulator screen"
-                width={900}
-                height={680}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-4 hidden rounded-2xl border border-gold/30 bg-green-deep/95 px-7 py-5 shadow-lg backdrop-blur sm:block">
-              <p className="font-display text-4xl text-gold">{golf.courses}</p>
-              <p className="eyebrow mt-1 text-cream/70">Courses</p>
+        <div className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <p className="kicker text-gold-soft">02 · The bays</p>
+            <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
+              Your own bay. <span className="text-gold-soft">Your own tee time.</span>
+            </h2>
+            <p className="mt-6 max-w-md text-cream/70">
+              Every bay is private, with a TrackMan launch monitor, a
+              full-size screen and room for up to {golf.players} players. Food
+              and drinks come to you. Bays are priced by the hour, not by the
+              person.
+            </p>
+
+            <dl className="mt-10 max-w-md">
+              {golf.rates.map((r) => (
+                <div
+                  key={r.name}
+                  className="flex items-baseline gap-4 border-b border-cream/10 py-4"
+                >
+                  <dt className="eyebrow text-cream/70">{r.name}</dt>
+                  <span className="leader" aria-hidden />
+                  <dd className="font-display text-2xl font-semibold">
+                    {r.price}
+                    <span className="ml-0.5 text-xs font-light text-cream/55">{r.unit}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-4 max-w-md text-sm text-cream/50">
+              Peak: {golf.rates[1].note}.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-7">
+              <BookButton variant="gold" size="lg" withArrow>
+                Check availability
+              </BookButton>
+              <Link href="/golf-booking" className="text-cta text-cream">
+                Rates &amp; details <span aria-hidden>→</span>
+              </Link>
             </div>
           </Reveal>
-
-          <div>
-            <Reveal>
-              <p className="eyebrow text-gold-soft">The simulators</p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="font-display mt-4 text-balance text-4xl font-light leading-tight sm:text-5xl">
-                TrackMan technology, clubhouse comfort.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.14}>
-              <p className="mt-5 max-w-lg leading-relaxed text-cream/75">
-                The same launch monitors the tour pros train on — measuring every
-                shot to the foot. Play St Andrews at noon, run a closest-to-pin
-                with friends, or take a lesson. Lounge seating, food and drinks
-                come right to your bay.
-              </p>
-            </Reveal>
-
-            <Stagger className="mt-9 grid gap-px overflow-hidden rounded-2xl border border-green-soft/40 bg-green-soft/40 sm:grid-cols-3">
-              {[
-                { n: golf.bays, l: "Simulator bays" },
-                { n: golf.players, l: "Players per bay" },
-                { n: "24/7", l: "Member access" },
-              ].map((s) => (
-                <StaggerItem
-                  key={s.l}
-                  className="bg-green-deep px-6 py-7 text-center"
-                >
-                  <p className="font-display text-4xl text-gold">{s.n}</p>
-                  <p className="mt-1 text-xs uppercase tracking-wider text-cream/60">
-                    {s.l}
-                  </p>
-                </StaggerItem>
-              ))}
-            </Stagger>
-
-            <Reveal delay={0.1}>
-              <div className="mt-9 flex flex-wrap gap-4">
-                <BookButton variant="gold" withArrow />
-                <ButtonLink href="/golf-booking" variant="ghost-light">
-                  Rates <Amp className="text-white" /> details
-                </ButtonLink>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================ FOOD & DRINK TEASE ===== */}
-      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="order-2 lg:order-1">
-            <Reveal>
-              <p className="eyebrow text-gold">
-                The kitchen <Amp className="text-gold" /> bar
-              </p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="font-display mt-4 text-balance text-4xl font-light text-green-deep sm:text-5xl">
-                Good enough to come for the food alone.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.14}>
-              <p className="mt-5 max-w-lg leading-relaxed text-muted">
-                Burgers, wings, loaded totchos and a Philly worth
-                the drive — plus sandwiches, wraps and salads. Pair it with a
-                cold draft, a glass of wine or a signature cocktail. Happy hour
-                runs Mon–Fri, 3–6 PM.
-              </p>
-            </Reveal>
-            <Stagger className="mt-8 flex flex-wrap gap-3">
-              {["Burgers & Sandwiches", "Wings & Tenders", "Signature Cocktails", "Cold Drafts", "Happy Hour 3–6"].map(
-                (tag) => (
-                  <StaggerItem
-                    key={tag}
-                    className="rounded-full border border-line bg-cream-2 px-4 py-2 text-sm text-green-deep"
-                  >
-                    <AmpText className="text-gold">{tag}</AmpText>
-                  </StaggerItem>
-                )
-              )}
-            </Stagger>
-            <Reveal delay={0.1}>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <ButtonLink href="/food-drink" variant="outline" size="lg" withArrow>
-                  Explore the full menu
-                </ButtonLink>
-                {orderOnlineLive && (
-                  <ButtonLink href="/food-drink#order" variant="green" size="lg">
-                    {liveDelivery.length ? "Order pickup or delivery" : "Order pickup"}
-                  </ButtonLink>
-                )}
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="order-1 grid grid-cols-2 gap-4 lg:order-2">
-            <Reveal>
-              <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
-                <Image
-                  src={img.foodBurger}
-                  alt="A bacon cheeseburger with seasoned fries"
-                  width={520}
-                  height={640}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.12} className="mt-10">
-              <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
-                <Image
-                  src={img.cocktailsHighball}
-                  alt="A signature cocktail with a golf-ball garnish on the bar"
-                  width={520}
-                  height={640}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================ EVENTS TEASER ===== */}
-      <section className="relative overflow-hidden bg-green text-cream">
-        <Image
-          src={img.bayRoomWide}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-20"
-        />
-        <div className="veil-green-strong absolute inset-0" />
-        <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-          <div className="max-w-2xl">
-            <Reveal>
-              <p className="eyebrow text-gold-soft">
-                Events <Amp /> parties
-              </p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="font-display mt-4 text-balance text-4xl font-light sm:text-5xl">
-                Birthdays, team nights <Amp /> everything in between.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.14}>
-              <p className="mt-5 leading-relaxed text-cream/75">
-                Private bays, catered food and a full bar make Chip Shots an easy
-                yes for groups. Tell us what you're celebrating and we'll tailor
-                it to your party.
-              </p>
-            </Reveal>
-          </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-12">
-              <ButtonLink href="/events" variant="gold" size="lg" withArrow>
-                Plan your event
-              </ButtonLink>
-            </div>
+            <figure>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={img.bayCinematic}
+                  alt="A private TrackMan bay with leather seating at Chip Shots"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 flex justify-between text-[0.65rem] uppercase tracking-[0.2em] text-cream/45">
+                <span>{golf.bays} private bays</span>
+                <span>TrackMan iO</span>
+                <span>{golf.courses} courses</span>
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>
 
-      {/* ============================================ TRIVIA NIGHT ===== */}
-      <section className="bg-gold">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-10 text-center sm:px-8 md:flex-row md:justify-between md:gap-8 md:text-left">
-          <div>
-            <p className="eyebrow text-green-deep/70">
-              {trivia.eyebrow} · {trivia.host}
-            </p>
-            <h2 className="font-display mt-1.5 text-3xl text-green-deep sm:text-4xl">
-              {trivia.title} — {trivia.day}s, {trivia.time}
-            </h2>
-            <UntilDate until={trivia.returnsOn}>
-              <p className="mt-2 inline-block rounded-full bg-green-deep/10 px-3 py-1 text-sm font-medium text-green-deep">
-                {trivia.returnsLabel}
-              </p>
-            </UntilDate>
-            <p className="mt-2 max-w-xl text-sm text-green-deep/80">
-              Free to play, no sign-up — {trivia.highlights[1].toLowerCase()}, so
-              there are more ways to win than the final score. {trivia.note}.
-            </p>
+      {/* =========================================== KITCHEN AND BAR ===== */}
+      <section className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-20">
+        <Reveal>
+          <div className="relative">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={img.clubRibs}
+                alt="Barbecue ribs with mashed potatoes at Chip Shots"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-10 right-4 hidden aspect-square w-44 overflow-hidden border-8 border-cream sm:block">
+              <Image
+                src={img.foodBurger}
+                alt="A bacon cheeseburger and fries at the bar"
+                fill
+                sizes="176px"
+                className="object-cover"
+              />
+            </div>
           </div>
-          <ButtonLink
-            href="/blog/trivia-night-henderson-tuesdays"
-            variant="green"
-            size="lg"
-            withArrow
-          >
-            How it works
-          </ButtonLink>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="kicker text-muted">03 · The kitchen &amp; bar</p>
+          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
+            You don&rsquo;t need a club in your hand{" "}
+            <span className="text-green-soft">to get a table.</span>
+          </h2>
+          <p className="mt-6 max-w-md text-ink/75">
+            Plenty of our regulars have never booked a bay. They come for
+            lunch, for dinner with the family, for a drink at the bar and for
+            brunch on Sunday. The dining room and patio are open whenever we
+            are.
+          </p>
+          <ul className="mt-8 max-w-md">
+            {[
+              ["Lunch & dinner", "Daily"],
+              ["Happy hour", "Mon–Fri · 3–6 PM"],
+              ["Prime rib brunch", "1st & 3rd Sundays · 10 AM–1 PM"],
+            ].map(([k, v]) => (
+              <li key={k} className="flex items-baseline gap-4 border-b border-line py-3.5">
+                <span className="eyebrow text-ink/70">{k}</span>
+                <span className="leader" aria-hidden />
+                <span className="text-sm text-ink/80">{v}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 flex flex-wrap items-center gap-7">
+            <ButtonLink href="/food-drink" variant="green" size="lg" withArrow>
+              See the menu
+            </ButtonLink>
+            {orderOnlineLive && (
+              <a
+                href={business.orderOnline}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cta text-ink"
+              >
+                Order pickup <span aria-hidden>→</span>
+              </a>
+            )}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ================================================= HENDERSON ===== */}
+      <section className="bg-green text-cream">
+        <div className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <div className="relative aspect-[4/3] overflow-hidden outline outline-1 outline-offset-[14px] outline-cream/15">
+              <Image
+                src={img.clubPatio}
+                alt="The patio and putting greens outside Chip Shots in Henderson"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="kicker text-gold-soft">04 · East Henderson</p>
+            <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
+              This side of town was missing a place like this.{" "}
+              <span className="text-gold-soft">So we built it.</span>
+            </h2>
+            <p className="mt-6 max-w-md text-cream/75">
+              Chip Shots is owned and run by the Mizell family. We are
+              veteran-owned, we live here, and we opened the kind of place we
+              wanted in our own neighborhood: good food, a proper bar and golf
+              you can play in any weather.
+            </p>
+            <p className="mt-8 flex max-w-md flex-wrap gap-x-5 gap-y-2 text-[0.7rem] uppercase tracking-[0.2em] text-cream/55">
+              {neighborhoods.map((n) => (
+                <span key={n}>{n}</span>
+              ))}
+            </p>
+            <Link href="/about" className="text-cta mt-10 text-cream">
+              Our story <span aria-hidden>→</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
-      {/* ============================================ FROM THE BLOG ===== */}
-      <section className="bg-cream-2">
-        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
+      {/* ============================================ PRIVATE EVENTS ===== */}
+      <section className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <Reveal>
+          <p className="kicker text-muted">05 · Private events</p>
+          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
+            Bring <span className="text-green-soft">the whole group.</span>
+          </h2>
+          <p className="mt-6 max-w-md text-ink/75">
+            Reserve a bay, a few bays or the whole building. Every event is
+            quoted to fit your group, with one person on our side handling the
+            food, the bar and the tee sheet.
+          </p>
+          <div className="mt-9">
+            <ButtonLink href="/holiday-parties" variant="green" size="lg" withArrow>
+              Plan an event
+            </ButtonLink>
+          </div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <ol className="border-t border-line">
+            {occasions.map((o, i) => (
+              <li key={o.title}>
+                <Link
+                  href={o.href}
+                  className="group flex items-baseline gap-6 border-b border-line py-5 transition-colors hover:text-green-soft"
+                >
+                  <span className="text-xs tracking-[0.15em] text-muted">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-display text-2xl font-semibold text-ink group-hover:text-green-soft">
+                    {o.title}
+                  </span>
+                  <span className="ml-auto text-ink/40 transition-transform group-hover:translate-x-1" aria-hidden>
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
+      </section>
+
+      {/* ================================================= THIS WEEK ===== */}
+      {next.length > 0 && (
+        <section className="bg-cream-2">
+          <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-28">
+            <div className="flex flex-wrap items-end justify-between gap-6">
               <Reveal>
-                <p className="eyebrow text-gold">From the Clubhouse</p>
-              </Reveal>
-              <Reveal delay={0.08}>
-                <h2 className="font-display mt-4 text-balance text-4xl font-light text-green-deep sm:text-5xl">
-                  Local guides, golf tips & what's on.
+                <p className="kicker text-muted">06 · On the calendar</p>
+                <h2 className="font-display mt-6 text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
+                  What&rsquo;s on.
                 </h2>
               </Reveal>
+              <Link href="/events" className="text-cta text-ink">
+                Full calendar <span aria-hidden>→</span>
+              </Link>
             </div>
-            <Reveal delay={0.12}>
-              <ButtonLink href="/blog" variant="outline" withArrow>
-                Read the blog
+            <div className="mt-12 border-t border-ink/15">
+              {next.map((e) => {
+                const d = formatEventDate(e.date);
+                return (
+                  <UntilDate key={e.date + e.title} until={e.date}>
+                    <div className="grid gap-2 border-b border-ink/15 py-6 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-8">
+                      <p className="eyebrow text-ink/60">
+                        {d.weekday} · {d.day}
+                      </p>
+                      <p className="font-display text-2xl font-semibold text-ink">
+                        {e.title}
+                      </p>
+                      <p className="text-sm text-ink/70">{e.time}</p>
+                    </div>
+                  </UntilDate>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ===================================================== VISIT ===== */}
+      <section className="bg-green-deep text-cream">
+        <div className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <p className="kicker text-gold-soft">07 · Visit</p>
+            <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
+              Easy to find <span className="text-gold-soft">once you know.</span>
+            </h2>
+            <p className="mt-6 max-w-md text-cream/70">
+              We&rsquo;re set back from Lake Mead Parkway, in the plaza with
+              the clock tower. Look for the striped awnings.
+            </p>
+            <address className="mt-8 not-italic text-cream/85">
+              {business.address.street}
+              <br />
+              {business.address.city}, {business.address.region}{" "}
+              {business.address.postalCode}
+              <br />
+              <a href={business.phoneHref} className="hover:text-gold-soft">
+                {business.phone}
+              </a>
+            </address>
+            <div className="mt-9 flex flex-wrap items-center gap-7">
+              <ButtonLink href={business.mapLink} external variant="gold" size="lg" withArrow>
+                Get directions
               </ButtonLink>
-            </Reveal>
-          </div>
-
-          <Stagger className="mt-14 grid gap-7 md:grid-cols-3" gap={0.12}>
-            {latestPosts.map((post) => (
-              <StaggerItem key={post.slug} as="article">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-[var(--shadow-card)] transition-all duration-500 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-7">
-                    <p className="eyebrow text-gold">{post.category}</p>
-                    <h3 className="font-display mt-3 text-xl leading-snug text-green-deep">
-                      {post.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                      {post.excerpt}
-                    </p>
-                    <p className="mt-5 text-sm text-muted">
-                      {formatPostDate(post.date)} · {post.readMinutes} min read
-                    </p>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      {/* ============================================ VISIT / MAP ===== */}
-      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div>
-            <Reveal>
-              <p className="eyebrow text-gold">Come see us</p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="font-display mt-4 text-balance text-4xl font-light text-green-deep sm:text-5xl">
-                In the heart of Henderson.
-              </h2>
-            </Reveal>
-            <GoldRule className="mt-7 w-32" />
-
-            <div className="mt-8 space-y-5 text-green-deep">
-              <div className="flex gap-4">
-                <Icon.pin className="mt-1 h-5 w-5 shrink-0 text-gold" />
-                <a
-                  href={business.mapLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline pb-0.5"
-                >
-                  {business.address.street}
-                  <br />
-                  {business.address.city}, {business.address.region}{" "}
-                  {business.address.postalCode}
-                </a>
-              </div>
-              <div className="flex gap-4">
-                <Icon.clock className="mt-1 h-5 w-5 shrink-0 text-gold" />
-                <ul className="space-y-1">
-                  {hoursSummary.map((h) => (
-                    <li key={h.label} className="flex gap-3">
-                      <span className="w-24 text-muted">{h.label}</span>
-                      <span className="font-medium">{h.time}</span>
-                    </li>
+              {orderOnlineLive && liveDelivery.length > 0 && (
+                <span className="text-sm text-cream/60">
+                  Delivery on{" "}
+                  {liveDelivery.map((d, i) => (
+                    <span key={d.key}>
+                      {i > 0 && " and "}
+                      <a
+                        href={d.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cream underline decoration-gold/60 underline-offset-4 hover:text-gold-soft"
+                      >
+                        {d.name}
+                      </a>
+                    </span>
                   ))}
-                </ul>
-              </div>
-              <div className="flex gap-4">
-                <Icon.phone className="mt-1 h-5 w-5 shrink-0 text-gold" />
-                <a href={business.phoneHref} className="link-underline pb-0.5">
-                  {business.phone}
-                </a>
-              </div>
+                </span>
+              )}
             </div>
-
-            <Reveal delay={0.1}>
-              <div className="mt-9 flex flex-wrap gap-4">
-                <BookButton variant="gold" withArrow />
-                <ButtonLink href="/about" variant="outline">
-                  About us
-                </ButtonLink>
-              </div>
-            </Reveal>
-          </div>
-
-          <Reveal delay={0.12}>
-            <div className="overflow-hidden rounded-3xl border border-line shadow-[var(--shadow-soft)]">
-              <iframe
-                src={business.mapEmbed}
-                title="Map to Chip Shots Indoor Golf Club"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-[420px] w-full"
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="eyebrow text-cream/55">Hours</p>
+            <dl className="mt-4">
+              {hours.map((h) => (
+                <div key={h.day} className="flex items-baseline gap-4 border-b border-cream/10 py-3.5">
+                  <dt className="text-sm text-cream/85">{h.day}</dt>
+                  <span className="leader" aria-hidden />
+                  <dd className="text-sm text-cream/70">{h.time}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="relative mt-10 aspect-[16/9] overflow-hidden">
+              <Image
+                src={img.clubDusk}
+                alt="The Chip Shots storefront with striped awnings at dusk"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
               />
             </div>
           </Reveal>

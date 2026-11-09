@@ -22,15 +22,14 @@ export function Wordmark({
       className={`group inline-flex flex-col leading-none ${className}`}
     >
       <span
-        className={`font-display text-[1.55rem] sm:text-[1.7rem] font-semibold tracking-tight ${main}`}
+        className={`font-display text-[1.3rem] font-semibold uppercase tracking-[0.16em] sm:text-[1.45rem] ${main}`}
       >
         Chip Shots
       </span>
       <span
-        className={`eyebrow mt-1 flex items-center gap-2 text-[0.6rem] ${sub}`}
+        className={`mt-1.5 text-[0.56rem] font-normal uppercase tracking-[0.34em] ${sub}`}
       >
-        <span className="h-px w-4 bg-gold/70" aria-hidden />
-        Indoor Golf Club
+        Golf · Food · Drinks
       </span>
     </Link>
   );

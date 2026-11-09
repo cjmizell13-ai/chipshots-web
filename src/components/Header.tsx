@@ -42,7 +42,7 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,0.7,0.2,1)] ${
           scrolled
-            ? "bg-green-deep/95 backdrop-blur-md shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+            ? "bg-green-deep/95 backdrop-blur-md border-b border-cream/10"
             : "bg-gradient-to-b from-green-deep/70 to-transparent"
         }`}
       >
@@ -58,7 +58,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`link-underline pb-1 text-sm tracking-wide transition-colors ${
+                className={`link-underline pb-1 text-[0.72rem] font-normal uppercase tracking-[0.18em] transition-colors ${
                   active ? "text-gold" : "text-cream/85 hover:text-cream"
                 }`}
               >
@@ -91,7 +91,7 @@ export default function Header() {
             aria-label="Open menu"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/25 text-cream transition-colors hover:bg-cream/10 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[2px] border border-cream/25 text-cream transition-colors hover:bg-cream/10 lg:hidden"
           >
             <Icon.menu className="h-5 w-5" />
           </button>
@@ -125,7 +125,7 @@ export default function Header() {
                   type="button"
                   aria-label="Close menu"
                   onClick={() => setOpen(false)}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/25 text-cream hover:bg-cream/10"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-[2px] border border-cream/25 text-cream hover:bg-cream/10"
                 >
                   <Icon.close className="h-5 w-5" />
                 </button>
