@@ -87,8 +87,9 @@ export const delivery: {
     key: "ubereats",
     name: "Uber Eats",
     href: "https://www.ubereats.com/store/chip-shots/s6QUaqG7RWG4PP9Cz21sjA",
-    // Off until the store is back online in Uber Eats Manager.
-    live: false,
+    // Live Nov 9: store is online in Uber Eats Manager with delivery and
+    // pickup, 11 AM-9:30 PM.
+    live: true,
   },
 ];
 
