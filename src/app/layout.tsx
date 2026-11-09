@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Fraunces, Inter } from "next/font/google";
+import { Bodoni_Moda, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,15 +10,14 @@ import BookingProvider from "@/components/BookingProvider";
 import BookingTracker from "@/components/BookingTracker";
 import { business, liveDelivery, orderOnlineLive, schedule } from "@/lib/site";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
   display: "swap",
-  axes: ["opsz", "SOFT", "WONK"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const lexend = Lexend_Deca({
+  variable: "--font-lexend",
   subsets: ["latin"],
   display: "swap",
 });
@@ -138,7 +137,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${bodoni.variable} ${lexend.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-cream">
         <script

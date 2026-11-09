@@ -5,19 +5,27 @@
    Deep green + gold + cream. Editorial serif display, clean sans body.
    =========================================================================== */
 @theme {
-  --color-green: #1b4332;
-  --color-green-deep: #0f2a18;
-  --color-green-soft: #2c5a43;
-  --color-gold: #c9a84c;
-  --color-gold-soft: #d8be74;
-  --color-cream: #fbf8f0;
-  --color-cream-2: #f3eee1;
-  --color-ink: #1d2419;
-  --color-muted: #6f6d61;
-  --color-line: #e3dcc8;
+  /* Clubhouse palette: deep greens, warm paper, a quiet brass. */
+  --color-green: #1f3a2d;
+  --color-green-deep: #101c16;
+  --color-green-soft: #3a5646;
+  --color-gold: #b99a55;
+  --color-gold-soft: #cdb680;
+  --color-cream: #ece3d3;
+  --color-cream-2: #e2d7c3;
+  --color-ink: #23261f;
+  --color-muted: #6b675b;
+  --color-line: #d3c7b0;
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  --font-display: var(--font-bodoni);
+  --font-sans: var(--font-lexend);
+
+  /* Squared-off corners everywhere; the look is tailored, not bubbly. */
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 3px;
+  --radius-2xl: 3px;
+  --radius-3xl: 4px;
 
   --shadow-soft: 0 18px 50px -20px rgba(20, 40, 25, 0.35);
   --shadow-card: 0 10px 30px -16px rgba(20, 40, 25, 0.28);
@@ -39,7 +47,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.65;
 }
+
+h1, h2, h3, h4 { letter-spacing: 0.005em; }
 
 ::selection {
   background: var(--color-gold);
@@ -61,10 +74,51 @@ body {
 .font-display { font-family: var(--font-display), Georgia, serif; }
 
 .eyebrow {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
+}
+
+/* Section label: a short rule, then "01 · Under one roof". */
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.kicker::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+/* Small text link with an arrow, underlined in brass. */
+.text-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: gap 0.3s var(--ease-out-soft), color 0.3s;
+}
+.text-cta:hover { gap: 1rem; color: var(--color-gold); }
+
+/* Dotted leader between a label and its price or time. */
+.leader {
+  flex: 1;
+  border-bottom: 1px dotted currentColor;
+  opacity: 0.35;
+  transform: translateY(-0.3em);
 }
 
 .display-balance { text-wrap: balance; }
@@ -88,11 +142,11 @@ body {
 /* Subtle grain/texture for hero overlays */
 .veil-green {
   background:
-    linear-gradient(180deg, rgba(15, 42, 24, 0.35) 0%, rgba(15, 42, 24, 0.55) 45%, rgba(15, 42, 24, 0.88) 100%);
+    linear-gradient(180deg, rgba(16, 28, 22, 0.35) 0%, rgba(16, 28, 22, 0.55) 45%, rgba(16, 28, 22, 0.88) 100%);
 }
 .veil-green-strong {
   background:
-    linear-gradient(180deg, rgba(15, 42, 24, 0.55) 0%, rgba(15, 42, 24, 0.7) 50%, rgba(15, 42, 24, 0.95) 100%);
+    linear-gradient(180deg, rgba(16, 28, 22, 0.55) 0%, rgba(16, 28, 22, 0.7) 50%, rgba(16, 28, 22, 0.95) 100%);
 }
 
 /* ---- Keyframe animations (CSS, reduced-motion aware) ------------------ */

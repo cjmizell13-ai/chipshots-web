@@ -137,11 +137,11 @@ export const schedule: { open: number; close: number }[] = [
 export type NavItem = { label: string; href: string };
 
 export const nav: NavItem[] = [
-  { label: "Food & Drink", href: "/food-drink" },
-  { label: "Golf & Booking", href: "/golf-booking" },
-  { label: "Memberships", href: "/memberships" },
+  { label: "Dine", href: "/food-drink" },
+  { label: "Play", href: "/golf-booking" },
   { label: "Events", href: "/events" },
-  { label: "Blog", href: "/blog" },
+  { label: "Memberships", href: "/memberships" },
+  { label: "Journal", href: "/blog" },
   { label: "About", href: "/about" },
 ];
 
@@ -182,6 +182,17 @@ export const img = {
   exterior2: "/images/exterior-storefront.jpg",
   entry: "/images/entry-vestibule.jpg",
   logo: "/images/logo-crest.jpg",
+
+  // Stills from the Henderson Chamber "Have You Been?" film (Aug 2026)
+  clubGolfer: "/images/club-golfer.jpg", // guest mid-swing in a bay
+  clubRoom: "/images/club-room.jpg", // dining room looking toward the bar
+  clubPatio: "/images/club-patio.jpg", // patio and putting greens
+  clubService: "/images/club-bayservice.jpg", // server carrying plates
+  clubRibs: "/images/club-ribs.jpg",
+  clubNachos: "/images/club-nachos.jpg",
+  clubDining: "/images/club-diningbusy.jpg", // full tables at lunch
+  clubGuests: "/images/club-guests.jpg",
+  clubDusk: "/images/club-dusk.jpg", // storefront at dusk
 };
 
 // -----------------------------------------------------------------------------

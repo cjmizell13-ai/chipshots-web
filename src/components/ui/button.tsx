@@ -5,19 +5,18 @@ type Variant = "gold" | "green" | "outline" | "ghost-light";
 type Size = "md" | "lg";
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-all duration-300 ease-[cubic-bezier(0.22,0.7,0.2,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gold focus-visible:ring-offset-cream disabled:opacity-50 disabled:pointer-events-none";
+  "group relative inline-flex items-center justify-center gap-3 rounded-[2px] text-[0.72rem] font-normal uppercase tracking-[0.2em] transition-all duration-300 ease-[cubic-bezier(0.22,0.7,0.2,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gold focus-visible:ring-offset-cream disabled:opacity-50 disabled:pointer-events-none";
 
 const sizes: Record<Size, string> = {
-  md: "px-6 py-3 text-sm",
-  lg: "px-8 py-4 text-[0.95rem]",
+  md: "px-6 py-3.5",
+  lg: "px-8 py-4.5",
 };
 
 const variants: Record<Variant, string> = {
-  gold: "bg-gold text-green-deep hover:bg-gold-soft shadow-[0_10px_30px_-12px_rgba(201,168,76,0.7)] hover:-translate-y-0.5",
-  green:
-    "bg-green text-cream hover:bg-green-soft shadow-[0_10px_30px_-14px_rgba(15,42,24,0.8)] hover:-translate-y-0.5",
+  gold: "bg-gold text-green-deep hover:bg-gold-soft",
+  green: "bg-green text-cream hover:bg-green-soft",
   outline:
-    "border border-green/30 text-green hover:border-green hover:bg-green hover:text-cream",
+    "border border-ink/30 text-ink hover:border-green hover:bg-green hover:text-cream",
   "ghost-light":
     "border border-cream/35 text-cream hover:bg-cream hover:text-green-deep",
 };
