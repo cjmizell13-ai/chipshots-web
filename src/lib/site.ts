@@ -394,8 +394,8 @@ export type Membership = {
 export const memberships: Membership[] = [
   { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true, joinUrl: business.membershipJoin },
   { tier: "Unlimited Monthly", price: "$239", per: "/mo", note: "Unlimited bay time, billed monthly.", joinUrl: business.membershipJoin },
-  { tier: "Junior", price: "$159", per: "/mo", note: "Youth program for players 18 & under." },
-  { tier: "Evenings", price: "$119", per: "/mo", note: "Evening-focused late-night tier.", joinUrl: business.membershipJoin },
+  { tier: "Youth", price: "$159", per: "/mo", note: "For players 18 and under." },
+  { tier: "Night-Only", price: "$119", per: "/mo", note: "After-hours bay access: Sun–Thu 10 PM–6 AM, Fri–Sat midnight–8 AM.", joinUrl: business.membershipJoin },
   { tier: "Corporate Club", price: "$449", per: "/mo", note: "Up to 3 users, unlimited three-hour bay sessions, 10% off F&B." },
   { tier: "Corporate Premier", price: "$699", per: "/mo", note: "Up to 5 users, four-hour sessions, 15% off F&B, plus a monthly team outing: up to 3 bays for 2 hours, Mon–Thu before 5pm." },
 ];
@@ -1011,7 +1011,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Is Chip Shots family-friendly? Can kids play?",
-    a: "Yes. Indoor golf is great for all ages, and we host kids' birthday parties and offer a junior membership. Families are welcome any time during open hours.",
+    a: "Yes. Indoor golf is great for all ages, and we host kids' birthday parties and offer a youth membership. Families are welcome any time during open hours.",
   },
   {
     q: "Do I need a reservation, or can I walk in?",

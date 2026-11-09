@@ -9,7 +9,7 @@ import { business, img, memberships } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Junior Golf in Henderson",
   description:
-    "Indoor junior golf for kids and teens in Henderson, NV. A junior membership, beginner-friendly TrackMan simulators, kids' birthday parties and a family-friendly, climate-controlled venue. No experience needed.",
+    "Indoor junior golf for kids and teens in Henderson, NV. A youth membership, beginner-friendly TrackMan simulators, kids' birthday parties and a family-friendly, climate-controlled venue. No experience needed.",
   alternates: { canonical: "/youth-golf" },
 };
 
@@ -36,7 +36,7 @@ const whyKids = [
   },
 ];
 
-const youthTier = memberships.find((m) => m.tier === "Junior");
+const youthTier = memberships.find((m) => m.tier === "Youth");
 
 export default function YouthGolf() {
   return (
@@ -87,12 +87,12 @@ export default function YouthGolf() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <Reveal>
               <div>
-                <p className="eyebrow text-gold-soft">Junior membership</p>
+                <p className="eyebrow text-gold-soft">Youth membership</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
                   A youth membership built for regulars.
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-                  The junior membership is for players 18 and under — for
+                  The youth membership is for players 18 and under — for
                   the kid who's hooked and wants to keep coming back. It's the
                   most affordable way to turn casual swings into a real, growing
                   skill.
@@ -187,7 +187,7 @@ export default function YouthGolf() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted">
               Grab a bay any day of the week and let them try it — clubs
-              included, no experience needed. Questions about the junior membership or
+              included, no experience needed. Questions about the youth membership or
               a party? Give us a call.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
