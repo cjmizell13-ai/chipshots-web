@@ -100,7 +100,7 @@ export default function FoodDrink() {
               </h2>
             </div>
             <span className="hidden text-sm text-muted sm:block">
-              Plus prime rib brunch the first Sunday of every month, 10 AM–1 PM
+              Plus prime rib brunch the first and third Sunday of every month, 10 AM–1 PM
             </span>
           </div>
         </Reveal>

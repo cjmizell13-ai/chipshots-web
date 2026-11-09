@@ -609,7 +609,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-01",
     title: "Sunday Prime Rib Brunch",
     time: "10:00 AM–1:00 PM",
-    desc: "Join us for our monthly Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
     signup: "https://form.jotform.com/262977660757071",
     signupLabel: "RSVP",
   },
@@ -657,6 +657,12 @@ export const upcomingEvents: ScheduledEvent[] = [
     signup: "https://pci.jotform.com/form/262979400496166",
   },
   {
+    date: "2026-11-15",
+    title: "Sunday Prime Rib Brunch",
+    time: "10:00 AM–1:00 PM",
+    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+  },
+  {
     date: "2026-11-17",
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
@@ -696,10 +702,22 @@ export const upcomingEvents: ScheduledEvent[] = [
     signup: "https://form.jotform.com/262980906700056",
     signupLabel: "Vendor Interest Form",
   },
+  {
+    date: "2026-12-06",
+    title: "Sunday Prime Rib Brunch",
+    time: "10:00 AM–1:00 PM",
+    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+  },
+  {
+    date: "2026-12-20",
+    title: "Sunday Prime Rib Brunch",
+    time: "10:00 AM–1:00 PM",
+    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+  },
 ];
 
 // Daily specials, shown above the menu on /food-drink as banners styled like
-// the football one. Sunday brunch runs the first Sunday of each month only.
+// the football one. Sunday brunch runs the first and third Sundays of each month.
 export type DailySpecial = {
   day: string;
   headline: string;
@@ -741,7 +759,7 @@ export const dailySpecials: DailySpecial[] = [
     icon: "star",
   },
   {
-    day: "1st Sunday · 10 AM–1 PM",
+    day: "1st & 3rd Sundays · 10 AM–1 PM",
     headline: "Prime Rib Brunch",
     detail:
       "Adults $35 · Kids 6–12 $17 · 5 & under free · Bottomless mimosas & Bloody Marys $15",
