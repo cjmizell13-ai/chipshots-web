@@ -599,9 +599,9 @@ export type ScheduledEvent = {
   signupLabel?: string;
 };
 const triviaRsvp = "https://form.jotform.com/262977444520059";
-// Facebook Event for the Nov 15 brunch (posted Nov 9). Guests who tap
-// Interested or Going get Facebook's own reminders before the day.
-const brunchNov15 = "https://www.facebook.com/events/2464679007602428/";
+// RSVP form for the Nov 15 brunch (name, contact, party size, seating), so
+// the kitchen has a head count. The Facebook Event links to the same form.
+const brunchNov15 = "https://form.jotform.com/263127147256154";
 const brunchDesc =
   "Brunch buffet with a prime rib carving station, breakfast favorites and more. Adults $35, kids 6–12 $17, 5 and under free. Bottomless mimosas and Bloody Marys $15.";
 export const upcomingEventsIntro =
@@ -635,7 +635,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     time: "10:00 AM–1:00 PM",
     desc: brunchDesc,
     signup: brunchNov15,
-    signupLabel: "RSVP on Facebook",
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-17",
