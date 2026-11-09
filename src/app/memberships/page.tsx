@@ -20,9 +20,9 @@ export default function Memberships() {
     <>
       <PixelEvent event="ViewContent" params={{ content_name: "Memberships" }} />
       <PageHero
-        eyebrow="Memberships & Pricing"
-        title="Play more. Pay less. Skip the line."
-        intro="Members book their bay time free, with priority booking and round-the-clock access. Need extra hours? They're just $30/hr. There's a tier for every kind of player."
+        eyebrow="Memberships"
+        title="For the regulars."
+        intro="Chip Shots is open to everyone. Membership is for people who play often: bay time is included, booking opens to you first, and extra hours are $30. There's a tier for every kind of player."
         image={img.bayLoveseat}
       />
 
@@ -33,7 +33,7 @@ export default function Memberships() {
             <div>
               <p className="eyebrow text-gold">Why join</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                The perks pay for themselves.
+                What members get.
               </h2>
               <p className="mt-5 max-w-md leading-relaxed text-muted">
                 If you're playing even a couple times a month, a membership is
@@ -62,7 +62,7 @@ export default function Memberships() {
             <div className="max-w-2xl">
               <p className="eyebrow text-gold">How it works</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Simple to join. Simpler to play.
+                How it works.
               </h2>
               <p className="mt-5 leading-relaxed text-muted">
                 Memberships are month-to-month or annual — no long contracts.
@@ -165,7 +165,7 @@ export default function Memberships() {
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 py-14 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
           <div>
             <h2 className="font-display text-3xl text-green-deep sm:text-4xl">
-              Not ready to commit?
+              Not sure yet?
             </h2>
             <p className="mt-2 text-green-deep/80">
               Book a bay first — you'll be back. Members book free.

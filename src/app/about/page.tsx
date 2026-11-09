@@ -38,9 +38,9 @@ export default function About() {
   return (
     <>
       <PageHero
-        eyebrow="About & Contact"
-        title="A veteran-owned clubhouse in the heart of Henderson."
-        intro="Chip Shots was built by the Mizell family to be the kind of place you actually want to spend an evening — great food, a real bar, and golf that's fun whether you shoot par or have never swung a club."
+        eyebrow="Our story"
+        title="A family place, built for the neighborhood."
+        intro="Chip Shots was built by the Mizell family to be the kind of place you want to spend an evening: good food, a proper bar, and golf that's fun whether you shoot par or have never swung a club."
         image={img.exterior}
       />
 
@@ -64,7 +64,7 @@ export default function About() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Golf for everyone. Food for its own sake.
+                Golf for anyone. Food worth the trip on its own.
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -118,7 +118,7 @@ export default function About() {
               <Reveal>
                 <p className="eyebrow text-gold-soft">Visit</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  Find us <Amp /> say hi.
+                  Come by.
                 </h2>
               </Reveal>
 
@@ -205,7 +205,7 @@ export default function About() {
               <div className="h-full min-h-[420px] overflow-hidden rounded-3xl border border-cream/15 shadow-[var(--shadow-soft)]">
                 <iframe
                   src={business.mapEmbed}
-                  title="Map to Chip Shots Indoor Golf Club"
+                  title="Map to Chip Shots"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-full min-h-[420px] w-full"
@@ -222,7 +222,7 @@ export default function About() {
           <div className="text-center">
             <p className="eyebrow text-gold">Get in touch</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Send us a note.
+              Write to us.
             </h2>
             <p className="mt-4 text-muted">
               Questions, feedback or just want to say hello? We'd love to hear

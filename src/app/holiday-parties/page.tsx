@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const packages = [
   {
-    name: "Par",
+    name: "A few bays",
     size: "Small groups, about 8 to 12 guests",
     items: [
       "2 to 3 private TrackMan bays",
@@ -25,7 +25,7 @@ const packages = [
     ],
   },
   {
-    name: "Birdie",
+    name: "The bays",
     size: "Team parties, about 12 to 25 guests",
     items: [
       `Up to all ${golf.bays} bays for your group`,
@@ -34,7 +34,7 @@ const packages = [
     ],
   },
   {
-    name: "Eagle",
+    name: "The whole building",
     size: "Full private buyout, groups of 100+",
     items: [
       "The whole venue: every bay, the dining room, the bar and the patio",
@@ -67,7 +67,7 @@ export default function HolidayParties() {
     <>
       <PageHero
         eyebrow="Holiday Parties"
-        title="The office holiday party people actually want to go to."
+        title="Holiday parties, done properly."
         intro="Private TrackMan bays, food from our kitchen and a full bar, for groups of 10 up to full private buyouts of 100+. Family- and veteran-owned, right on Lake Mead Pkwy in Henderson."
         image={img.bayRoomWide}
       />
@@ -78,7 +78,7 @@ export default function HolidayParties() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">Party options</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Pick a size. We'll handle the rest.
+              Every party is quoted to fit. Here is how most groups use the space.
             </h2>
             <p className="mt-4 leading-relaxed text-muted">
               Every party is quoted to your group, so send us a headcount and a
@@ -121,7 +121,7 @@ export default function HolidayParties() {
             <div className="max-w-2xl">
               <p className="eyebrow text-gold-soft">Why groups book us</p>
               <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                Easier than a restaurant, more fun than a conference room.
+                Why groups book here.
               </h2>
             </div>
           </Reveal>
@@ -157,7 +157,7 @@ export default function HolidayParties() {
             <div className="lg:sticky lg:top-28">
               <p className="eyebrow text-gold">Request a quote</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Lock in your date.
+                Ask about your date.
               </h2>
               <p className="mt-5 max-w-sm leading-relaxed text-muted">
                 Choose "Holiday Party," add your headcount and a date or two,

@@ -10,8 +10,6 @@ import { Wordmark } from "@/components/ui/brand";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import { AmpText } from "@/components/ui/amp";
-import AnnouncementBar from "@/components/AnnouncementBar";
-import VipBar from "@/components/VipBar";
 import BookButton from "@/components/BookButton";
 import { useBooking } from "@/components/BookingProvider";
 
@@ -46,8 +44,6 @@ export default function Header() {
             : "bg-gradient-to-b from-green-deep/70 to-transparent"
         }`}
       >
-        <VipBar />
-        <AnnouncementBar />
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Wordmark />
 

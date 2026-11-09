@@ -42,8 +42,8 @@ export default function GiftCards() {
     <>
       <PageHero
         eyebrow="Gift Cards"
-        title="The gift that always fits."
-        intro="A Chip Shots gift card is golf, great food and a cold drink in one of Henderson's best spots — no 110° heat. Pick any amount, delivered instantly by email."
+        title="Gift cards."
+        intro="A Chip Shots gift card is good for dinner, drinks and bay time. Pick any amount, delivered instantly by email."
         image={img.bayMoody}
       />
 
@@ -53,7 +53,7 @@ export default function GiftCards() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">How it works</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Done in under a minute.
+              How it works.
             </h2>
           </div>
         </Reveal>
@@ -84,7 +84,7 @@ export default function GiftCards() {
             <div className="max-w-2xl">
               <p className="eyebrow text-gold">What it covers</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                More than golf.
+                Good for everything here.
               </h2>
             </div>
           </Reveal>
@@ -116,7 +116,7 @@ export default function GiftCards() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-              Give the good times.
+              Send one today.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>

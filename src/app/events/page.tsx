@@ -51,11 +51,10 @@ export default function Events() {
   return (
     <>
       <PageHero
-        eyebrow="Events & Parties"
-        title="Good Times. Great Company. Unforgettable Gatherings."
+        eyebrow="Events"
+        title="What's on, and how to host your own."
         intro={[
-          "From private celebrations and corporate outings to trivia nights, cocktail classes and community events, there\u2019s always a reason to get together at Chip Shots.",
-          "Enjoy great food, a full bar, indoor golf and a spacious patio — all in one place.",
+          "Trivia on Tuesdays, prime rib brunch on the first and third Sundays, and a calendar of one-off nights in between. For private events, every booking is quoted to fit your group.",
         ]}
         image={img.bayRoomWide}
       />
@@ -66,7 +65,7 @@ export default function Events() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">Upcoming events at Chip Shots</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              More than just golf!
+              On the calendar.
             </h2>
             <p className="mt-4 leading-relaxed text-muted">
               {upcomingEventsIntro}
@@ -134,7 +133,7 @@ export default function Events() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">What we host</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Built for groups of any size.
+              Private events.
             </h2>
           </div>
         </Reveal>
@@ -188,7 +187,7 @@ export default function Events() {
             <div className="lg:sticky lg:top-28">
               <p className="eyebrow text-gold">Request an event</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Let's plan it.
+                Tell us about your event.
               </h2>
               <p className="mt-5 max-w-sm leading-relaxed text-muted">
                 Send us the basics and our events team will follow up with

@@ -5,7 +5,7 @@
 // =============================================================================
 
 export const business = {
-  name: "Chip Shots Indoor Golf Club",
+  name: "Chip Shots",
   shortName: "Chip Shots",
   tagline: "Golf • Food • Drinks",
   address: {
@@ -298,8 +298,8 @@ export const leagues = {
   },
   // "Does membership pay for itself?" — uses real rates from `golf` + `memberships`.
   membershipMath: {
-    eyebrow: "Do the math",
-    title: "For a weekly player, membership pays for itself.",
+    eyebrow: "The numbers",
+    title: "If you play most weeks, membership costs less.",
     payg: {
       title: "Pay per visit",
       lines: [
@@ -394,8 +394,8 @@ export type Membership = {
 export const memberships: Membership[] = [
   { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true, joinUrl: business.membershipJoin },
   { tier: "Unlimited Monthly", price: "$239", per: "/mo", note: "Unlimited bay time, billed monthly.", joinUrl: business.membershipJoin },
-  { tier: "Chip Crew — Youth", price: "$159", per: "/mo", note: "Youth program for players 18 & under." },
-  { tier: "Chippin' After Dark", price: "$119", per: "/mo", note: "Evening-focused late-night tier.", joinUrl: business.membershipJoin },
+  { tier: "Junior", price: "$159", per: "/mo", note: "Youth program for players 18 & under." },
+  { tier: "Evenings", price: "$119", per: "/mo", note: "Evening-focused late-night tier.", joinUrl: business.membershipJoin },
   { tier: "Corporate Club", price: "$449", per: "/mo", note: "Up to 3 users, unlimited three-hour bay sessions, 10% off F&B." },
   { tier: "Corporate Premier", price: "$699", per: "/mo", note: "Up to 5 users, four-hour sessions, 15% off F&B, plus a monthly team outing: up to 3 bays for 2 hours, Mon–Thu before 5pm." },
 ];
@@ -921,8 +921,8 @@ export const spirits: SpiritGroup[] = [
 // -----------------------------------------------------------------------------
 export const happyHour = {
   window: "Mon–Fri · 3–6 PM",
-  lateWindow: "The Night Cap · Sun–Wed · 8 PM–close",
-  note: "No clubs, no tee time, no problem — pull up to the bar, grab a table, or take a bay. Happy-hour pricing runs in the bays too, so you can eat, drink and play without getting up. And it comes back around late: The Night Cap runs the same happy-hour pricing Sunday through Wednesday from 8 PM to close — the second session of every weekly night rolls straight into it.",
+  lateWindow: "The Night Cap · Sun–Thu · 8 PM–close · from Nov 15",
+  note: "Happy-hour pricing runs at the bar, at the tables and in the bays. From November 15 it comes back for The Night Cap: the same pricing Sunday through Thursday from 8 PM to close.",
   drinks: [
     { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Modelo · Cali Squeeze" },
     { name: "Well Drinks", price: "$6", desc: "Vodka · gin · tequila · rum · bourbon" },
@@ -976,7 +976,7 @@ export const trivia = {
 // Events
 // -----------------------------------------------------------------------------
 export const eventTypes = [
-  { title: "Birthday Parties", desc: "Adults and kids alike — bays, burgers and cake. Ties to our Chip Crew youth program." },
+  { title: "Birthday Parties", desc: "Adults and kids alike — bays, burgers and cake. Kids' parties welcome." },
   { title: "Corporate & Team Building", desc: "Off-sites, client outings and team nights with private bays and catering." },
   { title: "Bachelor & Bachelorette", desc: "A standout stop on the celebration circuit — drinks, golf and good company." },
   { title: "Holiday Parties", desc: "Climate-controlled, festive and easy to host for groups of any size." },
@@ -1011,7 +1011,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Is Chip Shots family-friendly? Can kids play?",
-    a: "Yes. Indoor golf is great for all ages, and we host kids' birthday parties tied to our Chip Crew youth program. Families are welcome any time during open hours.",
+    a: "Yes. Indoor golf is great for all ages, and we host kids' birthday parties and offer a junior membership. Families are welcome any time during open hours.",
   },
   {
     q: "Do I need a reservation, or can I walk in?",

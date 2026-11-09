@@ -24,14 +24,13 @@ export default function VipSignup() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="eyebrow text-gold-soft">Join the Chip Shots VIP Crew</p>
+            <p className="eyebrow text-gold-soft">The list</p>
             <h2 className="font-display mt-3 text-3xl font-light sm:text-4xl">
-              First to know. First in the bay.
+              Hear it first.
             </h2>
             <p className="mt-4 max-w-md leading-relaxed text-cream/75">
-              Members-only deals, event invites, club-night news and the
-              occasional free-play perk — straight to your inbox. No spam, just
-              the good stuff.
+              Event dates, brunch Sundays and new menus, a couple of times a
+              month. Nothing else.
             </p>
           </div>
 
