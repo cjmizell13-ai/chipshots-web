@@ -7,9 +7,9 @@ import { Icon } from "@/components/ui/icons";
 import { business, img, memberships } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Youth & Junior Golf in Henderson — The Chip Crew",
+  title: "Junior Golf in Henderson",
   description:
-    "Indoor junior golf for kids and teens in Henderson, NV. The Chip Crew youth program, beginner-friendly TrackMan simulators, kids' birthday parties and a family-friendly, climate-controlled venue. No experience needed.",
+    "Indoor junior golf for kids and teens in Henderson, NV. A junior membership, beginner-friendly TrackMan simulators, kids' birthday parties and a family-friendly, climate-controlled venue. No experience needed.",
   alternates: { canonical: "/youth-golf" },
 };
 
@@ -36,13 +36,13 @@ const whyKids = [
   },
 ];
 
-const youthTier = memberships.find((m) => m.tier.startsWith("Chip Crew"));
+const youthTier = memberships.find((m) => m.tier === "Junior");
 
 export default function YouthGolf() {
   return (
     <>
       <PageHero
-        eyebrow="The Chip Crew · Youth Golf"
+        eyebrow="Junior golf"
         title="Where Henderson's next golfers get started."
         intro="Indoor, beginner-friendly and built for all ages — junior golf at Chip Shots is the easiest way for kids and teens to fall in love with the game. No experience, no clubs and no sunburn required."
         image={img.bayCinematic}
@@ -54,7 +54,7 @@ export default function YouthGolf() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">Why families love it</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Big fun for little golfers.
+              Why families come.
             </h2>
           </div>
         </Reveal>
@@ -87,12 +87,12 @@ export default function YouthGolf() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <Reveal>
               <div>
-                <p className="eyebrow text-gold-soft">The Chip Crew</p>
+                <p className="eyebrow text-gold-soft">Junior membership</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
                   A youth membership built for regulars.
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-                  The Chip Crew is our membership for players 18 and under — for
+                  The junior membership is for players 18 and under — for
                   the kid who's hooked and wants to keep coming back. It's the
                   most affordable way to turn casual swings into a real, growing
                   skill.
@@ -155,7 +155,7 @@ export default function YouthGolf() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                The birthday they'll actually remember.
+                Kids&rsquo; birthday parties.
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -183,11 +183,11 @@ export default function YouthGolf() {
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-24">
           <Reveal>
             <h2 className="font-display text-3xl font-light text-green-deep sm:text-4xl">
-              Bring the kids in for a swing.
+              Bring them in for a first swing.
             </h2>
             <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted">
               Grab a bay any day of the week and let them try it — clubs
-              included, no experience needed. Questions about the Chip Crew or
+              included, no experience needed. Questions about the junior membership or
               a party? Give us a call.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">

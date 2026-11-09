@@ -61,9 +61,9 @@ export default function FoodDrink() {
   return (
     <>
       <PageHero
-        eyebrow="Food & Drink"
-        title="A full kitchen and a proper bar."
-        intro="Real food made to order, an honest pour and a happy hour that runs right into the bays. Golf optional."
+        eyebrow="Dine"
+        title="A restaurant first."
+        intro="Lunch, dinner and a full bar every day, with brunch on the first and third Sundays. You don't have to book a bay to get a table."
         image={img.foodCheesesteak}
       />
 
@@ -94,9 +94,9 @@ export default function FoodDrink() {
         <Reveal>
           <div className="flex items-end justify-between gap-6">
             <div>
-              <p className="eyebrow text-gold">Every day&apos;s a deal</p>
+              <p className="eyebrow text-gold">This week in the kitchen</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Daily specials
+                Nightly features
               </h2>
             </div>
             <span className="hidden text-sm text-muted sm:block">

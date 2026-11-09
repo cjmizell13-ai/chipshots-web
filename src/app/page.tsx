@@ -75,7 +75,7 @@ export default function Home() {
       <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-green-deep">
         <Image
           src={img.clubRoom}
-          alt="The dining room and bar at Chip Shots Indoor Golf Club in Henderson, Nevada"
+          alt="The dining room and bar at Chip Shots in Henderson, Nevada"
           fill
           priority
           sizes="100vw"

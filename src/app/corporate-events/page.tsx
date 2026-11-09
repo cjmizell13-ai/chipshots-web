@@ -63,8 +63,8 @@ export default function CorporateEvents() {
     <>
       <PageHero
         eyebrow="Corporate Events"
-        title="Team building that doesn't feel like team building."
-        intro="Private TrackMan bays, catered food and a full bar — and games everyone can play, whether they golf or have never held a club. The easiest yes on the company calendar."
+        title="Bring the team. We'll run the day."
+        intro="Private TrackMan bays, food from our kitchen and a full bar, with games anyone can play whether or not they golf. One contact on our side plans it with you."
         image={img.trackmanCompetitions}
       />
 
@@ -74,7 +74,7 @@ export default function CorporateEvents() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">Why teams love it</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              The conference room never stood a chance.
+              Why companies book here.
             </h2>
           </div>
         </Reveal>
@@ -109,7 +109,7 @@ export default function CorporateEvents() {
               <div>
                 <p className="eyebrow text-gold-soft">What we host</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  Built for every kind of work gathering.
+                  What we host.
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
                   From a casual team happy hour to a full sales-kickoff
@@ -161,7 +161,7 @@ export default function CorporateEvents() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Entertain clients all year with a corporate membership.
+                Host clients all year on a corporate membership.
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
@@ -212,7 +212,7 @@ export default function CorporateEvents() {
               <div className="lg:sticky lg:top-28">
                 <p className="eyebrow text-gold">Request your event</p>
                 <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                  Let's plan it.
+                  Tell us about your event.
                 </h2>
                 <p className="mt-5 max-w-sm leading-relaxed text-muted">
                   Send us the basics and our events team will follow up with

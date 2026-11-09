@@ -43,9 +43,9 @@ export default function GolfBooking() {
   return (
     <>
       <PageHero
-        eyebrow="Golf & Booking"
-        title="Five TrackMan bays. 500+ courses. No tee time at dawn."
-        intro="Indoor golf the way it should be — climate-controlled, social, and open late. Reserve a bay below."
+        eyebrow="Play"
+        title="Your own bay. Your own tee time."
+        intro="Five private TrackMan bays, priced by the hour for the whole bay. Food and drinks come to you."
         image={img.bayDesertData}
       />
 
@@ -138,7 +138,7 @@ export default function GolfBooking() {
               <div>
                 <p className="eyebrow text-gold-soft">Bay rates</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  Simple, by-the-hour pricing.
+                  Priced by the hour, not by the person.
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
                   Rates are per bay, per hour — split it with up to three friends.
@@ -190,7 +190,7 @@ export default function GolfBooking() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Book online in seconds.
+                Reserve a bay.
               </h2>
             </Reveal>
             <GoldRule className="mx-auto mt-7 w-40" />
@@ -232,7 +232,7 @@ export default function GolfBooking() {
         <Reveal>
           <p className="eyebrow text-gold">Inside the bays</p>
           <h2 className="font-display mt-3 text-3xl font-light text-green-deep sm:text-4xl">
-            Take a look around.
+            Inside the bays.
           </h2>
         </Reveal>
         <div className="mt-8">

@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 export const alt =
-  "Chip Shots Indoor Golf Club — golf, food and drinks in Henderson, NV";
+  "Chip Shots — golf, food and drinks in Henderson, NV";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -62,7 +62,7 @@ export default function OpengraphImage() {
               marginTop: "28px",
             }}
           >
-            Chip Shots Indoor Golf Club
+            Chip Shots
           </div>
         </div>
         <div style={{ display: "flex", width: "480px", height: "630px" }}>

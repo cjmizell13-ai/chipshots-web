@@ -424,7 +424,7 @@ export const posts: Post[] = [
       { type: "h2", text: "Easy to book, easy to host" },
       {
         type: "p",
-        text: "Kids' birthdays tie into our Chip Crew youth program, and adult parties — milestone birthdays, bachelor and bachelorette groups — fit right in too. We're open every day until 10 PM at 1473 E Lake Mead Pkwy, Suite 110 in Henderson. Grab a bay and throw the birthday nobody's done before.",
+        text: "Kids' birthdays pair well with our junior membership, and adult parties — milestone birthdays, bachelor and bachelorette groups — fit right in too. We're open every day until 10 PM at 1473 E Lake Mead Pkwy, Suite 110 in Henderson. Grab a bay and throw the birthday nobody's done before.",
       },
       { type: "cta", label: "Plan a birthday", href: "/events" },
     ],
