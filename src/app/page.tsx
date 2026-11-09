@@ -77,7 +77,7 @@ export default function Home() {
           src={img.clubRoom}
           alt="The dining room and bar at Chip Shots in Henderson, Nevada"
           fill
-          priority
+          preload
           sizes="100vw"
           className="kenburns object-cover object-center opacity-70"
         />

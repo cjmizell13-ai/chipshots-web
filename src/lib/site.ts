@@ -193,6 +193,19 @@ export const img = {
   clubDining: "/images/club-diningbusy.jpg", // full tables at lunch
   clubGuests: "/images/club-guests.jpg",
   clubDusk: "/images/club-dusk.jpg", // storefront at dusk
+
+  // Phone photos taken at the bar and the brunch line, May–Sept 2026. These
+  // filenames say what is actually pictured.
+  dineBurgerBar: "/images/dine-burger-bar.jpg", // bacon cheeseburger + fries (wide)
+  dineWings: "/images/dine-wings.jpg", // bone-in wings and a draft
+  dineTotchos: "/images/dine-totchos.jpg",
+  dineSliders: "/images/dine-sliders.jpg", // slider trio + onion rings
+  dineShake: "/images/dine-shake.jpg",
+  barEspressoMartini: "/images/bar-espresso-martini.jpg",
+  barMule: "/images/bar-mule.jpg",
+  barHighball: "/images/bar-highball.jpg",
+  brunchPrimeRib: "/images/brunch-prime-rib.jpg", // carving station at brunch
+  bayCoastalChairs: "/images/bay-coastal-chairs.jpg", // sharp bay shot, two club chairs
 };
 
 // -----------------------------------------------------------------------------
@@ -204,10 +217,20 @@ export const golf = {
   players: 4,
   rates: [
     { name: "Non-Peak", price: "$40", unit: "/hr", note: "All open hours outside peak windows" },
-    { name: "Peak", price: "$50", unit: "/hr", note: "Mon–Thu 5–9p · Fri 4p–close · Sat all day · Sun 11a–2p" },
+    { name: "Peak", price: "$50", unit: "/hr", note: "Mon–Thu 5–9 PM · Fri 4 PM–close · Sat all day · Sun open–2 PM" },
     { name: "Member", price: "$30", unit: "/hr", note: "Additional hours beyond your membership" },
   ],
 };
+
+// When each rate applies, day by day. Checked against the live booking page
+// on Nov 9, 2026 — if the windows change in YourGolfBooking, change them here
+// and in the Peak note above.
+export const bayWeek: { days: string; peak: string; nonPeak: string }[] = [
+  { days: "Monday – Thursday", peak: "5 – 9 PM", nonPeak: "Open – 5 PM · 9 PM – close" },
+  { days: "Friday", peak: "4 PM – close", nonPeak: "Open – 4 PM" },
+  { days: "Saturday", peak: "All day", nonPeak: "" },
+  { days: "Sunday", peak: "Open – 2 PM", nonPeak: "2 PM – close" },
+];
 
 // Leagues — recurring competitive play on TrackMan's competition suite.
 export const leagues = {
@@ -561,13 +584,6 @@ export const shakes21: MenuItem[] = [
 export const foodMore =
   "Ask your server about today's specials. Parties of 8 or more are charged a 20% service fee · prices do not include tax.";
 
-// Weekend football on the TVs — a standing draw, not tied to any one service.
-export const football = {
-  headline: "Football on the TVs",
-  detail: "College on Saturdays · NFL on Sundays",
-  note: "All ages welcome",
-};
-
 // Upcoming events calendar at the top of /events, grouped by month on the
 // page. `date` is YYYY-MM-DD; each event (and each month heading, once all its
 // events are done) hides itself the day after via <UntilDate>, so past events
@@ -583,74 +599,19 @@ export type ScheduledEvent = {
   signupLabel?: string;
 };
 const triviaRsvp = "https://form.jotform.com/262977444520059";
+// Facebook Event for the Nov 15 brunch (posted Nov 9). Guests who tap
+// Interested or Going get Facebook's own reminders before the day.
+const brunchNov15 = "https://www.facebook.com/events/2464679007602428/";
+const brunchDesc =
+  "Brunch buffet with a prime rib carving station, breakfast favorites and more. Adults $35, kids 6–12 $17, 5 and under free. Bottomless mimosas and Bloody Marys $15.";
 export const upcomingEventsIntro =
-  "From trivia nights and music bingo to cocktail classes, holiday celebrations and special dining experiences, there\u2019s always something happening at Chip Shots!";
+  "Most nights you can just walk in. A few need a ticket or an RSVP, and those have a link.";
 export const upcomingEvents: ScheduledEvent[] = [
-  {
-    date: "2026-10-27",
-    title: "Trivia Tuesday",
-    time: "6:30–8:00 PM",
-    desc: "Grab your crew and test your knowledge! Enjoy a fun night of trivia, mini challenges, prizes, and great food and drinks. All skill levels welcome! No cost to play!",
-    signup: triviaRsvp,
-    signupLabel: "RSVP",
-  },
-  {
-    date: "2026-10-29",
-    title: "Ladies of Henderson Networking Mixer",
-    time: "6:00–8:00 PM",
-    desc: "Connect, network and make new friends. Food and drink available for purchase.",
-  },
-  {
-    date: "2026-10-30",
-    title: "Nevada Day – BOGO 50% Off Bays",
-    time: "All day",
-    desc: "Celebrate Nevada Day with indoor golf and fun for the whole family! Book two hours in a TrackMan bay and get your second hour 50% off!\n\nOnline bookings only! Reserve your two-hour session and enter promo code NVDAY26 at checkout to receive your discount.\n\nOffer valid October 30 only. Promo code required. Up to 4 golfers per bay.",
-    signup: business.booking,
-    signupLabel: "Book Now",
-  },
-  {
-    date: "2026-10-31",
-    title: "Halloween Bingo",
-    time: "3:00–5:00 PM",
-    desc: "Get into the Halloween spirit with an afternoon of bingo, prizes and festive fun! Bring your friends and family, grab some food and drinks, and join the fun. All ages welcome! No cost to play!",
-    signup: "https://form.jotform.com/262978213821159",
-    signupLabel: "RSVP",
-  },
-  {
-    date: "2026-11-01",
-    title: "Sunday Prime Rib Brunch",
-    time: "10:00 AM–1:00 PM",
-    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
-    signup: "https://form.jotform.com/262977660757071",
-    signupLabel: "RSVP",
-  },
-  {
-    date: "2026-11-03",
-    title: "Trivia Tuesday",
-    time: "6:30–8:00 PM",
-    desc: "Gather your team and put your knowledge to the test! Enjoy a fun evening of trivia, mini challenges, prizes, and great food and drinks. All skill levels welcome! No cost to play!",
-    signup: triviaRsvp,
-    signupLabel: "RSVP",
-  },
-  {
-    date: "2026-11-04",
-    title: "Fall Cocktail Making Class",
-    time: "6:00–7:30 PM",
-    desc: "Shake, sip and celebrate fall! Learn to make three delicious fall-inspired mini cocktails during this hands-on experience. $35 per person, ages 21+. Advance registration required.",
-    signup: "https://pci.jotform.com/form/262976326726065",
-  },
-  {
-    date: "2026-11-05",
-    title: "Sip & Swing Ladies Night",
-    time: "6:00–8:00 PM",
-    desc: "Ladies, grab your girlfriends and join us for a fun evening of sipping, swinging and socializing! Enjoy great drinks, good company and a little indoor golf in a relaxed, welcoming atmosphere. No golf experience necessary — just come ready to have fun! $35 per person, ages 21+. Advance registration required.",
-    signup: "https://pci.jotform.com/form/262977354628169",
-  },
   {
     date: "2026-11-10",
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
-    desc: "Think you\u2019ve got what it takes? Round up your friends for an entertaining evening of trivia, friendly competition, mini challenges and chances to win! No cost to play!",
+    desc: "Team trivia with mini challenges between rounds. Free to play.",
     signup: triviaRsvp,
     signupLabel: "RSVP",
   },
@@ -658,26 +619,29 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-11",
     title: "Veterans Day Meals",
     time: "11:00 AM–4:00 PM",
-    desc: "Join us as we honor those who served! Veterans and active-duty military receive a FREE meal from our special Veterans Day menu.\n\nChip Shots is proudly veteran-owned, and we\u2019re donating 10% of the day\u2019s profits to Folds of Honor.\n\nEveryone is welcome! Come enjoy a great meal, support our veterans, and help us give back.",
+    desc: "Veterans and active-duty military eat free from our Veterans Day menu and get a free hour on a TrackMan bay with a military or VA ID. Chip Shots is veteran-owned, and 10% of the day’s profits go to Folds of Honor. Everyone is welcome.",
   },
   {
     date: "2026-11-13",
     title: "Wine Tasting Night",
     time: "6:00–8:00 PM",
-    desc: "An evening of sipping, savoring and socializing! Explore four wines paired with delicious small bites during a relaxed, guided tasting experience at Chip Shots. $35 per person, ages 21+. Advance registration required.",
+    desc: "A guided tasting of four wines with paired small bites. $35 per person, 21 and over. Registration is required.",
     signup: "https://pci.jotform.com/form/262979400496166",
+    signupLabel: "Register",
   },
   {
     date: "2026-11-15",
     title: "Sunday Prime Rib Brunch",
     time: "10:00 AM–1:00 PM",
-    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+    desc: brunchDesc,
+    signup: brunchNov15,
+    signupLabel: "RSVP on Facebook",
   },
   {
     date: "2026-11-17",
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
-    desc: "Make Tuesday your trivia night! Bring your team, enjoy delicious food and drinks, and compete in fun rounds of trivia with prizes and surprises along the way. No cost to play!",
+    desc: "Team trivia with mini challenges between rounds. Free to play.",
     signup: triviaRsvp,
     signupLabel: "RSVP",
   },
@@ -685,7 +649,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-19",
     title: "Music Bingo",
     time: "6:30–8:00 PM",
-    desc: "It\u2019s bingo with a musical twist! Listen to familiar songs, mark your card and compete for prizes. No music expertise required — just come ready for a fun night out! No cost to play!",
+    desc: "Bingo played with songs you know in place of numbers. Free to play.",
     signup: "https://form.jotform.com/263028484906160",
     signupLabel: "RSVP",
   },
@@ -693,7 +657,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-24",
     title: "Trivia Tuesday",
     time: "6:30–8:00 PM",
-    desc: "Kick off Thanksgiving week with trivia, laughter and a little friendly competition! Grab your friends, enjoy dinner and drinks, and see if your team can take home a win. No cost to play!",
+    desc: "Team trivia to start Thanksgiving week. Free to play.",
     signup: triviaRsvp,
     signupLabel: "RSVP",
   },
@@ -701,82 +665,96 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-26",
     title: "Thanksgiving Day Buffet",
     time: "11:00 AM–5:00 PM",
-    desc: "Skip the cooking and cleanup! Enjoy a traditional Thanksgiving feast with turkey, ham, all your favorite sides, and desserts while watching football on our big screens.\n\nAdults $39 | Bottomless $54 | Kids 6–12 $19 | Ages 5 & under FREE\n\nPlus tax and 18% gratuity. Seating at 11 AM, 1 PM, and 3 PM. Advance prepaid reservations encouraged. Walk-ins welcome as space permits!",
+    desc: "Turkey, ham, all the sides and dessert, with football on the screens. Adults $39 (bottomless $54), kids 6–12 $19, 5 and under free, plus tax and 18% gratuity. Seatings at 11 AM, 1 PM and 3 PM. Prepaid reservations are encouraged, and walk-ins are welcome as space allows.",
     signup: "https://pci.jotform.com/form/263094656829168",
-    signupLabel: "Purchase Tickets",
+    signupLabel: "Buy tickets",
   },
   {
     date: "2026-11-28",
     title: "Small Business Saturday Holiday Market",
     time: "10:00 AM–2:00 PM",
-    desc: "Shop small and celebrate the season! Browse unique gifts and handmade items from local vendors while enjoying food, drinks and holiday cheer at Chip Shots.",
+    desc: "Local vendors with gifts and handmade items, with the kitchen and bar open while you shop.",
     signup: "https://form.jotform.com/262980906700056",
-    signupLabel: "Vendor Interest Form",
+    signupLabel: "Vendor interest form",
   },
   {
     date: "2026-12-06",
     title: "Sunday Prime Rib Brunch",
     time: "10:00 AM–1:00 PM",
-    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+    desc: brunchDesc,
   },
   {
     date: "2026-12-20",
     title: "Sunday Prime Rib Brunch",
     time: "10:00 AM–1:00 PM",
-    desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+    desc: brunchDesc,
   },
 ];
 
-// Daily specials, shown above the menu on /food-drink as banners styled like
-// the football one. Sunday brunch runs the first and third Sundays of each month.
-export type DailySpecial = {
+// What's on in the kitchen and on the screens, day by day, shown on
+// /food-drink. `dow` matches JS Date.getDay() (0 = Sunday) so the page can
+// mark today's row. `also` is a second line for something that isn't food.
+export type WeekFeature = {
+  dow: number;
   day: string;
   headline: string;
   detail: string;
-  icon: "burger" | "glass" | "star" | "clock";
+  also?: string;
 };
-export const dailySpecials: DailySpecial[] = [
+export const weekFeatures: WeekFeature[] = [
   {
+    dow: 1,
     day: "Monday",
     headline: "Prime Rib Dip",
     detail: "Prime rib dip sandwich + side · $18",
-    icon: "burger",
   },
   {
+    dow: 2,
     day: "Tuesday",
     headline: "Taco Tuesday",
-    detail:
-      "$4 tacos — steak, chicken, shrimp or fish (grilled or fried) · $6 margaritas",
-    icon: "star",
+    detail: "$4 tacos: steak, chicken, shrimp or fish (grilled or fried) · $6 margaritas",
+    also: "Trivia, 6:30–8 PM",
   },
   {
+    dow: 3,
     day: "Wednesday",
     headline: "Wing Wednesday",
-    detail:
-      "Buy one, get one 50% off · 6- or 12-piece, bone-in or boneless",
-    icon: "star",
+    detail: "Buy one, get one 50% off · 6- or 12-piece, bone-in or boneless",
   },
   {
+    dow: 4,
     day: "Thursday",
     headline: "Burger Thursday",
     detail: "$3 off all burgers",
-    icon: "burger",
   },
   {
+    dow: 5,
     day: "Friday",
     headline: "Fish Friday",
-    detail:
-      "Fish & chips $16 · Clam chowder $7 · Fish & chips + chowder combo $21",
-    icon: "star",
+    detail: "Fish & chips $16 · Clam chowder $7 · Fish & chips + chowder combo $21",
   },
   {
-    day: "1st & 3rd Sundays · 10 AM–1 PM",
-    headline: "Prime Rib Brunch",
-    detail:
-      "Adults $35 · Kids 6–12 $17 · 5 & under free · Bottomless mimosas & Bloody Marys $15",
-    icon: "glass",
+    dow: 6,
+    day: "Saturday",
+    headline: "College football",
+    detail: "On the screens over the bar and the TV in every bay",
+  },
+  {
+    dow: 0,
+    day: "Sunday",
+    headline: "NFL Sunday Ticket",
+    detail: "On the screens over the bar and the TV in every bay",
+    also: "Prime rib brunch on the 1st & 3rd Sundays",
   },
 ];
+
+// Sunday brunch runs the first and third Sundays of each month.
+export const brunch = {
+  title: "Prime rib brunch",
+  when: "1st & 3rd Sundays · 10 AM–1 PM",
+  prices: "Adults $35 · Kids 6–12 $17 · 5 & under free",
+  drinks: "Bottomless mimosas & Bloody Marys $15",
+};
 
 // Health-department consumer advisory (the * items on the printed menu).
 export const foodAdvisory =
@@ -975,11 +953,38 @@ export const trivia = {
 // -----------------------------------------------------------------------------
 // Events
 // -----------------------------------------------------------------------------
-export const eventTypes = [
-  { title: "Birthday Parties", desc: "Adults and kids alike — bays, burgers and cake. Kids' parties welcome." },
-  { title: "Corporate & Team Building", desc: "Off-sites, client outings and team nights with private bays and catering." },
-  { title: "Bachelor & Bachelorette", desc: "A standout stop on the celebration circuit — drinks, golf and good company." },
-  { title: "Holiday Parties", desc: "Climate-controlled, festive and easy to host for groups of any size." },
+// How groups use the building, smallest to largest. Every private event is
+// quoted to fit, so these are sizes, not packages with prices. The guest
+// counts match /holiday-parties.
+export const eventSpaces: { name: string; size: string; desc: string }[] = [
+  {
+    name: "One bay",
+    size: "Up to 4 players",
+    desc: "A birthday, a client or a night out. Book it online like any tee time, and order from the kitchen and bar when you get here.",
+  },
+  {
+    name: "A few bays",
+    size: "About 8 to 12 guests",
+    desc: "Two or three private bays, shareables from our kitchen and bar service at the bays.",
+  },
+  {
+    name: "All five bays",
+    size: "About 12 to 25 guests",
+    desc: "Every bay for your group, a spread for the whole team and tables in the dining room for mingling.",
+  },
+  {
+    name: "The whole building",
+    size: "Private buyouts, 100+ guests",
+    desc: "Every bay, the dining room, the bar and the patio, with food and drinks planned around your headcount.",
+  },
+];
+
+// `href` points at the page that goes deeper, where there is one.
+export const eventTypes: { title: string; desc: string; href?: string }[] = [
+  { title: "Birthdays", desc: "For adults and kids. Bays, burgers and cake." },
+  { title: "Corporate & team outings", desc: "Off-sites, client outings and team nights with private bays and catering.", href: "/corporate-events" },
+  { title: "Bachelor & bachelorette", desc: "Drinks, golf and good company in a private bay." },
+  { title: "Holiday parties", desc: "Groups of 10 up to full buyouts of 100+, indoors and climate-controlled.", href: "/holiday-parties" },
 ];
 
 // -----------------------------------------------------------------------------
@@ -999,7 +1004,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How many people can play in one bay?",
-    a: "Up to four players per bay. We have five climate-controlled bays, each with its own screen, comfortable seating and a server who brings food and drinks right to you.",
+    a: "Up to four golfers per bay, and up to six people in the bay with spectators. Bigger groups book a second bay. We have five climate-controlled bays, each with its own screen, comfortable seating and a server who brings food and drinks right to you.",
   },
   {
     q: "Do you provide golf clubs?",
@@ -1007,7 +1012,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you serve food and drinks?",
-    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday 3–6 PM, plus The Night Cap — the same happy-hour pricing Sunday–Wednesday from 8 PM to close. Bays included, both windows.",
+    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday 3–6 PM. From November 15 it comes back for The Night Cap: the same pricing Sunday–Thursday from 8 PM to close. Bays included, both windows.",
   },
   {
     q: "Is Chip Shots family-friendly? Can kids play?",
@@ -1019,7 +1024,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What are your hours?",
-    a: "We're open every day, 11 AM–10 PM.",
+    a: "We're open every day: Monday–Friday 11 AM–10 PM, and Saturday and Sunday 10 AM–10 PM.",
   },
   {
     q: "Where are you located?",
