@@ -672,6 +672,8 @@ export const upcomingEvents: ScheduledEvent[] = [
     title: "Sunday Prime Rib Brunch",
     time: "10:00 AM–1:00 PM",
     desc: "Join us for Sunday brunch featuring a delicious buffet with prime rib, breakfast favorites and more! Bring the family and enjoy a relaxing Sunday at Chip Shots. $35 for adults, $17 for kids 6–12, and kids 5 and under eat free.",
+    signup: "https://form.jotform.com/263127147256154",
+    signupLabel: "RSVP",
   },
   {
     date: "2026-11-17",
