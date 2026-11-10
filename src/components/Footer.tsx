@@ -187,7 +187,10 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream/12 pt-7 text-xs text-cream/55 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {business.name}. All rights reserved.
+            © {new Date().getFullYear()} {business.name}. All rights reserved.{" "}
+            <Link href="/privacy" className="underline underline-offset-4 hover:text-cream">
+              Privacy
+            </Link>
           </p>
           <p className="flex items-center gap-2">
             <Icon.flag className="h-4 w-4 text-gold" />
