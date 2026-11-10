@@ -370,7 +370,9 @@ export default function FoodDrink() {
               </figure>
               <div>
                 <h3 className="font-display text-4xl font-semibold leading-[1.1] text-ink">
-                  {brunch.title}
+                  <Link href="/brunch" className="hover:text-green-soft">
+                    {brunch.title}
+                  </Link>
                 </h3>
                 <dl className="mt-6">
                   {[
