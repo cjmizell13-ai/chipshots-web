@@ -619,7 +619,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-11-11",
     title: "Veterans Day Meals",
     time: "11:00 AM–4:00 PM",
-    desc: "Veterans and active-duty military eat free from our Veterans Day menu and get a free hour on a TrackMan bay with a military or VA ID. Chip Shots is veteran-owned, and 10% of the day’s profits go to Folds of Honor. Everyone is welcome.",
+    desc: "Veterans and active-duty military eat free from our Veterans Day menu. Chip Shots is veteran-owned, and 10% of the day’s profits go to Folds of Honor. Everyone is welcome.",
   },
   {
     date: "2026-11-13",
