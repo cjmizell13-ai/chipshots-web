@@ -111,7 +111,7 @@ export default function About() {
       </section>
 
       {/* ============================================== VISIT + HOURS ===== */}
-      <section className="bg-green-deep text-cream">
+      <section id="visit" className="scroll-mt-24 bg-green-deep text-cream">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
             <div>
