@@ -27,6 +27,14 @@ const JOTFORM_SUBMIT_URL = `https://submit.jotform.com/submit/${JOTFORM_ID}`;
  * Request-an-event form. Posts straight to Jotform so every inquiry is
  * captured (no reliance on the guest's mail app). If the request can't be
  * sent at all, it falls back to a pre-filled email (mailto).
+ *
+ * The reply from Jotform can't be read from the browser, so this form can't
+ * tell an accepted inquiry from a refused one. Two rules follow from that:
+ *
+ *  - Whatever must be filled in is enforced here, before sending.
+ *  - A question added in Jotform stays optional there until this form sends
+ *    an answer for it. Jotform refuses a submission that is missing a required
+ *    answer, and the guest would still see "Your request is in."
  */
 export default function EventForm() {
   const [sent, setSent] = useState<"jotform" | "mailto" | null>(null);
@@ -41,12 +49,14 @@ export default function EventForm() {
     const date = String(data.get("date") || "");
     const guests = String(data.get("guests") || "");
     const phone = String(data.get("phone") || "");
+    const email = String(data.get("email") || "").trim();
     const details = String(data.get("details") || "");
 
     const subject = `Event inquiry — ${type || "Chip Shots"}`;
     const body = [
       `Name: ${name}`,
       `Phone: ${phone}`,
+      `Email: ${email}`,
       `Event type: ${type}`,
       `Preferred date: ${date}`,
       `Estimated guests: ${guests}`,
@@ -87,6 +97,7 @@ export default function EventForm() {
     jf.append("q2_q2_fullname0[first]", first || name);
     jf.append("q2_q2_fullname0[last]", rest.join(" ") || "-");
     jf.append("q3_q3_phone1[full]", phone);
+    jf.append("q9_email", email);
     jf.append("q4_q4_dropdown2", type || "Something else");
     jf.append("q5_q5_datetime3[month]", mm);
     jf.append("q5_q5_datetime3[day]", dd);
@@ -189,6 +200,26 @@ export default function EventForm() {
             autoComplete="tel"
             className={field}
             placeholder="(725) 000-0000"
+          />
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="email" className={label}>
+            Email <span className="text-gold">*</span>
+          </label>
+          {/* The pattern is stricter than the browser's own email check,
+              which accepts "name@host" with no dot. An address Jotform would
+              refuse is stopped here instead of being sent and lost. */}
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            inputMode="email"
+            pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}"
+            title="Enter an email address like name@example.com"
+            className={field}
+            placeholder="name@example.com"
           />
         </div>
         <div className="sm:col-span-2">
