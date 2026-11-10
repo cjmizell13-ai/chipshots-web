@@ -92,3 +92,61 @@ export function trackBookingEngaged(product: BookingProduct, source: BookingSour
     content_name: `ygb_${source}`,
   });
 }
+
+/**
+ * Contact and RSVP intent.
+ *
+ * A phone call, Google Maps, a Jotform RSVP or ticket page and the Toast gift
+ * card store all happen off this site and none of them report back, so the
+ * click is the last thing we can measure. GA4's enhanced measurement already
+ * logs outbound links as a generic "click", but it skips tel: links and can't
+ * tell an RSVP from any other link, so each gets its own event here.
+ */
+export type LinkIntent =
+  | { event: "phone_click" }
+  | { event: "email_click" }
+  | { event: "directions_click" }
+  | { event: "rsvp_click"; form_id: string }
+  | { event: "gift_card_click" };
+
+/** Work out what a link is for, or null when it isn't one we count. */
+export function linkIntent(href: string): LinkIntent | null {
+  if (/^tel:/i.test(href)) return { event: "phone_click" };
+  if (/^mailto:/i.test(href)) return { event: "email_click" };
+
+  let url: URL;
+  try {
+    url = new URL(href, window.location.href);
+  } catch {
+    return null;
+  }
+  const host = url.hostname.toLowerCase();
+
+  if (/(^|\.)jotform\.com$/.test(host)) {
+    // form.jotform.com/<id> and pci.jotform.com/form/<id>
+    const id = url.pathname.match(/(\d{6,})/)?.[1] ?? "";
+    return { event: "rsvp_click", form_id: id };
+  }
+  if (/(^|\.)google\.com$/.test(host) && url.pathname.startsWith("/maps")) {
+    return { event: "directions_click" };
+  }
+  if (/(^|\.)toasttab\.com$/.test(host) && url.pathname.includes("/egiftcards")) {
+    return { event: "gift_card_click" };
+  }
+  return null;
+}
+
+/** Someone clicked to call, email, get directions, RSVP or buy a gift card. */
+export function trackLinkIntent(intent: LinkIntent, linkText: string) {
+  const { gtag, fbq } = tools();
+  const { event, ...params } = intent;
+  gtag?.("event", event, { ...params, link_text: linkText.slice(0, 100) });
+
+  // Meta's standard events where one fits. The gift card button already sends
+  // InitiateCheckout from its own page, so it is left out here.
+  if (event === "phone_click") fbq?.("track", "Contact");
+  if (event === "directions_click") fbq?.("track", "FindLocation");
+  if (event === "rsvp_click") {
+    fbq?.("trackCustom", "RsvpClick", { content_name: linkText.slice(0, 100) });
+  }
+}
