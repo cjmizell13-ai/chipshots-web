@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/gift-cards", priority: 0.7, changeFrequency: "monthly" },
     { path: "/memberships", priority: 0.8, changeFrequency: "monthly" },
     { path: "/events", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/brunch", priority: 0.8, changeFrequency: "weekly" },
     { path: "/corporate-events", priority: 0.7, changeFrequency: "monthly" },
     { path: "/holiday-parties", priority: 0.8, changeFrequency: "monthly" },
     { path: "/youth-golf", priority: 0.7, changeFrequency: "monthly" },

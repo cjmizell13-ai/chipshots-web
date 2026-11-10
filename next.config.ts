@@ -30,7 +30,6 @@ const nextConfig: NextConfig = {
 
       // Temporary (307) on purpose: these may get pages of their own later, and
       // the ordering address belongs to Toast.
-      { source: "/brunch", destination: "/events#calendar", permanent: false },
       { source: "/trivia", destination: "/events#calendar", permanent: false },
       { source: "/parties", destination: "/events#private", permanent: false },
       { source: "/order", destination: ORDER_ONLINE, permanent: false },
