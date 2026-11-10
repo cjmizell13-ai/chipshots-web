@@ -66,6 +66,12 @@ const DAY_NAMES = [
   "Saturday",
 ] as const;
 
+/**
+ * The live site's domain without "www" (chipshotshenderson.com). The analytics
+ * tags below only run on this host and its subdomains.
+ */
+const liveHost = new URL(business.website).hostname.replace(/^www\./, "");
+
 /** 24h hour number to a schema.org "HH:MM" time. */
 const hourLabel = (h: number) => `${String(h).padStart(2, "0")}:00`;
 
@@ -146,15 +152,17 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* Google Analytics (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-QN5SXFND95"
-          strategy="afterInteractive"
-        />
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            // Tags only run on the live site. Preview deployments
+            // (*.vercel.app) and local builds would otherwise report test
+            // visits as real traffic. gtag stays defined everywhere so the
+            // site's tracking calls are safe; off the live host nothing reads
+            // the queue.
+            var gaHost = location.hostname.toLowerCase();
+            var gaLive = gaHost === '${liveHost}' || gaHost.slice(-${liveHost.length + 1}) === '.${liveHost}';
             // Referral-spam sessions (bot traffic posing as referrals) are
             // tagged traffic_type=internal so GA4's "Internal Traffic" data
             // filter drops them. The flag is kept for the whole session because
@@ -165,21 +173,31 @@ export default function RootLayout({
               isSpam = spamRef.test(document.referrer) || sessionStorage.getItem('cs_spam') === '1';
               if (isSpam) sessionStorage.setItem('cs_spam', '1');
             } catch (e) { isSpam = spamRef.test(document.referrer); }
-            gtag('config', 'G-QN5SXFND95', isSpam ? { traffic_type: 'internal' } : {});
+            if (gaLive) {
+              var gaTag = document.createElement('script');
+              gaTag.async = true;
+              gaTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-QN5SXFND95';
+              document.head.appendChild(gaTag);
+              gtag('js', new Date());
+              gtag('config', 'G-QN5SXFND95', isSpam ? { traffic_type: 'internal' } : {});
+            }
           `}
         </Script>
         {/* Meta Pixel */}
         <Script id="fb-pixel" strategy="afterInteractive">
           {`
             // Referral-spam sessions never load the pixel, so bots stay out of
-            // Meta's website-visitor audiences and conversion counts. A no-op
-            // fbq keeps the site's tracking calls safe. Checked here as well as
-            // in gtag-init so it doesn't depend on script order.
+            // Meta's website-visitor audiences and conversion counts. Preview
+            // and local hosts don't load it either. A no-op fbq keeps the
+            // site's tracking calls safe. Checked here as well as in gtag-init
+            // so it doesn't depend on script order.
+            var fbHost = location.hostname.toLowerCase();
+            var fbLive = fbHost === '${liveHost}' || fbHost.slice(-${liveHost.length + 1}) === '.${liveHost}';
             var fbSpam = false;
             try {
               fbSpam = /clickbaitpays\\.me/i.test(document.referrer) || sessionStorage.getItem('cs_spam') === '1';
             } catch (e) { fbSpam = /clickbaitpays\\.me/i.test(document.referrer); }
-            if (fbSpam) {
+            if (fbSpam || !fbLive) {
               window.fbq = function(){};
             } else {
               !function(f,b,e,v,n,t,s)
@@ -199,7 +217,11 @@ export default function RootLayout({
         <Script id="metricool-tracker" strategy="afterInteractive">
           {`
             function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}
-            loadScript(function(){beTracker.t({hash:"43f7e9e3fc1710397bc64b31beb1f2c9"})});
+            // Live site only, same as the tags above.
+            var mcHost = location.hostname.toLowerCase();
+            if (mcHost === '${liveHost}' || mcHost.slice(-${liveHost.length + 1}) === '.${liveHost}') {
+              loadScript(function(){beTracker.t({hash:"43f7e9e3fc1710397bc64b31beb1f2c9"})});
+            }
           `}
         </Script>
         <noscript>
