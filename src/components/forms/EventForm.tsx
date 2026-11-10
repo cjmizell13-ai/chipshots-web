@@ -15,8 +15,8 @@ const eventOptions = [
 ];
 
 const field =
-  "w-full rounded-xl border border-line bg-white px-4 py-3 text-green-deep placeholder:text-muted/70 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/40";
-const label = "mb-1.5 block text-sm font-medium text-green-deep";
+  "w-full rounded-[2px] border border-ink/20 bg-cream px-4 py-3 text-ink placeholder:text-muted/70 outline-none transition focus:border-green focus:ring-2 focus:ring-gold/40";
+const label = "eyebrow mb-2 block text-ink/70";
 
 // Jotform "Chip Shots Event Inquiry" form. Submissions land in the Chip Shots
 // Jotform inbox and trigger the email notification set up there.
@@ -119,20 +119,20 @@ export default function EventForm() {
 
   if (sent === "jotform") {
     return (
-      <div className="flex flex-col items-center rounded-3xl border border-gold/40 bg-cream-2 p-10 text-center">
-        <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-deep text-gold">
-          <Icon.check className="h-7 w-7" />
+      <div className="border border-ink/15 bg-cream-2 p-10" role="status">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-deep text-gold-soft">
+          <Icon.check className="h-6 w-6" />
         </span>
-        <h3 className="font-display mt-5 text-2xl text-green-deep">
-          Got it — your request is in.
+        <h3 className="font-display mt-6 text-3xl font-semibold text-ink">
+          Your request is in.
         </h3>
-        <p className="mt-2 max-w-sm text-muted">
+        <p className="mt-3 max-w-sm text-ink/70">
           Our events team will reach out within one business day. Need us
           sooner? Give us a call.
         </p>
         <a
           href={business.phoneHref}
-          className="mt-4 inline-flex items-center gap-2 font-medium text-green"
+          className="mt-5 inline-flex items-center gap-2 text-ink hover:text-green-soft"
         >
           <Icon.phone className="h-4 w-4 text-gold" />
           {business.phone}
@@ -143,20 +143,20 @@ export default function EventForm() {
 
   if (sent === "mailto") {
     return (
-      <div className="flex flex-col items-center rounded-3xl border border-gold/40 bg-cream-2 p-10 text-center">
-        <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-deep text-gold">
-          <Icon.check className="h-7 w-7" />
+      <div className="border border-ink/15 bg-cream-2 p-10" role="status">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-deep text-gold-soft">
+          <Icon.check className="h-6 w-6" />
         </span>
-        <h3 className="font-display mt-5 text-2xl text-green-deep">
+        <h3 className="font-display mt-6 text-3xl font-semibold text-ink">
           Your email is ready to send.
         </h3>
-        <p className="mt-2 max-w-sm text-muted">
-          We opened a pre-filled message in your mail app — just hit send and our
-          events team will get right back to you. Prefer to call?
+        <p className="mt-3 max-w-sm text-ink/70">
+          We opened a pre-filled message in your mail app. Hit send and our
+          events team will get back to you. Prefer to call?
         </p>
         <a
           href={business.phoneHref}
-          className="mt-4 inline-flex items-center gap-2 font-medium text-green"
+          className="mt-5 inline-flex items-center gap-2 text-ink hover:text-green-soft"
         >
           <Icon.phone className="h-4 w-4 text-gold" />
           {business.phone}
@@ -168,7 +168,7 @@ export default function EventForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-soft)] sm:p-9"
+      className="border border-ink/15 bg-cream-2 p-7 sm:p-10"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
@@ -241,7 +241,7 @@ export default function EventForm() {
       </div>
 
       <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-muted">
+        <p className="text-sm text-ink/60">
           We&apos;ll reply within one business day.
         </p>
         <Button type="submit" variant="gold" size="lg" withArrow disabled={sending}>

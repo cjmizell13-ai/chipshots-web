@@ -43,6 +43,10 @@
   text-rendering: optimizeLegibility;
 }
 
+/* In-page jumps (menu sections, "Rates", "Inquire") glide instead of snap.
+   layout.tsx sets data-scroll-behavior so route changes still jump. */
+html { scroll-behavior: smooth; }
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -122,6 +126,10 @@ h1, h2, h3, h4 { letter-spacing: 0.005em; }
 }
 
 .display-balance { text-wrap: balance; }
+
+/* A sideways-scrolling rail without a visible scrollbar (menu section bar). */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* Thin gold rule */
 .rule-gold {
