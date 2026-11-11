@@ -5,11 +5,38 @@ import UntilDate from "@/components/ui/UntilDate";
 import { ButtonLink } from "@/components/ui/button";
 import { brunch, business, img, upcomingEvents } from "@/lib/site";
 
+const shareTitle = "Sunday Prime Rib Brunch at Chip Shots";
+const shareDescription = `${brunch.when}. ${brunch.prices}. ${brunch.drinks}.`;
+// The carving-station photo, 2400 x 1350.
+const shareImage = {
+  url: `${business.website}${img.brunchPrimeRib}`,
+  width: 2400,
+  height: 1350,
+  alt: "Prime rib at the brunch carving station at Chip Shots",
+};
+
 export const metadata: Metadata = {
   title: "Sunday Prime Rib Brunch in Henderson",
   description:
     "Prime rib brunch buffet at Chip Shots in Henderson, NV on the first and third Sundays, 10 AM to 1 PM. Adults $35, kids 6–12 $17, 5 and under free. Bottomless mimosas and Bloody Marys $15.",
   alternates: { canonical: "/brunch" },
+  // What shows when the link is texted or posted. A page that sets openGraph
+  // replaces the site-wide card whole, so every field is spelled out here.
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: business.name,
+    url: `${business.website}/brunch`,
+    title: shareTitle,
+    description: shareDescription,
+    images: [shareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: shareTitle,
+    description: shareDescription,
+    images: [shareImage],
+  },
 };
 
 /** "2026-11-15" to "Sunday, November 15". Built from the parts so the result
