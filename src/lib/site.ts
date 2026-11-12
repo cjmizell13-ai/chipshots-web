@@ -599,13 +599,13 @@ export type ScheduledEvent = {
   signupLabel?: string;
 };
 const triviaRsvp = "https://form.jotform.com/262977444520059";
-// RSVP form for the Nov 15 brunch (name, contact, party size, seating), so
+// Reservation form for the Nov 15 brunch (name, contact, party size, seating), so
 // the kitchen has a head count. The Facebook Event links to the same form.
 const brunchNov15 = "https://form.jotform.com/263127147256154";
 const brunchDesc =
   "Brunch buffet with a prime rib carving station, breakfast favorites and more. Adults $35, kids 6–12 $17, 5 and under free. Bottomless mimosas and Bloody Marys $15.";
 export const upcomingEventsIntro =
-  "Most nights you can just walk in. A few need a ticket or an RSVP, and those have a link.";
+  "Most nights you can just walk in. For the ones that fill up, reserve a table or get a ticket from the link.";
 export const upcomingEvents: ScheduledEvent[] = [
   {
     date: "2026-11-10",
@@ -613,7 +613,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     time: "6:30–8:00 PM",
     desc: "Team trivia with mini challenges between rounds. Free to play.",
     signup: triviaRsvp,
-    signupLabel: "RSVP",
+    signupLabel: "Reserve a table",
   },
   {
     date: "2026-11-11",
@@ -635,7 +635,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     time: "10:00 AM–1:00 PM",
     desc: brunchDesc,
     signup: brunchNov15,
-    signupLabel: "RSVP",
+    signupLabel: "Reserve a table",
   },
   {
     date: "2026-11-17",
@@ -643,7 +643,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     time: "6:30–8:00 PM",
     desc: "Team trivia with mini challenges between rounds. Free to play.",
     signup: triviaRsvp,
-    signupLabel: "RSVP",
+    signupLabel: "Reserve a table",
   },
   {
     date: "2026-11-19",
@@ -651,7 +651,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     time: "6:30–8:00 PM",
     desc: "Bingo played with songs you know in place of numbers. Free to play.",
     signup: "https://form.jotform.com/263028484906160",
-    signupLabel: "RSVP",
+    signupLabel: "Reserve a table",
   },
   {
     date: "2026-11-24",
@@ -659,7 +659,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     time: "6:30–8:00 PM",
     desc: "Team trivia to start Thanksgiving week. Free to play.",
     signup: triviaRsvp,
-    signupLabel: "RSVP",
+    signupLabel: "Reserve a table",
   },
   {
     date: "2026-11-26",

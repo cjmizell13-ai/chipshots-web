@@ -51,10 +51,23 @@ function longDay(iso: string) {
   });
 }
 
+/** "2026-11-15" to "Nov 15". */
+function shortDay(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 export default function Brunch() {
   // Every dated brunch on the calendar. Each one hides itself once its day
   // has passed (UntilDate), so this list never needs pruning by hand.
   const dates = upcomingEvents.filter((e) => /brunch/i.test(e.title));
+  // The first date that takes reservations gets a button at the top of the page,
+  // where people landing from an ad or a post actually look.
+  const nextRsvp = dates.find((e) => e.signup);
 
   // Lets Google show the dates as events. Pacific time, 10 AM to 1 PM.
   const jsonLd = dates.map((e) => ({
@@ -103,9 +116,18 @@ export default function Brunch() {
         image={img.brunchPrimeRib}
         alt="Prime rib at the carving station during Sunday brunch at Chip Shots, with a slice being plated"
         actions={
-          <a href="#dates" className="text-cta text-cream">
-            Dates and RSVP <span aria-hidden>↓</span>
-          </a>
+          <>
+            {nextRsvp?.signup && (
+              <UntilDate until={nextRsvp.date}>
+                <ButtonLink href={nextRsvp.signup} external variant="gold" size="lg" withArrow>
+                  Reserve for {shortDay(nextRsvp.date)}
+                </ButtonLink>
+              </UntilDate>
+            )}
+            <a href="#dates" className="text-cta text-cream">
+              All dates <span aria-hidden>↓</span>
+            </a>
+          </>
         }
         facts={[
           { label: "Buffet", value: brunch.prices },
@@ -121,8 +143,8 @@ export default function Brunch() {
               Next brunch dates
             </h2>
             <p className="mt-6 max-w-md text-ink/75">
-              Brunch runs on the first and third Sundays of the month. An RSVP
-              tells the kitchen how many to carve for.
+              Brunch runs on the first and third Sundays of the month. Walk-ins
+              are welcome, and a reservation holds your table.
             </p>
           </div>
           <ul className="border-t border-ink/15">
@@ -137,7 +159,7 @@ export default function Brunch() {
                   </div>
                   {e.signup && (
                     <ButtonLink href={e.signup} external variant="green" size="lg" withArrow>
-                      RSVP
+                      Reserve a table
                     </ButtonLink>
                   )}
                 </li>
