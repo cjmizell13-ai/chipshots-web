@@ -218,7 +218,7 @@ export const golf = {
   rates: [
     { name: "Non-Peak", price: "$40", unit: "/hr", note: "All open hours outside peak windows" },
     { name: "Peak", price: "$50", unit: "/hr", note: "Mon–Thu 5–9 PM · Fri 4 PM–close · Sat all day · Sun open–2 PM" },
-    { name: "Member", price: "$30", unit: "/hr", note: "Additional hours beyond your membership" },
+    { name: "Members, extra hours", price: "$30", unit: "/hr", note: "Bay time is included with membership. This rate is only for hours beyond your plan" },
   ],
 };
 
