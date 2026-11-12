@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { business, liveDelivery, nav, orderOnlineLive } from "@/lib/site";
-import { trackOrderClick } from "@/lib/analytics";
+import { business, liveDelivery, nav, orderOnlineLive, reservationsLive } from "@/lib/site";
+import { trackOrderClick, trackReserveClick } from "@/lib/analytics";
 import { Wordmark } from "@/components/ui/brand";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
@@ -65,7 +65,23 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-3">
-          {orderOnlineLive && (
+          {reservationsLive && (
+            <span className="hidden whitespace-nowrap md:block lg:hidden xl:block">
+              <ButtonLink
+                href={business.reservations}
+                external
+                variant="ghost-light"
+                size="md"
+                onClick={() => trackReserveClick("header")}
+              >
+                Reserve a Table
+              </ButtonLink>
+            </span>
+          )}
+          {/* The header only fits two buttons next to the nav. While
+              reservations are live, "Reserve a Table" takes the second slot;
+              pickup ordering stays in the mobile menu and on /food-drink. */}
+          {orderOnlineLive && !reservationsLive && (
             <span className="hidden whitespace-nowrap md:block lg:hidden xl:block">
               <ButtonLink
                 href={business.orderOnline}
@@ -163,6 +179,20 @@ export default function Header() {
                 >
                   Book a Bay
                 </Button>
+                {reservationsLive && (
+                  <ButtonLink
+                    href={business.reservations}
+                    external
+                    variant="ghost-light"
+                    size="lg"
+                    onClick={() => {
+                      setOpen(false);
+                      trackReserveClick("mobile_menu");
+                    }}
+                  >
+                    Reserve a Table
+                  </ButtonLink>
+                )}
                 {orderOnlineLive && (
                   <ButtonLink
                     href={business.orderOnline}

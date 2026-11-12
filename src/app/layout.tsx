@@ -8,7 +8,7 @@ import VipSignup from "@/components/forms/VipSignup";
 import BackToTop from "@/components/BackToTop";
 import BookingProvider from "@/components/BookingProvider";
 import BookingTracker from "@/components/BookingTracker";
-import { business, liveDelivery, orderOnlineLive, schedule } from "@/lib/site";
+import { business, liveDelivery, orderOnlineLive, reservationsLive, schedule } from "@/lib/site";
 
 const bodoni = Bodoni_Moda({
   variable: "--font-bodoni",
@@ -87,7 +87,7 @@ const jsonLd = {
   email: business.email,
   servesCuisine: ["American", "Burgers", "Bar food"],
   priceRange: "$$",
-  acceptsReservations: true,
+  acceptsReservations: reservationsLive ? business.reservations : true,
   hasMenu: `${business.website}/food-drink`,
   // Lets Google show an "Order online" action on the listing / rich results.
   ...(orderOnlineLive && {

@@ -6,6 +6,7 @@ import { Reveal } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
+import ReserveButton from "@/components/ReserveButton";
 import OrderOptions from "@/components/OrderOptions";
 import UntilDate from "@/components/ui/UntilDate";
 import OnWeekday from "@/components/ui/OnWeekday";
@@ -205,6 +206,7 @@ export default function FoodDrink() {
                 Order to go
               </ButtonLink>
             )}
+            <ReserveButton source="dine_hero" variant="ghost-light" size="lg" />
             <a href="#breakfast" className="text-cta text-cream">
               Read the menu <span aria-hidden>↓</span>
             </a>
