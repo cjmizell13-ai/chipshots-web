@@ -756,6 +756,36 @@ export const brunch = {
   drinks: "Bottomless mimosas & Bloody Marys $15",
 };
 
+// Brunch questions, answered in plain sentences. Rendered on /brunch and sent
+// as FAQPage structured data, so Google and AI assistants can quote them when
+// someone asks about brunch in Henderson.
+export const brunchFaqs: Faq[] = [
+  {
+    q: "When is brunch at Chip Shots?",
+    a: "Prime rib brunch runs on the first and third Sundays of every month, 10 AM to 1 PM, at Chip Shots on East Lake Mead Parkway in Henderson. The upcoming dates are listed on this page.",
+  },
+  {
+    q: "How much is brunch?",
+    a: "The brunch buffet is $35 for adults and $17 for kids 6 to 12. Kids 5 and under eat free. Bottomless mimosas and Bloody Marys are $15.",
+  },
+  {
+    q: "What is on the brunch buffet?",
+    a: "A prime rib carving station, breakfast favorites and more, served as a buffet. The full bar is open too.",
+  },
+  {
+    q: "Do I need a reservation for brunch?",
+    a: "Walk-ins are welcome. A reservation holds your table and tells the kitchen how many to carve for, so we recommend reserving, especially for larger groups.",
+  },
+  {
+    q: "Are the football games on during brunch?",
+    a: "Yes. NFL Sunday Ticket plays on the screens over the bar and on the TV in every golf bay, so you can catch the morning games over brunch.",
+  },
+  {
+    q: "Is brunch good for families?",
+    a: "Yes. Kids 6 to 12 are $17 and kids 5 and under eat free, and after brunch you can book one of our five TrackMan golf bays by the hour.",
+  },
+];
+
 // Health-department consumer advisory (the * items on the printed menu).
 export const foodAdvisory =
   "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.";
@@ -994,6 +1024,10 @@ export const eventTypes: { title: string; desc: string; href?: string }[] = [
 export type Faq = { q: string; a: string };
 
 export const faqs: Faq[] = [
+  {
+    q: "Do you serve brunch?",
+    a: "Yes. Prime rib brunch runs on the first and third Sundays of every month, 10 AM to 1 PM: a buffet with a prime rib carving station and breakfast favorites. Adults $35, kids 6 to 12 $17, kids 5 and under free, and bottomless mimosas and Bloody Marys for $15. Walk-ins are welcome, and a reservation holds your table.",
+  },
   {
     q: "Do I need to know how to golf?",
     a: "Not at all. The TrackMan simulators read your swing, keep score and handicap the games automatically, so total beginners and seasoned golfers have a great time in the same group. Clubs are provided — just show up.",
