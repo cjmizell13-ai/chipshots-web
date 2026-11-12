@@ -65,7 +65,7 @@ export default function Brunch() {
   // Every dated brunch on the calendar. Each one hides itself once its day
   // has passed (UntilDate), so this list never needs pruning by hand.
   const dates = upcomingEvents.filter((e) => /brunch/i.test(e.title));
-  // The first date that takes RSVPs gets a button at the top of the page,
+  // The first date that takes reservations gets a button at the top of the page,
   // where people landing from an ad or a post actually look.
   const nextRsvp = dates.find((e) => e.signup);
 
@@ -120,7 +120,7 @@ export default function Brunch() {
             {nextRsvp?.signup && (
               <UntilDate until={nextRsvp.date}>
                 <ButtonLink href={nextRsvp.signup} external variant="gold" size="lg" withArrow>
-                  RSVP for {shortDay(nextRsvp.date)}
+                  Reserve for {shortDay(nextRsvp.date)}
                 </ButtonLink>
               </UntilDate>
             )}
@@ -143,8 +143,8 @@ export default function Brunch() {
               Next brunch dates
             </h2>
             <p className="mt-6 max-w-md text-ink/75">
-              Brunch runs on the first and third Sundays of the month. An RSVP
-              tells the kitchen how many to carve for.
+              Brunch runs on the first and third Sundays of the month. Walk-ins
+              are welcome, and a reservation holds your table.
             </p>
           </div>
           <ul className="border-t border-ink/15">
@@ -159,7 +159,7 @@ export default function Brunch() {
                   </div>
                   {e.signup && (
                     <ButtonLink href={e.signup} external variant="green" size="lg" withArrow>
-                      RSVP
+                      Reserve a table
                     </ButtonLink>
                   )}
                 </li>

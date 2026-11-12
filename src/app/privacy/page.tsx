@@ -62,7 +62,7 @@ export default function Privacy() {
           </p>
           <p>
             <strong className="font-medium text-ink">
-              RSVPs, tickets, bookings, orders and sign-ups.
+              reservations, tickets, bookings, orders and sign-ups.
             </strong>{" "}
             These happen on pages run by other companies, listed below. They
             collect what they need to do the job, such as your name, contact
@@ -85,7 +85,7 @@ export default function Privacy() {
         <Section title="How we use it">
           <ul className="list-disc space-y-2 pl-5">
             <li>To reply to you about a party, event or question.</li>
-            <li>To run the bookings, RSVPs, tickets and orders you make.</li>
+            <li>To run the bookings, reservations, tickets and orders you make.</li>
             <li>
               To send emails or texts if you signed up for them. You can stop
               either at any time.
@@ -103,7 +103,7 @@ export default function Privacy() {
           <ul className="list-disc space-y-2 pl-5">
             <li>
               <strong className="font-medium text-ink">Jotform</strong>: party
-              and event inquiries, RSVPs and event tickets.
+              and event inquiries, reservations and event tickets.
             </li>
             <li>
               <strong className="font-medium text-ink">YourGolfBooking</strong>:
@@ -219,7 +219,7 @@ export default function Privacy() {
 
         <Section title="How long we keep it">
           <p>
-            We keep inquiries, RSVPs and booking records for as long as we
+            We keep inquiries, reservations and booking records for as long as we
             need them to host your event and keep our business records. Google
             Analytics data about visits is kept for up to 14 months.
           </p>
