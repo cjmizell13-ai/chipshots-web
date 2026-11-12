@@ -202,7 +202,8 @@ export default function Home() {
               ))}
             </dl>
             <p className="mt-4 max-w-md text-sm text-cream/50">
-              Peak: {golf.rates[1].note}.
+              Peak: {golf.rates[1].note}. Members book bay time free; the
+              member rate is only for hours beyond their plan.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-7">
