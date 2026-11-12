@@ -60,6 +60,13 @@ export function trackBookingStart(product: BookingProduct, source: BookingSource
   });
 }
 
+/** Someone clicked through to reserve a table (Toast Tables). */
+export function trackReserveClick(source: string) {
+  const { gtag, fbq } = tools();
+  gtag?.("event", "reserve_table_click", { reserve_source: source });
+  fbq?.("trackCustom", "ReserveTableClick", { content_name: source });
+}
+
 export type OrderChannel = "pickup" | "doordash" | "ubereats";
 
 /** Someone clicked through to order food (Toast pickup or a delivery app). */

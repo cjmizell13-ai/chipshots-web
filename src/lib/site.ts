@@ -55,7 +55,16 @@ export const business = {
   // — not a delivery marketplace.
   orderOnline:
     "https://order.toasttab.com/online/chip-shots-1473-east-lake-mead-parkway-suite-110",
+  // Table reservations (Toast Tables). Dining room tables, not golf bays —
+  // bays book through YourGolfBooking above.
+  reservations:
+    "https://tables.toasttab.com/restaurants/261386bf-6186-4aee-a6d4-2e20677b85b0/findTime",
 };
+
+// Toast Tables reservations. Shows the "Reserve a table" buttons and tells
+// Google we take reservations. Only keep it true while Toast Tables is active
+// (trial or paid): a button pointing at a dead booking page is worse than none.
+export const reservationsLive = true;
 
 // Toast Online Ordering (pickup). This reveals the "Order Pickup" button in the
 // header and mobile menu. Only keep it true while the Toast ordering toggle is

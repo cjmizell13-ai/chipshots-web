@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import BookButton from "@/components/BookButton";
+import ReserveButton from "@/components/ReserveButton";
 import UntilDate from "@/components/ui/UntilDate";
 import {
   business,
@@ -105,9 +106,10 @@ export default function Home() {
           <Reveal delay={0.22}>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <BookButton variant="gold" size="lg" withArrow />
-              <ButtonLink href="/food-drink" variant="ghost-light" size="lg">
+              <ReserveButton source="home_hero" variant="ghost-light" size="lg" />
+              <Link href="/food-drink" className="text-cta text-cream">
                 See the menu
-              </ButtonLink>
+              </Link>
             </div>
           </Reveal>
 
