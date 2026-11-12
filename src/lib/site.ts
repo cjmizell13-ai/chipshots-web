@@ -1083,4 +1083,4 @@ export const faqs: Faq[] = [
   },
 ];
 
-export const owners = "Mark, Roseanne & Cameron Mizell";
+export const owners = "Mark & Roseanne Mizell";
