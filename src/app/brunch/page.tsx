@@ -3,7 +3,7 @@ import Link from "next/link";
 import PlateHero from "@/components/ui/PlateHero";
 import UntilDate from "@/components/ui/UntilDate";
 import { ButtonLink } from "@/components/ui/button";
-import { brunch, business, img, upcomingEvents } from "@/lib/site";
+import { brunch, brunchFaqs, business, img, upcomingEvents } from "@/lib/site";
 
 const shareTitle = "Sunday Prime Rib Brunch at Chip Shots";
 const shareDescription = `${brunch.when}. ${brunch.prices}. ${brunch.drinks}.`;
@@ -102,11 +102,26 @@ export default function Brunch() {
     },
   }));
 
+  // The brunch questions below, as FAQPage data for Google and AI search.
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: brunchFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <PlateHero
         kicker="Brunch · 1st & 3rd Sundays"
@@ -197,6 +212,22 @@ export default function Brunch() {
               .
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-5 py-20 sm:px-8 sm:py-24">
+        <h2 className="font-display text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
+          Brunch questions
+        </h2>
+        <div className="mt-10 divide-y divide-ink/15 border-t border-ink/15">
+          {brunchFaqs.map((f) => (
+            <div key={f.q} className="py-7">
+              <h3 className="font-display text-xl font-semibold text-ink sm:text-2xl">
+                {f.q}
+              </h3>
+              <p className="mt-3 leading-relaxed text-ink/75">{f.a}</p>
+            </div>
+          ))}
         </div>
       </section>
     </>
