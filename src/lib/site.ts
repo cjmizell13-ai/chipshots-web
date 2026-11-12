@@ -208,7 +208,7 @@ export const img = {
   dineBurgerBar: "/images/dine-burger-bar.jpg", // bacon cheeseburger + fries (wide)
   dineWings: "/images/dine-wings.jpg", // bone-in wings and a draft
   dineTotchos: "/images/dine-totchos.jpg",
-  dineSliders: "/images/dine-sliders.jpg", // slider trio + onion rings
+  dineSliders: "/images/dine-sliders.jpg", // beer cheese burger (halved) + onion rings — NOT the slider trio
   dineShake: "/images/dine-shake.jpg",
   barEspressoMartini: "/images/bar-espresso-martini.jpg",
   barMule: "/images/bar-mule.jpg",
@@ -1083,4 +1083,4 @@ export const faqs: Faq[] = [
   },
 ];
 
-export const owners = "Mark, Roseanne & Cameron Mizell";
+export const owners = "Mark & Roseanne Mizell";

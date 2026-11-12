@@ -78,7 +78,7 @@ const navItems: MenuNavItem[] = [
 const plates = [
   { src: img.dineWings, alt: "Glazed bone-in wings with celery, carrots and a draft beer on the bar", caption: "Bone-in wings" },
   { src: img.dineTotchos, alt: "Loaded tater tots with nacho cheese, bacon, green onion and ranch", caption: "Loaded Totchos" },
-  { src: img.dineSliders, alt: "Three cheeseburger sliders with a stack of onion rings", caption: "Slider Trio" },
+  { src: img.dineSliders, alt: "A beer cheese burger cut in half with a stack of onion rings", caption: "Beer cheese burger" },
   { src: img.dineShake, alt: "A hand-spun shake with whipped cream and chocolate drizzle", caption: "Hand-spun shakes" },
 ];
 
