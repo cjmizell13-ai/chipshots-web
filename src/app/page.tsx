@@ -20,7 +20,7 @@ const rooms = [
   {
     no: "01",
     title: "Dine",
-    body: "A full kitchen that cooks like a restaurant, because it is one. Burgers, ribs, steaks and salads at lunch and dinner, and a prime rib brunch on the first and third Sundays.",
+    body: "A full kitchen that cooks like a restaurant, because it is one. Burgers, ribs, steaks and salads at lunch and dinner.",
     image: img.clubService,
     alt: "A server carrying plates of nachos and wings through the dining room at Chip Shots",
     href: "/food-drink",
@@ -271,15 +271,13 @@ export default function Home() {
           </h2>
           <p className="mt-6 max-w-md text-ink/75">
             Plenty of our regulars have never booked a bay. They come for
-            lunch, for dinner with the family, for a drink at the bar and for
-            brunch on Sunday. The dining room and patio are open whenever we
-            are.
+            lunch, for dinner with the family and for a drink at the bar. The
+            dining room and patio are open whenever we are.
           </p>
           <ul className="mt-8 max-w-md">
             {[
               ["Lunch & dinner", "Daily"],
               ["Happy hour", "Mon–Fri · 3–6 PM"],
-              ["Prime rib brunch", "1st & 3rd Sundays · 10 AM–1 PM"],
             ].map(([k, v]) => (
               <li key={k} className="flex items-baseline gap-4 border-b border-line py-3.5">
                 <span className="eyebrow text-ink/70">{k}</span>

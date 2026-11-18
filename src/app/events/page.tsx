@@ -10,7 +10,6 @@ import UntilDate from "@/components/ui/UntilDate";
 import {
   business,
   img,
-  brunch,
   happyHour,
   trivia,
   eventSpaces,
@@ -49,7 +48,7 @@ function byMonth(events: ScheduledEvent[]) {
 export const metadata: Metadata = {
   title: "Events & Parties",
   description:
-    "What's on at Chip Shots in Henderson, NV: trivia, prime rib brunch, tastings and holiday events. Plus private events from one bay to a full buyout, with food from our kitchen and a full bar.",
+    "What's on at Chip Shots in Henderson, NV: trivia, tastings and holiday events. Plus private events from one bay to a full buyout, with food from our kitchen and a full bar.",
   alternates: { canonical: "/events" },
 };
 
@@ -59,7 +58,6 @@ const everyWeek: [string, string][] = [
   ["Trivia", `${trivia.day}s · ${trivia.time.replace(/\s*–\s*/, "–")}`],
   ["Happy hour", happyHour.window],
   ["The Night Cap", happyHour.lateWindow.split(" · ").slice(1).join(" · ")],
-  ["Prime rib brunch", brunch.when],
   ["College football", "Saturdays"],
   ["NFL Sunday Ticket", "Sundays"],
 ];
@@ -75,7 +73,7 @@ export default function Events() {
         kicker="Events · Public and private"
         title="What's on,"
         accent="and how to host your own."
-        intro="Trivia on Tuesdays, prime rib brunch on the first and third Sundays, and a calendar of one-off nights in between. For private events, every booking is quoted to fit your group."
+        intro="Trivia on Tuesdays and a calendar of one-off nights in between. For private events, every booking is quoted to fit your group."
         image={img.clubDining}
         alt="A server taking an order at a full table in the dining room at Chip Shots"
         position="50% 40%"
@@ -91,7 +89,7 @@ export default function Events() {
         }
         facts={[
           { label: "Trivia", value: "Tuesdays, 6:30 PM" },
-          { label: "Prime rib brunch", value: "1st & 3rd Sundays" },
+          { label: "Happy hour", value: happyHour.window },
           { label: "Private events", value: "One bay to the whole building" },
         ]}
       />
@@ -162,22 +160,7 @@ export default function Events() {
           </div>
 
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <figure>
-              <div className="relative aspect-[4/3] overflow-hidden bg-green-deep">
-                <Image
-                  src={img.brunchPrimeRib}
-                  alt="Prime rib at the carving station during Sunday brunch at Chip Shots"
-                  fill
-                  sizes="(min-width: 1024px) 336px, 100vw"
-                  className="object-cover"
-                  style={{ objectPosition: "38% 50%" }}
-                />
-              </div>
-              <figcaption className="mt-3 text-[0.65rem] uppercase tracking-[0.2em] text-muted">
-                Sunday brunch · {brunch.prices.split(" · ")[0]}
-              </figcaption>
-            </figure>
-            <p className="eyebrow mt-10 text-muted">Every week</p>
+            <p className="eyebrow text-muted">Every week</p>
             <dl className="mt-3 border-t border-ink/15">
               {everyWeek.map(([k, v]) => (
                 <div key={k} className="border-b border-ink/15 py-3.5">
