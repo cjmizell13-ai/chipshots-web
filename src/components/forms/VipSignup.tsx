@@ -29,8 +29,8 @@ export default function VipSignup() {
               Hear it first.
             </h2>
             <p className="mt-4 max-w-md leading-relaxed text-cream/75">
-              Event dates, brunch Sundays and new menus, a couple of times a
-              month. Nothing else.
+              Event dates and new menus, a couple of times a month. Nothing
+              else.
             </p>
           </div>
 

@@ -8,7 +8,6 @@ import { AmpText } from "@/components/ui/amp";
 import BookButton from "@/components/BookButton";
 import ReserveButton from "@/components/ReserveButton";
 import OrderOptions from "@/components/OrderOptions";
-import UntilDate from "@/components/ui/UntilDate";
 import OnWeekday from "@/components/ui/OnWeekday";
 import MenuNav, { type MenuNavItem } from "@/components/menu/MenuNav";
 import TodayFeature from "@/components/menu/TodayFeature";
@@ -17,9 +16,6 @@ import {
   img,
   orderOnlineLive,
   weekFeatures,
-  brunch,
-  upcomingEvents,
-  promoActive,
   foodMenu,
   foodMore,
   foodAdvisory,
@@ -40,7 +36,7 @@ import {
 export const metadata: Metadata = {
   title: "Food & Drink — Breakfast All Day, Burgers, Wings & Full Bar",
   description:
-    "The full Chip Shots menu: breakfast all day, burgers, ribs, salmon, wings, shareables and salads, plus drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM and prime rib brunch on the first and third Sundays in Henderson, NV.",
+    "The full Chip Shots menu: breakfast all day, burgers, ribs, salmon, wings, shareables and salads, plus drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM in Henderson, NV.",
   alternates: { canonical: "/food-drink" },
 };
 
@@ -86,15 +82,6 @@ const pours = [
   { src: img.barEspressoMartini, alt: "An espresso martini on the marble bar at Chip Shots", caption: "Espresso Martini" },
   { src: img.barMule, alt: "A mule in a copper mug with a lime wheel", caption: "A mule, in copper" },
 ];
-
-function formatDay(iso: string) {
-  const [y, m, d] = iso.split("-").map(Number);
-  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
-  });
-}
 
 /** One menu line: name, dotted leader, price, with the description under it. */
 function Row({
@@ -179,9 +166,6 @@ function MenuBlock({
 }
 
 export default function FoodDrink() {
-  const brunchDates = upcomingEvents.filter(
-    (e) => /brunch/i.test(e.title) && promoActive(e.date),
-  );
   // Draft beers and their pitchers are listed in the same order.
   const draftRows =
     drafts.length === pitchers.length
@@ -195,7 +179,7 @@ export default function FoodDrink() {
         kicker="Dine · Open daily"
         title="A restaurant first."
         accent="No tee time needed."
-        intro="Lunch, dinner and a full bar every day, with brunch on the first and third Sundays. You don't have to book a bay to get a table."
+        intro="Lunch, dinner and a full bar every day. You don't have to book a bay to get a table."
         image={img.dineBurgerBar}
         alt="A bacon cheeseburger and seasoned fries on the bar at Chip Shots"
         position="50% 30%"
@@ -215,7 +199,11 @@ export default function FoodDrink() {
         facts={[
           { label: "Open", value: "Mon–Fri 11 AM · Sat & Sun 10 AM" },
           { label: "Happy hour", value: happyHour.window },
-          { label: "Prime rib brunch", value: brunch.when },
+          {
+            label: "The Night Cap",
+            // "The Night Cap · Sun–Thu · 8 PM–close · from Nov 15": the days and hours only.
+            value: happyHour.lateWindow.split(" · ").slice(1, 3).join(" · "),
+          },
         ]}
       />
 
@@ -353,69 +341,6 @@ export default function FoodDrink() {
                 </li>
               ))}
             </ol>
-
-            {/* Brunch */}
-            <div className="mt-20 grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-16">
-              <figure>
-                <div className="relative aspect-[16/9] overflow-hidden bg-green-deep">
-                  <Image
-                    src={img.brunchPrimeRib}
-                    alt="Prime rib at the carving station during Sunday brunch at Chip Shots, with a slice being plated"
-                    fill
-                    sizes="(min-width: 1024px) 55vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="mt-3 text-[0.65rem] uppercase tracking-[0.2em] text-muted">
-                  The carving station at Sunday brunch
-                </figcaption>
-              </figure>
-              <div>
-                <h3 className="font-display text-4xl font-semibold leading-[1.1] text-ink">
-                  <Link href="/brunch" className="hover:text-green-soft">
-                    {brunch.title}
-                  </Link>
-                </h3>
-                <dl className="mt-6">
-                  {[
-                    ["When", brunch.when],
-                    ["Buffet", brunch.prices],
-                    ["Add", brunch.drinks],
-                  ].map(([k, v]) => (
-                    <div
-                      key={k}
-                      className="flex flex-wrap items-baseline gap-x-6 gap-y-1 border-b border-ink/15 py-3.5"
-                    >
-                      <dt className="eyebrow w-16 text-ink/60">{k}</dt>
-                      <dd className="text-[0.95rem] text-ink/85">{v}</dd>
-                    </div>
-                  ))}
-                </dl>
-                {brunchDates.length > 0 && (
-                  <p className="mt-6 flex flex-wrap items-baseline gap-x-5 gap-y-2 text-ink/85">
-                    <span className="eyebrow text-ink/60">Next dates</span>
-                    {brunchDates.map((e) => (
-                      <UntilDate key={e.date} until={e.date}>
-                        <span className="font-display text-xl font-semibold">
-                          {e.signup ? (
-                            <a
-                              href={e.signup}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="underline decoration-gold decoration-1 underline-offset-[6px] hover:text-green-soft"
-                            >
-                              {formatDay(e.date)}
-                            </a>
-                          ) : (
-                            formatDay(e.date)
-                          )}
-                        </span>
-                      </UntilDate>
-                    ))}
-                  </p>
-                )}
-              </div>
-            </div>
           </div>
         </section>
 
