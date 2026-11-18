@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
-import { leagues } from "@/lib/site";
+import { membershipMath } from "@/lib/site";
 
 /**
  * The "does membership pay for itself?" comparison. Used on
@@ -13,7 +13,7 @@ export default function MembershipMath({
 }: {
   cta?: { href: string; label: string; external?: boolean };
 }) {
-  const math = leagues.membershipMath;
+  const math = membershipMath;
   return (
     <section className="bg-cream-2">
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">

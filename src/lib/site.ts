@@ -36,14 +36,9 @@ export const business = {
   reviewUrl: "https://g.page/r/CamJDL5vhQqMEBM/review",
   booking:
     "https://www.yourgolfbooking.com/venues/chip-shots-henderson/booking/simulator-bays",
-  // Public YGB booking landing that lists every bookable event — the club
-  // nights (Men's / Open / Ladies) plus "Book a Trackman Bay".
+  // Public YGB booking landing that lists everything bookable, including
+  // "Book a Trackman Bay".
   events: "https://www.yourgolfbooking.com/venues/chip-shots-henderson/booking",
-  // Free Weekly Nights RSVP (Google Form). One screen, no account — the
-  // cold-start funnel decision (playbook §2): form now, deposits later.
-  // This is the rebranded league form; it feeds the auto tee sheet.
-  nightsRsvp:
-    "https://docs.google.com/forms/d/e/1FAIpQLSd8IPkCGaZN2pPiBMPga5wDrod7t4xF6kx3cdb0-WUiMGFZvg/viewform",
   // Public YGB membership signup + checkout (card on file). Only the $239/mo
   // "Member" tier is offered here; other tiers are set up by us on request.
   membershipJoin:
@@ -241,125 +236,31 @@ export const bayWeek: { days: string; peak: string; nonPeak: string }[] = [
   { days: "Sunday", peak: "Open – 2 PM", nonPeak: "2 PM – close" },
 ];
 
-// Leagues — recurring competitive play on TrackMan's competition suite.
-export const leagues = {
-  eyebrow: "Weekly at Chip Shots",
-  title: "Your night to play.",
-  intro:
-    "Need a reason to get out and play? Pick your night. Three standing weekly nights on TrackMan — Men's Night (Sundays), Ladies Night (Wednesdays) and Open Night (Mondays), all at 5 & 7 PM. It's a standing weekly night, not a season-long league: a standing time to come hit, hang out and make it social, with a fresh leaderboard every week and no season standings to chase. Men's and Ladies Nights play a full 18; Open Night is an easy 9 for newcomers. Happy hour is live the whole time you play — a featured draft and signature cocktail delivered right to your bay. Net scoring keeps it fair for every skill level. No 110° heat.",
-  nights: [
-    {
-      title: "Men's Night",
-      day: "Sundays",
-      time: "5 PM & 7 PM",
-      who: "The guys' standing night out — come play, talk a little trash, grab a beer. All skill levels.",
-      format: "18 holes · net Stableford · weekly winners",
-      preview: "Bank F&B credit",
-    },
-    {
-      title: "Open Night",
-      day: "Mondays",
-      time: "5 PM & 7 PM",
-      who: "Mixed & casual — an easy 9 with generous gimmes. Total first-timers welcome.",
-      format: "Easy 9 · beginner-friendly · weekly winners",
-      preview: "Newcomers start here",
-    },
-    {
-      title: "Ladies Night",
-      day: "Wednesdays",
-      time: "5 PM & 7 PM",
-      who: "Henderson's women's night out — come play, bring friends, make it a thing. All skill levels.",
-      format: "18 holes · net Stableford · weekly winners",
-      preview: "Bank F&B credit",
-    },
-  ],
-  // The fresh weekly leaderboard that runs across all three weekly nights.
-  season: {
-    eyebrow: "The weekly board",
-    title: "Fresh leaderboard. Every week.",
-    intro:
-      "This is a standing weekly night, not a season-long league — nothing to chase all season, just a fresh board every week. Play any night and your net score lands on that week's combined leaderboard. Net Stableford keeps every skill level and every night fair. Top three net scores each week bank a Chip Shots F&B credit — 🥇 $50, 🥈 $25, 🥉 $15.",
-    weeks: [
-      { tag: "Every week", both: "A fresh leaderboard", desc: "No season standings to chase — a clean board every week, so this week's game is the only one that matters." },
-      { tag: "Any night", both: "Sunday, Monday or Wednesday", desc: "Play whichever night fits your week — Men's and Ladies play a full 18, Open plays an easy 9." },
-      { tag: "Fair for all", both: "Net Stableford, handicapped", desc: "Net scoring levels every skill level and every night onto one weekly leaderboard — auto-scored live on TrackMan." },
-      { tag: "Win", both: "F&B credit — $50 / $25 / $15", desc: "Top three net scores each week bank a Chip Shots food & drink credit. Fresh board, new shot, every week.", highlight: true },
-    ] as {
-      tag: string;
-      both?: string;
-      open?: string;
-      league?: string;
-      desc: string;
-      highlight?: boolean;
-    }[],
-    sidePots: {
-      title: "House-sponsored skill prizes",
-      desc: "Some nights we post a closest-to-the-pin or long-drive prize on the house — small optional entry, a set prize Chip Shots puts up, winner takes it. Auto-tracked on TrackMan, all skill levels welcome.",
-    },
-  },
-  // The three-tier hype ladder.
-  ladder: [
-    { title: "Every week", desc: "A fresh combined leaderboard — top three net scores bank F&B credit ($50 / $25 / $15)." },
-    { title: "Every night", desc: "Your night, your crowd — a standing weekly hang with happy hour live the whole time you play." },
-    { title: "Every visit", desc: "$40 a player for the night, bay time included — nothing to prepay, just RSVP. Members play free on their membership." },
-  ],
-  // Quick-reference details for the "how it works" strip.
-  details: [
-    { label: "The nights", value: "Men's Night (Sun), Ladies Night (Wed), Open Night (Mon) — all 5 & 7 PM, all skill levels" },
-    { label: "The cost", value: "$40 per player, bay time included — members play free. RSVP free, pay when you get here." },
-    { label: "The round", value: "Men's & Ladies play a full 18 · Open plays an easy 9 — net Stableford, handicapped, generous gimmes" },
-    { label: "The prize", value: "Top three net scores each week: $50 / $25 / $15 F&B credit" },
-    { label: "Happy hour", value: "Live the whole time you play — featured draft + signature cocktail to your bay" },
-  ],
-  prizes: [
-    { title: "Weekly F&B credit", desc: "Top three net scores each week bank a Chip Shots tab — $50 / $25 / $15 to eat & drink on us." },
-    { title: "Happy hour, live", desc: "A featured draft and signature cocktail to your bay the whole time you play — every night." },
-    { title: "Members play free", desc: "Every night, every week — the $40 is waived on your membership." },
-  ],
-  // Night perks — dedicated drink specials + F&B to make the social nights the place to be.
-  nightPerks: {
-    eyebrow: "Night perks",
-    title: "Every night is a hang.",
-    intro:
-      "Come for a time to play, stay for the night. Every night has its own drink specials and shareables — all delivered right to your bay.",
-    perks: [
-      { title: "Happy hour, live during play", desc: "A featured draft and a signature cocktail at a deal — running the whole time you play, delivered straight to your bay." },
-      { title: "Win F&B credit", desc: "Top three net scores each week bank a Chip Shots tab — $50 / $25 / $15, eat & drink on us." },
-      { title: "Squad buckets & shareables", desc: "Beer buckets and foursome bites built to share, delivered straight to your bay." },
+// "Does membership pay for itself?" — uses real rates from `golf` + `memberships`.
+export const membershipMath = {
+  eyebrow: "The numbers",
+  title: "If you play most weeks, membership costs less.",
+  payg: {
+    title: "Pay per visit",
+    lines: [
+      { label: "Weekend round 1×/week (2-hr bay, peak)", value: "≈ $400/mo" },
+      { label: "Practice 1×/week (2 hrs)", value: "≈ $320/mo" },
+      { label: "Food & drink", value: "Full price" },
     ],
+    total: "≈ $720/mo to play & practice",
   },
-  // "Does membership pay for itself?" — uses real rates from `golf` + `memberships`.
-  membershipMath: {
-    eyebrow: "The numbers",
-    title: "If you play most weeks, membership costs less.",
-    payg: {
-      title: "Pay per visit",
-      lines: [
-        { label: "Weekend round 1×/week (2-hr bay, peak)", value: "≈ $400/mo" },
-        { label: "Practice 1×/week (2 hrs)", value: "≈ $320/mo" },
-        { label: "Food & drink", value: "Full price" },
-      ],
-      total: "≈ $720/mo to play & practice",
-    },
-    member: {
-      title: "Unlimited Member",
-      price: "$239/mo",
-      lines: [
-        { label: "Priority booking", value: "Included" },
-        { label: "Unlimited bay time, any day", value: "Included" },
-        { label: "All food & drink", value: "10% off" },
-      ],
-      total: "One flat price — play all you want",
-    },
-    bottomLine:
-      "Two 2-hour sessions a week at the hourly rate runs about $720 a month. Unlimited is $239 and covers all of your bay time, any day, plus 10% off food and drink.",
+  member: {
+    title: "Unlimited Member",
+    price: "$239/mo",
+    lines: [
+      { label: "Priority booking", value: "Included" },
+      { label: "Unlimited bay time, any day", value: "Included" },
+      { label: "All food & drink", value: "10% off" },
+    ],
+    total: "One flat price — play all you want",
   },
-  points: [
-    { title: "Weekly nights", desc: "A standing time to come play, get social and land on the weekly leaderboard." },
-    { title: "All skill levels", desc: "Handicapped, net scoring so every player has a real shot at the weekly board." },
-    { title: "Food & drinks also available", desc: "Burgers, wings and a full bar without leaving your bay." },
-  ],
-  cta: "Ask about the clubs",
+  bottomLine:
+    "Two 2-hour sessions a week at the hourly rate runs about $720 a month. Unlimited is $239 and covers all of your bay time, any day, plus 10% off food and drink.",
 };
 
 // Last day (inclusive, venue time) the BOGO first-visit offer is valid.
