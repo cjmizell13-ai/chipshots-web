@@ -9,7 +9,7 @@ import { getAllPosts, formatPostDate } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "The Clubhouse",
   description:
-    "Local guides, golf tips and what's happening at Chip Shots in Henderson, NV — from beating the summer heat to getting the most out of TrackMan.",
+    "Local guides, golf tips and what's happening at Chip Shots Golf Club in Henderson, NV, from beating the summer heat to getting the most out of TrackMan.",
   alternates: { canonical: "/blog" },
 };
 
@@ -21,7 +21,7 @@ export default function Blog() {
       <PageHero
         eyebrow="The journal"
         title="Notes from the clubhouse."
-        intro="Local guides, golf basics and what's on at Chip Shots."
+        intro="Local guides, golf basics and what's on at Chip Shots Golf Club."
         image={img.bayLounge}
       />
 

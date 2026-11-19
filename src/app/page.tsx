@@ -325,7 +325,7 @@ export default function Home() {
               <span className="text-gold-soft">So we built it.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/75">
-              Chip Shots is owned and run by the Mizell family. We are
+              Chip Shots Golf Club is owned and run by the Mizell family. We are
               veteran-owned, we live here, and we opened the kind of place we
               wanted in our own neighborhood: good food, a proper bar and golf
               you can play in any weather.

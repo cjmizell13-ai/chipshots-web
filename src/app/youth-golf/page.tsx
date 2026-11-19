@@ -44,7 +44,7 @@ export default function YouthGolf() {
       <PageHero
         eyebrow="Junior golf"
         title="Where Henderson's next golfers get started."
-        intro="Indoor, beginner-friendly and built for all ages — junior golf at Chip Shots is the easiest way for kids and teens to fall in love with the game. No experience, no clubs and no sunburn required."
+        intro="Indoor, beginner-friendly and built for all ages, junior golf at Chip Shots Golf Club is the easiest way for kids and teens to fall in love with the game. No experience, no clubs and no sunburn required."
         image={img.bayCinematic}
       />
 

@@ -158,7 +158,7 @@ export default function Footer() {
                 href={business.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Chip Shots on Instagram"
+                aria-label="Chip Shots Golf Club on Instagram"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
               >
                 <Icon.instagram className="h-5 w-5" />
@@ -167,7 +167,7 @@ export default function Footer() {
                 href={business.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Chip Shots on Facebook"
+                aria-label="Chip Shots Golf Club on Facebook"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
               >
                 <Icon.facebook className="h-5 w-5" />
@@ -176,7 +176,7 @@ export default function Footer() {
                 href={business.social.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Chip Shots on TikTok"
+                aria-label="Chip Shots Golf Club on TikTok"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
               >
                 <Icon.tiktok className="h-5 w-5" />

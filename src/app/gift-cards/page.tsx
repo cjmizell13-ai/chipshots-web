@@ -9,7 +9,7 @@ import { business, img } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Gift Cards",
   description:
-    "Give golf, food and drinks at Chip Shots in Henderson, NV. Pick any amount — an eGift card delivered instantly by email, good toward bay time, the kitchen and the bar.",
+    "Give golf, food and drinks at Chip Shots Golf Club in Henderson, NV. Pick any amount: an eGift card delivered instantly by email, good toward bay time, the kitchen and the bar.",
   alternates: { canonical: "/gift-cards" },
 };
 
@@ -43,7 +43,7 @@ export default function GiftCards() {
       <PageHero
         eyebrow="Gift Cards"
         title="Gift cards."
-        intro="A Chip Shots gift card is good for dinner, drinks and bay time. Pick any amount, delivered instantly by email."
+        intro="A Chip Shots Golf Club gift card is good for dinner, drinks and bay time. Pick any amount, delivered instantly by email."
         image={img.bayMoody}
       />
 
@@ -112,7 +112,7 @@ export default function GiftCards() {
       <section className="bg-green-deep text-cream">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-28">
           <Reveal>
-            <p className="eyebrow text-gold-soft">Chip Shots Gift Cards</p>
+            <p className="eyebrow text-gold-soft">Chip Shots Golf Club Gift Cards</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">

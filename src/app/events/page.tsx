@@ -48,7 +48,7 @@ function byMonth(events: ScheduledEvent[]) {
 export const metadata: Metadata = {
   title: "Events & Parties",
   description:
-    "What's on at Chip Shots in Henderson, NV: trivia, tastings and holiday events. Plus private events from one bay to a full buyout, with food from our kitchen and a full bar.",
+    "What's on at Chip Shots Golf Club in Henderson, NV: trivia, tastings and holiday events. Plus private events from one bay to a full buyout, with food from our kitchen and a full bar.",
   alternates: { canonical: "/events" },
 };
 

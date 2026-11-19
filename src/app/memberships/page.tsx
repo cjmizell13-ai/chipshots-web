@@ -11,7 +11,7 @@ import { business, img, memberBenefits } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Memberships & Pricing",
   description:
-    "Join Chip Shots in Henderson, NV. Members book bay time free — from $239/mo — plus priority booking and 24/7 access. Extra hours just $30/hr. Youth, corporate and late-night tiers available.",
+    "Join Chip Shots Golf Club in Henderson, NV. Members book bay time free (from $239/mo) plus priority booking and 24/7 access. Extra hours just $30/hr. Youth, corporate and late-night tiers available.",
   alternates: { canonical: "/memberships" },
 };
 
@@ -22,7 +22,7 @@ export default function Memberships() {
       <PageHero
         eyebrow="Memberships"
         title="For the regulars."
-        intro="Chip Shots is open to everyone. Membership is for people who play often: bay time is included, booking opens to you first, and extra hours are $30. There's a tier for every kind of player."
+        intro="Chip Shots Golf Club is open to everyone. Membership is for people who play often: bay time is included, booking opens to you first, and extra hours are $30. There's a tier for every kind of player."
         image={img.bayLoveseat}
       />
 

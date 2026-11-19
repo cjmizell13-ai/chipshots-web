@@ -4,7 +4,7 @@ import { business } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "What Chip Shots collects when you use this website, the services that handle it, and the choices you have.",
+    "What Chip Shots Golf Club collects when you use this website, the services that handle it, and the choices you have.",
   alternates: { canonical: "/privacy" },
 };
 

@@ -12,7 +12,7 @@ import { business, img, hours, owners } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About & Contact",
   description:
-    "Chip Shots Indoor Golf is a veteran-owned golf simulator, bar and restaurant in Henderson, NV — built by the Mizell family. Find our hours, location and contact info.",
+    "Chip Shots Golf Club is a veteran-owned golf simulator, bar and restaurant in Henderson, NV, built by the Mizell family. Find our hours, location and contact info.",
   alternates: { canonical: "/about" },
 };
 
@@ -40,7 +40,7 @@ export default function About() {
       <PageHero
         eyebrow="Our story"
         title="A family place, built for the neighborhood."
-        intro="Chip Shots was built by the Mizell family to be the kind of place you want to spend an evening: good food, a proper bar, and golf that's fun whether you shoot par or have never swung a club."
+        intro="Chip Shots Golf Club was built by the Mizell family to be the kind of place you want to spend an evening: good food, a proper bar, and golf that's fun whether you shoot par or have never swung a club."
         image={img.exterior}
       />
 
@@ -171,7 +171,7 @@ export default function About() {
                   href={business.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chip Shots on Instagram"
+                  aria-label="Chip Shots Golf Club on Instagram"
                   className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
                 >
                   <Icon.instagram className="h-5 w-5" />
@@ -180,7 +180,7 @@ export default function About() {
                   href={business.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chip Shots on Facebook"
+                  aria-label="Chip Shots Golf Club on Facebook"
                   className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
                 >
                   <Icon.facebook className="h-5 w-5" />
@@ -189,7 +189,7 @@ export default function About() {
                   href={business.social.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chip Shots on TikTok"
+                  aria-label="Chip Shots Golf Club on TikTok"
                   className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/20 text-cream/85 transition-colors hover:border-gold hover:text-gold"
                 >
                   <Icon.tiktok className="h-5 w-5" />
@@ -205,7 +205,7 @@ export default function About() {
               <div className="h-full min-h-[420px] overflow-hidden rounded-3xl border border-cream/15 shadow-[var(--shadow-soft)]">
                 <iframe
                   src={business.mapEmbed}
-                  title="Map to Chip Shots"
+                  title="Map to Chip Shots Golf Club"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-full min-h-[420px] w-full"

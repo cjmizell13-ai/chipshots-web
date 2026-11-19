@@ -313,7 +313,7 @@ export default function GolfBooking() {
             <div className="overflow-hidden border border-line bg-white">
               <iframe
                 src={business.booking}
-                title="Book a simulator bay at Chip Shots"
+                title="Book a simulator bay at Chip Shots Golf Club"
                 loading="lazy"
                 className="h-[720px] w-full"
               />

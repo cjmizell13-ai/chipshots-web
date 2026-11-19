@@ -36,7 +36,7 @@ import {
 export const metadata: Metadata = {
   title: "Food & Drink — Breakfast All Day, Burgers, Wings & Full Bar",
   description:
-    "The full Chip Shots menu: breakfast all day, burgers, ribs, salmon, wings, shareables and salads, plus drafts, wine, signature cocktails and spirits. Happy hour Mon–Fri 3–6 PM in Henderson, NV.",
+    "The full Chip Shots Golf Club menu: breakfast all day, burgers, ribs, salmon, wings, shareables and salads, plus drafts, wine, signature cocktails and spirits. Happy hour Mon to Fri, 3 to 6 PM, in Henderson, NV.",
   alternates: { canonical: "/food-drink" },
 };
 

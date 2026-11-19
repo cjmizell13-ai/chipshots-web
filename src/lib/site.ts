@@ -1,11 +1,11 @@
 // =============================================================================
-// Chip Shots Indoor Golf — single source of truth for site content
+// Chip Shots Golf Club: single source of truth for site content
 // All NAP (name/address/phone), hours, links, menus and pricing live here so
 // they stay identical everywhere they appear (important for local SEO).
 // =============================================================================
 
 export const business = {
-  name: "Chip Shots",
+  name: "Chip Shots Golf Club",
   shortName: "Chip Shots",
   tagline: "Golf • Food • Drinks",
   address: {
@@ -907,7 +907,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you host parties and corporate events?",
-    a: "Absolutely. Private bays, catered food and a full bar make Chip Shots an easy yes for birthdays, corporate team nights, bachelor/bachelorette groups and holiday parties. Tell us what you're celebrating and we'll tailor it.",
+    a: "Absolutely. Private bays, catered food and a full bar make Chip Shots Golf Club an easy yes for birthdays, corporate team nights, bachelor/bachelorette groups and holiday parties. Tell us what you're celebrating and we'll tailor it.",
   },
   {
     q: "Is there a membership?",

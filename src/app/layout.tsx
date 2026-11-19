@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(business.website),
   title: {
     default:
-      "Chip Shots | Restaurant, Bar & Indoor Golf — Henderson, NV",
-    template: "%s | Chip Shots Henderson",
+      "Chip Shots Golf Club | Restaurant, Bar and Indoor Golf in Henderson",
+    template: "%s | Chip Shots Golf Club",
   },
   description:
     "Five TrackMan simulator bays, a full bar and a full kitchen in Henderson, NV. Burgers, sandwiches, wings, shareables, cold drafts, signature cocktails and 500+ courses. Veteran-owned. Now open.",
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     "golf simulator Henderson NV",
     "TrackMan Henderson",
     "burgers bar Henderson",
+    "Chip Shots Golf Club",
     "Chip Shots Henderson",
     "golf bar restaurant Henderson",
   ],
@@ -44,13 +45,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: business.website,
     siteName: business.name,
-    title: "Chip Shots — Golf • Food • Drinks",
+    title: "Chip Shots Golf Club | Golf, Food, Drinks",
     description:
       "Five TrackMan bays, a full bar and a full kitchen in the heart of Henderson, NV.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chip Shots — Henderson, NV",
+    title: "Chip Shots Golf Club | Henderson, NV",
     description: "Golf simulators, a full kitchen and a full bar. Veteran-owned.",
   },
   alternates: { canonical: "/" },
@@ -79,7 +80,13 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["Restaurant", "BarOrPub", "SportsActivityLocation"],
   name: business.name,
-  alternateName: "Chip Shots Indoor Golf & Bar",
+  alternateName: [
+    "Chip Shots",
+    "Chip Shots Henderson",
+    "Chip Shots Indoor Golf and Bar",
+    "Chip Shots Indoor Golf Club",
+  ],
+  legalName: "Chip Shots LLC",
   description:
     "Indoor golf simulators, full bar and full kitchen in Henderson, NV.",
   url: business.website,

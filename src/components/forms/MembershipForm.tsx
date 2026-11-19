@@ -122,7 +122,7 @@ function Dialog({ tier, onClose }: { tier: string; onClose: () => void }) {
           </div>
         ) : (
           <>
-            <p className="eyebrow text-gold">Join Chip Shots</p>
+            <p className="eyebrow text-gold">Join Chip Shots Golf Club</p>
             <h3
               id="membership-form-title"
               className="font-display mt-2 text-3xl text-green-deep"

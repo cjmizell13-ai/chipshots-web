@@ -107,7 +107,7 @@ export default function BookingProvider({
                 )}
                 <iframe
                   src={business.booking}
-                  title="Book a simulator bay at Chip Shots"
+                  title="Book a simulator bay at Chip Shots Golf Club"
                   data-booking-source="modal"
                   onLoad={() => setLoaded(true)}
                   className="h-full w-full"

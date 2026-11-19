@@ -10,7 +10,7 @@ import { business, img, golf } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Holiday Parties in Henderson",
   description:
-    "Book your office or group holiday party at Chip Shots in Henderson, NV. Private TrackMan bays, food from our kitchen and a full bar for groups of 10 to full private buyouts of 100+. No golf experience needed.",
+    "Book your office or group holiday party at Chip Shots Golf Club in Henderson, NV. Private TrackMan bays, food from our kitchen and a full bar for groups of 10 to full private buyouts of 100+. No golf experience needed.",
   alternates: { canonical: "/holiday-parties" },
 };
 

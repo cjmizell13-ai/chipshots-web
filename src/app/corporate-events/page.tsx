@@ -10,7 +10,7 @@ import { business, img, golf, memberships } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Corporate Events & Team Building in Henderson",
   description:
-    "Host your next corporate team night, client outing, off-site or holiday party at Chip Shots in Henderson, NV. Private TrackMan bays, catered food and a full bar — and games everyone can play, no golf experience required.",
+    "Host your next corporate team night, client outing, off-site or holiday party at Chip Shots Golf Club in Henderson, NV. Private TrackMan bays, catered food and a full bar, plus games everyone can play, no golf experience required.",
   alternates: { canonical: "/corporate-events" },
 };
 

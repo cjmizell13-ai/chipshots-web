@@ -52,7 +52,7 @@ export default function EventForm() {
     const email = String(data.get("email") || "").trim();
     const details = String(data.get("details") || "");
 
-    const subject = `Event inquiry — ${type || "Chip Shots"}`;
+    const subject = `Event inquiry, Chip Shots Golf Club${type ? `: ${type}` : ""}`;
     const body = [
       `Name: ${name}`,
       `Phone: ${phone}`,

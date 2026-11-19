@@ -18,7 +18,7 @@ export function Wordmark({
   return (
     <Link
       href="/"
-      aria-label="Chip Shots — home"
+      aria-label="Chip Shots Golf Club, home"
       className={`group inline-flex flex-col leading-none ${className}`}
     >
       <span
@@ -29,7 +29,7 @@ export function Wordmark({
       <span
         className={`mt-1.5 text-[0.56rem] font-normal uppercase tracking-[0.34em] ${sub}`}
       >
-        Golf · Food · Drinks
+        Golf Club
       </span>
     </Link>
   );

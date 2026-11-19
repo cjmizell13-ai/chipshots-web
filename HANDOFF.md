@@ -1,9 +1,9 @@
-# Chip Shots Indoor Golf Club — Project Handoff
+# Chip Shots Golf Club: Project Handoff
 
 Paste this whole file into a new chat to continue with a different model.
 
 ## What this is
-A premium marketing website for **Chip Shots Indoor Golf Club** — a golf
+A premium marketing website for **Chip Shots Golf Club** — a golf
 simulator + bar + restaurant in Henderson, NV. Veteran-owned. Now open.
 Aesthetic: Augusta National–inspired (deep green + gold + cream).
 
@@ -53,7 +53,7 @@ Aesthetic: Augusta National–inspired (deep green + gold + cream).
   `className="text-gold"` so it stays legible; dark backgrounds use the white default.
 
 ## Brand copy rules (learned from user)
-- Brand name is "Chip Shots Indoor Golf Club".
+- Brand name is Chip Shots Golf Club. Short form Chip Shots. Not Chip Shots Indoor Golf Club, not Chip Shots Henderson.
 - NOT "smash burgers", NOT a "from-scratch kitchen" — say "a full kitchen".
 - Food is broader than burgers: breakfast all day, burgers, handhelds, wings,
   shareables, salads & wraps, soups, totchos, Philly.
