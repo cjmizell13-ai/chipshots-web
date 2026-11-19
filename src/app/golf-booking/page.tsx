@@ -4,8 +4,10 @@ import Link from "next/link";
 import PlateHero from "@/components/ui/PlateHero";
 import { Reveal } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
+import AttributedLink from "@/components/AttributedLink";
 import BookButton from "@/components/BookButton";
 import Gallery from "@/components/Gallery";
+import YgbFrame from "@/components/YgbFrame";
 import { business, img, golf, bayWeek, rangeCard, faqs } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -184,14 +186,14 @@ export default function GolfBooking() {
                 buys {rangeCard.detail}. No membership needed, and it never
                 expires.
               </p>
-              <a
+              <AttributedLink
                 href={rangeCard.buyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cta mt-5 text-ink"
               >
                 Buy a Range Card <span aria-hidden>→</span>
-              </a>
+              </AttributedLink>
             </div>
           </Reveal>
         </div>
@@ -311,7 +313,7 @@ export default function GolfBooking() {
 
           <Reveal delay={0.1}>
             <div className="overflow-hidden border border-line bg-white">
-              <iframe
+              <YgbFrame
                 src={business.booking}
                 title="Book a simulator bay at Chip Shots Golf Club"
                 loading="lazy"

@@ -10,7 +10,15 @@
  *  - booking_engaged / BookingEngaged: someone actually clicked inside a YGB
  *    booking widget (picked a bay, day or time). Stronger signal than a click
  *    on a button, and the one to optimize ad spend against.
+ *
+ * Every event also carries the visit's campaign as utm_source, utm_medium and
+ * utm_campaign (plus utm_content and utm_term when the link had them), from
+ * lib/attribution.ts. Those are the same tags the YGB and Toast Tables links
+ * carry, so GA4 and YGB's Web Traffic Report can be read side by side. To
+ * report on them in GA4, register them as event-scoped custom dimensions.
  */
+
+import { campaignParams } from "@/lib/attribution";
 
 type Gtag = (...args: unknown[]) => void;
 type Fbq = (...args: unknown[]) => void;
@@ -50,21 +58,25 @@ export function isYgbUrl(href: string) {
 /** Someone started a booking or purchase on YGB. */
 export function trackBookingStart(product: BookingProduct, source: BookingSource) {
   const { gtag, fbq } = tools();
+  const campaign = campaignParams();
   gtag?.("event", "begin_checkout", {
     item_category: product,
     booking_source: source,
+    ...campaign,
   });
   fbq?.("track", "InitiateCheckout", {
     content_category: product,
     content_name: `ygb_${source}`,
+    ...campaign,
   });
 }
 
 /** Someone clicked through to reserve a table (Toast Tables). */
 export function trackReserveClick(source: string) {
   const { gtag, fbq } = tools();
-  gtag?.("event", "reserve_table_click", { reserve_source: source });
-  fbq?.("trackCustom", "ReserveTableClick", { content_name: source });
+  const campaign = campaignParams();
+  gtag?.("event", "reserve_table_click", { reserve_source: source, ...campaign });
+  fbq?.("trackCustom", "ReserveTableClick", { content_name: source, ...campaign });
 }
 
 export type OrderChannel = "pickup" | "doordash" | "ubereats";
@@ -72,13 +84,16 @@ export type OrderChannel = "pickup" | "doordash" | "ubereats";
 /** Someone clicked through to order food (Toast pickup or a delivery app). */
 export function trackOrderClick(channel: OrderChannel, source: string) {
   const { gtag, fbq } = tools();
+  const campaign = campaignParams();
   gtag?.("event", "order_online_click", {
     order_channel: channel,
     order_source: source,
+    ...campaign,
   });
   fbq?.("trackCustom", "OrderOnlineClick", {
     content_category: channel,
     content_name: source,
+    ...campaign,
   });
 }
 
@@ -90,13 +105,16 @@ export function trackBookingEngaged(product: BookingProduct, source: BookingSour
   if (engaged.has(key)) return;
   engaged.add(key);
   const { gtag, fbq } = tools();
+  const campaign = campaignParams();
   gtag?.("event", "booking_engaged", {
     item_category: product,
     booking_source: source,
+    ...campaign,
   });
   fbq?.("trackCustom", "BookingEngaged", {
     content_category: product,
     content_name: `ygb_${source}`,
+    ...campaign,
   });
 }
 
@@ -146,14 +164,18 @@ export function linkIntent(href: string): LinkIntent | null {
 /** Someone clicked to call, email, get directions, RSVP or buy a gift card. */
 export function trackLinkIntent(intent: LinkIntent, linkText: string) {
   const { gtag, fbq } = tools();
+  const campaign = campaignParams();
   const { event, ...params } = intent;
-  gtag?.("event", event, { ...params, link_text: linkText.slice(0, 100) });
+  gtag?.("event", event, { ...params, link_text: linkText.slice(0, 100), ...campaign });
 
   // Meta's standard events where one fits. The gift card button already sends
   // InitiateCheckout from its own page, so it is left out here.
-  if (event === "phone_click") fbq?.("track", "Contact");
-  if (event === "directions_click") fbq?.("track", "FindLocation");
+  if (event === "phone_click") fbq?.("track", "Contact", campaign);
+  if (event === "directions_click") fbq?.("track", "FindLocation", campaign);
   if (event === "rsvp_click") {
-    fbq?.("trackCustom", "RsvpClick", { content_name: linkText.slice(0, 100) });
+    fbq?.("trackCustom", "RsvpClick", {
+      content_name: linkText.slice(0, 100),
+      ...campaign,
+    });
   }
 }

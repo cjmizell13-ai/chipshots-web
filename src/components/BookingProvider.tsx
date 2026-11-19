@@ -5,12 +5,15 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { business } from "@/lib/site";
 import { Icon } from "@/components/ui/icons";
 import { trackBookingStart } from "@/lib/analytics";
+import { withAttribution } from "@/lib/attribution";
+import { useAttribution } from "@/lib/useAttribution";
 
 type BookingContextValue = { open: () => void; close: () => void };
 
@@ -35,12 +38,19 @@ export default function BookingProvider({
   const reduce = useReducedMotion();
   const [isOpen, setIsOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  // The booking URL with this visit's campaign tags. The modal only renders
+  // after a click, so by then the tags are known.
+  const attribution = useAttribution();
+  const bookingUrl = withAttribution(business.booking, attribution);
 
   const open = useCallback(() => {
     setIsOpen(true);
     trackBookingStart("bay", "modal");
   }, []);
   const close = useCallback(() => setIsOpen(false), []);
+  // Stable, so the tags arriving after hydration don't re-render every
+  // component that calls useBooking().
+  const value = useMemo(() => ({ open, close }), [open, close]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -56,7 +66,7 @@ export default function BookingProvider({
   }, [isOpen, close]);
 
   return (
-    <BookingContext.Provider value={{ open, close }}>
+    <BookingContext.Provider value={value}>
       {children}
 
       <AnimatePresence>
@@ -106,7 +116,7 @@ export default function BookingProvider({
                   </div>
                 )}
                 <iframe
-                  src={business.booking}
+                  src={bookingUrl}
                   title="Book a simulator bay at Chip Shots Golf Club"
                   data-booking-source="modal"
                   onLoad={() => setLoaded(true)}
@@ -123,7 +133,7 @@ export default function BookingProvider({
                   {business.phone}
                 </a>
                 <a
-                  href={business.booking}
+                  href={bookingUrl}
                   data-no-booking-track
                   target="_blank"
                   rel="noopener noreferrer"
