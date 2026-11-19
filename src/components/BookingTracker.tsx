@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { captureAttribution } from "@/lib/attribution";
 import {
   isYgbUrl,
   linkIntent,
@@ -18,9 +19,15 @@ import {
  *  - clicking into an embedded YGB iframe fires booking_engaged. The page
  *    can't see inside a cross-origin iframe, but when the window loses focus
  *    to one, document.activeElement is that iframe.
+ *
+ * It also remembers the campaign tags this visit landed with (lib/attribution.ts)
+ * so the YGB and Toast Tables links can carry them. Every event above includes
+ * that campaign in its parameters.
  */
 export default function BookingTracker() {
   useEffect(() => {
+    captureAttribution();
+
     const onClick = (e: MouseEvent) => {
       const a = (e.target as Element | null)?.closest?.("a[href]");
       if (!a) return;

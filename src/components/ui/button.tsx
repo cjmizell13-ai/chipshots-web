@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
+import AttributedLink from "@/components/AttributedLink";
+import { takesCampaignTags } from "@/lib/attribution";
 
 type Variant = "gold" | "green" | "outline" | "ghost-light";
 type Size = "md" | "lg";
@@ -61,6 +63,27 @@ export function ButtonLink({
 }) {
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
   if (external) {
+    const inner = (
+      <>
+        {children}
+        {withArrow && <Arrow />}
+      </>
+    );
+    // YourGolfBooking and Toast Tables links carry the visit's campaign tags
+    // (lib/attribution.ts). Every other external link stays a plain <a>.
+    if (takesCampaignTags(href)) {
+      return (
+        <AttributedLink
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cls}
+          onClick={onClick}
+        >
+          {inner}
+        </AttributedLink>
+      );
+    }
     return (
       <a
         href={href}
@@ -69,8 +92,7 @@ export function ButtonLink({
         className={cls}
         onClick={onClick}
       >
-        {children}
-        {withArrow && <Arrow />}
+        {inner}
       </a>
     );
   }
