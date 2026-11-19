@@ -9,29 +9,29 @@ import { business, img, memberships } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Junior Golf in Henderson",
   description:
-    "Indoor junior golf for kids and teens in Henderson, NV. A youth membership, beginner-friendly TrackMan simulators, kids' birthday parties and a family-friendly, climate-controlled venue. No experience needed.",
+    "Junior golf for kids and teens at Chip Shots Golf Club in Henderson, NV: a youth membership, beginner-friendly TrackMan bays and kids' birthday parties, indoors. No experience needed.",
   alternates: { canonical: "/youth-golf" },
 };
 
 const whyKids = [
   {
     title: "No experience needed",
-    desc: "TrackMan reads every swing, keeps score and runs easy arcade-style games, so a first-timer has just as much fun as a junior who already plays. Clubs are provided — kids just show up and swing.",
+    desc: "TrackMan reads every swing, keeps score and runs simple games, so a first-timer and a junior who already plays can share a bay. Clubs are provided.",
     icon: Icon.target,
   },
   {
     title: "Safe, indoor & climate-controlled",
-    desc: "No 110° heat, no lost balls, no walking a course in the sun. Just a comfortable, air-conditioned room where parents can relax while kids play.",
+    desc: "No 110° heat and no lost balls. A cool, comfortable room where parents can sit down while the kids play.",
     icon: Icon.flag,
   },
   {
     title: "A real skill, the fun way",
-    desc: "Golf teaches focus, patience and good sportsmanship — and on a simulator the feedback is instant, so kids see themselves improve shot by shot without the pressure of a real course.",
+    desc: "Golf teaches focus, patience and good manners. On a simulator the feedback is instant, so kids see each shot improve without the pressure of a real course.",
     icon: Icon.star,
   },
   {
     title: "Screens off, together",
-    desc: "A genuinely active way to get kids off their devices and moving — playing alongside friends, siblings or parents in the same bay.",
+    desc: "An active way to get kids off their devices, playing alongside friends, siblings or parents in the same bay.",
     icon: Icon.users,
   },
 ];
@@ -44,7 +44,7 @@ export default function YouthGolf() {
       <PageHero
         eyebrow="Junior golf"
         title="Where Henderson's next golfers get started."
-        intro="Indoor, beginner-friendly and built for all ages, junior golf at Chip Shots Golf Club is the easiest way for kids and teens to fall in love with the game. No experience, no clubs and no sunburn required."
+        intro="Junior golf at Chip Shots Golf Club is indoors, beginner-friendly and built for all ages. No experience, no clubs and no sunburn required."
         image={img.bayCinematic}
       />
 
@@ -52,7 +52,7 @@ export default function YouthGolf() {
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="eyebrow text-gold">Why families love it</p>
+            <p className="eyebrow text-gold">For families</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
               Why families come.
             </h2>
@@ -92,10 +92,8 @@ export default function YouthGolf() {
                   A youth membership built for regulars.
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-                  The youth membership is for players 18 and under — for
-                  the kid who's hooked and wants to keep coming back. It's the
-                  most affordable way to turn casual swings into a real, growing
-                  skill.
+                  For players 18 and under who are hooked and want to keep
+                  coming back.
                 </p>
                 {youthTier && (
                   <div className="mt-8 inline-flex items-baseline gap-3 rounded-2xl border border-cream/15 bg-green-deep/60 px-7 py-5">
@@ -113,7 +111,7 @@ export default function YouthGolf() {
                     See membership details
                   </ButtonLink>
                   <ButtonLink href={business.booking} external variant="ghost-light" size="lg">
-                    Book a bay
+                    Book a Bay
                   </ButtonLink>
                 </div>
               </div>
@@ -161,10 +159,8 @@ export default function YouthGolf() {
             <Reveal delay={0.14}>
               <p className="mt-5 max-w-lg leading-relaxed text-muted">
                 Book a private bay and let the kids loose on games anyone can
-                play — no golf skill required. The kitchen sends out sliders,
-                totchos, mini corn dogs and shakes right to the bay, so all you
-                have to bring is the cake. Easy to host, easy to clean up,
-                impossible to forget.
+                play. The kitchen sends sliders, totchos, mini corn dogs and
+                shakes to the bay, so all you bring is the cake.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -186,13 +182,13 @@ export default function YouthGolf() {
               Bring them in for a first swing.
             </h2>
             <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted">
-              Grab a bay any day of the week and let them try it — clubs
-              included, no experience needed. Questions about the youth membership or
-              a party? Give us a call.
+              Book a bay any day of the week and let them try it. Clubs
+              included, no experience needed. Questions about the youth
+              membership or a party? Give us a call.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <ButtonLink href={business.booking} external variant="gold" size="lg" withArrow>
-                Book a bay
+                Book a Bay
               </ButtonLink>
               <ButtonLink href={business.phoneHref} variant="outline" size="lg">
                 Call {business.phone}

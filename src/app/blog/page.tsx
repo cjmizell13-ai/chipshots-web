@@ -9,7 +9,7 @@ import { getAllPosts, formatPostDate } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "The Clubhouse",
   description:
-    "Local guides, golf tips and what's happening at Chip Shots Golf Club in Henderson, NV, from beating the summer heat to getting the most out of TrackMan.",
+    "Local guides, golf basics and news from Chip Shots Golf Club in Henderson, NV.",
   alternates: { canonical: "/blog" },
 };
 

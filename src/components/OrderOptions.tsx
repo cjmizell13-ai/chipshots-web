@@ -37,8 +37,7 @@ export default function OrderOptions({
           </h2>
           <p className="mt-6 max-w-md text-ink/75">
             Pickup is the regular menu at regular prices, with no app markup.
-            Order online, come inside and give your name at the bar. Your food
-            will be bagged and ready.
+            Order online and give your name at the bar when you arrive.
           </p>
 
           <dl className="mt-8 max-w-md">

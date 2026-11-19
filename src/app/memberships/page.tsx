@@ -9,9 +9,9 @@ import PixelEvent from "@/components/PixelEvent";
 import { business, img, memberBenefits } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Memberships & Pricing",
+  title: "Membership",
   description:
-    "Join Chip Shots Golf Club in Henderson, NV. Members book bay time free (from $239/mo) plus priority booking and 24/7 access. Extra hours just $30/hr. Youth, corporate and late-night tiers available.",
+    "Membership at Chip Shots Golf Club in Henderson, NV: bay time included from $239/mo, priority booking and 24/7 access, with youth, night-only and corporate tiers. Extra hours $30/hr.",
   alternates: { canonical: "/memberships" },
 };
 
@@ -20,9 +20,9 @@ export default function Memberships() {
     <>
       <PixelEvent event="ViewContent" params={{ content_name: "Memberships" }} />
       <PageHero
-        eyebrow="Memberships"
+        eyebrow="Membership"
         title="For the regulars."
-        intro="Chip Shots Golf Club is open to everyone. Membership is for people who play often: bay time is included, booking opens to you first, and extra hours are $30. There's a tier for every kind of player."
+        intro="The club is open to everyone. Membership is for those who play often: bay time included, first call on booking and extra hours at $30."
         image={img.bayLoveseat}
       />
 
@@ -31,13 +31,12 @@ export default function Memberships() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <Reveal>
             <div>
-              <p className="eyebrow text-gold">Why join</p>
+              <p className="eyebrow text-gold">Membership</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
                 What members get.
               </h2>
               <p className="mt-5 max-w-md leading-relaxed text-muted">
-                If you're playing even a couple times a month, a membership is
-                the easy call. No-commitment monthly options available.
+                Month-to-month or annual, with no long contracts.
               </p>
             </div>
           </Reveal>
@@ -65,8 +64,8 @@ export default function Memberships() {
                 How it works.
               </h2>
               <p className="mt-5 leading-relaxed text-muted">
-                Memberships are month-to-month or annual — no long contracts.
-                Here's exactly what you get and how playing works once you're in.
+                What membership includes, and how playing works once you are
+                in.
               </p>
             </div>
           </Reveal>
@@ -75,18 +74,18 @@ export default function Memberships() {
             {[
               {
                 icon: Icon.target,
-                title: "Book free, every time",
-                body: "Your bay time is included with membership — book online for free. Only need more? Extra hours are just $30/hr, well below the $40–$50 walk-in rate.",
+                title: "Bay time included",
+                body: "Book online at no charge. Hours beyond your plan are $30, against $40 to $50 for guests.",
               },
               {
                 icon: Icon.clock,
-                title: "Fair-use keeps bays open",
-                body: "Up to 2 hours per visit and 2 active reservations at a time, so there's always a bay free when you want to play.",
+                title: "Fair use",
+                body: "Up to 2 hours per visit and 2 active reservations at a time, so a bay is there when you want one.",
               },
               {
                 icon: Icon.star,
-                title: "Perks on every visit",
-                body: "Priority booking up to 14 days out, 10% off all food and drink, and 24/7 access to the bays the moment you join.",
+                title: "On every visit",
+                body: "Priority booking up to 14 days out, 10% off food and drink, and 24/7 access to the bays from the day you join.",
               },
             ].map((step, i) => {
               const StepIcon = step.icon;
@@ -118,8 +117,9 @@ export default function Memberships() {
           <Reveal delay={0.05}>
             <p className="mt-8 text-sm text-muted">
               <span className="font-medium text-green-deep">Billing:</span>{" "}
-              monthly tiers renew month-to-month — cancel anytime. Annual tiers
-              are billed once up front and save you the most over the year.
+              monthly tiers renew month to month and can be cancelled any time.
+              Annual tiers are billed once, up front, and cost less over the
+              year.
             </p>
           </Reveal>
         </div>
@@ -130,7 +130,7 @@ export default function Memberships() {
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
           <Reveal>
             <div className="text-center">
-              <p className="eyebrow text-gold-soft">Choose your tier</p>
+              <p className="eyebrow text-gold-soft">The tiers</p>
               <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
                 Membership levels
               </h2>
@@ -141,7 +141,7 @@ export default function Memberships() {
 
           <Reveal delay={0.05}>
             <p className="mt-10 text-center text-sm text-cream/55">
-              Questions on tiers or corporate plans? Call{" "}
+              Questions about a tier or a corporate plan? Call{" "}
               <a href={business.phoneHref} className="text-gold-soft underline">
                 {business.phone}
               </a>{" "}
@@ -165,10 +165,10 @@ export default function Memberships() {
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 py-14 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
           <div>
             <h2 className="font-display text-3xl text-green-deep sm:text-4xl">
-              Not sure yet?
+              Not ready to join?
             </h2>
             <p className="mt-2 text-green-deep/80">
-              Book a bay first — you'll be back. Members book free.
+              Book a bay as a guest first. The door is open either way.
             </p>
           </div>
           <BookButton variant="green" size="lg" withArrow />

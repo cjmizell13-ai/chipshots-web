@@ -7,7 +7,7 @@ import { business, img, faqs } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Everything you need to know before visiting Chip Shots Golf Club in Henderson, NV: bay pricing, golf experience, food & drink, group size, hours and more.",
+    "Bay prices, group sizes, clubs, food, hours and more: what to know before visiting Chip Shots Golf Club in Henderson, NV.",
   alternates: { canonical: "/faq" },
 };
 
@@ -53,12 +53,12 @@ export default function FAQ() {
               Still have a question?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-muted">
-              Give us a call or just book a bay. It is the easiest way to see what
-              Chip Shots Golf Club is all about.
+              Give us a call, or book a bay and see Chip Shots Golf Club for
+              yourself.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-4">
               <ButtonLink href={business.booking} external variant="green" size="lg" withArrow>
-                Book a bay
+                Book a Bay
               </ButtonLink>
               <ButtonLink href={business.phoneHref} variant="outline" size="lg">
                 Call {business.phone}

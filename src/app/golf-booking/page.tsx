@@ -9,9 +9,9 @@ import Gallery from "@/components/Gallery";
 import { business, img, golf, bayWeek, rangeCard, faqs } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Golf & Booking — TrackMan Simulator Bays",
+  title: "Book a Bay: TrackMan Simulator Bays",
   description:
-    "Five private TrackMan simulator bays with 500+ courses in Henderson, NV. Up to four players, clubs included. Book online: non-peak $40/hr, peak $50/hr, members book free.",
+    "Five private TrackMan bays with 500+ courses at Chip Shots Golf Club in Henderson, NV. Up to four players, clubs included. Non-peak $40/hr, peak $50/hr; members book free.",
   alternates: { canonical: "/golf-booking" },
 };
 

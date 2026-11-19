@@ -56,7 +56,7 @@ export default function MembershipMath({
           <Reveal delay={0.1}>
             <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-gold bg-green-deep p-8 text-cream shadow-[var(--shadow-soft)]">
               <span className="absolute right-6 top-6 rounded-full bg-gold px-3 py-1 text-xs font-medium uppercase tracking-wide text-green-deep">
-                Best value
+                Recommended
               </span>
               <h3 className="font-display text-2xl">{math.member.title}</h3>
               <p className="font-display mt-1 text-3xl text-gold">

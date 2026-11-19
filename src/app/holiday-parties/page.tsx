@@ -68,7 +68,7 @@ export default function HolidayParties() {
       <PageHero
         eyebrow="Holiday Parties"
         title="Holiday parties, done properly."
-        intro="Private TrackMan bays, food from our kitchen and a full bar, for groups of 10 up to full private buyouts of 100+. Family- and veteran-owned, right on Lake Mead Pkwy in Henderson."
+        intro="Private TrackMan bays, food from our kitchen and a full bar, for groups of 10 up to full private buyouts of 100+. Family- and veteran-owned, on Lake Mead Pkwy in Henderson."
         image={img.bayRoomWide}
       />
 

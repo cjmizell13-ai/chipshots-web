@@ -9,7 +9,7 @@ import { business, img } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Gift Cards",
   description:
-    "Give golf, food and drinks at Chip Shots Golf Club in Henderson, NV. Pick any amount: an eGift card delivered instantly by email, good toward bay time, the kitchen and the bar.",
+    "Chip Shots Golf Club gift cards in any amount, good for bay time, the kitchen and the bar in Henderson, NV. Sent by email at checkout.",
   alternates: { canonical: "/gift-cards" },
 };
 
@@ -21,19 +21,19 @@ const steps = [
   },
   {
     icon: "mail" as const,
-    title: "Delivered instantly",
-    desc: "The eGift card lands in the inbox right away — print it or forward it on.",
+    title: "Sent by email",
+    desc: "The eGift card arrives by email right away. Print it or forward it.",
   },
   {
     icon: "star" as const,
     title: "Spend it any time",
-    desc: "Good toward bay time, food, drinks and events — whenever they drop in.",
+    desc: "Good toward bay time, food, drinks and events, whenever they come in.",
   },
 ];
 
 const uses = [
-  { icon: "flag" as const, title: "Bay time", desc: "TrackMan simulators — play 500+ courses or dial in your swing, any skill level." },
-  { icon: "glass" as const, title: "Food & drinks", desc: "Burgers, wings, cheesesteaks and a full bar, brought right to the bay." },
+  { icon: "flag" as const, title: "Bay time", desc: "Private TrackMan bays and 500+ courses, for any level of player." },
+  { icon: "glass" as const, title: "Food & drinks", desc: "Burgers, wings, cheesesteaks and a full bar, brought to the bay." },
   { icon: "users" as const, title: "Events & parties", desc: "Put it toward a watch party, a private event or a holiday party." },
 ];
 
@@ -43,7 +43,7 @@ export default function GiftCards() {
       <PageHero
         eyebrow="Gift Cards"
         title="Gift cards."
-        intro="A Chip Shots Golf Club gift card is good for dinner, drinks and bay time. Pick any amount, delivered instantly by email."
+        intro="A Chip Shots Golf Club gift card covers dinner, drinks and bay time. Any amount, sent by email."
         image={img.bayMoody}
       />
 
@@ -116,13 +116,12 @@ export default function GiftCards() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-              Send one today.
+              For the golfer, or anyone who eats.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mx-auto mt-5 max-w-xl leading-relaxed text-cream/75">
-              Pick any amount and it's delivered to your inbox the moment you
-              check out — ready to print or forward on.
+              Any amount, delivered by email the moment you check out.
             </p>
           </Reveal>
           <GoldRule className="mx-auto mt-7 w-40" />

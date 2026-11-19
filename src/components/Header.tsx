@@ -204,7 +204,7 @@ export default function Header() {
                       trackOrderClick("pickup", "mobile_menu");
                     }}
                   >
-                    Order Food for Pickup
+                    Order Pickup
                   </ButtonLink>
                 )}
                 {orderOnlineLive && liveDelivery.length > 0 && (

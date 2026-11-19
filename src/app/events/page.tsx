@@ -48,7 +48,7 @@ function byMonth(events: ScheduledEvent[]) {
 export const metadata: Metadata = {
   title: "Events & Parties",
   description:
-    "What's on at Chip Shots Golf Club in Henderson, NV: trivia, tastings and holiday events. Plus private events from one bay to a full buyout, with food from our kitchen and a full bar.",
+    "Trivia, tastings and holiday nights at Chip Shots Golf Club in Henderson, NV, plus private events from one bay to a full buyout.",
   alternates: { canonical: "/events" },
 };
 
@@ -73,7 +73,7 @@ export default function Events() {
         kicker="Events · Public and private"
         title="What's on,"
         accent="and how to host your own."
-        intro="Trivia on Tuesdays and a calendar of one-off nights in between. For private events, every booking is quoted to fit your group."
+        intro="Trivia on Tuesdays and a few one-off nights in between. Private events are quoted to fit your group."
         image={img.clubDining}
         alt="A server taking an order at a full table in the dining room at Chip Shots"
         position="50% 40%"
@@ -186,9 +186,9 @@ export default function Events() {
                 <span className="text-gold-soft">or the whole building.</span>
               </h2>
               <p className="mt-6 max-w-md text-cream/70">
-                Every event is quoted to fit your group, with one person on
-                our side handling the food, the bar and the tee sheet. Nobody
-                needs to know how to golf.
+                Quoted to fit your group, with one person on our side handling
+                the food, the bar and the tee sheet. Nobody needs to know how
+                to golf.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -215,7 +215,7 @@ export default function Events() {
                 {i === 0 && (
                   <div className="mt-5">
                     <BookButton variant="ghost-light" size="md">
-                      Book a bay
+                      Book a Bay
                     </BookButton>
                   </div>
                 )}

@@ -10,29 +10,29 @@ import { business, img, golf, memberships } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Corporate Events & Team Building in Henderson",
   description:
-    "Host your next corporate team night, client outing, off-site or holiday party at Chip Shots Golf Club in Henderson, NV. Private TrackMan bays, catered food and a full bar, plus games everyone can play, no golf experience required.",
+    "Team nights, client outings, off-sites and holiday parties at Chip Shots Golf Club in Henderson, NV. Private TrackMan bays, food from our kitchen and a full bar. No golf experience needed.",
   alternates: { canonical: "/corporate-events" },
 };
 
 const whyItWorks = [
   {
-    title: "Everyone plays — skill doesn't matter",
-    desc: "TrackMan handicaps the games and keeps score automatically, so the new hire and the VP who golfs every weekend are on even footing. Closest-to-the-pin and long-drive games get the whole room cheering, and nobody sits on the sidelines.",
+    title: "Everyone can play",
+    desc: "TrackMan keeps score and handicaps the games, so the new hire and the VP who golfs every weekend play on even terms. Closest-to-the-pin and long-drive games keep the whole room in it.",
     icon: Icon.target,
   },
   {
     title: "Private bays keep the team together",
-    desc: `Reserve a block of our ${golf.bays} climate-controlled bays and your group stays in one place — rotating through games, talking shop or not, with no 110° parking lot and no rented gear.`,
+    desc: `Reserve a block of our ${golf.bays} climate-controlled bays and the group stays in one place. No 110° parking lot, no rented gear.`,
     icon: Icon.users,
   },
   {
     title: "Food and drinks, handled",
-    desc: "A full kitchen and full bar deliver burgers, shareables, cocktails and cold drafts straight to your bays. Run it as a happy-hour outing, an after-work team night, or a half-day with catering — nobody has to leave to eat.",
+    desc: "Burgers, shareables, cocktails and cold drafts come to the bays from our kitchen and bar. A happy-hour outing, an after-work team night or a half day with catering; nobody leaves to eat.",
     icon: Icon.burger,
   },
   {
     title: "Climate-controlled, any season",
-    desc: "Indoor and air-conditioned year-round, so your event isn't at the mercy of the Henderson heat or a rained-out tee time. Book with confidence months out.",
+    desc: "Indoors and air-conditioned all year, so the Henderson heat and a rained-out tee time are not your problem.",
     icon: Icon.flag,
   },
 ];
@@ -40,19 +40,19 @@ const whyItWorks = [
 const occasions = [
   {
     title: "Team nights & off-sites",
-    desc: "Break up the quarter with something people actually look forward to — a few hours of games, food and friendly competition that gets the whole team talking.",
+    desc: "A few hours of games, food and friendly competition, away from the office.",
   },
   {
     title: "Client outings & entertaining",
-    desc: "Impress clients without the stuffy steakhouse. Private bays make it easy to talk business between swings, with the bar and kitchen at your service.",
+    desc: "A private bay makes it easy to talk business between swings, with the kitchen and bar close at hand.",
   },
   {
     title: "Sales kickoffs & celebrations",
-    desc: "Hit a number worth celebrating? Toast it over a TrackMan tournament with prizes, drinks and dinner — all under one roof.",
+    desc: "Mark a good quarter with a TrackMan tournament, drinks and dinner under one roof.",
   },
   {
     title: "Holiday parties",
-    desc: "A festive, climate-controlled venue with golf, catering and a full bar makes the company holiday party an easy yes for groups of any size.",
+    desc: "Golf, food and a full bar in one climate-controlled building, for groups of 10 up to full buyouts of 100+.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function CorporateEvents() {
       <PageHero
         eyebrow="Corporate Events"
         title="Bring the team. We'll run the day."
-        intro="Private TrackMan bays, food from our kitchen and a full bar, with games anyone can play whether or not they golf. One contact on our side plans it with you."
+        intro="Private TrackMan bays, food from our kitchen and a full bar, with games anyone can play. One person on our side plans it with you."
         image={img.trackmanCompetitions}
       />
 
@@ -72,9 +72,9 @@ export default function CorporateEvents() {
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="eyebrow text-gold">Why teams love it</p>
+            <p className="eyebrow text-gold">Corporate events</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Why companies book here.
+              Why teams come here.
             </h2>
           </div>
         </Reveal>
@@ -112,9 +112,9 @@ export default function CorporateEvents() {
                   What we host.
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-                  From a casual team happy hour to a full sales-kickoff
-                  blowout, we tailor the bays, food and format to your group.
-                  Tell us the headcount and the vibe — we'll handle the rest.
+                  From a team happy hour to a full sales kickoff, the bays, food
+                  and format are set to your group. Send the headcount and we
+                  will handle the rest.
                 </p>
                 <div className="mt-8">
                   <ButtonLink href="#inquire" variant="gold" size="lg" withArrow>
@@ -166,9 +166,9 @@ export default function CorporateEvents() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-5 max-w-lg leading-relaxed text-muted">
-                If your team comes back — for recurring client entertaining,
-                standing team nights or a perk employees actually use — a
-                corporate membership makes it easy on the budget.
+                For standing team nights, regular client entertaining or a perk
+                your staff will use, a corporate membership keeps the cost
+                steady.
               </p>
             </Reveal>
             <Stagger className="mt-8 grid gap-4">
@@ -215,8 +215,8 @@ export default function CorporateEvents() {
                   Tell us about your event.
                 </h2>
                 <p className="mt-5 max-w-sm leading-relaxed text-muted">
-                  Send us the basics and our events team will follow up with
-                  availability and a quote — usually within a business day.
+                  Send the basics and our events team will reply with availability
+                  and a quote, usually within a business day.
                 </p>
                 <div className="mt-8 space-y-4 text-green-deep">
                   <a

@@ -12,7 +12,7 @@ import { business, img, hours, owners } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About & Contact",
   description:
-    "Chip Shots Golf Club is a veteran-owned golf simulator, bar and restaurant in Henderson, NV, built by the Mizell family. Find our hours, location and contact info.",
+    "Chip Shots Golf Club is a veteran-owned restaurant, bar and indoor golf club in Henderson, NV, run by the Mizell family. Hours, location and contact.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,7 +20,7 @@ const values = [
   {
     icon: Icon.flag,
     title: "Veteran-owned",
-    body: "Built on service, discipline and hospitality — a place that feels like it was made for the neighborhood, because it was.",
+    body: "Run on service, discipline and hospitality, for the neighborhood we live in.",
   },
   {
     icon: Icon.users,
@@ -29,8 +29,8 @@ const values = [
   },
   {
     icon: Icon.star,
-    title: "Quality first",
-    body: "Real food, real cocktails and tour-grade TrackMan tech. No corners cut.",
+    title: "Done properly",
+    body: "Real food, proper cocktails and tour-grade TrackMan. No corners cut.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function About() {
       <PageHero
         eyebrow="Our story"
         title="A family place, built for the neighborhood."
-        intro="Chip Shots Golf Club was built by the Mizell family to be the kind of place you want to spend an evening: good food, a proper bar, and golf that's fun whether you shoot par or have never swung a club."
+        intro="Chip Shots Golf Club is run by the Mizell family. Good food, a proper bar, and golf for par shooters and first-timers alike."
         image={img.exterior}
       />
 
@@ -69,18 +69,15 @@ export default function About() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-5 leading-relaxed text-muted">
-                We set out to build something Henderson didn't have — a spot where
-                the simulators are genuinely great, but the kitchen and bar can
-                stand entirely on their own. Bring the family for burgers, bring
-                the team for a tournament, or just grab a cocktail and watch the
-                leaderboard.
+                We wanted a place where the golf is good and the kitchen and bar
+                would stand on their own without it. Bring the family for
+                burgers, the team for a tournament, or come for a cocktail.
               </p>
             </Reveal>
             <Reveal delay={0.18}>
               <p className="mt-4 leading-relaxed text-muted">
                 Five TrackMan bays, 500+ courses, a full kitchen and a full
-                bar — open late, climate-controlled, and run by people who live
-                here.
+                bar, run by people who live here.
               </p>
             </Reveal>
             <GoldRule className="mt-7 w-32" />
@@ -225,8 +222,8 @@ export default function About() {
               Write to us.
             </h2>
             <p className="mt-4 text-muted">
-              Questions, feedback or just want to say hello? We'd love to hear
-              from you.
+              Questions, feedback or a note to say hello. We read every
+              one.
             </p>
           </div>
         </Reveal>

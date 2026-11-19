@@ -238,7 +238,7 @@ export const bayWeek: { days: string; peak: string; nonPeak: string }[] = [
 // "Does membership pay for itself?" — uses real rates from `golf` + `memberships`.
 export const membershipMath = {
   eyebrow: "The numbers",
-  title: "If you play most weeks, membership costs less.",
+  title: "If you play most weeks, the arithmetic is simple.",
   payg: {
     title: "Pay per visit",
     lines: [
@@ -256,7 +256,7 @@ export const membershipMath = {
       { label: "Unlimited bay time, any day", value: "Included" },
       { label: "All food & drink", value: "10% off" },
     ],
-    total: "One flat price — play all you want",
+    total: "One flat price. Play as often as you like.",
   },
   bottomLine:
     "Two 2-hour sessions a week at the hourly rate runs about $720 a month. Unlimited is $239 and covers all of your bay time, any day, plus 10% off food and drink.",
@@ -284,21 +284,21 @@ export const promoBanners: {
   until?: string;
 }[] = [
   {
-    message: "Ribbon Cutting & Opening Celebration — Thursday, July 30, 4–7 PM. A free hour of golf for every guest",
-    cta: "RSVP on Facebook",
+    message: "Ribbon Cutting and Opening Celebration, Thursday, July 30, 4 to 7 PM. A free hour of golf for every guest",
+    cta: "Details on Facebook",
     href: "https://www.facebook.com/events/914533917674160/",
     until: "2026-07-30",
   },
   {
     code: "BOGO",
-    message: "First visit? Book a 2-hour bay and the second hour's on us — through July 31",
+    message: "First visit? Book a 2-hour bay and the second hour is on us, through July 31",
     cta: "Redeem the offer",
     href: "/golf-booking",
     until: bogoUntil,
   },
   {
-    message: "Trivia is back — Tuesdays 6:30–8 PM · hosted in house, mini challenges all night",
-    cta: "Grab your team",
+    message: "Trivia, Tuesdays 6:30 to 8 PM. Hosted in house.",
+    cta: "Events",
     href: "/events",
   },
 ];
@@ -333,10 +333,10 @@ export const memberships: Membership[] = [
 ];
 
 export const memberBenefits = [
-  "Members book bay time free — only pay for extra hours",
+  "Bay time included. You pay only for hours beyond your plan",
   "Priority booking up to 14 days in advance",
   "Up to 2 hours per visit, 2 active reservations",
-  "10% off all food & beverage",
+  "10% off food and drink",
   "24/7 access to the bays",
 ];
 
@@ -401,7 +401,7 @@ export const foodMenu: MenuSection[] = [
   {
     title: "Wings & Tenders",
     note: "Sauces, rubs & glazes",
-    blurb: "Sauces — Buffalo · BBQ · Honey BBQ · Sweet Chili · Garlic Parm · Mango Habanero · Thai BBQ · Sweet Teriyaki · Hot Honey · Sweet Tea Lemon Glaze. Rubs — Lemon Pepper · Honey Chipotle · Honey Garlic.",
+    blurb: "Sauces: Buffalo · BBQ · Honey BBQ · Sweet Chili · Garlic Parm · Mango Habanero · Thai BBQ · Sweet Teriyaki · Hot Honey · Sweet Tea Lemon Glaze. Rubs: Lemon Pepper · Honey Chipotle · Honey Garlic.",
     items: [
       { name: "Boneless Wings", price: "$12 / $20", desc: "Six or twelve · crispy all-white chicken bites tossed in your choice of sauce or dry rub" },
       { name: "Bone-In Wings", price: "$14 / $24", desc: "Six or twelve · crispy, juicy wings tossed in your choice of sauce or dry rub" },
@@ -644,7 +644,7 @@ export const drafts: MenuItem[] = [
   { name: "805", price: "$8" },
   { name: "Angry Orchard", price: "$8" },
   { name: "Cali Squeeze", price: "$9" },
-  { name: "Able Baker Atomic Duck IPA", price: "$10", desc: "Able Baker Brewing — Las Vegas" },
+  { name: "Able Baker Atomic Duck IPA", price: "$10", desc: "Able Baker Brewing, Las Vegas" },
 ];
 
 export const pitchers: MenuItem[] = [
@@ -687,7 +687,7 @@ export const wineBottles: MenuItem[] = [
 ];
 
 export const cocktails: MenuItem[] = [
-  { name: "Transfusion", price: "$12", desc: "Weber Ranch vodka, grape juice & ginger ale — the golfer's classic" },
+  { name: "Transfusion", price: "$12", desc: "Weber Ranch vodka, grape juice & ginger ale. The golfer's classic" },
   { name: "Azalea", price: "$12", desc: "Weber Ranch vodka, lemonade & a grenadine sink" },
   { name: "Peach Palmer", price: "$12", desc: "Weber Ranch vodka, peach purée, lemonade & iced tea" },
   { name: "Blue Lagoon", price: "$12", desc: "Weber Ranch vodka, blue curaçao & lemonade" },
@@ -775,7 +775,7 @@ export const spirits: SpiritGroup[] = [
 export const happyHour = {
   window: "Mon–Fri · 3–6 PM",
   lateWindow: "The Night Cap · Sun–Thu · 8 PM–close · from Nov 15",
-  note: "Happy-hour pricing runs at the bar, at the tables and in the bays. From November 15 it comes back for The Night Cap: the same pricing Sunday through Thursday from 8 PM to close.",
+  note: "Happy-hour pricing holds at the bar, the tables and the bays. It returns for The Night Cap, Sunday to Thursday from 8 PM to close.",
   drinks: [
     { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Modelo · Cali Squeeze" },
     { name: "Well Drinks", price: "$6", desc: "Vodka · gin · tequila · rum · bourbon" },
@@ -816,11 +816,11 @@ export const trivia = {
   returnsOn: "2026-10-20",
   returnsLabel: "Back Tuesday, October 20",
   intro:
-    "Grab your team and settle in — free live trivia every Tuesday from 6:30 to 8 PM, hosted by our own crew. Mini challenges run between the rounds, so there are more ways to win than the final scoreboard. Full bar, full kitchen and no golf required. No cover, no sign-up: just show up early and grab a table.",
+    "Free live trivia every Tuesday from 6:30 to 8 PM, hosted by our own crew, with mini challenges between rounds. No cover and no sign-up; come early for a table.",
   highlights: [
-    "Hosted in house — our crew, our questions",
+    "Hosted in house, our crew and our questions",
     "Mini challenges throughout the night",
-    "More ways to win than the final score",
+    "More than one way to win",
   ],
   note: "Full bar · Kitchen open · No golf required",
 };
@@ -871,47 +871,47 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: "Do I need to know how to golf?",
-    a: "Not at all. The TrackMan simulators read your swing, keep score and handicap the games automatically, so total beginners and seasoned golfers have a great time in the same group. Clubs are provided — just show up.",
+    a: "No. TrackMan reads your swing, keeps score and handicaps the games, so beginners and regular golfers can play in the same group. Clubs are provided.",
   },
   {
     q: "How much does a bay cost?",
-    a: "Bays are billed by the hour, not per person, and hold up to four players — so splitting one with friends is the most affordable way to play. Non-peak time is $40/hour and peak time is $50/hour. Members pay $30/hour for any hours beyond their plan.",
+    a: "Bays are priced by the hour, not per person, and hold up to four players. Non-peak time is $40/hour and peak time is $50/hour. Members pay $30/hour for any hours beyond their plan.",
   },
   {
     q: "How many people can play in one bay?",
-    a: "Up to four golfers per bay, and up to six people in the bay with spectators. Bigger groups book a second bay. We have five climate-controlled bays, each with its own screen, comfortable seating and a server who brings food and drinks right to you.",
+    a: "Up to four golfers per bay, and up to six people in the bay with spectators. Bigger groups book a second bay. Each of our five bays is climate-controlled, with its own screen, comfortable seating and a server who brings food and drinks to you.",
   },
   {
     q: "Do you provide golf clubs?",
-    a: "Yes — clubs are available to use at no extra charge, so you can come empty-handed. You're welcome to bring your own if you prefer.",
+    a: "Yes, at no extra charge. You are welcome to bring your own.",
   },
   {
     q: "Do you serve food and drinks?",
-    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday 3–6 PM. From November 15 it comes back for The Night Cap: the same pricing Sunday–Thursday from 8 PM to close. Bays included, both windows.",
+    a: "A full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and cocktails, all served at the bay. Happy hour runs Monday to Friday, 3 to 6 PM, and returns for The Night Cap, Sunday to Thursday from 8 PM to close. Both include the bays.",
   },
   {
     q: "Is Chip Shots family-friendly? Can kids play?",
-    a: "Yes. Indoor golf is great for all ages, and we host kids' birthday parties and offer a youth membership. Families are welcome any time during open hours.",
+    a: "Yes. We host kids' birthday parties and offer a youth membership, and families are welcome any time we are open.",
   },
   {
     q: "Do I need a reservation, or can I walk in?",
-    a: "Walk-ins are welcome whenever a bay is open, but booking ahead is the surest way to get the time you want — especially on evenings and weekends. You can reserve a bay online in about a minute.",
+    a: "Walk-ins are welcome whenever a bay is open. Evenings and weekends fill up, so booking ahead is the sure way to get the time you want. It takes about a minute online.",
   },
   {
     q: "What are your hours?",
-    a: "We're open every day: Monday–Friday 11 AM–10 PM, and Saturday and Sunday 10 AM–10 PM.",
+    a: "Every day: Monday to Friday 11 AM to 10 PM, Saturday and Sunday 10 AM to 10 PM.",
   },
   {
     q: "Where are you located?",
-    a: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015 — in the heart of Henderson, just off Lake Mead Parkway.",
+    a: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015, just off Lake Mead Parkway.",
   },
   {
     q: "Do you host parties and corporate events?",
-    a: "Absolutely. Private bays, catered food and a full bar make Chip Shots Golf Club an easy yes for birthdays, corporate team nights, bachelor/bachelorette groups and holiday parties. Tell us what you're celebrating and we'll tailor it.",
+    a: "Yes. Birthdays, corporate team nights, bachelor and bachelorette groups and holiday parties, with private bays, food from our kitchen and a full bar. Tell us what you are planning and we will quote it to fit.",
   },
   {
     q: "Is there a membership?",
-    a: "Yes. Unlimited bay time is $239/month or $2,390/year, plus youth, late-night and corporate tiers. Members get priority booking and 10% off food and drink.",
+    a: "Yes. Unlimited bay time is $239 a month or $2,390 a year, with youth, late-night and corporate tiers. Members get priority booking and 10% off food and drink.",
   },
 ];
 

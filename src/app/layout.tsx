@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Chip Shots Golf Club",
   },
   description:
-    "Five TrackMan simulator bays, a full bar and a full kitchen in Henderson, NV. Burgers, sandwiches, wings, shareables, cold drafts, signature cocktails and 500+ courses. Veteran-owned. Now open.",
+    "A restaurant, a full bar and five private TrackMan bays in east Henderson, Nevada. Open to everyone, every day. Veteran-owned.",
   keywords: [
     "indoor golf Henderson",
     "golf simulator Henderson NV",
@@ -47,12 +47,12 @@ export const metadata: Metadata = {
     siteName: business.name,
     title: "Chip Shots Golf Club | Golf, Food, Drinks",
     description:
-      "Five TrackMan bays, a full bar and a full kitchen in the heart of Henderson, NV.",
+      "A restaurant, a full bar and five private TrackMan bays in Henderson, Nevada.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Chip Shots Golf Club | Henderson, NV",
-    description: "Golf simulators, a full kitchen and a full bar. Veteran-owned.",
+    description: "Dinner, drinks and a round of golf. Veteran-owned.",
   },
   alternates: { canonical: "/" },
 };
@@ -88,7 +88,7 @@ const jsonLd = {
   ],
   legalName: "Chip Shots LLC",
   description:
-    "Indoor golf simulators, full bar and full kitchen in Henderson, NV.",
+    "A restaurant, a full bar and five TrackMan golf bays in Henderson, NV.",
   url: business.website,
   telephone: business.phone,
   email: business.email,

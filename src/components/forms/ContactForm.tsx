@@ -34,10 +34,10 @@ export default function ContactForm() {
           <Icon.check className="h-7 w-7" />
         </span>
         <h3 className="font-display mt-5 text-2xl text-green-deep">
-          Thanks — your message is ready to send.
+          Thank you. Your message is ready to send.
         </h3>
         <p className="mt-2 max-w-sm text-muted">
-          We opened a pre-filled email in your mail app. Hit send and we'll be in
+          We opened a pre-filled email in your mail app. Send it and we'll be in
           touch shortly.
         </p>
       </div>

@@ -11,7 +11,7 @@ export default function NotFound() {
           That one sailed the green.
         </h1>
         <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-          The page you&rsquo;re after doesn&rsquo;t exist — it may have moved,
+          The page you&rsquo;re after doesn&rsquo;t exist. It may have moved,
           or the link was mistyped. Take a drop and play on.
         </p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -19,7 +19,7 @@ export default function NotFound() {
             Back to the clubhouse
           </ButtonLink>
           <ButtonLink href={business.booking} external variant="ghost-light" size="lg">
-            Book a bay
+            Book a Bay
           </ButtonLink>
         </div>
         <p className="mt-10 text-sm text-cream/55">

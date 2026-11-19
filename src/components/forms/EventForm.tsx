@@ -162,7 +162,7 @@ export default function EventForm() {
           Your email is ready to send.
         </h3>
         <p className="mt-3 max-w-sm text-ink/70">
-          We opened a pre-filled message in your mail app. Hit send and our
+          We opened a pre-filled message in your mail app. Send it and our
           events team will get back to you. Prefer to call?
         </p>
         <a

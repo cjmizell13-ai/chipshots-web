@@ -30,7 +30,7 @@ export default function MembershipTiers() {
           >
             {m.featured && (
               <span className="eyebrow absolute -top-3 left-7 rounded-full bg-gold px-3 py-1 text-[0.62rem] text-green-deep">
-                Best value
+                Recommended
               </span>
             )}
             <h3 className="font-display text-2xl text-cream">{m.tier}</h3>
@@ -51,7 +51,7 @@ export default function MembershipTiers() {
                   variant={m.featured ? "gold" : "ghost-light"}
                   className="w-full"
                 >
-                  Join &amp; pay online
+                  Join online
                 </ButtonLink>
               ) : (
                 <Button
@@ -59,7 +59,7 @@ export default function MembershipTiers() {
                   variant={m.featured ? "gold" : "ghost-light"}
                   className="w-full"
                 >
-                  Request info
+                  Inquire
                 </Button>
               )}
             </div>
@@ -74,8 +74,8 @@ export default function MembershipTiers() {
           <h3 className="font-display text-2xl text-cream">Range Card</h3>
           <p className="mt-3 font-display text-4xl text-gold">{rangeCard.price}</p>
           <p className="mt-4 flex-1 text-sm leading-relaxed text-cream/70">
-            {rangeCard.detail} — good for 10 hours of non-peak bay time. No
-            membership required, never expires.
+            {rangeCard.detail}, or 10 hours of non-peak bay time. No
+            membership needed, and it never expires.
           </p>
           <div className="mt-6">
             <ButtonLink

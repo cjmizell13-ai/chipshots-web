@@ -34,9 +34,9 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Drink — Breakfast All Day, Burgers, Wings & Full Bar",
+  title: "Food and Drink Menu",
   description:
-    "The full Chip Shots Golf Club menu: breakfast all day, burgers, ribs, salmon, wings, shareables and salads, plus drafts, wine, signature cocktails and spirits. Happy hour Mon to Fri, 3 to 6 PM, in Henderson, NV.",
+    "The menu at Chip Shots Golf Club in Henderson, NV: breakfast all day, burgers, ribs, salmon, wings, shareables and salads, with drafts, wine, cocktails and spirits. Happy hour Mon to Fri, 3 to 6 PM.",
   alternates: { canonical: "/food-drink" },
 };
 
@@ -179,7 +179,7 @@ export default function FoodDrink() {
         kicker="Dine · Open daily"
         title="A restaurant first."
         accent="No tee time needed."
-        intro="Lunch, dinner and a full bar every day. You don't have to book a bay to get a table."
+        intro="Lunch, dinner and a full bar, every day. No bay required for a table."
         image={img.dineBurgerBar}
         alt="A bacon cheeseburger and seasoned fries on the bar at Chip Shots"
         position="50% 30%"
@@ -192,7 +192,7 @@ export default function FoodDrink() {
             )}
             <ReserveButton source="dine_hero" variant="ghost-light" size="lg" />
             <a href="#breakfast" className="text-cta text-cream">
-              Read the menu <span aria-hidden>↓</span>
+              Menu <span aria-hidden>↓</span>
             </a>
           </>
         }
@@ -224,8 +224,8 @@ export default function FoodDrink() {
             </h2>
             <p className="mt-6 max-w-xl text-ink/75">
               Breakfast all day, burgers, plates from the grill and plenty to
-              share. Everything here is served in the dining room, at the bar,
-              on the patio and in the bays.
+              share. Served in the dining room, at the bar, on the patio and in
+              the bays.
             </p>
           </Reveal>
 
@@ -592,8 +592,8 @@ export default function FoodDrink() {
               <span className="text-gold-soft">Then a round.</span>
             </h2>
             <p className="mt-5 max-w-md text-cream/75">
-              Book a bay for after dinner, or have dinner brought to you
-              while you play.
+              Book a bay for after dinner, or have dinner brought to the
+              bay.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-7">

@@ -9,7 +9,7 @@ import { Icon } from "@/components/ui/icons";
 const tierOptions = [
   ...memberships.map((m) => m.tier),
   "Range Card",
-  "Not sure yet — help me choose",
+  "Not sure yet, help me choose",
 ];
 
 const field =
@@ -45,7 +45,7 @@ function Dialog({ tier, onClose }: { tier: string; onClose: () => void }) {
     const selectedTier = String(data.get("tier") || "");
     const message = String(data.get("message") || "");
 
-    const subject = `Membership inquiry — ${selectedTier}`;
+    const subject = `Membership inquiry, ${selectedTier}`;
     const body = [
       `Name: ${name}`,
       `Phone: ${phone}`,
@@ -106,11 +106,11 @@ function Dialog({ tier, onClose }: { tier: string; onClose: () => void }) {
               <Icon.check className="h-7 w-7" />
             </span>
             <h3 className="font-display mt-5 text-2xl text-green-deep">
-              Your request is ready to send.
+              Your inquiry is ready to send.
             </h3>
             <p className="mt-2 max-w-sm text-muted">
-              We opened a pre-filled email in your mail app — hit send and our
-              team will follow up to get you set up. Prefer to call?
+              We opened a pre-filled email in your mail app. Send it and we
+              will follow up. Prefer to call?
             </p>
             <a
               href={business.phoneHref}
@@ -122,15 +122,16 @@ function Dialog({ tier, onClose }: { tier: string; onClose: () => void }) {
           </div>
         ) : (
           <>
-            <p className="eyebrow text-gold">Join Chip Shots Golf Club</p>
+            <p className="eyebrow text-gold">Chip Shots Golf Club</p>
             <h3
               id="membership-form-title"
               className="font-display mt-2 text-3xl text-green-deep"
             >
-              Request your membership
+              Membership inquiry
             </h3>
             <p className="mt-2 text-sm text-muted">
-              Tell us a little about you and we'll get you signed up.
+              Tell us a little about yourself, and we will be in touch to talk
+              it through.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-6 grid gap-5">
@@ -207,7 +208,7 @@ function Dialog({ tier, onClose }: { tier: string; onClose: () => void }) {
                 />
               </div>
               <Button type="submit" variant="gold" size="lg" withArrow className="w-full">
-                Submit Request
+                Send inquiry
               </Button>
             </form>
           </>

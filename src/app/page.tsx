@@ -20,29 +20,29 @@ const rooms = [
   {
     no: "01",
     title: "Dine",
-    body: "A full kitchen that cooks like a restaurant, because it is one. Burgers, ribs, steaks and salads at lunch and dinner.",
+    body: "A restaurant kitchen, because it is one. Burgers, ribs, steaks and salads at lunch and dinner.",
     image: img.clubService,
     alt: "A server carrying plates of nachos and wings through the dining room at Chip Shots",
     href: "/food-drink",
-    cta: "See the menu",
+    cta: "Menu",
   },
   {
     no: "02",
     title: "Play",
-    body: `Five private TrackMan bays with ${golf.courses} courses. Play eighteen at a course you know, work on your wedges, or hit a few between bites. Clubs are here if you need them.`,
+    body: `Five private TrackMan bays and ${golf.courses} courses. Play eighteen, or hit a few between bites. Clubs are here if you need them.`,
     image: img.clubGolfer,
     alt: "A guest mid-swing in a private TrackMan simulator bay at Chip Shots",
     href: "/golf-booking",
-    cta: "See the bays",
+    cta: "The bays",
   },
   {
     no: "03",
     title: "Watch",
-    body: "Screens over the bar, a TV in every bay and NFL Sunday Ticket. Saturday and Sunday are built around the games, with breakfast from the first kickoff.",
+    body: "Screens over the bar, a TV in every bay and NFL Sunday Ticket. On weekends, breakfast is served from the first kickoff.",
     image: img.clubGuests,
     alt: "Guests at the bar watching a game at Chip Shots",
     href: "/events",
-    cta: "What's on",
+    cta: "Events",
   },
 ];
 
@@ -92,15 +92,15 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="font-display mt-7 max-w-4xl text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-7xl">
-              The clubhouse
+              Dinner, drinks
               <br />
-              is open <span className="text-gold-soft">to everyone.</span>
+              and a round <span className="text-gold-soft">after work.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-7 max-w-xl text-lg text-cream/75">
-              A restaurant, a full bar and five private golf bays under
-              one roof. No membership needed and no tee time at dawn.
+              A restaurant, a full bar and five private TrackMan bays in
+              east Henderson. Open to everyone, no membership needed.
             </p>
           </Reveal>
           <Reveal delay={0.22}>
@@ -108,7 +108,7 @@ export default function Home() {
               <BookButton variant="gold" size="lg" withArrow />
               <ReserveButton source="home_hero" variant="ghost-light" size="lg" />
               <Link href="/food-drink" className="text-cta text-cream">
-                See the menu
+                Menu
               </Link>
             </div>
           </Reveal>
@@ -139,7 +139,7 @@ export default function Home() {
         <Reveal>
           <p className="kicker text-muted">01 · Under one roof</p>
           <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            Come for dinner, a round after work,{" "}
+            Dinner, a round after work,{" "}
             <span className="text-green-soft">or Sunday&rsquo;s game.</span>
           </h2>
         </Reveal>
@@ -179,13 +179,12 @@ export default function Home() {
           <Reveal>
             <p className="kicker text-gold-soft">02 · The bays</p>
             <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
-              Your own bay. <span className="text-gold-soft">Your own tee time.</span>
+              Your own bay. <span className="text-gold-soft">No starter.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/70">
-              Every bay is private, with a TrackMan launch monitor, a
-              full-size screen and room for up to {golf.players} players. Food
-              and drinks come to you. Bays are priced by the hour, not by the
-              person.
+              Each bay is private, with TrackMan, a full-size screen and room
+              for up to {golf.players} players. Priced by the hour, not the
+              person, and dinner comes to you.
             </p>
 
             <dl className="mt-10 max-w-md">
@@ -204,16 +203,14 @@ export default function Home() {
               ))}
             </dl>
             <p className="mt-4 max-w-md text-sm text-cream/50">
-              Peak: {golf.rates[1].note}. Members book bay time free; the
-              member rate is only for hours beyond their plan.
+              Peak: {golf.rates[1].note}. Members book bay time free. The
+              member rate applies only to hours beyond their plan.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-7">
-              <BookButton variant="gold" size="lg" withArrow>
-                Check availability
-              </BookButton>
+              <BookButton variant="gold" size="lg" withArrow />
               <Link href="/golf-booking" className="text-cta text-cream">
-                Rates &amp; details <span aria-hidden>→</span>
+                Rates and details <span aria-hidden>→</span>
               </Link>
             </div>
           </Reveal>
@@ -266,13 +263,12 @@ export default function Home() {
         <Reveal delay={0.1}>
           <p className="kicker text-muted">03 · The kitchen &amp; bar</p>
           <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            You don&rsquo;t need a club in your hand{" "}
-            <span className="text-green-soft">to get a table.</span>
+            No clubs required{" "}
+            <span className="text-green-soft">for dinner.</span>
           </h2>
           <p className="mt-6 max-w-md text-ink/75">
-            Plenty of our regulars have never booked a bay. They come for
-            lunch, for dinner with the family and for a drink at the bar. The
-            dining room and patio are open whenever we are.
+            Plenty of our regulars have never booked a bay. The dining room,
+            the bar and the patio are open whenever we are.
           </p>
           <ul className="mt-8 max-w-md">
             {[
@@ -288,7 +284,7 @@ export default function Home() {
           </ul>
           <div className="mt-10 flex flex-wrap items-center gap-7">
             <ButtonLink href="/food-drink" variant="green" size="lg" withArrow>
-              See the menu
+              Menu
             </ButtonLink>
             {orderOnlineLive && (
               <a
@@ -321,14 +317,13 @@ export default function Home() {
           <Reveal delay={0.1}>
             <p className="kicker text-gold-soft">04 · East Henderson</p>
             <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
-              This side of town was missing a place like this.{" "}
-              <span className="text-gold-soft">So we built it.</span>
+              Built by a Henderson family,{" "}
+              <span className="text-gold-soft">for the neighborhood.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/75">
-              Chip Shots Golf Club is owned and run by the Mizell family. We are
-              veteran-owned, we live here, and we opened the kind of place we
-              wanted in our own neighborhood: good food, a proper bar and golf
-              you can play in any weather.
+              Chip Shots Golf Club is veteran-owned and run by the Mizell
+              family, who live here. Good food, a proper bar and golf in any
+              weather.
             </p>
             <p className="mt-8 flex max-w-md flex-wrap gap-x-5 gap-y-2 text-[0.7rem] uppercase tracking-[0.2em] text-cream/55">
               {neighborhoods.map((n) => (
@@ -347,12 +342,11 @@ export default function Home() {
         <Reveal>
           <p className="kicker text-muted">05 · Private events</p>
           <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            Bring <span className="text-green-soft">the whole group.</span>
+            Bring <span className="text-green-soft">the whole party.</span>
           </h2>
           <p className="mt-6 max-w-md text-ink/75">
-            Reserve a bay, a few bays or the whole building. Every event is
-            quoted to fit your group, with one person on our side handling the
-            food, the bar and the tee sheet.
+            One bay, a few bays or the whole building, quoted to fit. One
+            person on our side handles the food, the bar and the tee sheet.
           </p>
           <div className="mt-9">
             <ButtonLink href="/holiday-parties" variant="green" size="lg" withArrow>

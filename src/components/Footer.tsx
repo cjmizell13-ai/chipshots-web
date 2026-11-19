@@ -14,8 +14,8 @@ export default function Footer() {
           <div>
             <Wordmark />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/70">
-              Five TrackMan simulator bays, a full bar and a full kitchen —
-              in the heart of Henderson. Veteran-owned.
+              A restaurant, a full bar and five TrackMan bays in east
+              Henderson. Veteran-owned.
             </p>
             <p className="eyebrow mt-5 text-gold-soft">{business.tagline}</p>
           </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                   href="/food-drink"
                   className="link-underline pb-0.5 text-gold hover:text-gold-soft"
                 >
-                  View the Menu
+                  Menu
                 </Link>
               </li>
               {orderOnlineLive && (
@@ -132,7 +132,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-cream"
                 >
-                  Been in to see us?
+                  Been in?
                   <br />
                   Leave us a Google review
                 </a>
