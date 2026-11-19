@@ -71,9 +71,8 @@ export default function Events() {
     <>
       <PlateHero
         kicker="Events · Public and private"
-        title="What's on,"
-        accent="and how to host your own."
-        intro="Trivia on Tuesdays and a few one-off nights in between. Private events are quoted to fit your group."
+        title="What's on at the club."
+        intro="Trivia on Tuesdays and a handful of evenings in between. Private parties are quoted to fit."
         image={img.clubDining}
         alt="A server taking an order at a full table in the dining room at Chip Shots"
         position="50% 40%"
@@ -102,7 +101,7 @@ export default function Events() {
         <Reveal>
           <p className="kicker text-muted">01 · On the calendar</p>
           <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            The next <span className="text-green-soft">few weeks.</span>
+            The coming <span className="text-green-soft">weeks.</span>
           </h2>
           <p className="mt-6 max-w-xl text-ink/75">{upcomingEventsIntro}</p>
         </Reveal>

@@ -84,7 +84,7 @@ export default function GiftCards() {
             <div className="max-w-2xl">
               <p className="eyebrow text-gold">What it covers</p>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Good for everything here.
+                Bay time, food, drinks and events.
               </h2>
             </div>
           </Reveal>
@@ -116,7 +116,7 @@ export default function GiftCards() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-              For the golfer, or anyone who eats.
+              Give an evening at the club.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>

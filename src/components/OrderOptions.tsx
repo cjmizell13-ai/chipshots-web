@@ -33,7 +33,7 @@ export default function OrderOptions({
         <Reveal>
           <p className="kicker text-muted">{kicker}</p>
           <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            Order ahead, <span className="text-green-soft">skip the wait.</span>
+            Order <span className="text-green-soft">pickup.</span>
           </h2>
           <p className="mt-6 max-w-md text-ink/75">
             Pickup is the regular menu at regular prices, with no app markup.

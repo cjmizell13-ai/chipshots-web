@@ -30,8 +30,8 @@ export default function FAQ() {
       />
       <PageHero
         eyebrow="FAQ"
-        title="Before you visit."
-        intro="What people ask us most, from what a bay costs to whether you need to know how to golf."
+        title="Before your first visit."
+        intro="What people ask most, from the price of a bay to whether you need to play golf."
         image={img.bayRoomWide}
       />
 

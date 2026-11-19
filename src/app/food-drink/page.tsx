@@ -177,9 +177,9 @@ export default function FoodDrink() {
     <>
       <PlateHero
         kicker="Dine · Open daily"
-        title="A restaurant first."
-        accent="No tee time needed."
-        intro="Lunch, dinner and a full bar, every day. No bay required for a table."
+        title="The kitchen and the bar."
+        accent="Open daily."
+        intro="Lunch and dinner every day, served at the table, the bar or the bay."
         image={img.dineBurgerBar}
         alt="A bacon cheeseburger and seasoned fries on the bar at Chip Shots"
         position="50% 30%"
@@ -309,8 +309,8 @@ export default function FoodDrink() {
             <Reveal>
               <p className="kicker text-muted">02 · Through the week</p>
               <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-                Something on,{" "}
-                <span className="text-green-soft">every day.</span>
+                The week{" "}
+                <span className="text-green-soft">at the club.</span>
               </h2>
             </Reveal>
 
@@ -404,7 +404,7 @@ export default function FoodDrink() {
             <p className="kicker text-muted">04 · The bar</p>
             <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
               Cocktails, cold drafts{" "}
-              <span className="text-green-soft">and a deep back bar.</span>
+              <span className="text-green-soft">and a well-kept back bar.</span>
             </h2>
           </Reveal>
 
@@ -588,12 +588,11 @@ export default function FoodDrink() {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-20 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <h2 className="font-display text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
-              Dinner first.{" "}
-              <span className="text-gold-soft">Then a round.</span>
+              After dinner,{" "}
+              <span className="text-gold-soft">a round.</span>
             </h2>
             <p className="mt-5 max-w-md text-cream/75">
-              Book a bay for after dinner, or have dinner brought to the
-              bay.
+              Book a bay for after the meal, or have dinner served at the bay.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-7">

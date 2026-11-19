@@ -21,8 +21,8 @@ export default function Memberships() {
       <PixelEvent event="ViewContent" params={{ content_name: "Memberships" }} />
       <PageHero
         eyebrow="Membership"
-        title="For the regulars."
-        intro="The club is open to everyone. Membership is for those who play often: bay time included, first call on booking and extra hours at $30."
+        title="Membership at the club."
+        intro="The club is open to everyone. Members have bay time included, first call on booking and extra hours at $30."
         image={img.bayLoveseat}
       />
 
@@ -168,7 +168,7 @@ export default function Memberships() {
               Not ready to join?
             </h2>
             <p className="mt-2 text-green-deep/80">
-              Book a bay as a guest first. The door is open either way.
+              Any guest may book a bay. Membership can wait.
             </p>
           </div>
           <BookButton variant="green" size="lg" withArrow />

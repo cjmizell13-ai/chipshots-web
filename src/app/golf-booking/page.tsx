@@ -62,9 +62,9 @@ export default function GolfBooking() {
     <>
       <PlateHero
         kicker={`Play · ${golf.bays} private bays`}
-        title="Your own bay."
-        accent="Your own tee time."
-        intro="Five private TrackMan bays, priced by the hour for the whole bay. Food and drinks come to you."
+        title="The bays."
+        accent="Five private rooms, TrackMan in each."
+        intro="Priced by the hour for the whole bay, with food and drinks served while you play."
         image={img.clubGolfer}
         alt="A guest lining up a drive in a private TrackMan bay at Chip Shots"
         position="50% 55%"
@@ -328,7 +328,7 @@ export default function GolfBooking() {
           <Reveal>
             <p className="kicker text-muted">04 · Good to know</p>
             <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-              Before you <span className="text-green-soft">tee off.</span>
+              Common <span className="text-green-soft">questions.</span>
             </h2>
             <Link href="/faq" className="text-cta mt-8 text-ink">
               All questions <span aria-hidden>→</span>

@@ -238,7 +238,7 @@ export const bayWeek: { days: string; peak: string; nonPeak: string }[] = [
 // "Does membership pay for itself?" — uses real rates from `golf` + `memberships`.
 export const membershipMath = {
   eyebrow: "The numbers",
-  title: "If you play most weeks, the arithmetic is simple.",
+  title: "If you play most weeks, membership costs less.",
   payg: {
     title: "Pay per visit",
     lines: [

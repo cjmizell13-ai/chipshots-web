@@ -26,11 +26,10 @@ export default function VipSignup() {
           <div>
             <p className="eyebrow text-gold-soft">The list</p>
             <h2 className="font-display mt-3 text-3xl font-light sm:text-4xl">
-              Hear it first.
+              The club letter.
             </h2>
             <p className="mt-4 max-w-md leading-relaxed text-cream/75">
-              Event dates and new menus, a couple of times a month. Nothing
-              else.
+              Event dates and menu news, a couple of times a month.
             </p>
           </div>
 

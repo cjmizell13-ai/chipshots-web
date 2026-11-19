@@ -20,7 +20,7 @@ const rooms = [
   {
     no: "01",
     title: "Dine",
-    body: "A restaurant kitchen, because it is one. Burgers, ribs, steaks and salads at lunch and dinner.",
+    body: "Burgers, ribs, steaks and salads from a full kitchen, at lunch and dinner.",
     image: img.clubService,
     alt: "A server carrying plates of nachos and wings through the dining room at Chip Shots",
     href: "/food-drink",
@@ -29,7 +29,7 @@ const rooms = [
   {
     no: "02",
     title: "Play",
-    body: `Five private TrackMan bays and ${golf.courses} courses. Play eighteen, or hit a few between bites. Clubs are here if you need them.`,
+    body: `Five private TrackMan bays and ${golf.courses} courses. Clubs are on hand.`,
     image: img.clubGolfer,
     alt: "A guest mid-swing in a private TrackMan simulator bay at Chip Shots",
     href: "/golf-booking",
@@ -92,15 +92,15 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="font-display mt-7 max-w-4xl text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-7xl">
-              Dinner, drinks
+              Henderson&rsquo;s
               <br />
-              and a round <span className="text-gold-soft">after work.</span>
+              <span className="text-gold-soft">golf club.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-7 max-w-xl text-lg text-cream/75">
-              A restaurant, a full bar and five private TrackMan bays in
-              east Henderson. Open to everyone, no membership needed.
+              A restaurant, a bar and five private TrackMan bays on Lake Mead
+              Parkway. Open to everyone, every day.
             </p>
           </Reveal>
           <Reveal delay={0.22}>
@@ -139,8 +139,8 @@ export default function Home() {
         <Reveal>
           <p className="kicker text-muted">01 · Under one roof</p>
           <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            Dinner, a round after work,{" "}
-            <span className="text-green-soft">or Sunday&rsquo;s game.</span>
+            Dinner at the table,{" "}
+            <span className="text-green-soft">golf in the next room.</span>
           </h2>
         </Reveal>
 
@@ -179,12 +179,12 @@ export default function Home() {
           <Reveal>
             <p className="kicker text-gold-soft">02 · The bays</p>
             <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
-              Your own bay. <span className="text-gold-soft">No starter.</span>
+              Each bay is <span className="text-gold-soft">a room of its own.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/70">
-              Each bay is private, with TrackMan, a full-size screen and room
-              for up to {golf.players} players. Priced by the hour, not the
-              person, and dinner comes to you.
+              TrackMan, a full-size screen and seats for up to {golf.players}.
+              Priced by the bay, not by the head, with dinner served where you
+              play.
             </p>
 
             <dl className="mt-10 max-w-md">
@@ -263,12 +263,12 @@ export default function Home() {
         <Reveal delay={0.1}>
           <p className="kicker text-muted">03 · The kitchen &amp; bar</p>
           <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            No clubs required{" "}
-            <span className="text-green-soft">for dinner.</span>
+            A good table,{" "}
+            <span className="text-green-soft">with or without golf.</span>
           </h2>
           <p className="mt-6 max-w-md text-ink/75">
             Plenty of our regulars have never booked a bay. The dining room,
-            the bar and the patio are open whenever we are.
+            the bar and the patio keep the same hours we do.
           </p>
           <ul className="mt-8 max-w-md">
             {[
@@ -317,13 +317,12 @@ export default function Home() {
           <Reveal delay={0.1}>
             <p className="kicker text-gold-soft">04 · East Henderson</p>
             <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
-              Built by a Henderson family,{" "}
-              <span className="text-gold-soft">for the neighborhood.</span>
+              Owned by a family{" "}
+              <span className="text-gold-soft">that lives down the road.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/75">
               Chip Shots Golf Club is veteran-owned and run by the Mizell
-              family, who live here. Good food, a proper bar and golf in any
-              weather.
+              family.
             </p>
             <p className="mt-8 flex max-w-md flex-wrap gap-x-5 gap-y-2 text-[0.7rem] uppercase tracking-[0.2em] text-cream/55">
               {neighborhoods.map((n) => (
@@ -342,11 +341,11 @@ export default function Home() {
         <Reveal>
           <p className="kicker text-muted">05 · Private events</p>
           <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            Bring <span className="text-green-soft">the whole party.</span>
+            From one bay <span className="text-green-soft">to the whole house.</span>
           </h2>
           <p className="mt-6 max-w-md text-ink/75">
-            One bay, a few bays or the whole building, quoted to fit. One
-            person on our side handles the food, the bar and the tee sheet.
+            Every party is quoted to fit, and one person on our side looks
+            after the food, the bar and the tee sheet.
           </p>
           <div className="mt-9">
             <ButtonLink href="/holiday-parties" variant="green" size="lg" withArrow>
@@ -421,11 +420,11 @@ export default function Home() {
           <Reveal>
             <p className="kicker text-gold-soft">07 · Visit</p>
             <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
-              Easy to find <span className="text-gold-soft">once you know.</span>
+              Where <span className="text-gold-soft">to find us.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/70">
-              We&rsquo;re set back from Lake Mead Parkway, in the plaza with
-              the clock tower. Look for the striped awnings.
+              Set back from Lake Mead Parkway, in the plaza with the clock
+              tower. Look for the striped awnings.
             </p>
             <address className="mt-8 not-italic text-cream/85">
               {business.address.street}

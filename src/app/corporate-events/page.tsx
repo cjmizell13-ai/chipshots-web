@@ -22,17 +22,17 @@ const whyItWorks = [
   },
   {
     title: "Private bays keep the team together",
-    desc: `Reserve a block of our ${golf.bays} climate-controlled bays and the group stays in one place. No 110° parking lot, no rented gear.`,
+    desc: `Reserve a block of our ${golf.bays} climate-controlled bays and the group stays in one place. Clubs are provided.`,
     icon: Icon.users,
   },
   {
-    title: "Food and drinks, handled",
-    desc: "Burgers, shareables, cocktails and cold drafts come to the bays from our kitchen and bar. A happy-hour outing, an after-work team night or a half day with catering; nobody leaves to eat.",
+    title: "Food and drinks at the bays",
+    desc: "Burgers, shareables, cocktails and drafts are served at the bays. Book it as a happy-hour outing, an after-work team night or a half day with catering.",
     icon: Icon.burger,
   },
   {
     title: "Climate-controlled, any season",
-    desc: "Indoors and air-conditioned all year, so the Henderson heat and a rained-out tee time are not your problem.",
+    desc: "Indoors and air-conditioned all year.",
     icon: Icon.flag,
   },
 ];
@@ -48,7 +48,7 @@ const occasions = [
   },
   {
     title: "Sales kickoffs & celebrations",
-    desc: "Mark a good quarter with a TrackMan tournament, drinks and dinner under one roof.",
+    desc: "A TrackMan tournament with drinks and dinner for the team.",
   },
   {
     title: "Holiday parties",
@@ -63,8 +63,8 @@ export default function CorporateEvents() {
     <>
       <PageHero
         eyebrow="Corporate Events"
-        title="Bring the team. We'll run the day."
-        intro="Private TrackMan bays, food from our kitchen and a full bar, with games anyone can play. One person on our side plans it with you."
+        title="Company outings."
+        intro="Private bays, food from our kitchen and a full bar. One person on our side plans the day with you."
         image={img.trackmanCompetitions}
       />
 
@@ -74,7 +74,7 @@ export default function CorporateEvents() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">Corporate events</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Why teams come here.
+              What is included.
             </h2>
           </div>
         </Reveal>

@@ -20,7 +20,7 @@ const values = [
   {
     icon: Icon.flag,
     title: "Veteran-owned",
-    body: "Run on service, discipline and hospitality, for the neighborhood we live in.",
+    body: "Owned by a veteran family that lives in Henderson.",
   },
   {
     icon: Icon.users,
@@ -29,8 +29,8 @@ const values = [
   },
   {
     icon: Icon.star,
-    title: "Done properly",
-    body: "Real food, proper cocktails and tour-grade TrackMan. No corners cut.",
+    title: "TrackMan bays",
+    body: "Five private bays with TrackMan iO and 500+ courses.",
   },
 ];
 
@@ -39,8 +39,8 @@ export default function About() {
     <>
       <PageHero
         eyebrow="Our story"
-        title="A family place, built for the neighborhood."
-        intro="Chip Shots Golf Club is run by the Mizell family. Good food, a proper bar, and golf for par shooters and first-timers alike."
+        title="A family club in Henderson."
+        intro="Chip Shots Golf Club is veteran-owned and run by Mark and Roseanne Mizell, who live in Henderson."
         image={img.exterior}
       />
 
@@ -64,14 +64,14 @@ export default function About() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-                Golf for anyone. Food worth the trip on its own.
+                The place we wanted to spend our evenings.
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-5 leading-relaxed text-muted">
-                We wanted a place where the golf is good and the kitchen and bar
-                would stand on their own without it. Bring the family for
-                burgers, the team for a tournament, or come for a cocktail.
+                We opened in 2026 with a full kitchen, a proper bar and five
+                TrackMan bays. Families come for dinner, teams book the bays,
+                and plenty of guests come only for a drink.
               </p>
             </Reveal>
             <Reveal delay={0.18}>
@@ -115,7 +115,7 @@ export default function About() {
               <Reveal>
                 <p className="eyebrow text-gold-soft">Visit</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  Come by.
+                  Visit.
                 </h2>
               </Reveal>
 
@@ -219,11 +219,10 @@ export default function About() {
           <div className="text-center">
             <p className="eyebrow text-gold">Get in touch</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Write to us.
+              Contact us.
             </h2>
             <p className="mt-4 text-muted">
-              Questions, feedback or a note to say hello. We read every
-              one.
+              Send a question or feedback and we will get back to you.
             </p>
           </div>
         </Reveal>

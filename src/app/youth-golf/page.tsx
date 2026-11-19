@@ -21,17 +21,17 @@ const whyKids = [
   },
   {
     title: "Safe, indoor & climate-controlled",
-    desc: "No 110° heat and no lost balls. A cool, comfortable room where parents can sit down while the kids play.",
+    desc: "Indoors and air-conditioned, with seating for parents in the bay.",
     icon: Icon.flag,
   },
   {
-    title: "A real skill, the fun way",
-    desc: "Golf teaches focus, patience and good manners. On a simulator the feedback is instant, so kids see each shot improve without the pressure of a real course.",
+    title: "Instant feedback",
+    desc: "TrackMan shows the result of every shot, so kids can see how they are improving.",
     icon: Icon.star,
   },
   {
-    title: "Screens off, together",
-    desc: "An active way to get kids off their devices, playing alongside friends, siblings or parents in the same bay.",
+    title: "Play together",
+    desc: "Kids can play alongside friends, siblings or parents in the same bay.",
     icon: Icon.users,
   },
 ];
@@ -43,8 +43,8 @@ export default function YouthGolf() {
     <>
       <PageHero
         eyebrow="Junior golf"
-        title="Where Henderson's next golfers get started."
-        intro="Junior golf at Chip Shots Golf Club is indoors, beginner-friendly and built for all ages. No experience, no clubs and no sunburn required."
+        title="Junior golf at the club."
+        intro="Indoors, for every age and skill level, with clubs provided."
         image={img.bayCinematic}
       />
 
@@ -54,7 +54,7 @@ export default function YouthGolf() {
           <div className="max-w-2xl">
             <p className="eyebrow text-gold">For families</p>
             <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
-              Why families come.
+              What to expect.
             </h2>
           </div>
         </Reveal>
@@ -89,11 +89,10 @@ export default function YouthGolf() {
               <div>
                 <p className="eyebrow text-gold-soft">Youth membership</p>
                 <h2 className="font-display mt-3 text-4xl font-light sm:text-5xl">
-                  A youth membership built for regulars.
+                  Youth membership.
                 </h2>
                 <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-                  For players 18 and under who are hooked and want to keep
-                  coming back.
+                  For players 18 and under who play regularly.
                 </p>
                 {youthTier && (
                   <div className="mt-8 inline-flex items-baseline gap-3 rounded-2xl border border-cream/15 bg-green-deep/60 px-7 py-5">
@@ -158,9 +157,8 @@ export default function YouthGolf() {
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mt-5 max-w-lg leading-relaxed text-muted">
-                Book a private bay and let the kids loose on games anyone can
-                play. The kitchen sends sliders, totchos, mini corn dogs and
-                shakes to the bay, so all you bring is the cake.
+                Book a private bay with games anyone can play. The kitchen
+                serves sliders, totchos, mini corn dogs and shakes at the bay.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -179,7 +177,7 @@ export default function YouthGolf() {
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-24">
           <Reveal>
             <h2 className="font-display text-3xl font-light text-green-deep sm:text-4xl">
-              Bring them in for a first swing.
+              Book a first visit.
             </h2>
             <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted">
               Book a bay any day of the week and let them try it. Clubs

@@ -8,15 +8,14 @@ export default function NotFound() {
       <div className="mx-auto flex min-h-[70svh] max-w-3xl flex-col items-center justify-center px-5 pb-24 pt-52 text-center sm:px-8">
         <p className="eyebrow text-gold-soft">Out of bounds</p>
         <h1 className="font-display mt-4 text-5xl font-light sm:text-6xl">
-          That one sailed the green.
+          Page not found.
         </h1>
         <p className="mt-5 max-w-md leading-relaxed text-cream/75">
-          The page you&rsquo;re after doesn&rsquo;t exist. It may have moved,
-          or the link was mistyped. Take a drop and play on.
+          The page may have moved, or the link was mistyped.
         </p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
           <ButtonLink href="/" variant="gold" size="lg" withArrow>
-            Back to the clubhouse
+            Home
           </ButtonLink>
           <ButtonLink href={business.booking} external variant="ghost-light" size="lg">
             Book a Bay
