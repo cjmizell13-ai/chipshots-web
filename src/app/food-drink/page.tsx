@@ -72,15 +72,15 @@ const navItems: MenuNavItem[] = [
 ];
 
 const plates = [
-  { src: img.dineWings, alt: "Glazed bone-in wings with celery, carrots and a draft beer on the bar", caption: "Bone-in wings" },
+  { src: img.dineWings, alt: "Glazed bone-in wings with celery, carrots and a draft beer on the bar", caption: "Bone-In Wings" },
   { src: img.dineTotchos, alt: "Loaded tater tots with nacho cheese, bacon, green onion and ranch", caption: "Loaded Totchos" },
-  { src: img.dineSliders, alt: "A beer cheese burger cut in half with a stack of onion rings", caption: "Beer cheese burger" },
-  { src: img.dineShake, alt: "A hand-spun shake with whipped cream and chocolate drizzle", caption: "Hand-spun shakes" },
+  { src: img.foodCheesesteak, alt: "A Philly cheesesteak with pretzel bites and fries", caption: "Philly Cheesesteak" },
+  { src: img.dineShake, alt: "A hand-spun shake with whipped cream and chocolate drizzle", caption: "Shakes" },
 ];
 
 const pours = [
   { src: img.barEspressoMartini, alt: "An espresso martini on the marble bar at Chip Shots", caption: "Espresso Martini" },
-  { src: img.barMule, alt: "A mule in a copper mug with a lime wheel", caption: "A mule, in copper" },
+  { src: img.barMule, alt: "A mule in a copper mug with a lime wheel", caption: "Crown Peach Mule" },
 ];
 
 /** One menu line: name, dotted leader, price, with the description under it. */
@@ -176,7 +176,7 @@ export default function FoodDrink() {
   return (
     <>
       <PlateHero
-        kicker="Dine · Open daily"
+        kicker="Dine"
         title="The kitchen and the bar."
         accent="Open daily."
         intro="Lunch and dinner every day, served at the table, the bar or the bay."
@@ -201,7 +201,7 @@ export default function FoodDrink() {
           { label: "Happy hour", value: happyHour.window },
           {
             label: "The Night Cap",
-            // "The Night Cap · Sun–Thu · 8 PM–close · from Nov 15": the days and hours only.
+            // "The Night Cap · Sun–Thu · 8 PM–close": the days and hours only.
             value: happyHour.lateWindow.split(" · ").slice(1, 3).join(" · "),
           },
         ]}

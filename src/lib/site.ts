@@ -203,7 +203,7 @@ export const img = {
   dineBurgerBar: "/images/dine-burger-bar.jpg", // bacon cheeseburger + fries (wide)
   dineWings: "/images/dine-wings.jpg", // bone-in wings and a draft
   dineTotchos: "/images/dine-totchos.jpg",
-  dineSliders: "/images/dine-sliders.jpg", // beer cheese burger (halved) + onion rings — NOT the slider trio
+  dineSliders: "/images/dine-sliders.jpg", // burger (halved) + onion rings, not a menu item; unused
   dineShake: "/images/dine-shake.jpg",
   barEspressoMartini: "/images/bar-espresso-martini.jpg",
   barMule: "/images/bar-mule.jpg",
@@ -774,7 +774,7 @@ export const spirits: SpiritGroup[] = [
 // -----------------------------------------------------------------------------
 export const happyHour = {
   window: "Mon–Fri · 3–6 PM",
-  lateWindow: "The Night Cap · Sun–Thu · 8 PM–close · from Nov 15",
+  lateWindow: "The Night Cap · Sun–Thu · 8 PM–close",
   note: "Happy-hour pricing holds at the bar, the tables and the bays. It returns for The Night Cap, Sunday to Thursday from 8 PM to close.",
   drinks: [
     { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Modelo · Cali Squeeze" },
