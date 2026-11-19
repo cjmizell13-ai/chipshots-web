@@ -36,8 +36,8 @@ export function Wordmark({
 }
 
 /**
- * The real Chip Shots crest, presented on a light "coaster" surface so the
- * shield reads as an intentional emblem. Use on cream / dark sections.
+ * The Chip Shots Golf Club CS monogram, presented on a light "coaster" surface
+ * so it reads as an intentional emblem. Use on cream / dark sections.
  */
 export function Crest({
   size = 132,
@@ -53,7 +53,7 @@ export function Crest({
     >
       <Image
         src={img.logo}
-        alt={`${business.name} crest`}
+        alt={`${business.name} logo`}
         width={size - 18}
         height={size - 18}
         className="h-auto w-[82%] object-contain"

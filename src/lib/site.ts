@@ -185,7 +185,7 @@ export const img = {
   exterior: "/images/exterior-storefront-2.jpg", // angled, sunlit storefront
   exterior2: "/images/exterior-storefront.jpg",
   entry: "/images/entry-vestibule.jpg",
-  logo: "/images/logo-crest.jpg",
+  logo: "/images/logo-cs.png",
 
   // Stills from the Henderson Chamber "Have You Been?" film (Aug 2026)
   clubGolfer: "/images/club-golfer.jpg", // guest mid-swing in a bay

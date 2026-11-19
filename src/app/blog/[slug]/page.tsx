@@ -65,7 +65,7 @@ export default async function BlogPost({
     publisher: {
       "@type": "Organization",
       name: business.name,
-      logo: { "@type": "ImageObject", url: `${business.website}/images/logo-crest.jpg` },
+      logo: { "@type": "ImageObject", url: `${business.website}/images/logo-cs.png` },
     },
   };
 
