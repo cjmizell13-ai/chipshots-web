@@ -58,7 +58,6 @@ export const metadata: Metadata = {
 const everyWeek: [string, string][] = [
   ["Trivia", `${trivia.day}s · ${trivia.time.replace(/\s*–\s*/, "–")}`],
   ["Happy hour", happyHour.window],
-  ["The Night Cap", happyHour.lateWindow.split(" · ").slice(1).join(" · ")],
   ["Prime rib brunch", brunch.when],
   ["College football", "Saturdays"],
   ["NFL Sunday Ticket", "Sundays"],
