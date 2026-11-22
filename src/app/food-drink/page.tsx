@@ -78,7 +78,7 @@ const navItems: MenuNavItem[] = [
 const plates = [
   { src: img.dineWings, alt: "Glazed bone-in wings with celery, carrots and a draft beer on the bar", caption: "Bone-in wings" },
   { src: img.dineTotchos, alt: "Loaded tater tots with nacho cheese, bacon, green onion and ranch", caption: "Loaded Totchos" },
-  { src: img.dineSliders, alt: "A beer cheese burger cut in half with a stack of onion rings", caption: "Beer cheese burger" },
+  { src: img.dineSliders, alt: "A burger cut in half with a stack of onion rings", caption: "Signature burgers" },
   { src: img.dineShake, alt: "A hand-spun shake with whipped cream and chocolate drizzle", caption: "Hand-spun shakes" },
 ];
 
@@ -429,9 +429,6 @@ export default function FoodDrink() {
                 <span className="text-gold-soft">three to six.</span>
               </h2>
               <p className="mt-6 max-w-md text-cream/70">{happyHour.note}</p>
-              <p className="mt-8 border-y border-cream/12 py-4 text-[0.7rem] uppercase tracking-[0.2em] text-cream/70">
-                {happyHour.lateWindow}
-              </p>
               <Link
                 href="/blog/happy-hour-henderson-guide"
                 className="text-cta mt-8 text-cream"

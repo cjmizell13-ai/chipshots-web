@@ -208,7 +208,7 @@ export const img = {
   dineBurgerBar: "/images/dine-burger-bar.jpg", // bacon cheeseburger + fries (wide)
   dineWings: "/images/dine-wings.jpg", // bone-in wings and a draft
   dineTotchos: "/images/dine-totchos.jpg",
-  dineSliders: "/images/dine-sliders.jpg", // beer cheese burger (halved) + onion rings — NOT the slider trio
+  dineSliders: "/images/dine-sliders.jpg", // burger (halved) + onion rings — NOT the slider trio; captioned generically
   dineShake: "/images/dine-shake.jpg",
   barEspressoMartini: "/images/bar-espresso-martini.jpg",
   barMule: "/images/bar-mule.jpg",
@@ -938,8 +938,7 @@ export const spirits: SpiritGroup[] = [
 // -----------------------------------------------------------------------------
 export const happyHour = {
   window: "Mon–Fri · 3–6 PM",
-  lateWindow: "The Night Cap · Sun–Thu · 8 PM–close · from Nov 15",
-  note: "Happy-hour pricing runs at the bar, at the tables and in the bays. From November 15 it comes back for The Night Cap: the same pricing Sunday through Thursday from 8 PM to close.",
+  note: "Happy-hour pricing runs at the bar, at the tables and in the bays.",
   drinks: [
     { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Modelo · Cali Squeeze" },
     { name: "Well Drinks", price: "$6", desc: "Vodka · gin · tequila · rum · bourbon" },
@@ -1055,7 +1054,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you serve food and drinks?",
-    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday 3–6 PM. From November 15 it comes back for The Night Cap: the same pricing Sunday–Thursday from 8 PM to close. Bays included, both windows.",
+    a: "We have a full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and signature cocktails all come straight to your bay. Happy hour runs Monday–Friday 3–6 PM. Happy-hour pricing applies in the bays too.",
   },
   {
     q: "Is Chip Shots family-friendly? Can kids play?",

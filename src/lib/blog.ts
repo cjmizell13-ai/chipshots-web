@@ -34,7 +34,7 @@ export const posts: Post[] = [
     slug: "things-to-do-henderson-winter-nights",
     title: "Things to Do in Henderson After Dark This Winter",
     excerpt:
-      "The sun goes down before 5 from now until late January. Here's how to spend a Henderson winter evening: a round of golf indoors, dinner at the bay and a drink after.",
+      "The sun goes down before 5 from now until late January. Here's how to spend a Henderson winter evening: a round of golf indoors, dinner at the bay and a weekly night to look forward to.",
     date: "2026-11-22",
     readMinutes: 4,
     category: "Henderson Guide",
@@ -56,11 +56,6 @@ export const posts: Post[] = [
         text: "Our kitchen serves until close, and everything comes to your bay or your table: burgers, wings, a Philly cheesesteak, shareables. Each weeknight has its own feature. Monday is the prime rib dip, Tuesday is $4 tacos, Wednesday is wings buy one get one half off, Thursday is $3 off burgers and Friday is fish and chips.",
       },
       { type: "cta", label: "See the menu", href: "/food-drink" },
-      { type: "h2", text: "Stay for a late drink" },
-      {
-        type: "p",
-        text: "The Night Cap runs Sunday through Thursday from 8 PM to close, with happy-hour prices on drafts, wells, house cocktails and bites. It's a good second half to an evening that started somewhere else, or a quiet end to one that started here.",
-      },
       { type: "h2", text: "Find a weekly night" },
       {
         type: "ul",
@@ -123,46 +118,6 @@ export const posts: Post[] = [
         type: "p",
         text: "Gift cards are delivered instantly, so it's also the right answer on December 24.",
       },
-    ],
-  },
-  {
-    slug: "late-night-happy-hour-henderson-night-cap",
-    title: "Late-Night Happy Hour in Henderson: The Night Cap, Sunday to Thursday",
-    excerpt:
-      "Happy-hour prices come back from 8 PM to close, Sunday through Thursday: $5 drafts, $6 wells, $10 house cocktails and $8 bites, at the bar, the tables and the bays.",
-    date: "2026-11-20",
-    readMinutes: 3,
-    category: "Food & Drink",
-    image: img.cocktailAmber,
-    body: [
-      {
-        type: "p",
-        text: "Most happy hours end before dinner. Ours comes back after it. The Night Cap runs Sunday through Thursday from 8 PM to close, with the same prices as our weekday 3 to 6 PM happy hour.",
-      },
-      { type: "h2", text: "What's on it" },
-      {
-        type: "ul",
-        items: [
-          "$5 domestic drafts: Coors Light, Modelo, Cali Squeeze",
-          "$6 well drinks",
-          "$7 craft beer, cider and house wine",
-          "$10 house cocktails: Par Old Fashioned, Transfusion, Azalea, Peach Palmer, Blue Lagoon",
-          "$2 off every other cocktail, including the Espresso Martini",
-          "$8 bites like pretzel bites, mozzarella sticks and pimento cheese dip, $10 for loaded totchos or the slider trio",
-        ],
-      },
-      { type: "h2", text: "It works in the bays too" },
-      {
-        type: "p",
-        text: "Night Cap pricing applies wherever you sit, including a TrackMan bay. Bays after 9 PM on weeknights are non-peak, so a late round with a few drinks costs less than you'd expect. Order from the bay and we'll bring it over.",
-      },
-      { type: "cta", label: "Book a late bay", href: business.booking, external: true },
-      { type: "h2", text: "Who it's for" },
-      {
-        type: "p",
-        text: "Restaurant and casino workers coming off a shift. Couples who want one more stop after dinner somewhere else. Anyone watching the late game. We're open until 10 every night at 1473 E Lake Mead Pkwy in Henderson.",
-      },
-      { type: "cta", label: "See the full menu", href: "/food-drink" },
     ],
   },
   {
@@ -239,7 +194,7 @@ export const posts: Post[] = [
           "Saturday: college football all day, doors at 10 AM",
           "Sunday: NFL Sunday Ticket from 10 AM, plus prime rib brunch on the first and third Sundays",
           "Monday: the prime rib dip special for Monday Night Football",
-          "Sunday and Thursday nights: The Night Cap, happy-hour prices from 8 PM to close",
+          "Weekdays: happy hour from 3 to 6 PM, Monday through Friday",
         ],
       },
       {

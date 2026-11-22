@@ -147,7 +147,7 @@ export default function Home() {
         <Stagger className="mt-16 grid gap-12 md:grid-cols-3 md:gap-9">
           {rooms.map((r) => (
             <StaggerItem key={r.title}>
-              <Link href={r.href} className="group block">
+              <div className="group relative">
                 <div className="relative aspect-[3/2] overflow-hidden bg-green-deep">
                   <Image
                     src={r.image}
@@ -164,10 +164,13 @@ export default function Home() {
                   {r.title}
                 </h3>
                 <p className="mt-4 text-ink/75">{r.body}</p>
-                <span className="text-cta mt-6 text-ink">
+                <Link
+                  href={r.href}
+                  className="text-cta mt-6 text-ink after:absolute after:inset-0 after:content-['']"
+                >
                   {r.cta} <span aria-hidden>→</span>
-                </span>
-              </Link>
+                </Link>
+              </div>
             </StaggerItem>
           ))}
         </Stagger>
