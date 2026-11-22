@@ -164,30 +164,30 @@ export const nav: NavItem[] = [
 // -----------------------------------------------------------------------------
 export const img = {
   // Simulator bays — the strongest, most cinematic shots up front
-  heroBay: "/images/bay-coastal-cinematic.jpg", // dark, dramatic — the hero
-  bayCinematic: "/images/hero-bay-coastal.jpg", // bright bay + couch
-  bayMoody: "/images/bay-coastal-moody.jpg", // two club chairs, moody
-  bayLounge: "/images/bay-lounge-chairs.jpg", // lounge couch, low light
-  bayLoveseat: "/images/bay-lounge-chairs.jpg", // membership lounge feel
-  bayDesertData: "/images/bay-desert-data.jpg", // TrackMan shot data overlay
-  bayClubs: "/images/hero-bay-coastal.jpg", // gallery filler (bright bay)
+  heroBay: "/images/hq-bay-hero.jpg", // dark, dramatic — the hero
+  bayCinematic: "/images/hq-bay-couch.jpg", // bright bay + couch
+  bayMoody: "/images/hq-bay-evening.jpg", // two club chairs, moody
+  bayLounge: "/images/hq-bay-lounge.jpg", // lounge couch, low light
+  bayLoveseat: "/images/hq-bay-lounge.jpg", // membership lounge feel
+  bayDesertData: "/images/hq-trackman-data.jpg", // TrackMan shot data overlay
+  bayClubs: "/images/hq-bay-couch.jpg", // gallery filler (bright bay)
   bayRoomWide: "/images/bay-room-wide.jpg", // TrackMan activity menu
   trackmanActivities: "/images/trackman-competitions.jpg", // competitions screen
   trackmanCompetitions: "/images/trackman-competitions.jpg",
 
   // Food — real plates
   foodCheesesteak: "/images/cocktail-amber.jpg", // ACTUAL cheesesteak + pretzels
-  foodWings: "/images/food-wings.jpg", // ACTUAL wings
-  foodBurger: "/images/food-burger.jpg", // ACTUAL bacon cheeseburger + fries
+  foodWings: "/images/hq-food-wings.jpg", // ACTUAL wings
+  foodBurger: "/images/hq-food-burger.jpg", // ACTUAL bacon cheeseburger + fries
 
   // Drinks — real cocktails
-  cocktailRed: "/images/cocktail-red.jpg",
-  cocktailAmber: "/images/dining-room.jpg", // ACTUAL amber cocktail
-  cocktailsHighball: "/images/cocktails-highball.jpg",
+  cocktailRed: "/images/hq-cocktail-red.jpg",
+  cocktailAmber: "/images/hq-cocktail-amber.jpg", // ACTUAL amber cocktail
+  cocktailsHighball: "/images/hq-cocktail-martini.jpg",
 
   // Venue
   diningRoom: "/images/food-cheesesteak.jpg", // ACTUAL dining room
-  exterior: "/images/exterior-storefront-2.jpg", // angled, sunlit storefront
+  exterior: "/images/hq-exterior.jpg", // angled, sunlit storefront
   exterior2: "/images/exterior-storefront.jpg",
   entry: "/images/entry-vestibule.jpg",
   logo: "/images/logo-crest.jpg",
