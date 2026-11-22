@@ -1,13 +1,13 @@
 // =============================================================================
-// Chip Shots Indoor Golf — single source of truth for site content
+// Chip Shots Golf Club — single source of truth for site content
 // All NAP (name/address/phone), hours, links, menus and pricing live here so
 // they stay identical everywhere they appear (important for local SEO).
 // =============================================================================
 
 export const business = {
-  name: "Chip Shots",
+  name: "Chip Shots Golf Club",
   shortName: "Chip Shots",
-  tagline: "Golf • Food • Drinks",
+  tagline: "Restaurant · Bar · Golf Lounge",
   address: {
     street: "1473 E Lake Mead Pkwy, Suite 110",
     city: "Henderson",
