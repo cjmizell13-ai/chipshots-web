@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 // dated events. Times come from the same data the other pages use.
 const everyWeek: [string, string][] = [
   ["Trivia", `${trivia.day}s · ${trivia.time.replace(/\s*–\s*/, "–")}`],
+  ["Music bingo", "Wednesdays from Dec 2 · 6:30–8 PM"],
   ["Happy hour", happyHour.window],
   ["Prime rib brunch", brunch.when],
   ["College football", "Saturdays"],
@@ -74,7 +75,7 @@ export default function Events() {
         kicker="Events · Public and private"
         title="What's on,"
         accent="and how to host your own."
-        intro="Trivia on Tuesdays, prime rib brunch on the first and third Sundays, and a calendar of one-off nights in between. For private events, every booking is quoted to fit your group."
+        intro="Trivia on Tuesdays, music bingo on Wednesdays from December 2, prime rib brunch on the first and third Sundays, and a calendar of one-off nights in between. For private events, every booking is quoted to fit your group."
         image={img.clubDining}
         alt="A server taking an order at a full table in the dining room at Chip Shots"
         position="50% 40%"

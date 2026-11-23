@@ -687,6 +687,12 @@ export const upcomingEvents: ScheduledEvent[] = [
     signupLabel: "Vendor interest form",
   },
   {
+    date: "2026-12-02",
+    title: "Music Bingo",
+    time: "6:30–8:00 PM",
+    desc: "The first of our weekly Wednesday music bingo nights. Bingo played with songs you know in place of numbers. Free to play.",
+  },
+  {
     date: "2026-12-06",
     title: "Sunday Prime Rib Brunch",
     time: "10:00 AM–1:00 PM",

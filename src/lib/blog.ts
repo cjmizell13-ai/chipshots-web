@@ -61,8 +61,7 @@ export const posts: Post[] = [
         type: "ul",
         items: [
           "Trivia every Tuesday, 6:30 to 8 PM, free to play",
-          "Open Night on Mondays at 5 and 7 PM, an easy 9 holes for newcomers",
-          "Ladies Night on Wednesdays and Men's Night on Sundays, both at 5 and 7 PM",
+          "Music bingo every Wednesday starting December 2, 6:30 to 8 PM, free to play",
         ],
       },
       {

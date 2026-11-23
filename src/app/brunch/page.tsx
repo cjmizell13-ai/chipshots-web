@@ -3,7 +3,7 @@ import Link from "next/link";
 import PlateHero from "@/components/ui/PlateHero";
 import UntilDate from "@/components/ui/UntilDate";
 import { ButtonLink } from "@/components/ui/button";
-import { brunch, brunchFaqs, business, img, upcomingEvents } from "@/lib/site";
+import { brunch, brunchFaqs, business, img, promoActive, upcomingEvents } from "@/lib/site";
 
 const shareTitle = "Sunday Prime Rib Brunch at Chip Shots";
 const shareDescription = `${brunch.when}. ${brunch.prices}. ${brunch.drinks}.`;
@@ -62,9 +62,12 @@ function shortDay(iso: string) {
 }
 
 export default function Brunch() {
-  // Every dated brunch on the calendar. Each one hides itself once its day
-  // has passed (UntilDate), so this list never needs pruning by hand.
-  const dates = upcomingEvents.filter((e) => /brunch/i.test(e.title));
+  // Every dated brunch still ahead. Past dates are dropped at build time so
+  // they stay out of the page source and the event data Google reads; each
+  // row also hides itself the day after its date (UntilDate) between deploys.
+  const dates = upcomingEvents.filter(
+    (e) => /brunch/i.test(e.title) && promoActive(e.date),
+  );
   // The first date that takes reservations gets a button at the top of the page,
   // where people landing from an ad or a post actually look.
   const nextRsvp = dates.find((e) => e.signup);
@@ -126,7 +129,7 @@ export default function Brunch() {
       <PlateHero
         kicker="Brunch · 1st & 3rd Sundays"
         title="Prime rib brunch."
-        accent="Sundays, 10 to 1."
+        accent="1st & 3rd Sundays, 10 to 1."
         intro="A brunch buffet with a prime rib carving station, breakfast favorites and more, with the morning games on every screen."
         image={img.brunchPrimeRib}
         alt="Prime rib at the carving station during Sunday brunch at Chip Shots, with a slice being plated"
