@@ -435,8 +435,9 @@ export default function Home() {
               Easy to find <span className="text-gold-soft">once you know.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/70">
-              We&rsquo;re set back from Lake Mead Parkway, in the plaza with
-              the clock tower. Look for the striped awnings.
+              We&rsquo;re at Monument at Calico Ridge, the plaza with the
+              clock tower, set back from Lake Mead Parkway. Look for the
+              striped awnings.
             </p>
             <address className="mt-8 not-italic text-cream/85">
               {business.address.street}

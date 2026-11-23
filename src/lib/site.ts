@@ -1076,7 +1076,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Where are you located?",
-    a: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015 — in the heart of Henderson, just off Lake Mead Parkway.",
+    a: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015. We're at Monument at Calico Ridge, the plaza with the clock tower, just off Lake Mead Parkway.",
   },
   {
     q: "Do you host parties and corporate events?",
