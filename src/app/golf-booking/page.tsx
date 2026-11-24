@@ -367,7 +367,7 @@ export default function GolfBooking() {
               { src: img.bayMoody, alt: "A Chip Shots simulator bay lit for evening play" },
               { src: img.heroBay, alt: "Wide view of a TrackMan bay with a coastal course on screen" },
               { src: img.bayDesertData, alt: "TrackMan shot data on the bay screen" },
-              { src: img.bayRoomWide, alt: "The TrackMan activity menu on a bay screen" },
+              { src: img.bayRoomWide, alt: "Two club chairs facing the screen in a private bay" },
             ]}
           />
         </div>

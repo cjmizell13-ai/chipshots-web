@@ -166,7 +166,7 @@ export const img = {
   bayLoveseat: "/images/hq-bay-lounge.jpg", // membership lounge feel
   bayDesertData: "/images/hq-trackman-data.jpg", // TrackMan shot data overlay
   bayClubs: "/images/hq-bay-couch.jpg", // gallery filler (bright bay)
-  bayRoomWide: "/images/bay-room-wide.jpg", // TrackMan activity menu
+  bayRoomWide: "/images/hq-bay-evening.jpg", // two club chairs, moody (was a low-res menu-screen shot)
   trackmanActivities: "/images/trackman-competitions.jpg", // competitions screen
   trackmanCompetitions: "/images/trackman-competitions.jpg",
 
@@ -181,7 +181,7 @@ export const img = {
   cocktailsHighball: "/images/hq-cocktail-martini.jpg",
 
   // Venue
-  diningRoom: "/images/food-cheesesteak.jpg", // ACTUAL dining room
+  diningRoom: "/images/dining-to-bar.jpg", // dining room looking toward the bar (from the Place reel)
   exterior: "/images/hq-exterior.jpg", // angled, sunlit storefront
   exterior2: "/images/exterior-storefront.jpg",
   entry: "/images/entry-vestibule.jpg",
