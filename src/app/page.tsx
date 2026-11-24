@@ -16,6 +16,7 @@ import {
   orderOnlineLive,
   promoActive,
   upcomingEvents,
+  googleReviews,
 } from "@/lib/site";
 
 const rooms = [
@@ -150,6 +151,46 @@ export default function Home() {
 
       {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
       <HolidayDeals />
+
+      {/* ================================================= REVIEWS ===== */}
+      <section className="bg-cream text-ink">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <Reveal>
+              <p className="kicker text-muted">From our guests</p>
+              <h2 className="font-display mt-6 text-4xl font-semibold leading-[1.1] sm:text-5xl">
+                {googleReviews.rating}{" "}
+                <span className="text-gold" aria-hidden>★★★★★</span>
+                <span className="sr-only">out of 5 stars</span>
+              </h2>
+              <p className="mt-3 text-ink/70">
+                From {googleReviews.count} reviews on Google.
+              </p>
+            </Reveal>
+            <a
+              href={googleReviews.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cta text-ink"
+            >
+              Read all reviews <span aria-hidden>→</span>
+            </a>
+          </div>
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {googleReviews.quotes.map((q) => (
+              <StaggerItem key={q.name}>
+                <figure className="flex h-full flex-col border-t border-ink/15 pt-6">
+                  <span className="text-sm tracking-[0.2em] text-gold" aria-hidden>★★★★★</span>
+                  <blockquote className="font-display mt-4 flex-1 text-xl leading-snug text-ink">
+                    &ldquo;{q.text}&rdquo;
+                  </blockquote>
+                  <figcaption className="eyebrow mt-5 text-ink/60">{q.name} · Google</figcaption>
+                </figure>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
 
       {/* ============================================ UNDER ONE ROOF ===== */}
       <section className="bg-black text-cream">

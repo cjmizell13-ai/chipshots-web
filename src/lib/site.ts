@@ -992,3 +992,29 @@ export const faqs: Faq[] = [
 ];
 
 export const owners = "Mark & Roseanne Mizell";
+
+// Google reviews, quoted word for word (sentences trimmed, never reworded).
+// Pulled Nov 24, 2026 from the Google listing: 5.0 stars, 69 reviews.
+export const googleReviews = {
+  rating: "5.0",
+  count: 69,
+  href: "https://search.google.com/local/reviews?placeid=ChIJcda6KXDXyIARqYkMvm-FCow",
+  quotes: [
+    {
+      text: "Their golf membership is the best in town!!! Great atmosphere, awesome staff, and always a good time. Easily one of my favorite spots in Henderson.",
+      name: "Richard S.",
+    },
+    {
+      text: "Love that it's kid-friendly too, so you can bring the whole family. Definitely a great spot to hang out with friends and family.",
+      name: "Anna",
+    },
+    {
+      text: "Became a member right away and now I can’t stay away. Golf/bar/food they have it all.",
+      name: "Matthew M.",
+    },
+    {
+      text: "Love this place! Food and staff are amazing! We come here weekly!",
+      name: "Barb B.",
+    },
+  ],
+};
