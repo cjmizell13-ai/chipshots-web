@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Monogram } from "@/components/ui/reel";
 import { reel } from "@/lib/reels";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
@@ -118,6 +119,7 @@ export default function GiftCards() {
       <section className="bg-green-deep text-cream">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-28">
           <Reveal>
+            <Monogram size={88} className="mx-auto mb-8 text-cream" />
             <p className="eyebrow text-gold-soft">Chip Shots Golf Club Gift Cards</p>
           </Reveal>
           <Reveal delay={0.08}>
