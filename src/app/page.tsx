@@ -498,13 +498,14 @@ export default function Home() {
                 </div>
               ))}
             </dl>
-            <div className="relative mt-10 aspect-[16/9] overflow-hidden">
-              <Image
-                src="/images/day-storefront.jpg"
-                alt="The Chip Shots sign and striped awnings in daylight"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="reel-grade object-cover"
+            <div className="relative mt-10 aspect-[16/10] overflow-hidden ring-1 ring-cream/10">
+              <iframe
+                src={business.mapEmbed}
+                title="Map: Chip Shots Golf Club at Monument at Calico Ridge, Henderson"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full border-0 grayscale-[35%]"
+                allowFullScreen
               />
             </div>
           </Reveal>

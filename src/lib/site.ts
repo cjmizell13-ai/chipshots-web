@@ -21,11 +21,11 @@ export const business = {
   website: "https://www.chipshotshenderson.com",
   status: "Now Open",
   founded: "Grand opening May 29, 2026",
-  geo: { lat: 36.0398, lng: -114.9817 },
+  geo: { lat: 36.0764652, lng: -114.9516785 },
   mapEmbed:
-    "https://www.google.com/maps?q=1473+E+Lake+Mead+Pkwy+Suite+110+Henderson+NV+89015&output=embed",
+    "https://www.google.com/maps?q=Chip+Shots+Golf+Club,+1473+E+Lake+Mead+Pkwy+Suite+110,+Henderson,+NV+89015&z=16&output=embed",
   mapLink:
-    "https://www.google.com/maps/search/?api=1&query=1473+E+Lake+Mead+Pkwy+Suite+110+Henderson+NV+89015",
+    "https://www.google.com/maps/search/?api=1&query=Chip+Shots+Golf+Club+Henderson+NV&query_place_id=ChIJcda6KXDXyIARqYkMvm-FCow",
   social: {
     instagram: "https://www.instagram.com/chipshotshenderson",
     facebook: "https://www.facebook.com/chipshotshenderson",
