@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { reel } from "@/lib/reels";
 import Image from "next/image";
 import Link from "next/link";
 import PlateHero from "@/components/ui/PlateHero";
@@ -198,6 +199,7 @@ export default function FoodDrink() {
         intro="Lunch and dinner every day, and prime rib brunch on the first and third Sundays, served at the table, the bar or the bay."
         image={img.dineBurgerBar}
         alt="A bacon cheeseburger and seasoned fries on the bar at Chip Shots"
+        reels={[reel.food, reel.bar, reel.place]}
         position="50% 30%"
         actions={
           <>

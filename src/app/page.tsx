@@ -6,6 +6,7 @@ import BookButton from "@/components/BookButton";
 import ReserveButton from "@/components/ReserveButton";
 import UntilDate from "@/components/ui/UntilDate";
 import HolidayDeals from "@/components/HolidayDeals";
+import { ReelVideo, ReelCaption, ReelShade, ReelEndCard } from "@/components/ui/reel";
 import {
   business,
   img,
@@ -21,6 +22,8 @@ const rooms = [
   {
     no: "01",
     title: "Dine",
+    caption: "Full kitchen & bar",
+    captionSub: "Lunch & dinner, every day",
     body: "Burgers, ribs, steaks and salads from a full kitchen at lunch and dinner, and prime rib brunch on the first and third Sundays.",
     image: img.clubService,
     alt: "A server carrying plates of nachos and wings through the dining room at Chip Shots",
@@ -30,6 +33,8 @@ const rooms = [
   {
     no: "02",
     title: "Play",
+    caption: "Every shot, measured",
+    captionSub: "5 private TrackMan bays",
     body: `Five private TrackMan bays and ${golf.courses} courses. Clubs are on hand.`,
     image: img.clubGolfer,
     alt: "A guest mid-swing in a private TrackMan simulator bay at Chip Shots",
@@ -39,11 +44,37 @@ const rooms = [
   {
     no: "03",
     title: "Watch",
+    caption: "Every game, every screen",
+    captionSub: "NFL Sunday Ticket",
     body: "Screens over the bar, a TV in every bay and NFL Sunday Ticket. On weekends, breakfast is served from the first kickoff.",
     image: img.clubGuests,
     alt: "Guests at the bar watching a game at Chip Shots",
     href: "/events",
     cta: "Events",
+  },
+];
+
+const reels = [
+  {
+    src: "/videos/reel/golf.mp4",
+    poster: "/videos/reel/golf.jpg",
+    label: "Guests swinging in a TrackMan bay",
+    title: "Play the world’s great courses",
+    sub: "500+ courses on 5 TrackMan bays",
+  },
+  {
+    src: "/videos/reel/food.mp4",
+    poster: "/videos/reel/food.jpg",
+    label: "Burgers, wings and ribs from the kitchen",
+    title: "Burgers, wings & ribs",
+    sub: "Open daily for lunch & dinner",
+  },
+  {
+    src: "/videos/reel/bar.mp4",
+    poster: "/videos/reel/bar.jpg",
+    label: "Cocktails and wine being poured at the bar",
+    title: "Cocktails, wine & beer",
+    sub: "Happy hour Mon–Fri, 3–6 PM",
   },
 ];
 
@@ -74,38 +105,44 @@ export default function Home() {
   return (
     <>
       {/* ===================================================== HERO ===== */}
-      <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-green-deep">
-        <Image
-          src={img.clubRoom}
-          alt="The dining room and bar at Chip Shots in Henderson, Nevada"
-          fill
-          preload
-          sizes="100vw"
-          className="kenburns object-cover object-center opacity-70"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/45 to-green-deep/60" />
+      {/* Three reel panels side by side on desktop, one full-screen on phones. */}
+      <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-black">
+        <div className="absolute inset-0 grid grid-cols-1 gap-[3px] md:grid-cols-3">
+          {reels.map((r, i) => (
+            <div key={r.src} className={`relative overflow-hidden ${i > 0 ? "hidden md:block" : ""}`}>
+              <ReelVideo src={r.src} poster={r.poster} label={r.label} />
+              <div className="reel-vignette pointer-events-none absolute inset-0" aria-hidden />
+              <ReelCaption
+                title={r.title}
+                sub={r.sub}
+                className="absolute inset-x-4 top-[19%] hidden md:block"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20 md:from-black md:via-black/60 md:to-black/0" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-10 pt-44 sm:px-8">
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-44 text-center sm:px-8">
           <Reveal>
-            <p className="kicker text-gold-soft">
+            <p className="reel-sub text-gold-soft">
               Henderson, Nevada · {business.address.street}
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="font-display mt-7 max-w-4xl text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-7xl">
+            <h1 className="font-display mx-auto mt-5 max-w-4xl text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-6xl lg:text-7xl">
               Henderson&rsquo;s
               <br />
               <span className="text-gold-soft">golf club.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-7 max-w-xl text-lg text-cream/75">
+            <p className="mx-auto mt-5 max-w-xl text-lg text-cream/80">
               A restaurant, a bar and five private TrackMan bays on Lake Mead
               Parkway. Open to everyone, every day.
             </p>
           </Reveal>
           <Reveal delay={0.22}>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <BookButton variant="gold" size="lg" withArrow />
               <ReserveButton source="home_hero" variant="ghost-light" size="lg" />
               <Link href="/food-drink" className="text-cta text-cream">
@@ -114,7 +151,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <dl className="mt-16 grid grid-cols-1 border-t border-cream/15 sm:grid-cols-3">
+          <dl className="mx-auto mt-10 grid max-w-3xl grid-cols-3 border-t border-cream/15">
             {[
               { k: "Private bays", v: String(golf.bays) },
               { k: "Rates from", v: `${nonPeak.price}`, u: nonPeak.unit },
@@ -122,10 +159,10 @@ export default function Home() {
             ].map((f, i) => (
               <div
                 key={f.k}
-                className={`py-6 sm:py-7 ${i > 0 ? "border-t border-cream/15 sm:border-l sm:border-t-0 sm:pl-8" : ""}`}
+                className={`py-5 sm:py-6 ${i > 0 ? "border-l border-cream/15" : ""}`}
               >
-                <dt className="eyebrow text-cream/55">{f.k}</dt>
-                <dd className="font-display mt-2 text-3xl font-semibold text-cream">
+                <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-cream/55 sm:text-[0.7rem]">{f.k}</dt>
+                <dd className="font-display mt-2 text-2xl font-semibold text-cream sm:text-3xl">
                   {f.v}
                   {f.u && <span className="ml-1 text-sm font-light text-cream/60">{f.u}</span>}
                 </dd>
@@ -139,45 +176,47 @@ export default function Home() {
       <HolidayDeals />
 
       {/* ============================================ UNDER ONE ROOF ===== */}
-      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-        <Reveal>
-          <p className="kicker text-muted">01 · Under one roof</p>
-          <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            Dinner at the table,{" "}
-            <span className="text-green-soft">golf in the next room.</span>
-          </h2>
-        </Reveal>
+      <section className="bg-black text-cream">
+        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+          <Reveal>
+            <p className="kicker text-gold-soft">01 · Under one roof</p>
+            <h2 className="font-display mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.1] sm:text-5xl">
+              Dinner at the table,{" "}
+              <span className="text-gold-soft">golf in the next room.</span>
+            </h2>
+          </Reveal>
 
-        <Stagger className="mt-16 grid gap-12 md:grid-cols-3 md:gap-9">
-          {rooms.map((r) => (
-            <StaggerItem key={r.title}>
-              <div className="group relative">
-                <div className="relative aspect-[3/2] overflow-hidden bg-green-deep">
-                  <Image
-                    src={r.image}
-                    alt={r.alt}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  />
-                  <span className="absolute left-4 top-4 border border-cream/50 bg-green-deep/40 px-2.5 py-1 text-[0.65rem] tracking-[0.2em] text-cream backdrop-blur-sm">
-                    {r.no}
-                  </span>
+          <Stagger className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
+            {rooms.map((r) => (
+              <StaggerItem key={r.title}>
+                <div className="group relative">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-green-deep">
+                    <Image
+                      src={r.image}
+                      alt={r.alt}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="reel-grade object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    />
+                    <ReelShade />
+                    <ReelCaption
+                      title={r.caption}
+                      sub={r.captionSub}
+                      className="absolute inset-x-4 bottom-8"
+                    />
+                  </div>
+                  <p className="mt-6 text-cream/75">{r.body}</p>
+                  <Link
+                    href={r.href}
+                    className="text-cta mt-5 text-cream after:absolute after:inset-0 after:content-['']"
+                  >
+                    {r.cta} <span aria-hidden>→</span>
+                  </Link>
                 </div>
-                <h3 className="font-display mt-7 text-4xl font-semibold text-ink">
-                  {r.title}
-                </h3>
-                <p className="mt-4 text-ink/75">{r.body}</p>
-                <Link
-                  href={r.href}
-                  className="text-cta mt-6 text-ink after:absolute after:inset-0 after:content-['']"
-                >
-                  {r.cta} <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
       </section>
 
       {/* ================================================== THE BAYS ===== */}
@@ -230,7 +269,7 @@ export default function Home() {
                   alt="A private TrackMan bay with leather seating at Chip Shots"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
+                  className="reel-grade object-cover"
                 />
               </div>
               <figcaption className="mt-4 flex justify-between text-[0.65rem] uppercase tracking-[0.2em] text-cream/45">
@@ -244,7 +283,8 @@ export default function Home() {
       </section>
 
       {/* =========================================== KITCHEN AND BAR ===== */}
-      <section className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-20">
+      <section className="bg-black text-cream">
+      <div className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden">
@@ -253,27 +293,27 @@ export default function Home() {
                 alt="Barbecue ribs with mashed potatoes at Chip Shots"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="reel-grade object-cover"
               />
             </div>
-            <div className="absolute -bottom-10 right-4 hidden aspect-square w-44 overflow-hidden border-8 border-cream sm:block">
+            <div className="absolute -bottom-10 right-4 hidden aspect-square w-44 overflow-hidden border-8 border-black sm:block">
               <Image
                 src={img.foodBurger}
                 alt="A bacon cheeseburger and fries at the bar"
                 fill
                 sizes="176px"
-                className="object-cover"
+                className="reel-grade object-cover"
               />
             </div>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="kicker text-muted">03 · The kitchen &amp; bar</p>
-          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
+          <p className="kicker text-gold-soft">03 · The kitchen &amp; bar</p>
+          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-cream sm:text-5xl">
             A good table,{" "}
-            <span className="text-green-soft">with or without golf.</span>
+            <span className="text-gold-soft">with or without golf.</span>
           </h2>
-          <p className="mt-6 max-w-md text-ink/75">
+          <p className="mt-6 max-w-md text-cream/75">
             Plenty of our regulars have never booked a bay. They come for
             lunch, dinner, a drink at the bar or brunch on Sunday. The dining
             room and patio keep the same hours we do.
@@ -284,15 +324,15 @@ export default function Home() {
               ["Happy hour", "Mon–Fri · 3–6 PM"],
               ["Prime rib brunch", "1st & 3rd Sundays · 10 AM–1 PM"],
             ].map(([k, v]) => (
-              <li key={k} className="flex items-baseline gap-4 border-b border-line py-3.5">
-                <span className="eyebrow text-ink/70">{k}</span>
+              <li key={k} className="flex items-baseline gap-4 border-b border-cream/15 py-3.5">
+                <span className="eyebrow text-cream/70">{k}</span>
                 <span className="leader" aria-hidden />
-                <span className="text-sm text-ink/80">{v}</span>
+                <span className="text-sm text-cream/80">{v}</span>
               </li>
             ))}
           </ul>
           <div className="mt-10 flex flex-wrap items-center gap-7">
-            <ButtonLink href="/food-drink" variant="green" size="lg" withArrow>
+            <ButtonLink href="/food-drink" variant="gold" size="lg" withArrow>
               Menu
             </ButtonLink>
             {orderOnlineLive && (
@@ -300,13 +340,14 @@ export default function Home() {
                 href={business.orderOnline}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cta text-ink"
+                className="text-cta text-cream"
               >
                 Order pickup <span aria-hidden>→</span>
               </a>
             )}
           </div>
         </Reveal>
+      </div>
       </section>
 
       {/* ================================================= HENDERSON ===== */}
@@ -319,7 +360,7 @@ export default function Home() {
                 alt="The patio and putting greens outside Chip Shots in Henderson"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="reel-grade object-cover"
               />
             </div>
           </Reveal>
@@ -346,37 +387,38 @@ export default function Home() {
       </section>
 
       {/* ============================================ PRIVATE EVENTS ===== */}
-      <section className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:items-center lg:gap-20">
+      <section className="bg-black text-cream">
+      <div className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:items-center lg:gap-20">
         <Reveal>
-          <p className="kicker text-muted">05 · Private events</p>
-          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
-            From one bay <span className="text-green-soft">to the whole house.</span>
+          <p className="kicker text-gold-soft">05 · Private events</p>
+          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-cream sm:text-5xl">
+            From one bay <span className="text-gold-soft">to the whole house.</span>
           </h2>
-          <p className="mt-6 max-w-md text-ink/75">
+          <p className="mt-6 max-w-md text-cream/75">
             Every party is quoted to fit, and one person on our side looks
             after the food, the bar and the tee sheet.
           </p>
           <div className="mt-9">
-            <ButtonLink href="/holiday-parties" variant="green" size="lg" withArrow>
+            <ButtonLink href="/holiday-parties" variant="gold" size="lg" withArrow>
               Plan an event
             </ButtonLink>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <ol className="border-t border-line">
+          <ol className="border-t border-cream/15">
             {occasions.map((o, i) => (
               <li key={o.title}>
                 <Link
                   href={o.href}
-                  className="group flex items-baseline gap-6 border-b border-line py-5 transition-colors hover:text-green-soft"
+                  className="group flex items-baseline gap-6 border-b border-cream/15 py-5 transition-colors hover:text-gold-soft"
                 >
-                  <span className="text-xs tracking-[0.15em] text-muted">
+                  <span className="text-xs tracking-[0.15em] text-gold-soft">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-display text-2xl font-semibold text-ink group-hover:text-green-soft">
+                  <span className="font-display text-2xl font-semibold text-cream group-hover:text-gold-soft">
                     {o.title}
                   </span>
-                  <span className="ml-auto text-ink/40 transition-transform group-hover:translate-x-1" aria-hidden>
+                  <span className="ml-auto text-cream/40 transition-transform group-hover:translate-x-1" aria-hidden>
                     →
                   </span>
                 </Link>
@@ -384,36 +426,37 @@ export default function Home() {
             ))}
           </ol>
         </Reveal>
+      </div>
       </section>
 
       {/* ================================================= THIS WEEK ===== */}
       {next.length > 0 && (
-        <section className="bg-cream-2">
+        <section className="bg-green-deep text-cream">
           <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-28">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <Reveal>
-                <p className="kicker text-muted">06 · On the calendar</p>
-                <h2 className="font-display mt-6 text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
+                <p className="kicker text-gold-soft">06 · On the calendar</p>
+                <h2 className="font-display mt-6 text-4xl font-semibold leading-[1.1] text-cream sm:text-5xl">
                   What&rsquo;s on.
                 </h2>
               </Reveal>
-              <Link href="/events" className="text-cta text-ink">
+              <Link href="/events" className="text-cta text-cream">
                 Full calendar <span aria-hidden>→</span>
               </Link>
             </div>
-            <div className="mt-12 border-t border-ink/15">
+            <div className="mt-12 border-t border-cream/15">
               {next.map((e) => {
                 const d = formatEventDate(e.date);
                 return (
                   <UntilDate key={e.date + e.title} until={e.date}>
-                    <div className="grid gap-2 border-b border-ink/15 py-6 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-8">
-                      <p className="eyebrow text-ink/60">
+                    <div className="grid gap-2 border-b border-cream/15 py-6 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-8">
+                      <p className="eyebrow text-cream/60">
                         {d.weekday} · {d.day}
                       </p>
-                      <p className="font-display text-2xl font-semibold text-ink">
+                      <p className="font-display text-2xl font-semibold text-cream">
                         {e.title}
                       </p>
-                      <p className="text-sm text-ink/70">{e.time}</p>
+                      <p className="text-sm text-cream/70">{e.time}</p>
                     </div>
                   </UntilDate>
                 );
@@ -486,12 +529,18 @@ export default function Home() {
                 alt="The Chip Shots storefront with striped awnings at dusk"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="reel-grade object-cover"
               />
             </div>
           </Reveal>
         </div>
       </section>
+
+      {/* ================================================= END CARD ===== */}
+      <ReelEndCard title="Book a bay" url="chipshotshenderson.com" poster="/videos/reel/bar.jpg">
+        <BookButton variant="gold" size="lg" withArrow />
+        <ReserveButton source="home_endcard" variant="ghost-light" size="lg" />
+      </ReelEndCard>
     </>
   );
 }

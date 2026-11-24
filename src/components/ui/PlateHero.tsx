@@ -1,5 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { ReelVideo, ReelCaption } from "@/components/ui/reel";
+
+export type HeroReel = { src: string; poster: string; label: string; title: string; sub?: string };
 
 export type HeroFact = { label: string; value: string };
 
@@ -21,6 +24,7 @@ export default function PlateHero({
   alt,
   position = "50% 50%",
   facts,
+  reels,
 }: {
   kicker: string;
   /** First part of the headline, in cream. */
@@ -35,6 +39,8 @@ export default function PlateHero({
   /** CSS object-position for the photo, to keep its subject in the crop. */
   position?: string;
   facts?: HeroFact[];
+  /** Up to three reel clips; when given they replace the photo. */
+  reels?: HeroReel[];
 }) {
   return (
     <section className="bg-cream">
@@ -64,6 +70,18 @@ export default function PlateHero({
       {/* The photo straddles the edge of the green. */}
       <div className="bg-[linear-gradient(to_bottom,var(--color-green-deep)_50%,transparent_50%)]">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          {reels && reels.length > 0 ? (
+            <div className="grid aspect-[4/5] grid-cols-1 gap-[3px] overflow-hidden bg-black sm:aspect-[2/1] md:grid-cols-3 lg:aspect-[11/5]">
+              {reels.slice(0, 3).map((r, i) => (
+                <div key={r.src} className={`relative overflow-hidden ${i > 0 ? "hidden md:block" : ""}`}>
+                  <ReelVideo src={r.src} poster={r.poster} label={r.label} />
+                  <div className="reel-vignette pointer-events-none absolute inset-0" aria-hidden />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" aria-hidden />
+                  <ReelCaption title={r.title} sub={r.sub} className="absolute inset-x-4 bottom-8" />
+                </div>
+              ))}
+            </div>
+          ) : (
           <div className="relative aspect-[3/2] overflow-hidden bg-green sm:aspect-[2/1] lg:aspect-[11/5]">
             <Image
               src={image}
@@ -71,10 +89,11 @@ export default function PlateHero({
               fill
               preload
               sizes="(min-width: 1280px) 1216px, 100vw"
-              className="object-cover"
+              className="reel-grade object-cover"
               style={{ objectPosition: position }}
             />
           </div>
+          )}
         </div>
       </div>
 

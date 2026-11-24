@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { reel } from "@/lib/reels";
 import Image from "next/image";
 import Link from "next/link";
 import PlateHero from "@/components/ui/PlateHero";
@@ -77,6 +78,7 @@ export default function Events() {
         intro="Trivia on Tuesdays, music bingo on Wednesdays from December 2, prime rib brunch on the first and third Sundays, and a handful of evenings in between. Private parties are quoted to fit."
         image={img.clubDining}
         alt="A server taking an order at a full table in the dining room at Chip Shots"
+        reels={[reel.place, reel.bar, reel.golf]}
         position="50% 40%"
         actions={
           <>

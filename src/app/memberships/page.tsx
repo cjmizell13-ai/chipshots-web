@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { reel } from "@/lib/reels";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { Icon } from "@/components/ui/icons";
@@ -25,6 +26,7 @@ export default function Memberships() {
         title="Membership at the club."
         intro="The club is open to everyone. Members have bay time included, first call on booking and extra hours at $30."
         image={img.bayLoveseat}
+        reels={[reel.golf2, reel.golf, reel.bar]}
       />
 
       {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
