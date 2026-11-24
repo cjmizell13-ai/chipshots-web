@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { reel } from "@/lib/reels";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
@@ -46,6 +47,7 @@ export default function GiftCards() {
         title="Gift cards."
         intro="A Chip Shots Golf Club gift card covers dinner, drinks and bay time. Any amount, sent by email."
         image={img.bayMoody}
+        reels={[reel.bar, reel.food, reel.place]}
       />
 
       {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
