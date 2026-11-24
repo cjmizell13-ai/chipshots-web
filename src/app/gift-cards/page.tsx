@@ -4,6 +4,7 @@ import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icons";
 import TrackOnClick from "@/components/TrackOnClick";
+import HolidayDeals from "@/components/HolidayDeals";
 import { business, img } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -46,6 +47,9 @@ export default function GiftCards() {
         intro="A Chip Shots gift card is good for dinner, drinks and bay time. Pick any amount, delivered instantly by email."
         image={img.bayMoody}
       />
+
+      {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
+      <HolidayDeals variant="gift-cards" />
 
       {/* ============================================== HOW IT WORKS ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">

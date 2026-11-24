@@ -6,6 +6,7 @@ import MembershipTiers from "@/components/MembershipTiers";
 import MembershipMath from "@/components/MembershipMath";
 import BookButton from "@/components/BookButton";
 import PixelEvent from "@/components/PixelEvent";
+import HolidayDeals from "@/components/HolidayDeals";
 import { business, img, memberBenefits } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,6 +26,9 @@ export default function Memberships() {
         intro="Chip Shots is open to everyone. Membership is for people who play often: bay time is included, booking opens to you first, and extra hours are $30. There's a tier for every kind of player."
         image={img.bayLoveseat}
       />
+
+      {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
+      <HolidayDeals />
 
       {/* ============================================== BENEFITS ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">

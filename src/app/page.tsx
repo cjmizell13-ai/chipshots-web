@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/ui/button";
 import BookButton from "@/components/BookButton";
 import ReserveButton from "@/components/ReserveButton";
 import UntilDate from "@/components/ui/UntilDate";
+import HolidayDeals from "@/components/HolidayDeals";
 import {
   business,
   img,
@@ -133,6 +134,9 @@ export default function Home() {
           </dl>
         </div>
       </section>
+
+      {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
+      <HolidayDeals />
 
       {/* ============================================ UNDER ONE ROOF ===== */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
