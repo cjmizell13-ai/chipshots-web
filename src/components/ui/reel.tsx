@@ -171,3 +171,75 @@ export function ReelEndCard({
     </section>
   );
 }
+
+/**
+ * A short edit: plays one shot at a time, cutting to the next when it ends,
+ * with that shot's caption. Pauses off screen; holds the first frame for
+ * people who turn off motion.
+ */
+export function ReelSequence({
+  shots,
+  className = "",
+  captionClassName = "absolute inset-x-4 bottom-[14%]",
+}: {
+  shots: { src: string; poster: string; label: string; title: string; sub?: string }[];
+  className?: string;
+  captionClassName?: string;
+}) {
+  const wrap = useRef<HTMLDivElement>(null);
+  const vids = useRef<(HTMLVideoElement | null)[]>([]);
+  const reduce = useReducedMotion();
+  const [active, setActive] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = wrap.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), { threshold: 0.15 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    vids.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === active && visible && !reduce) {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, [active, visible, reduce]);
+
+  return (
+    <div ref={wrap} className={`overflow-hidden bg-black ${className}`}>
+      {shots.map((s, i) => (
+        <video
+          key={s.src}
+          ref={(el) => {
+            vids.current[i] = el;
+          }}
+          src={s.src}
+          poster={s.poster}
+          muted
+          playsInline
+          preload={i === 0 ? "auto" : "metadata"}
+          aria-label={s.label}
+          onEnded={() => setActive((a) => (a + 1) % shots.length)}
+          className={`reel-grade absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${i === active ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+      <div className="reel-vignette pointer-events-none absolute inset-0" aria-hidden />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/85 to-transparent" aria-hidden />
+      {shots.map((s, i) => (
+        <ReelCaption
+          key={s.title}
+          title={s.title}
+          sub={s.sub}
+          className={`${captionClassName} transition-opacity duration-500 ${i === active ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+    </div>
+  );
+}

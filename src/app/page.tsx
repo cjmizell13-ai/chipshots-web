@@ -6,7 +6,7 @@ import BookButton from "@/components/BookButton";
 import ReserveButton from "@/components/ReserveButton";
 import UntilDate from "@/components/ui/UntilDate";
 import HolidayDeals from "@/components/HolidayDeals";
-import { ReelVideo, ReelCaption, ReelShade, ReelEndCard } from "@/components/ui/reel";
+import { ReelSequence, ReelCaption, ReelShade, ReelEndCard } from "@/components/ui/reel";
 import {
   business,
   img,
@@ -56,23 +56,23 @@ const rooms = [
 
 const reels = [
   {
-    src: "/videos/reel/golf.mp4",
-    poster: "/videos/reel/golf.jpg",
+    src: "/videos/home/golf.mp4",
+    poster: "/videos/home/golf.jpg",
     label: "Guests swinging in a TrackMan bay",
     title: "Play the world’s great courses",
     sub: "500+ courses on 5 TrackMan bays",
   },
   {
-    src: "/videos/reel/food.mp4",
-    poster: "/videos/reel/food.jpg",
-    label: "Burgers, wings and ribs from the kitchen",
+    src: "/videos/home/food.mp4",
+    poster: "/videos/home/food.jpg",
+    label: "Burgers on the griddle and a finished burger",
     title: "Burgers, wings & ribs",
     sub: "Open daily for lunch & dinner",
   },
   {
-    src: "/videos/reel/bar.mp4",
-    poster: "/videos/reel/bar.jpg",
-    label: "Cocktails and wine being poured at the bar",
+    src: "/videos/home/bar.mp4",
+    poster: "/videos/home/bar.jpg",
+    label: "An espresso martini and a table toasting",
     title: "Cocktails, wine & beer",
     sub: "Happy hour Mon–Fri, 3–6 PM",
   },
@@ -105,70 +105,82 @@ export default function Home() {
   return (
     <>
       {/* ===================================================== HERO ===== */}
-      {/* Three reel panels side by side on desktop, one full-screen on phones. */}
-      <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-black">
-        <div className="absolute inset-0 grid grid-cols-1 gap-[3px] md:grid-cols-3">
-          {reels.map((r, i) => (
-            <div key={r.src} className={`relative overflow-hidden ${i > 0 ? "hidden md:block" : ""}`}>
-              <ReelVideo src={r.src} poster={r.poster} label={r.label} />
-              <div className="reel-vignette pointer-events-none absolute inset-0" aria-hidden />
-              <ReelCaption
-                title={r.title}
-                sub={r.sub}
-                className="absolute inset-x-4 top-[19%] hidden md:block"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20 md:from-black md:via-black/60 md:to-black/0" />
+      {/* One shot at a time, like the reels: golf, then food, then the bar.
+          Full screen on phones; a large reel frame beside the title on desktop. */}
+      <section className="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden bg-black text-cream lg:justify-center">
+        {/* Phone: the edit fills the screen behind the title. */}
+        <ReelSequence
+          shots={reels}
+          className="absolute inset-0 -z-10 lg:hidden"
+          captionClassName="hidden"
+        />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/70 to-black/10 lg:hidden" aria-hidden />
+        {/* Desktop: soft glow of the first shot behind everything. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={reels[0].poster}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 -z-20 hidden h-full w-full scale-110 object-cover opacity-30 blur-3xl lg:block"
+        />
+        <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-black via-black/85 to-black/40 lg:block" aria-hidden />
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-8 pt-44 text-center sm:px-8">
-          <Reveal>
-            <p className="reel-sub text-gold-soft">
-              Henderson, Nevada · {business.address.street}
-            </p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="font-display mx-auto mt-5 max-w-4xl text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-6xl lg:text-7xl">
-              Henderson&rsquo;s
-              <br />
-              <span className="text-gold-soft">golf club.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-cream/80">
-              A restaurant, a bar and five private TrackMan bays on Lake Mead
-              Parkway. Open to everyone, every day.
-            </p>
-          </Reveal>
-          <Reveal delay={0.22}>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <BookButton variant="gold" size="lg" withArrow />
-              <ReserveButton source="home_hero" variant="ghost-light" size="lg" />
-              <Link href="/food-drink" className="text-cta text-cream">
-                Menu
-              </Link>
-            </div>
-          </Reveal>
-
-          <dl className="mx-auto mt-10 grid max-w-3xl grid-cols-3 border-t border-cream/15">
-            {[
-              { k: "Private bays", v: String(golf.bays) },
-              { k: "Rates from", v: `${nonPeak.price}`, u: nonPeak.unit },
-              { k: "Open daily until", v: "10 PM" },
-            ].map((f, i) => (
-              <div
-                key={f.k}
-                className={`py-5 sm:py-6 ${i > 0 ? "border-l border-cream/15" : ""}`}
-              >
-                <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-cream/55 sm:text-[0.7rem]">{f.k}</dt>
-                <dd className="font-display mt-2 text-2xl font-semibold text-cream sm:text-3xl">
-                  {f.v}
-                  {f.u && <span className="ml-1 text-sm font-light text-cream/60">{f.u}</span>}
-                </dd>
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-14 px-5 pb-10 pt-44 sm:px-8 lg:grid-cols-[1.3fr_0.7fr] lg:pb-14 lg:pt-36">
+          <div className="text-center lg:text-left">
+            <Reveal>
+              <p className="reel-sub text-gold-soft">
+                Henderson, Nevada · {business.address.street}
+              </p>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h1 className="font-display mt-6 text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-6xl xl:text-7xl">
+                Henderson&rsquo;s
+                <br />
+                <span className="text-gold-soft">golf club.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <p className="mx-auto mt-6 max-w-xl text-lg text-cream/80 lg:mx-0">
+                A restaurant, a bar and five private TrackMan bays on Lake Mead
+                Parkway. Open to everyone, every day.
+              </p>
+            </Reveal>
+            <Reveal delay={0.22}>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                <BookButton variant="gold" size="lg" withArrow />
+                <ReserveButton source="home_hero" variant="ghost-light" size="lg" />
+                <Link href="/food-drink" className="text-cta text-cream">
+                  Menu
+                </Link>
               </div>
-            ))}
-          </dl>
+            </Reveal>
+
+            <dl className="mx-auto mt-12 grid max-w-xl grid-cols-3 border-t border-cream/15 lg:mx-0">
+              {[
+                { k: "Private bays", v: String(golf.bays) },
+                { k: "Rates from", v: `${nonPeak.price}`, u: nonPeak.unit },
+                { k: "Open daily until", v: "10 PM" },
+              ].map((f, i) => (
+                <div
+                  key={f.k}
+                  className={`py-5 ${i > 0 ? "border-l border-cream/15 pl-4 sm:pl-6" : ""}`}
+                >
+                  <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-cream/55 sm:text-[0.7rem]">{f.k}</dt>
+                  <dd className="font-display mt-2 text-2xl font-semibold text-cream sm:text-3xl">
+                    {f.v}
+                    {f.u && <span className="ml-1 text-sm font-light text-cream/60">{f.u}</span>}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <Reveal delay={0.12} className="hidden lg:block">
+            <ReelSequence
+              shots={reels}
+              className="relative ml-auto aspect-[9/16] w-full max-w-[min(24rem,calc((100svh-11rem)*0.5625))] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)] ring-1 ring-cream/10"
+            />
+          </Reveal>
         </div>
       </section>
 
@@ -537,7 +549,7 @@ export default function Home() {
       </section>
 
       {/* ================================================= END CARD ===== */}
-      <ReelEndCard title="Book a bay" url="chipshotshenderson.com" poster="/videos/reel/bar.jpg">
+      <ReelEndCard title="Book a bay" url="chipshotshenderson.com" poster="/videos/home/bar.jpg">
         <BookButton variant="gold" size="lg" withArrow />
         <ReserveButton source="home_endcard" variant="ghost-light" size="lg" />
       </ReelEndCard>
