@@ -424,7 +424,9 @@ export type Membership = {
 };
 
 export const memberships: Membership[] = [
-  { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true, joinUrl: business.membershipJoin },
+  // Holiday label through Dec 31, 2026. On Jan 1 switch back to:
+  // { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true, joinUrl: business.membershipJoin },
+  { tier: "Holiday Annual", price: "$2,390", per: "/13 mo", note: "Unlimited bay time, 13 months for the price of 12. Through Dec 31.", featured: true, joinUrl: business.membershipJoin },
   { tier: "Unlimited Monthly", price: "$239", per: "/mo", note: "Unlimited bay time, billed monthly.", joinUrl: business.membershipJoin },
   { tier: "Youth", price: "$159", per: "/mo", note: "For players 18 and under." },
   { tier: "Night-Only", price: "$119", per: "/mo", note: "After-hours bay access: Sun–Thu 10 PM–6 AM, Fri–Sat midnight–8 AM.", joinUrl: business.membershipJoin },
