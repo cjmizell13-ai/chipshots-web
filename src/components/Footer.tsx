@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { business, hoursSummary, liveDelivery, nav, orderOnlineLive } from "@/lib/site";
 import { Wordmark } from "@/components/ui/brand";
+import { Monogram } from "@/components/ui/reel";
 import { Icon } from "@/components/ui/icons";
 import { AmpText } from "@/components/ui/amp";
 import OpenStatus from "@/components/ui/OpenStatus";
@@ -12,7 +13,10 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand + tagline */}
           <div>
-            <Wordmark />
+            <div className="flex items-center gap-5">
+              <Monogram size={64} className="shrink-0 text-gold-soft" />
+              <Wordmark />
+            </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/70">
               A restaurant, a full bar and five TrackMan bays in east
               Henderson. Veteran-owned.
