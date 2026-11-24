@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { reel } from "@/lib/reels";
+import { shot } from "@/lib/reels";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem, GoldRule } from "@/components/ui/motion";
@@ -43,7 +43,7 @@ export default function About() {
         title="A family club in Henderson."
         intro="Chip Shots Golf Club is veteran-owned and run by Mark and Roseanne Mizell, who live in Henderson."
         image={img.exterior}
-        reels={[reel.place, reel.golf, reel.bar]}
+        shot={shot.about}
       />
 
       {/* ============================================== STORY ===== */}

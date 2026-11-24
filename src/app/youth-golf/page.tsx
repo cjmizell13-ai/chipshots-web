@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { reel } from "@/lib/reels";
+import { shot } from "@/lib/reels";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
@@ -47,7 +47,7 @@ export default function YouthGolf() {
         title="Junior golf at the club."
         intro="Indoors, for every age and skill level, with clubs provided."
         image={img.bayCinematic}
-        reels={[reel.golf2, reel.golf, reel.food]}
+        shot={shot.youth}
       />
 
       {/* ============================================== WHY KIDS ===== */}

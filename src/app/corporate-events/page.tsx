@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { reel } from "@/lib/reels";
+import { shot } from "@/lib/reels";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
@@ -67,7 +67,7 @@ export default function CorporateEvents() {
         title="Company outings."
         intro="Private bays, food from our kitchen and a full bar. One person on our side plans the day with you."
         image={img.trackmanCompetitions}
-        reels={[reel.golf, reel.place, reel.golf2]}
+        shot={shot.corporate}
       />
 
       {/* ============================================== WHY IT WORKS ===== */}

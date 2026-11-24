@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/motion";
 import { AmpText } from "@/components/ui/amp";
-import { ReelVideo } from "@/components/ui/reel";
+import ShotHero from "@/components/ui/ShotHero";
 import type { HeroReel } from "@/components/ui/PlateHero";
 
 /**
@@ -13,27 +13,21 @@ export default function PageHero({
   title,
   intro,
   image,
-  reels,
+  shot,
 }: {
   eyebrow: string;
   title: string;
   /** One paragraph, or several. */
   intro?: string | string[];
   image: string;
-  /** Optional reel clips shown, dimmed, behind the title. */
-  reels?: HeroReel[];
+  /** One reel shot chosen for this page; when given, the header is built around it. */
+  shot?: HeroReel;
 }) {
+  if (shot) {
+    return <ShotHero kicker={eyebrow} title={title} intro={intro} shot={shot} />;
+  }
   return (
     <section className="relative overflow-hidden bg-green-deep">
-      {reels && reels.length > 0 ? (
-        <div className="absolute inset-0 grid grid-cols-1 gap-[3px] opacity-60 md:grid-cols-3" aria-hidden>
-          {reels.slice(0, 3).map((r, i) => (
-            <div key={r.src} className={`relative overflow-hidden ${i > 0 ? "hidden md:block" : ""}`}>
-              <ReelVideo src={r.src} poster={r.poster} label={r.label} />
-            </div>
-          ))}
-        </div>
-      ) : (
         <Image
           src={image}
           alt=""
@@ -42,7 +36,6 @@ export default function PageHero({
           sizes="100vw"
           className="reel-grade object-cover opacity-55"
         />
-      )}
       <div className="absolute inset-0 bg-gradient-to-t from-green-deep via-green-deep/70 to-black/40" />
       <div className="reel-vignette pointer-events-none absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-44 sm:px-8 sm:pb-20 sm:pt-52">

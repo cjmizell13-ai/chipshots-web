@@ -1,19 +1,23 @@
-// Short silent loops cut from the finished Instagram reels (540x960).
 // Captions follow the reels: tracked capitals, a small line underneath.
 import type { HeroReel } from "@/components/ui/PlateHero";
 
-const clip = (name: string, label: string, title: string, sub?: string): HeroReel => ({
-  src: `/videos/reel/${name}.mp4`,
-  poster: `/videos/reel/${name}.jpg`,
+// One shot per inside page, cut sharper (720x1280) and chosen for that page.
+const shotClip = (name: string, label: string, title: string, sub?: string): HeroReel => ({
+  src: `/videos/page/${name}.mp4`,
+  poster: `/videos/page/${name}.jpg`,
   label,
   title,
   sub,
 });
 
-export const reel = {
-  golf: clip("golf", "Guests swinging in a TrackMan bay", "Play the world’s great courses", "500+ courses on 5 TrackMan bays"),
-  golf2: clip("golf2", "A guest driving in a TrackMan bay", "Every shot, measured", "Ball speed · spin · carry"),
-  food: clip("food", "Burgers, wings and ribs from the kitchen", "Burgers, wings & ribs", "Open daily for lunch & dinner"),
-  bar: clip("bar", "Cocktails and wine being poured at the bar", "Cocktails, wine & beer", "Happy hour Mon–Fri, 3–6 PM"),
-  place: clip("place", "The dining room, the bar and guests toasting", "Your new local in Henderson", "Golf, food & drinks"),
+export const shot = {
+  play: shotClip("play", "A guest lining up a drive in a TrackMan bay", "Every shot, measured", "Ball speed · spin · carry · club path"),
+  dine: shotClip("dine", "A burger, wings and ribs from the kitchen", "Burgers, wings & ribs", "Open daily for lunch & dinner"),
+  events: shotClip("events", "Guests raising a toast in the dining room", "Your new local in Henderson", "Golf, food & drinks"),
+  members: shotClip("members", "A member swinging in a TrackMan bay", "Unlimited golf", "24/7 · 2 active hours at a time"),
+  gifts: shotClip("gifts", "A martini being poured and wine swirled at the bar", "Cocktails, wine & beer", "Good for food, drinks & golf"),
+  about: shotClip("about", "The Chip Shots storefront and the clock tower plaza", "Chip Shots Golf Club", "Monument at Calico Ridge · Henderson"),
+  parties: shotClip("parties", "A cocktail and a table toasting", "Holiday parties", "From one bay to the whole house"),
+  corporate: shotClip("corporate", "Colleagues at a table and a golfer in a bay", "Company outings", "Private bays, food & a full bar"),
+  youth: shotClip("youth", "A golf shot landing on a TrackMan course", "Junior golf", "Clubs provided"),
 };

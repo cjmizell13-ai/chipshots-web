@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { reel } from "@/lib/reels";
+import { shot } from "@/lib/reels";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
@@ -71,7 +71,7 @@ export default function HolidayParties() {
         title="Holiday parties at the club."
         intro="Private bays, our kitchen and a full bar, for groups of 10 up to full buyouts of 100+."
         image={img.bayRoomWide}
-        reels={[reel.place, reel.bar, reel.food]}
+        shot={shot.parties}
       />
 
       {/* ============================================== PACKAGES ===== */}

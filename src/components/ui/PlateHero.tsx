@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { ReelVideo, ReelCaption } from "@/components/ui/reel";
+import ShotHero from "@/components/ui/ShotHero";
 
 export type HeroReel = { src: string; poster: string; label: string; title: string; sub?: string };
 
@@ -24,7 +24,7 @@ export default function PlateHero({
   alt,
   position = "50% 50%",
   facts,
-  reels,
+  shot,
 }: {
   kicker: string;
   /** First part of the headline, in cream. */
@@ -39,9 +39,14 @@ export default function PlateHero({
   /** CSS object-position for the photo, to keep its subject in the crop. */
   position?: string;
   facts?: HeroFact[];
-  /** Up to three reel clips; when given they replace the photo. */
-  reels?: HeroReel[];
+  /** One reel shot chosen for this page; when given, the header is built around it. */
+  shot?: HeroReel;
 }) {
+  if (shot) {
+    return (
+      <ShotHero kicker={kicker} title={title} accent={accent} intro={intro} actions={actions} shot={shot} facts={facts} />
+    );
+  }
   return (
     <section className="bg-green-deep pb-10 text-cream sm:pb-14">
       <div className="bg-green-deep text-cream">
@@ -70,18 +75,6 @@ export default function PlateHero({
       {/* The photo straddles the edge of the green. */}
       <div>
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          {reels && reels.length > 0 ? (
-            <div className="grid aspect-[4/5] grid-cols-1 gap-[3px] overflow-hidden bg-black sm:aspect-[2/1] md:grid-cols-3 lg:aspect-[11/5]">
-              {reels.slice(0, 3).map((r, i) => (
-                <div key={r.src} className={`relative overflow-hidden ${i > 0 ? "hidden md:block" : ""}`}>
-                  <ReelVideo src={r.src} poster={r.poster} label={r.label} />
-                  <div className="reel-vignette pointer-events-none absolute inset-0" aria-hidden />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" aria-hidden />
-                  <ReelCaption title={r.title} sub={r.sub} className="absolute inset-x-4 bottom-8" />
-                </div>
-              ))}
-            </div>
-          ) : (
           <div className="relative aspect-[3/2] overflow-hidden bg-green sm:aspect-[2/1] lg:aspect-[11/5]">
             <Image
               src={image}
@@ -93,7 +86,6 @@ export default function PlateHero({
               style={{ objectPosition: position }}
             />
           </div>
-          )}
         </div>
       </div>
 

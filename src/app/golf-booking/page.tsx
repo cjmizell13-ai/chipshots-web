@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { reel } from "@/lib/reels";
+import { shot } from "@/lib/reels";
 import Image from "next/image";
 import Link from "next/link";
 import PlateHero from "@/components/ui/PlateHero";
@@ -71,7 +71,7 @@ export default function GolfBooking() {
         intro="Priced by the hour for the whole bay, with food and drinks served while you play."
         image={img.clubGolfer}
         alt="A guest lining up a drive in a private TrackMan bay at Chip Shots"
-        reels={[reel.golf2, reel.golf, reel.food]}
+        shot={shot.play}
         position="50% 55%"
         actions={
           <>
