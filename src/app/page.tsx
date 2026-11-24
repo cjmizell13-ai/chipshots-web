@@ -58,8 +58,8 @@ const reels = [
   {
     src: "/videos/home/golf.mp4",
     poster: "/videos/home/golf.jpg",
-    label: "Guests swinging in a TrackMan bay",
-    title: "Play the world’s great courses",
+    label: "Guests swinging in a TrackMan bay and a shot landing on the course",
+    title: "Play the world\u2019s great courses",
     sub: "500+ courses on 5 TrackMan bays",
   },
   {
@@ -72,9 +72,23 @@ const reels = [
   {
     src: "/videos/home/bar.mp4",
     poster: "/videos/home/bar.jpg",
-    label: "An espresso martini and a table toasting",
+    label: "A martini pour, a citrus cocktail and an espresso martini",
     title: "Cocktails, wine & beer",
-    sub: "Happy hour Mon–Fri, 3–6 PM",
+    sub: "A full bar, open every day",
+  },
+  {
+    src: "/videos/home/wings.mp4",
+    poster: "/videos/home/wings.jpg",
+    label: "Wings tossed in sauce and plated",
+    title: "Wings & shareables",
+    sub: "Happy hour Mon\u2013Fri, 3\u20136 PM",
+  },
+  {
+    src: "/videos/home/room.mp4",
+    poster: "/videos/home/room.jpg",
+    label: "The dining room and a table raising a toast",
+    title: "Your new local in Henderson",
+    sub: "Golf, food & drinks",
   },
 ];
 
@@ -125,7 +139,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-black via-black/85 to-black/40 lg:block" aria-hidden />
 
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-14 px-5 pb-10 pt-44 sm:px-8 lg:grid-cols-[1.3fr_0.7fr] lg:pb-14 lg:pt-36">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-14 px-5 pb-10 pt-44 sm:px-8 lg:grid-cols-[minmax(0,40rem)_auto] lg:justify-center lg:gap-20 lg:pb-14 lg:pt-36 xl:gap-28">
           <div className="text-center lg:text-left">
             <Reveal>
               <p className="reel-sub text-gold-soft">
@@ -133,8 +147,10 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 className="font-display mt-6 text-[2.7rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-6xl xl:text-7xl">
+              <h1 className="font-display mt-6 text-[2.5rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-6xl xl:text-[4.25rem]">
                 Henderson&rsquo;s
+                <br />
+                indoor
                 <br />
                 <span className="text-gold-soft">golf club.</span>
               </h1>
@@ -178,7 +194,7 @@ export default function Home() {
           <Reveal delay={0.12} className="hidden lg:block">
             <ReelSequence
               shots={reels}
-              className="relative ml-auto aspect-[9/16] w-full max-w-[min(24rem,calc((100svh-11rem)*0.5625))] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)] ring-1 ring-cream/10"
+              className="relative aspect-[9/16] w-[min(25rem,calc((100svh-10rem)*0.5625))] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)] ring-1 ring-cream/10"
             />
           </Reveal>
         </div>
