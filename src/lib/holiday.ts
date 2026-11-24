@@ -50,3 +50,33 @@ export const holidayDeals: HolidayDeal[] = [
     until: "2026-12-24",
   },
 ];
+
+// Top-of-site strip, above the header. Holiday deals only; each entry hides
+// itself after its `until` date and the strip disappears after the last one.
+export const holidayBanners: {
+  code?: string;
+  message: string;
+  cta: string;
+  href: string;
+  until: string;
+}[] = [
+  {
+    code: "BLACKFRIDAY",
+    message: "Black Friday sale: your first month of membership is $99, through Dec 4",
+    cta: "Join for $99",
+    href: business.membershipJoin,
+    until: "2026-12-04",
+  },
+  {
+    message: "Gift cards: a $20 bonus for every $100, for dinner, drinks & golf. Through Dec 24",
+    cta: "Buy gift cards",
+    href: business.giftCards,
+    until: "2026-12-24",
+  },
+  {
+    message: "Annual membership: 13 months for the price of 12, just $184/month. Through Dec 31",
+    cta: "See the deal",
+    href: business.membershipJoin,
+    until: "2026-12-31",
+  },
+];

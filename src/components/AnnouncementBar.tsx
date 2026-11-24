@@ -1,27 +1,29 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { promoBanners, promoActive } from "@/lib/site";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { promoActive } from "@/lib/site";
+import { holidayBanners } from "@/lib/holiday";
 import { Icon } from "@/components/ui/icons";
 
-/** Slim, always-visible promo strip pinned above the header. Rotates promos. */
-export default function AnnouncementBar() {
-  const [index, setIndex] = useState(0);
-  // SSR renders the full list; expired promos drop after mount so the
-  // static HTML never mismatches hydration.
-  const [banners, setBanners] = useState(promoBanners);
+/** Nothing to subscribe to — the date is only read once, on mount. */
+const noSubscribe = () => () => {};
+const serverSnapshot = () => holidayBanners;
+let clientCache: typeof holidayBanners | null = null;
+const clientSnapshot = () =>
+  (clientCache ??= holidayBanners.filter((b) => promoActive(b.until)));
 
-  useEffect(() => {
-    setBanners(promoBanners.filter((b) => promoActive(b.until)));
-  }, []);
+/**
+ * Slim strip pinned above the header that rotates the holiday deals. The
+ * server renders every deal (matching the static HTML); in the browser,
+ * expired deals drop out and the strip disappears after the last one.
+ */
+export default function AnnouncementBar() {
+  const banners = useSyncExternalStore(noSubscribe, clientSnapshot, serverSnapshot);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     if (banners.length < 2) return;
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % banners.length),
-      5000,
-    );
+    const id = setInterval(() => setIndex((i) => (i + 1) % banners.length), 5000);
     return () => clearInterval(id);
   }, [banners.length]);
 
@@ -29,8 +31,10 @@ export default function AnnouncementBar() {
   const promo = banners[index % banners.length];
 
   return (
-    <Link
+    <a
       href={promo.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group flex w-full items-center justify-center gap-2 bg-gold px-4 py-2 text-center text-xs font-medium text-green-deep transition-colors hover:bg-gold-soft sm:text-sm"
     >
       {promo.code && (
@@ -39,10 +43,10 @@ export default function AnnouncementBar() {
         </span>
       )}
       <span>{promo.message}</span>
-      <span className="inline-flex items-center gap-1 font-semibold underline-offset-2 group-hover:underline">
+      <span className="inline-flex shrink-0 items-center gap-1 font-semibold underline-offset-2 group-hover:underline">
         {promo.cta}
         <Icon.arrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
       </span>
-    </Link>
+    </a>
   );
 }
