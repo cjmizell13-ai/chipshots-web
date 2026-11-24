@@ -128,6 +128,19 @@ export default function Memberships() {
               Annual tiers are billed once, up front, and cost less over the
               year.
             </p>
+            <p className="mt-3 text-sm text-cream/65">
+              <span className="font-medium text-cream">Referred by a member?</span>{" "}
+              <a
+                href="https://form.jotform.com/263274857762066"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold-soft underline underline-offset-4 hover:text-gold"
+              >
+                Tell us who sent you
+              </a>{" "}
+              after you join, and we&rsquo;ll thank them with a $50 food and
+              beverage credit.
+            </p>
           </Reveal>
         </div>
       </section>
