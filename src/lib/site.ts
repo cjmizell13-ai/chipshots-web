@@ -7,7 +7,7 @@
 export const business = {
   name: "Chip Shots Golf Club",
   shortName: "Chip Shots",
-  tagline: "Golf • Food • Drinks",
+  tagline: "Restaurant · Bar · Golf Lounge",
   address: {
     street: "1473 E Lake Mead Pkwy, Suite 110",
     city: "Henderson",
@@ -159,30 +159,30 @@ export const nav: NavItem[] = [
 // -----------------------------------------------------------------------------
 export const img = {
   // Simulator bays — the strongest, most cinematic shots up front
-  heroBay: "/images/bay-coastal-cinematic.jpg", // dark, dramatic — the hero
-  bayCinematic: "/images/hero-bay-coastal.jpg", // bright bay + couch
-  bayMoody: "/images/bay-coastal-moody.jpg", // two club chairs, moody
-  bayLounge: "/images/bay-lounge-chairs.jpg", // lounge couch, low light
-  bayLoveseat: "/images/bay-lounge-chairs.jpg", // membership lounge feel
-  bayDesertData: "/images/bay-desert-data.jpg", // TrackMan shot data overlay
-  bayClubs: "/images/hero-bay-coastal.jpg", // gallery filler (bright bay)
+  heroBay: "/images/hq-bay-hero.jpg", // dark, dramatic — the hero
+  bayCinematic: "/images/hq-bay-couch.jpg", // bright bay + couch
+  bayMoody: "/images/hq-bay-evening.jpg", // two club chairs, moody
+  bayLounge: "/images/hq-bay-lounge.jpg", // lounge couch, low light
+  bayLoveseat: "/images/hq-bay-lounge.jpg", // membership lounge feel
+  bayDesertData: "/images/hq-trackman-data.jpg", // TrackMan shot data overlay
+  bayClubs: "/images/hq-bay-couch.jpg", // gallery filler (bright bay)
   bayRoomWide: "/images/bay-room-wide.jpg", // TrackMan activity menu
   trackmanActivities: "/images/trackman-competitions.jpg", // competitions screen
   trackmanCompetitions: "/images/trackman-competitions.jpg",
 
   // Food — real plates
   foodCheesesteak: "/images/cocktail-amber.jpg", // ACTUAL cheesesteak + pretzels
-  foodWings: "/images/food-wings.jpg", // ACTUAL wings
-  foodBurger: "/images/food-burger.jpg", // ACTUAL bacon cheeseburger + fries
+  foodWings: "/images/hq-food-wings.jpg", // ACTUAL wings
+  foodBurger: "/images/hq-food-burger.jpg", // ACTUAL bacon cheeseburger + fries
 
   // Drinks — real cocktails
-  cocktailRed: "/images/cocktail-red.jpg",
-  cocktailAmber: "/images/dining-room.jpg", // ACTUAL amber cocktail
-  cocktailsHighball: "/images/cocktails-highball.jpg",
+  cocktailRed: "/images/hq-cocktail-red.jpg",
+  cocktailAmber: "/images/hq-cocktail-amber.jpg", // ACTUAL amber cocktail
+  cocktailsHighball: "/images/hq-cocktail-martini.jpg",
 
   // Venue
   diningRoom: "/images/food-cheesesteak.jpg", // ACTUAL dining room
-  exterior: "/images/exterior-storefront-2.jpg", // angled, sunlit storefront
+  exterior: "/images/hq-exterior.jpg", // angled, sunlit storefront
   exterior2: "/images/exterior-storefront.jpg",
   entry: "/images/entry-vestibule.jpg",
   logo: "/images/logo-cs.png",
@@ -325,7 +325,9 @@ export type Membership = {
 };
 
 export const memberships: Membership[] = [
-  { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true, joinUrl: business.membershipJoin },
+  // Holiday label through Dec 31, 2026. On Jan 1 switch back to:
+  // { tier: "Unlimited Annual", price: "$2,390", per: "/yr", note: "Unlimited bay time, billed annually.", featured: true, joinUrl: business.membershipJoin },
+  { tier: "Holiday Annual", price: "$2,390", per: "/13 mo", note: "Unlimited bay time, 13 months for the price of 12. Through Dec 31.", featured: true, joinUrl: business.membershipJoin },
   { tier: "Unlimited Monthly", price: "$239", per: "/mo", note: "Unlimited bay time, billed monthly.", joinUrl: business.membershipJoin },
   { tier: "Youth", price: "$159", per: "/mo", note: "For players 18 and under." },
   { tier: "Night-Only", price: "$119", per: "/mo", note: "After-hours bay access: Sun–Thu 10 PM–6 AM, Fri–Sat midnight–8 AM.", joinUrl: business.membershipJoin },
@@ -573,11 +575,11 @@ export const upcomingEvents: ScheduledEvent[] = [
   },
   {
     date: "2026-11-26",
-    title: "Thanksgiving Day Buffet",
-    time: "11:00 AM–5:00 PM",
-    desc: "Turkey, ham, all the sides and dessert, with football on the screens. Adults $39 (bottomless $54), kids 6–12 $19, 5 and under free, plus tax and 18% gratuity. Seatings at 11 AM, 1 PM and 3 PM. Prepaid reservations are encouraged, and walk-ins are welcome as space allows.",
-    signup: "https://pci.jotform.com/form/263094656829168",
-    signupLabel: "Buy tickets",
+    title: "Thanksgiving at Chip Shots",
+    time: "Seatings at 1:00 and 3:00 PM",
+    desc: "Turkey, ham, mashed potatoes and gravy, stuffing, sweet potato and green bean casseroles, mac and cheese, cranberry sauce, rolls and dessert. Buffet: adults $39, kids 6–12 $19, 5 and under free. Or a $20 dinner plate: turkey or ham with two sides and a roll. The regular menu isn't available that day, but the bar is open. Reservations recommended.",
+    signup: "https://form.jotform.com/263245964843164",
+    signupLabel: "Reserve a table",
   },
   {
     date: "2026-11-28",
@@ -586,6 +588,12 @@ export const upcomingEvents: ScheduledEvent[] = [
     desc: "Local vendors with gifts and handmade items, with the kitchen and bar open while you shop.",
     signup: "https://form.jotform.com/262980906700056",
     signupLabel: "Vendor interest form",
+  },
+  {
+    date: "2026-12-02",
+    title: "Music Bingo",
+    time: "6:30–8:00 PM",
+    desc: "The first of our weekly Wednesday music bingo nights. Bingo played with songs you know in place of numbers. Free to play.",
   },
   {
     date: "2026-12-06",
@@ -839,8 +847,7 @@ export const spirits: SpiritGroup[] = [
 // -----------------------------------------------------------------------------
 export const happyHour = {
   window: "Mon–Fri · 3–6 PM",
-  lateWindow: "The Night Cap · Sun–Thu · 8 PM–close",
-  note: "Happy-hour pricing holds at the bar, the tables and the bays. It returns for The Night Cap, Sunday to Thursday from 8 PM to close.",
+  note: "Happy-hour pricing runs at the bar, at the tables and in the bays.",
   drinks: [
     { name: "Domestic Drafts", price: "$5", desc: "Coors Light · Modelo · Cali Squeeze" },
     { name: "Well Drinks", price: "$6", desc: "Vodka · gin · tequila · rum · bourbon" },
@@ -956,7 +963,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you serve food and drinks?",
-    a: "A full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and cocktails, all served at the bay. Happy hour runs Monday to Friday, 3 to 6 PM, and returns for The Night Cap, Sunday to Thursday from 8 PM to close. Both include the bays.",
+    a: "A full kitchen and a full bar. Burgers, wings, shareables, sandwiches, shakes, craft drafts, wine and cocktails, all served at the bay. Happy hour runs Monday to Friday, 3 to 6 PM, and the prices hold in the bays too.",
   },
   {
     q: "Is Chip Shots family-friendly? Can kids play?",
@@ -972,7 +979,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Where are you located?",
-    a: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015, just off Lake Mead Parkway.",
+    a: "1473 E Lake Mead Pkwy, Suite 110, Henderson, NV 89015, at Monument at Calico Ridge, the plaza with the clock tower, just off Lake Mead Parkway.",
   },
   {
     q: "Do you host parties and corporate events?",

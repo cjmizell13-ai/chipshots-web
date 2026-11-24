@@ -429,9 +429,6 @@ export default function FoodDrink() {
                 <span className="text-gold-soft">three to six.</span>
               </h2>
               <p className="mt-6 max-w-md text-cream/70">{happyHour.note}</p>
-              <p className="mt-8 border-y border-cream/12 py-4 text-[0.7rem] uppercase tracking-[0.2em] text-cream/70">
-                {happyHour.lateWindow}
-              </p>
               <Link
                 href="/blog/happy-hour-henderson-guide"
                 className="text-cta mt-8 text-cream"

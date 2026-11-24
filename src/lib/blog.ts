@@ -31,6 +31,179 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "things-to-do-henderson-winter-nights",
+    title: "Things to Do in Henderson After Dark This Winter",
+    excerpt:
+      "The sun goes down before 5 from now until late January. Here's how to spend a Henderson winter evening: a round of golf indoors, dinner at the bay and a weekly night to look forward to.",
+    date: "2026-11-22",
+    readMinutes: 4,
+    category: "Henderson Guide",
+    image: img.bayMoody,
+    body: [
+      {
+        type: "p",
+        text: "From the clock change in November until late January, it's dark in Henderson before most people leave work. The courses close early, the patios get cold, and the evening can shrink to the couch. It doesn't have to. Here are a few ways to get more out of a winter night in town, starting with the one we know best.",
+      },
+      { type: "h2", text: "Play a round after work" },
+      {
+        type: "p",
+        text: "Outdoor tee times end at dusk, but a TrackMan bay doesn't care what time the sun sets. Chip Shots has five private bays with 500+ real courses, so you can play Pebble Beach at 7 PM in December in a T-shirt. Clubs are provided, up to four people share a bay, and you pay by the hour, not per person. Weeknights after 9 PM are non-peak.",
+      },
+      { type: "cta", label: "Book a bay", href: business.booking, external: true },
+      { type: "h2", text: "Make dinner the main event" },
+      {
+        type: "p",
+        text: "Our kitchen serves until close, and everything comes to your bay or your table: burgers, wings, a Philly cheesesteak, shareables. Each weeknight has its own feature. Monday is the prime rib dip, Tuesday is $4 tacos, Wednesday is wings buy one get one half off, Thursday is $3 off burgers and Friday is fish and chips.",
+      },
+      { type: "cta", label: "See the menu", href: "/food-drink" },
+      { type: "h2", text: "Find a weekly night" },
+      {
+        type: "ul",
+        items: [
+          "Trivia every Tuesday, 6:30 to 8 PM, free to play",
+          "Music bingo every Wednesday starting December 2, 6:30 to 8 PM, free to play",
+        ],
+      },
+      {
+        type: "p",
+        text: "We're at 1473 E Lake Mead Pkwy, Suite 110, open every night until 10. Winter evenings are long. Spend one with us.",
+      },
+      { type: "cta", label: "See what's on", href: "/events" },
+    ],
+  },
+  {
+    slug: "holiday-gift-ideas-henderson-golfer",
+    title: "Holiday Gift Ideas for the Golfer in Your Life (Who Already Has Every Gadget)",
+    excerpt:
+      "Skip the novelty tees. A Chip Shots gift card or Range Card gives them golf, dinner and drinks in Henderson, delivered by email in about a minute.",
+    date: "2026-11-21",
+    readMinutes: 3,
+    category: "Gift Guide",
+    image: img.bayCinematic,
+    body: [
+      {
+        type: "p",
+        text: "Golfers are hard to shop for. They already own the rangefinder, the training aid and three dozen sleeves of balls they'll lose in the desert. What most of them don't have enough of in December is time to play, because the days are short and the courses go dark early. That's the gift.",
+      },
+      { type: "h2", text: "A gift card for golf, food and drinks" },
+      {
+        type: "p",
+        text: "A Chip Shots eGift card works for bay time, the kitchen and the bar, so it suits the serious golfer and the person who mostly comes for the burgers. Pick any amount, check out through Toast, and it lands in their inbox right away. Print it, forward it, or tuck it into a card.",
+      },
+      { type: "cta", label: "Buy a gift card", href: business.giftCards, external: true },
+      { type: "h2", text: "A Range Card for the regular" },
+      {
+        type: "p",
+        text: "For someone who'll actually use it every week, the Range Card is $350 and holds $400 of bay credit. There's no membership to sign up for, and the credit doesn't expire. It's a good fit for the golfer who wants to keep their swing going through winter.",
+      },
+      { type: "cta", label: "Get a Range Card", href: "/golf-booking" },
+      { type: "h2", text: "A membership for the one who'd live here" },
+      {
+        type: "p",
+        text: "If they'd play three times a week given the chance, an Unlimited membership at $239 a month covers all of their bay time plus 10% off food and drink. We also have a youth membership for junior golfers.",
+      },
+      { type: "cta", label: "Compare memberships", href: "/memberships" },
+      { type: "h2", text: "Who it works for" },
+      {
+        type: "ul",
+        items: [
+          "The golfer who has everything",
+          "A coworker or client you want to thank",
+          "Parents who need a night out",
+          "The friend who's always wanted to try golf and never has",
+        ],
+      },
+      {
+        type: "p",
+        text: "Gift cards are delivered instantly, so it's also the right answer on December 24.",
+      },
+    ],
+  },
+  {
+    slug: "prime-rib-brunch-henderson",
+    title: "Prime Rib Brunch in Henderson: First and Third Sundays",
+    excerpt:
+      "A brunch buffet with a prime rib carving station, breakfast favorites and the morning games on every screen. Adults $35, kids 6–12 $17, bottomless mimosas $15. Next up: December 6 and 20.",
+    date: "2026-11-19",
+    readMinutes: 3,
+    category: "Food & Drink",
+    image: img.brunchPrimeRib,
+    body: [
+      {
+        type: "p",
+        text: "Twice a month, Chip Shots turns into a Sunday brunch spot. On the first and third Sundays from 10 AM to 1 PM we set out a buffet with a prime rib carving station at the center, plus breakfast favorites and more. The full bar is open and the morning games are on.",
+      },
+      { type: "h2", text: "Prices" },
+      {
+        type: "ul",
+        items: [
+          "Adults $35",
+          "Kids 6 to 12, $17",
+          "Kids 5 and under eat free",
+          "Bottomless mimosas and Bloody Marys, $15",
+        ],
+      },
+      { type: "h2", text: "Upcoming dates" },
+      {
+        type: "p",
+        text: "The next brunches are Sunday, December 6 and Sunday, December 20. The December 20 brunch lands the weekend before Christmas, which makes it an easy way to get family together without anyone hosting.",
+      },
+      { type: "cta", label: "Brunch details", href: "/brunch" },
+      { type: "h2", text: "Make a morning of it" },
+      {
+        type: "p",
+        text: "Bays are open during brunch, so the golfers in the group can play a few holes before or after they eat. Sunday mornings are peak bay time, so book ahead if you want one.",
+      },
+      { type: "cta", label: "Book a bay", href: business.booking, external: true },
+      {
+        type: "p",
+        text: "We're at 1473 E Lake Mead Pkwy, Suite 110 in Henderson.",
+      },
+    ],
+  },
+  {
+    slug: "where-to-watch-football-henderson",
+    title: "Where to Watch Football in Henderson: Sunday Ticket, College Saturdays and a TV in Every Bay",
+    excerpt:
+      "NFL Sunday Ticket on Sundays, college football on Saturdays, screens over the bar and a TV in every golf bay. Here's how game days work at Chip Shots.",
+    date: "2026-11-18",
+    readMinutes: 3,
+    category: "Henderson Guide",
+    image: img.clubRoom,
+    body: [
+      {
+        type: "p",
+        text: "Football season in Henderson needs a home base. Chip Shots has NFL Sunday Ticket on Sundays and college football on Saturdays, on the screens over the bar and on the TV in every one of our five golf bays.",
+      },
+      { type: "h2", text: "Watch from a bay" },
+      {
+        type: "p",
+        text: "This is what makes game day here different. Book a bay, put your game on the bay's TV and play a round between drives. Up to four people share a bay, food and drinks come to you, and nobody has to fight for a spot at the bar.",
+      },
+      { type: "cta", label: "Book a bay for the game", href: business.booking, external: true },
+      { type: "h2", text: "Or grab a seat at the bar" },
+      {
+        type: "p",
+        text: "Walk-ins are welcome at the bar and in the dining room. The kitchen has wings, burgers, a Philly cheesesteak and shareables built for a group, and the bar pours cold drafts and cocktails.",
+      },
+      { type: "h2", text: "Game day, by day" },
+      {
+        type: "ul",
+        items: [
+          "Saturday: college football all day, doors at 10 AM",
+          "Sunday: NFL Sunday Ticket from 10 AM, plus prime rib brunch on the first and third Sundays",
+          "Monday: the prime rib dip special for Monday Night Football",
+          "Weekdays: happy hour from 3 to 6 PM, Monday through Friday",
+        ],
+      },
+      {
+        type: "p",
+        text: "We're at 1473 E Lake Mead Pkwy, Suite 110, minutes from Water Street. Bays fill up for the big games, so book ahead.",
+      },
+      { type: "cta", label: "See the menu", href: "/food-drink" },
+    ],
+  },
+  {
     slug: "topgolf-alternative-henderson",
     title: "Searching for Topgolf Near Henderson? There's a Closer Way to Play",
     excerpt:

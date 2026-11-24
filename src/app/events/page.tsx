@@ -57,8 +57,8 @@ export const metadata: Metadata = {
 // dated events. Times come from the same data the other pages use.
 const everyWeek: [string, string][] = [
   ["Trivia", `${trivia.day}s · ${trivia.time.replace(/\s*–\s*/, "–")}`],
+  ["Music bingo", "Wednesdays from Dec 2 · 6:30–8 PM"],
   ["Happy hour", happyHour.window],
-  ["The Night Cap", happyHour.lateWindow.split(" · ").slice(1).join(" · ")],
   ["Prime rib brunch", brunch.when],
   ["College football", "Saturdays"],
   ["NFL Sunday Ticket", "Sundays"],
@@ -74,7 +74,7 @@ export default function Events() {
       <PlateHero
         kicker="Events · Public and private"
         title="What's on at the club."
-        intro="Trivia on Tuesdays, prime rib brunch on the first and third Sundays, and a handful of evenings in between. Private parties are quoted to fit."
+        intro="Trivia on Tuesdays, music bingo on Wednesdays from December 2, prime rib brunch on the first and third Sundays, and a handful of evenings in between. Private parties are quoted to fit."
         image={img.clubDining}
         alt="A server taking an order at a full table in the dining room at Chip Shots"
         position="50% 40%"

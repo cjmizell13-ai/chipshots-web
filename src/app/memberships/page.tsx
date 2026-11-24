@@ -6,6 +6,7 @@ import MembershipTiers from "@/components/MembershipTiers";
 import MembershipMath from "@/components/MembershipMath";
 import BookButton from "@/components/BookButton";
 import PixelEvent from "@/components/PixelEvent";
+import HolidayDeals from "@/components/HolidayDeals";
 import { business, img, memberBenefits } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,6 +26,9 @@ export default function Memberships() {
         intro="The club is open to everyone. Members have bay time included, first call on booking and extra hours at $30."
         image={img.bayLoveseat}
       />
+
+      {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
+      <HolidayDeals />
 
       {/* ============================================== BENEFITS ===== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">

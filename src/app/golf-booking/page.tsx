@@ -8,6 +8,7 @@ import AttributedLink from "@/components/AttributedLink";
 import BookButton from "@/components/BookButton";
 import Gallery from "@/components/Gallery";
 import YgbFrame from "@/components/YgbFrame";
+import HolidayDeals from "@/components/HolidayDeals";
 import { business, img, golf, bayWeek, rangeCard, faqs } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -86,6 +87,9 @@ export default function GolfBooking() {
           { label: "Players per bay", value: `Up to ${golf.players}` },
         ]}
       />
+
+      {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
+      <HolidayDeals variant="booking" />
 
       {/* =================================================== RATES ===== */}
       <section

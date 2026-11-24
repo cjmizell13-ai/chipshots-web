@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/ui/button";
 import BookButton from "@/components/BookButton";
 import ReserveButton from "@/components/ReserveButton";
 import UntilDate from "@/components/ui/UntilDate";
+import HolidayDeals from "@/components/HolidayDeals";
 import {
   business,
   img,
@@ -134,6 +135,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============================ HOLIDAY DEALS (auto-expires) ===== */}
+      <HolidayDeals />
+
       {/* ============================================ UNDER ONE ROOF ===== */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
         <Reveal>
@@ -147,7 +151,7 @@ export default function Home() {
         <Stagger className="mt-16 grid gap-12 md:grid-cols-3 md:gap-9">
           {rooms.map((r) => (
             <StaggerItem key={r.title}>
-              <Link href={r.href} className="group block">
+              <div className="group relative">
                 <div className="relative aspect-[3/2] overflow-hidden bg-green-deep">
                   <Image
                     src={r.image}
@@ -164,10 +168,13 @@ export default function Home() {
                   {r.title}
                 </h3>
                 <p className="mt-4 text-ink/75">{r.body}</p>
-                <span className="text-cta mt-6 text-ink">
+                <Link
+                  href={r.href}
+                  className="text-cta mt-6 text-ink after:absolute after:inset-0 after:content-['']"
+                >
                   {r.cta} <span aria-hidden>→</span>
-                </span>
-              </Link>
+                </Link>
+              </div>
             </StaggerItem>
           ))}
         </Stagger>
@@ -425,8 +432,8 @@ export default function Home() {
               Where <span className="text-gold-soft">to find us.</span>
             </h2>
             <p className="mt-6 max-w-md text-cream/70">
-              Set back from Lake Mead Parkway, in the plaza with the clock
-              tower. Look for the striped awnings.
+              At Monument at Calico Ridge, the plaza with the clock tower, set
+              back from Lake Mead Parkway. Look for the striped awnings.
             </p>
             <address className="mt-8 not-italic text-cream/85">
               {business.address.street}
