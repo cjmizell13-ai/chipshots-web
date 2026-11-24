@@ -11,11 +11,6 @@ const nextConfig: NextConfig = {
       // Old menu addresses still listed on Google, Bing and other directories.
       { source: "/food", destination: "/food-drink", permanent: true },
       { source: "/menu", destination: "/food-drink", permanent: true },
-      // Brunch ended in November. Old Google results and social posts still
-      // link here, so send them to the menu rather than a "page not found".
-      // Permanent (308) so search engines move on to /food-drink. Query
-      // strings (utm tags and the like) pass through to the destination.
-      { source: "/brunch", destination: "/food-drink", permanent: true },
       { source: "/blog/join-golf-league-henderson-first-timer", destination: "/blog", permanent: true },
 
       // Short addresses people type, say out loud or still have in old links.

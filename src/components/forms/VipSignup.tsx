@@ -29,7 +29,8 @@ export default function VipSignup() {
               The club letter.
             </h2>
             <p className="mt-4 max-w-md leading-relaxed text-cream/75">
-              Event dates and menu news, a couple of times a month.
+              Event dates, brunch Sundays and menu news, a couple of times a
+              month.
             </p>
           </div>
 

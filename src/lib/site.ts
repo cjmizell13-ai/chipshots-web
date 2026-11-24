@@ -198,8 +198,8 @@ export const img = {
   clubGuests: "/images/club-guests.jpg",
   clubDusk: "/images/club-dusk.jpg", // storefront at dusk
 
-  // Phone photos taken at the bar, May–Sept 2026. These filenames say what is
-  // actually pictured.
+  // Phone photos taken at the bar and the brunch line, May–Sept 2026. These
+  // filenames say what is actually pictured.
   dineBurgerBar: "/images/dine-burger-bar.jpg", // bacon cheeseburger + fries (wide)
   dineWings: "/images/dine-wings.jpg", // bone-in wings and a draft
   dineTotchos: "/images/dine-totchos.jpg",
@@ -208,6 +208,7 @@ export const img = {
   barEspressoMartini: "/images/bar-espresso-martini.jpg",
   barMule: "/images/bar-mule.jpg",
   barHighball: "/images/bar-highball.jpg",
+  brunchPrimeRib: "/images/brunch-prime-rib.jpg", // carving station at brunch
   bayCoastalChairs: "/images/bay-coastal-chairs.jpg", // sharp bay shot, two club chairs
 };
 
@@ -508,6 +509,11 @@ export type ScheduledEvent = {
   signupLabel?: string;
 };
 const triviaRsvp = "https://form.jotform.com/262977444520059";
+// Reservation form for the Nov 15 brunch (name, contact, party size, seating), so
+// the kitchen has a head count. The Facebook Event links to the same form.
+const brunchNov15 = "https://form.jotform.com/263127147256154";
+const brunchDesc =
+  "Brunch buffet with a prime rib carving station, breakfast favorites and more. Adults $35, kids 6–12 $17, 5 and under free. Bottomless mimosas and Bloody Marys $15.";
 export const upcomingEventsIntro =
   "Most nights you can just walk in. For the ones that fill up, reserve a table or get a ticket from the link.";
 export const upcomingEvents: ScheduledEvent[] = [
@@ -532,6 +538,14 @@ export const upcomingEvents: ScheduledEvent[] = [
     desc: "A guided tasting of four wines with paired small bites. $35 per person, 21 and over. Registration is required.",
     signup: "https://pci.jotform.com/form/262979400496166",
     signupLabel: "Register",
+  },
+  {
+    date: "2026-11-15",
+    title: "Sunday Prime Rib Brunch",
+    time: "10:00 AM–1:00 PM",
+    desc: brunchDesc,
+    signup: brunchNov15,
+    signupLabel: "Reserve a table",
   },
   {
     date: "2026-11-17",
@@ -572,6 +586,18 @@ export const upcomingEvents: ScheduledEvent[] = [
     desc: "Local vendors with gifts and handmade items, with the kitchen and bar open while you shop.",
     signup: "https://form.jotform.com/262980906700056",
     signupLabel: "Vendor interest form",
+  },
+  {
+    date: "2026-12-06",
+    title: "Sunday Prime Rib Brunch",
+    time: "10:00 AM–1:00 PM",
+    desc: brunchDesc,
+  },
+  {
+    date: "2026-12-20",
+    title: "Sunday Prime Rib Brunch",
+    time: "10:00 AM–1:00 PM",
+    desc: brunchDesc,
   },
 ];
 
@@ -628,6 +654,45 @@ export const weekFeatures: WeekFeature[] = [
     day: "Sunday",
     headline: "NFL Sunday Ticket",
     detail: "On the screens over the bar and the TV in every bay",
+    also: "Prime rib brunch on the 1st & 3rd Sundays",
+  },
+];
+
+// Sunday brunch runs the first and third Sundays of each month.
+export const brunch = {
+  title: "Prime rib brunch",
+  when: "1st & 3rd Sundays · 10 AM–1 PM",
+  prices: "Adults $35 · Kids 6–12 $17 · 5 & under free",
+  drinks: "Bottomless mimosas & Bloody Marys $15",
+};
+
+// Brunch questions, answered in plain sentences. Rendered on /brunch and sent
+// as FAQPage structured data, so Google and AI assistants can quote them when
+// someone asks about brunch in Henderson.
+export const brunchFaqs: Faq[] = [
+  {
+    q: "When is brunch at Chip Shots?",
+    a: "Prime rib brunch runs on the first and third Sundays of every month, 10 AM to 1 PM, at Chip Shots on East Lake Mead Parkway in Henderson. The upcoming dates are listed on this page.",
+  },
+  {
+    q: "How much is brunch?",
+    a: "The brunch buffet is $35 for adults and $17 for kids 6 to 12. Kids 5 and under eat free. Bottomless mimosas and Bloody Marys are $15.",
+  },
+  {
+    q: "What is on the brunch buffet?",
+    a: "A prime rib carving station, breakfast favorites and more, served as a buffet. The full bar is open too.",
+  },
+  {
+    q: "Do I need a reservation for brunch?",
+    a: "Walk-ins are welcome. A reservation holds your table and tells the kitchen how many to carve for, so we recommend reserving, especially for larger groups.",
+  },
+  {
+    q: "Are the football games on during brunch?",
+    a: "Yes. NFL Sunday Ticket plays on the screens over the bar and on the TV in every golf bay, so you can catch the morning games over brunch.",
+  },
+  {
+    q: "Is brunch good for families?",
+    a: "Yes. Kids 6 to 12 are $17 and kids 5 and under eat free, and after brunch you can book one of our five TrackMan golf bays by the hour.",
   },
 ];
 
@@ -869,6 +934,10 @@ export const eventTypes: { title: string; desc: string; href?: string }[] = [
 export type Faq = { q: string; a: string };
 
 export const faqs: Faq[] = [
+  {
+    q: "Do you serve brunch?",
+    a: "Yes. Prime rib brunch runs on the first and third Sundays of every month, 10 AM to 1 PM: a buffet with a prime rib carving station and breakfast favorites. Adults $35, kids 6 to 12 $17, kids 5 and under free, and bottomless mimosas and Bloody Marys for $15. Walk-ins are welcome, and a reservation holds your table.",
+  },
   {
     q: "Do I need to know how to golf?",
     a: "No. TrackMan reads your swing, keeps score and handicaps the games, so beginners and regular golfers can play in the same group. Clubs are provided.",

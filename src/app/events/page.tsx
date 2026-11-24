@@ -10,6 +10,7 @@ import UntilDate from "@/components/ui/UntilDate";
 import {
   business,
   img,
+  brunch,
   happyHour,
   trivia,
   eventSpaces,
@@ -48,7 +49,7 @@ function byMonth(events: ScheduledEvent[]) {
 export const metadata: Metadata = {
   title: "Events & Parties",
   description:
-    "Trivia, tastings and holiday nights at Chip Shots Golf Club in Henderson, NV, plus private events from one bay to a full buyout.",
+    "Trivia, prime rib brunch, tastings and holiday nights at Chip Shots Golf Club in Henderson, NV, plus private events from one bay to a full buyout.",
   alternates: { canonical: "/events" },
 };
 
@@ -58,6 +59,7 @@ const everyWeek: [string, string][] = [
   ["Trivia", `${trivia.day}s · ${trivia.time.replace(/\s*–\s*/, "–")}`],
   ["Happy hour", happyHour.window],
   ["The Night Cap", happyHour.lateWindow.split(" · ").slice(1).join(" · ")],
+  ["Prime rib brunch", brunch.when],
   ["College football", "Saturdays"],
   ["NFL Sunday Ticket", "Sundays"],
 ];
@@ -72,7 +74,7 @@ export default function Events() {
       <PlateHero
         kicker="Events · Public and private"
         title="What's on at the club."
-        intro="Trivia on Tuesdays and a handful of evenings in between. Private parties are quoted to fit."
+        intro="Trivia on Tuesdays, prime rib brunch on the first and third Sundays, and a handful of evenings in between. Private parties are quoted to fit."
         image={img.clubDining}
         alt="A server taking an order at a full table in the dining room at Chip Shots"
         position="50% 40%"
@@ -88,7 +90,7 @@ export default function Events() {
         }
         facts={[
           { label: "Trivia", value: "Tuesdays, 6:30 PM" },
-          { label: "Happy hour", value: happyHour.window },
+          { label: "Prime rib brunch", value: "1st & 3rd Sundays" },
           { label: "Private events", value: "One bay to the whole building" },
         ]}
       />
@@ -159,7 +161,22 @@ export default function Events() {
           </div>
 
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <p className="eyebrow text-muted">Every week</p>
+            <figure>
+              <div className="relative aspect-[4/3] overflow-hidden bg-green-deep">
+                <Image
+                  src={img.brunchPrimeRib}
+                  alt="Prime rib at the carving station during Sunday brunch at Chip Shots"
+                  fill
+                  sizes="(min-width: 1024px) 336px, 100vw"
+                  className="object-cover"
+                  style={{ objectPosition: "38% 50%" }}
+                />
+              </div>
+              <figcaption className="mt-3 text-[0.65rem] uppercase tracking-[0.2em] text-muted">
+                Sunday brunch · {brunch.prices.split(" · ")[0]}
+              </figcaption>
+            </figure>
+            <p className="eyebrow mt-10 text-muted">Every week</p>
             <dl className="mt-3 border-t border-ink/15">
               {everyWeek.map(([k, v]) => (
                 <div key={k} className="border-b border-ink/15 py-3.5">
