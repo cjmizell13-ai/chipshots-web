@@ -2,7 +2,16 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import ShotHero from "@/components/ui/ShotHero";
 
-export type HeroReel = { src: string; poster: string; label: string; title: string; sub?: string };
+export type HeroReel = {
+  src: string;
+  poster: string;
+  /** Wide cut for desktop. */
+  wideSrc?: string;
+  widePoster?: string;
+  label: string;
+  title: string;
+  sub?: string;
+};
 
 export type HeroFact = { label: string; value: string };
 

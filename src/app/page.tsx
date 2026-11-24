@@ -6,7 +6,7 @@ import BookButton from "@/components/BookButton";
 import ReserveButton from "@/components/ReserveButton";
 import UntilDate from "@/components/ui/UntilDate";
 import HolidayDeals from "@/components/HolidayDeals";
-import { ReelSequence, ReelCaption, ReelShade, ReelEndCard } from "@/components/ui/reel";
+import { ReelVideo, ReelEndCard } from "@/components/ui/reel";
 import {
   business,
   img,
@@ -22,8 +22,6 @@ const rooms = [
   {
     no: "01",
     title: "Dine",
-    caption: "Full kitchen & bar",
-    captionSub: "Lunch & dinner, every day",
     body: "Burgers, ribs, steaks and salads from a full kitchen at lunch and dinner, and prime rib brunch on the first and third Sundays.",
     image: img.clubService,
     alt: "A server carrying plates of nachos and wings through the dining room at Chip Shots",
@@ -33,8 +31,6 @@ const rooms = [
   {
     no: "02",
     title: "Play",
-    caption: "Every shot, measured",
-    captionSub: "5 private TrackMan bays",
     body: `Five private TrackMan bays and ${golf.courses} courses. Clubs are on hand.`,
     image: img.clubGolfer,
     alt: "A guest mid-swing in a private TrackMan simulator bay at Chip Shots",
@@ -44,8 +40,6 @@ const rooms = [
   {
     no: "03",
     title: "Watch",
-    caption: "Every game, every screen",
-    captionSub: "NFL Sunday Ticket",
     body: "Screens over the bar, a TV in every bay and NFL Sunday Ticket. On weekends, breakfast is served from the first kickoff.",
     image: img.clubGuests,
     alt: "Guests at the bar watching a game at Chip Shots",
@@ -54,43 +48,6 @@ const rooms = [
   },
 ];
 
-const reels = [
-  {
-    src: "/videos/home/golf.mp4",
-    poster: "/videos/home/golf.jpg",
-    label: "Guests swinging in a TrackMan bay and a shot landing on the course",
-    title: "Play the world\u2019s great courses",
-    sub: "500+ courses on 5 TrackMan bays",
-  },
-  {
-    src: "/videos/home/food.mp4",
-    poster: "/videos/home/food.jpg",
-    label: "Burgers on the griddle and a finished burger",
-    title: "Burgers, wings & ribs",
-    sub: "Open daily for lunch & dinner",
-  },
-  {
-    src: "/videos/home/bar.mp4",
-    poster: "/videos/home/bar.jpg",
-    label: "A martini pour, a citrus cocktail and an espresso martini",
-    title: "Cocktails, wine & beer",
-    sub: "A full bar, open every day",
-  },
-  {
-    src: "/videos/home/wings.mp4",
-    poster: "/videos/home/wings.jpg",
-    label: "Wings tossed in sauce and plated",
-    title: "Wings & shareables",
-    sub: "Happy hour Mon\u2013Fri, 3\u20136 PM",
-  },
-  {
-    src: "/videos/home/room.mp4",
-    poster: "/videos/home/room.jpg",
-    label: "The dining room and a table raising a toast",
-    title: "Your new local in Henderson",
-    sub: "Golf, food & drinks",
-  },
-];
 
 const occasions = [
   { title: "Holiday parties", href: "/holiday-parties" },
@@ -119,84 +76,75 @@ export default function Home() {
   return (
     <>
       {/* ===================================================== HERO ===== */}
-      {/* One shot at a time, like the reels: golf, then food, then the bar.
-          Full screen on phones; a large reel frame beside the title on desktop. */}
-      <section className="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden bg-black text-cream lg:justify-center">
-        {/* Phone: the edit fills the screen behind the title. */}
-        <ReelSequence
-          shots={reels}
-          className="absolute inset-0 -z-10 lg:hidden"
-          captionClassName="hidden"
-        />
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/70 to-black/10 lg:hidden" aria-hidden />
-        {/* Desktop: soft glow of the first shot behind everything. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={reels[0].poster}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 -z-20 hidden h-full w-full scale-110 object-cover opacity-30 blur-3xl lg:block"
-        />
-        <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-black via-black/85 to-black/40 lg:block" aria-hidden />
+      {/* One smooth loop of the bays, the kitchen and the bar behind the title:
+          a wide cut on desktop, a tall cut on phones. */}
+      <section className="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden bg-black text-cream">
+        <div className="absolute inset-0 -z-10">
+          <ReelVideo
+            src="/videos/hero/tall.mp4"
+            poster="/videos/hero/tall.jpg"
+            label="The bays, the kitchen and the bar at Chip Shots"
+            className="md:hidden"
+          />
+          <ReelVideo
+            src="/videos/hero/wide.mp4"
+            poster="/videos/hero/wide.jpg"
+            label="The bays, the kitchen and the bar at Chip Shots"
+            className="hidden md:block"
+          />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/55 to-black/25" aria-hidden />
+        <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-black/80 via-black/30 to-transparent md:block" aria-hidden />
 
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-14 px-5 pb-10 pt-44 sm:px-8 lg:grid-cols-[minmax(0,40rem)_auto] lg:justify-center lg:gap-20 lg:pb-14 lg:pt-36 xl:gap-28">
-          <div className="text-center lg:text-left">
-            <Reveal>
-              <p className="reel-sub text-gold-soft">
-                Henderson, Nevada · {business.address.street}
-              </p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h1 className="font-display mt-6 text-[2.5rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-6xl xl:text-[4.25rem]">
-                Henderson&rsquo;s
-                <br />
-                indoor
-                <br />
-                <span className="text-gold-soft">golf club.</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mx-auto mt-6 max-w-xl text-lg text-cream/80 lg:mx-0">
-                A restaurant, a bar and five private TrackMan bays on Lake Mead
-                Parkway. Open to everyone, every day.
-              </p>
-            </Reveal>
-            <Reveal delay={0.22}>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                <BookButton variant="gold" size="lg" withArrow />
-                <ReserveButton source="home_hero" variant="ghost-light" size="lg" />
-                <Link href="/food-drink" className="text-cta text-cream">
-                  Menu
-                </Link>
-              </div>
-            </Reveal>
-
-            <dl className="mx-auto mt-12 grid max-w-xl grid-cols-3 border-t border-cream/15 lg:mx-0">
-              {[
-                { k: "Private bays", v: String(golf.bays) },
-                { k: "Rates from", v: `${nonPeak.price}`, u: nonPeak.unit },
-                { k: "Open daily until", v: "10 PM" },
-              ].map((f, i) => (
-                <div
-                  key={f.k}
-                  className={`py-5 ${i > 0 ? "border-l border-cream/15 pl-4 sm:pl-6" : ""}`}
-                >
-                  <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-cream/55 sm:text-[0.7rem]">{f.k}</dt>
-                  <dd className="font-display mt-2 text-2xl font-semibold text-cream sm:text-3xl">
-                    {f.v}
-                    {f.u && <span className="ml-1 text-sm font-light text-cream/60">{f.u}</span>}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          <Reveal delay={0.12} className="hidden lg:block">
-            <ReelSequence
-              shots={reels}
-              className="relative aspect-[9/16] w-[min(25rem,calc((100svh-10rem)*0.5625))] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.9)] ring-1 ring-cream/10"
-            />
+        <div className="mx-auto w-full max-w-7xl px-5 pb-10 pt-44 text-center sm:px-8 md:text-left lg:pb-14">
+          <Reveal>
+            <p className="kicker justify-center text-gold-soft md:justify-start">
+              Henderson, Nevada · {business.address.street}
+            </p>
           </Reveal>
+          <Reveal delay={0.08}>
+            <h1 className="font-display mt-6 text-[2.5rem] font-bold uppercase leading-[1.02] tracking-[0.04em] text-cream sm:text-6xl xl:text-7xl">
+              Henderson&rsquo;s
+              <br />
+              indoor
+              <br />
+              <span className="text-gold-soft">golf club.</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <p className="mx-auto mt-6 max-w-xl text-lg text-cream/85 md:mx-0">
+              A restaurant, a bar and five private TrackMan bays on Lake Mead
+              Parkway. Open to everyone, every day.
+            </p>
+          </Reveal>
+          <Reveal delay={0.22}>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start">
+              <BookButton variant="gold" size="lg" withArrow />
+              <ReserveButton source="home_hero" variant="ghost-light" size="lg" />
+              <Link href="/food-drink" className="text-cta text-cream">
+                Menu
+              </Link>
+            </div>
+          </Reveal>
+
+          <dl className="mx-auto mt-12 grid max-w-3xl grid-cols-3 border-t border-cream/15 md:mx-0">
+            {[
+              { k: "Private bays", v: String(golf.bays) },
+              { k: "Rates from", v: `${nonPeak.price}`, u: nonPeak.unit },
+              { k: "Open daily until", v: "10 PM" },
+            ].map((f, i) => (
+              <div
+                key={f.k}
+                className={`py-5 ${i > 0 ? "border-l border-cream/15 pl-4 sm:pl-6" : ""}`}
+              >
+                <dt className="text-[0.6rem] uppercase tracking-[0.2em] text-cream/55 sm:text-[0.7rem]">{f.k}</dt>
+                <dd className="font-display mt-2 text-2xl font-semibold text-cream sm:text-3xl">
+                  {f.v}
+                  {f.u && <span className="ml-1 text-sm font-light text-cream/60">{f.u}</span>}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
@@ -226,14 +174,10 @@ export default function Home() {
                       sizes="(min-width: 768px) 33vw, 100vw"
                       className="reel-grade object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     />
-                    <ReelShade />
-                    <ReelCaption
-                      title={r.caption}
-                      sub={r.captionSub}
-                      className="absolute inset-x-4 bottom-8"
-                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" aria-hidden />
                   </div>
-                  <p className="mt-6 text-cream/75">{r.body}</p>
+                  <h3 className="font-display mt-6 text-3xl font-semibold">{r.title}</h3>
+                  <p className="mt-3 text-cream/75">{r.body}</p>
                   <Link
                     href={r.href}
                     className="text-cta mt-5 text-cream after:absolute after:inset-0 after:content-['']"
@@ -311,23 +255,23 @@ export default function Home() {
       </section>
 
       {/* =========================================== KITCHEN AND BAR ===== */}
-      <section className="bg-black text-cream">
+      <section className="bg-cream text-ink">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src={img.clubRibs}
-                alt="Barbecue ribs with mashed potatoes at Chip Shots"
+                src={img.clubRoom}
+                alt="The dining room at Chip Shots, looking toward the bar"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="reel-grade object-cover"
               />
             </div>
-            <div className="absolute -bottom-10 right-4 hidden aspect-square w-44 overflow-hidden border-8 border-black sm:block">
+            <div className="absolute -bottom-10 right-4 hidden aspect-square w-44 overflow-hidden border-8 border-cream sm:block">
               <Image
-                src={img.foodBurger}
-                alt="A bacon cheeseburger and fries at the bar"
+                src="/images/day-burger.jpg"
+                alt="A burger with onion rings in the dining room at lunch"
                 fill
                 sizes="176px"
                 className="reel-grade object-cover"
@@ -336,12 +280,15 @@ export default function Home() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="kicker text-gold-soft">03 · The kitchen &amp; bar</p>
-          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-cream sm:text-5xl">
+          <p className="kicker text-muted">03 · The kitchen &amp; bar</p>
+          <h2 className="font-display mt-6 text-balance text-4xl font-semibold leading-[1.1] text-ink sm:text-5xl">
             A good table,{" "}
-            <span className="text-gold-soft">with or without golf.</span>
+            <span className="text-green-soft">with or without golf.</span>
           </h2>
-          <p className="mt-6 max-w-md text-cream/75">
+          <p className="mt-6 max-w-md text-lg text-ink">
+            Lunch with the kids, dinner with friends, a round after work.
+          </p>
+          <p className="mt-4 max-w-md text-ink/75">
             Plenty of our regulars have never booked a bay. They come for
             lunch, dinner, a drink at the bar or brunch on Sunday. The dining
             room and patio keep the same hours we do.
@@ -352,15 +299,15 @@ export default function Home() {
               ["Happy hour", "Mon–Fri · 3–6 PM"],
               ["Prime rib brunch", "1st & 3rd Sundays · 10 AM–1 PM"],
             ].map(([k, v]) => (
-              <li key={k} className="flex items-baseline gap-4 border-b border-cream/15 py-3.5">
-                <span className="eyebrow text-cream/70">{k}</span>
+              <li key={k} className="flex items-baseline gap-4 border-b border-line py-3.5">
+                <span className="eyebrow text-ink/70">{k}</span>
                 <span className="leader" aria-hidden />
-                <span className="text-sm text-cream/80">{v}</span>
+                <span className="text-sm text-ink/80">{v}</span>
               </li>
             ))}
           </ul>
           <div className="mt-10 flex flex-wrap items-center gap-7">
-            <ButtonLink href="/food-drink" variant="gold" size="lg" withArrow>
+            <ButtonLink href="/food-drink" variant="green" size="lg" withArrow>
               Menu
             </ButtonLink>
             {orderOnlineLive && (
@@ -368,7 +315,7 @@ export default function Home() {
                 href={business.orderOnline}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cta text-cream"
+                className="text-cta text-ink"
               >
                 Order pickup <span aria-hidden>→</span>
               </a>
@@ -384,8 +331,8 @@ export default function Home() {
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden outline outline-1 outline-offset-[14px] outline-cream/15">
               <Image
-                src={img.clubPatio}
-                alt="The patio and putting greens outside Chip Shots in Henderson"
+                src="/images/day-patio.jpg"
+                alt="The sunny patio at Monument at Calico Ridge, outside Chip Shots"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="reel-grade object-cover"
@@ -553,8 +500,8 @@ export default function Home() {
             </dl>
             <div className="relative mt-10 aspect-[16/9] overflow-hidden">
               <Image
-                src={img.clubDusk}
-                alt="The Chip Shots storefront with striped awnings at dusk"
+                src="/images/day-storefront.jpg"
+                alt="The Chip Shots sign and striped awnings in daylight"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="reel-grade object-cover"
@@ -565,7 +512,7 @@ export default function Home() {
       </section>
 
       {/* ================================================= END CARD ===== */}
-      <ReelEndCard title="Book a bay" url="chipshotshenderson.com" poster="/videos/home/bar.jpg">
+      <ReelEndCard title="Book a bay" poster="/videos/hero/wide.jpg">
         <BookButton variant="gold" size="lg" withArrow />
         <ReserveButton source="home_endcard" variant="ghost-light" size="lg" />
       </ReelEndCard>
