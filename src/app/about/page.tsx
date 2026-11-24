@@ -56,7 +56,7 @@ export default function About() {
                 alt="The dining room and bar at Chip Shots"
                 width={900}
                 height={680}
-                className="h-full w-full object-cover"
+                className="reel-grade h-full w-full object-cover"
               />
             </div>
           </Reveal>
