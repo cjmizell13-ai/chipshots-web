@@ -123,7 +123,8 @@ export default function Memberships() {
           <Reveal delay={0.05}>
             <p className="mt-8 text-sm text-cream/65">
               <span className="font-medium text-cream">Billing:</span>{" "}
-              monthly tiers renew month to month and can be cancelled any time.
+              monthly tiers renew month to month. To cancel, give 7 days
+              written notice before your renewal date.
               Annual tiers are billed once, up front, and cost less over the
               year.
             </p>
