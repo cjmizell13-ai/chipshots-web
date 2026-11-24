@@ -61,15 +61,15 @@ export default function Memberships() {
       </section>
 
       {/* ============================================== HOW IT WORKS ===== */}
-      <section className="border-y border-line bg-cream-2">
+      <section className="bg-black text-cream">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
           <Reveal>
             <div className="max-w-2xl">
               <p className="eyebrow text-gold">How it works</p>
-              <h2 className="font-display mt-3 text-4xl font-light text-green-deep sm:text-5xl">
+              <h2 className="font-display mt-3 text-4xl font-light text-cream sm:text-5xl">
                 How it works.
               </h2>
-              <p className="mt-5 leading-relaxed text-muted">
+              <p className="mt-5 leading-relaxed text-cream/65">
                 What membership includes, and how playing works once you are
                 in.
               </p>
@@ -99,20 +99,20 @@ export default function Memberships() {
                 <StaggerItem
                   key={step.title}
                   as="article"
-                  className="rounded-3xl border border-line bg-white p-7 shadow-[var(--shadow-card)]"
+                  className="border border-cream/12 bg-green-deep/60 p-7"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green-deep text-gold">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-black text-gold">
                       <StepIcon className="h-5 w-5" />
                     </span>
-                    <span className="font-display text-3xl text-line">
+                    <span className="font-display text-3xl text-cream/20">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <h3 className="font-display mt-5 text-xl text-green-deep">
+                  <h3 className="font-display mt-5 text-xl text-cream">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                  <p className="mt-2 text-sm leading-relaxed text-cream/65">
                     {step.body}
                   </p>
                 </StaggerItem>
@@ -121,8 +121,8 @@ export default function Memberships() {
           </Stagger>
 
           <Reveal delay={0.05}>
-            <p className="mt-8 text-sm text-muted">
-              <span className="font-medium text-green-deep">Billing:</span>{" "}
+            <p className="mt-8 text-sm text-cream/65">
+              <span className="font-medium text-cream">Billing:</span>{" "}
               monthly tiers renew month to month and can be cancelled any time.
               Annual tiers are billed once, up front, and cost less over the
               year.
