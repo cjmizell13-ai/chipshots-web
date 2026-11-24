@@ -115,7 +115,7 @@ export default function Home() {
           <Reveal delay={0.16}>
             <p className="mx-auto mt-6 max-w-xl text-lg text-cream/85 md:mx-0">
               A restaurant, a bar and five private TrackMan bays on Lake Mead
-              Parkway. Open to everyone, every day.
+              Parkway. Open to the public, every day.
             </p>
           </Reveal>
           <Reveal delay={0.22}>

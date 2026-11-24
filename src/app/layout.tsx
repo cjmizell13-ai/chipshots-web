@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Chip Shots Golf Club",
   },
   description:
-    "A restaurant, a full bar and five private TrackMan bays in east Henderson, Nevada. Open to everyone, every day. Veteran-owned.",
+    "A restaurant, a full bar and five private TrackMan bays in east Henderson, Nevada. Open to the public, every day. Veteran-owned.",
   keywords: [
     "indoor golf Henderson",
     "golf simulator Henderson NV",

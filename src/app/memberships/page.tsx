@@ -24,7 +24,7 @@ export default function Memberships() {
       <PageHero
         eyebrow="Membership"
         title="Membership at the club."
-        intro="The club is open to everyone. Members have bay time included, first call on booking and extra hours at $30."
+        intro="The club is open to the public. Members have bay time included, first call on booking and extra hours at $30."
         image={img.bayLoveseat}
         shot={shot.members}
       />
