@@ -43,7 +43,7 @@ export default function PlateHero({
   reels?: HeroReel[];
 }) {
   return (
-    <section className="bg-cream">
+    <section className="bg-green-deep pb-10 text-cream sm:pb-14">
       <div className="bg-green-deep text-cream">
         <div className="mx-auto max-w-7xl px-5 pb-12 pt-36 sm:px-8 sm:pb-14 sm:pt-44">
           <p className="kicker text-gold-soft">{kicker}</p>
@@ -68,7 +68,7 @@ export default function PlateHero({
       </div>
 
       {/* The photo straddles the edge of the green. */}
-      <div className="bg-[linear-gradient(to_bottom,var(--color-green-deep)_50%,transparent_50%)]">
+      <div>
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           {reels && reels.length > 0 ? (
             <div className="grid aspect-[4/5] grid-cols-1 gap-[3px] overflow-hidden bg-black sm:aspect-[2/1] md:grid-cols-3 lg:aspect-[11/5]">
@@ -102,12 +102,12 @@ export default function PlateHero({
           {facts.map((f, i) => (
             <div
               key={f.label}
-              className={`border-b border-line py-5 sm:py-6 ${
-                i > 0 ? "sm:border-l sm:pl-8" : ""
+              className={`border-b border-cream/15 py-5 sm:py-6 ${
+                i > 0 ? "sm:border-l sm:border-cream/15 sm:pl-8" : ""
               }`}
             >
-              <dt className="eyebrow text-muted">{f.label}</dt>
-              <dd className="font-display mt-2 text-2xl font-semibold leading-snug text-ink">
+              <dt className="eyebrow text-cream/55">{f.label}</dt>
+              <dd className="font-display mt-2 text-2xl font-semibold leading-snug text-cream">
                 {f.value}
               </dd>
             </div>
