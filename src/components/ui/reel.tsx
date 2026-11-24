@@ -99,7 +99,7 @@ export function Monogram({ size = 96, className = "" }: { size?: number; classNa
   );
 }
 
-/** The reel's last frame: monogram, a call to action, the address. */
+/** Closing call to action: a sharp photo of the sign beside the monogram. */
 export function ReelEndCard({
   title,
   url,
@@ -108,36 +108,36 @@ export function ReelEndCard({
 }: {
   title: string;
   url?: string;
+  /** Photo shown beside the call to action. */
   poster: string;
   children?: ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-black text-center text-cream">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={poster}
-        alt=""
-        aria-hidden
-        className="reel-grade absolute inset-0 -z-10 h-full w-full object-cover opacity-45 blur-[2px]"
-      />
-      <div className="reel-vignette absolute inset-0 -z-10" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-black/40" aria-hidden />
-      <div className="mx-auto max-w-xl px-5 py-28 sm:py-36">
-        <Monogram size={112} className="mx-auto text-cream" />
-        <p className="reel-title mt-8 text-2xl sm:text-3xl">{title}</p>
-        <span className="mx-auto mt-3 block h-px w-16 bg-gold" aria-hidden />
-        {url && <p className="reel-sub mt-3 text-gold-soft">{url}</p>}
-        <p className="reel-sub mt-6 text-cream/80">
-          Monument at Calico Ridge · Henderson
-        </p>
-        <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-cream/55">
-          1473 E Lake Mead Pkwy
-        </p>
-        {children && (
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">{children}</div>
-        )}
+    <section className="bg-green-deep text-cream">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-28 md:grid-cols-2 md:gap-16">
+        <div className="relative aspect-[9/10] overflow-hidden ring-1 ring-cream/10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={poster}
+            alt="The Chip Shots Golf Club sign and striped awning at Monument at Calico Ridge"
+            loading="lazy"
+            className="reel-grade absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+        <div className="text-center">
+          <Monogram size={112} className="mx-auto text-cream" />
+          <p className="reel-title mt-8 text-2xl sm:text-3xl">{title}</p>
+          <span className="mx-auto mt-3 block h-px w-16 bg-gold" aria-hidden />
+          {url && <p className="reel-sub mt-3 text-gold-soft">{url}</p>}
+          <p className="reel-sub mt-6 text-cream/80">Monument at Calico Ridge · Henderson</p>
+          <p className="mt-1 text-[0.65rem] uppercase tracking-[0.22em] text-cream/55">
+            1473 E Lake Mead Pkwy
+          </p>
+          {children && (
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">{children}</div>
+          )}
+        </div>
       </div>
     </section>
   );
 }
-

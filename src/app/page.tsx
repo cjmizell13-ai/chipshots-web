@@ -372,8 +372,8 @@ export default function Home() {
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden outline outline-1 outline-offset-[14px] outline-cream/15">
               <Image
-                src="/images/day-patio.jpg"
-                alt="The sunny patio at Monument at Calico Ridge, outside Chip Shots"
+                src={img.clubPatio}
+                alt="The patio and putting greens outside Chip Shots in Henderson"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="reel-grade object-cover"
@@ -453,7 +453,7 @@ export default function Home() {
               <Reveal>
                 <p className="kicker text-gold-soft">06 · On the calendar</p>
                 <h2 className="font-display mt-6 text-4xl font-semibold leading-[1.1] text-cream sm:text-5xl">
-                  What&rsquo;s on.
+                  What&rsquo;s going on at the club.
                 </h2>
               </Reveal>
               <Link href="/events" className="text-cta text-cream">
@@ -554,7 +554,7 @@ export default function Home() {
       </section>
 
       {/* ================================================= END CARD ===== */}
-      <ReelEndCard title="Book a bay" poster="/videos/hero/wide.jpg">
+      <ReelEndCard title="Book a bay" poster="/images/sign.jpg">
         <BookButton variant="gold" size="lg" withArrow />
         <ReserveButton source="home_endcard" variant="ghost-light" size="lg" />
       </ReelEndCard>
