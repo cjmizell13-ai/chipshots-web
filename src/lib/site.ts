@@ -599,7 +599,7 @@ export const upcomingEvents: ScheduledEvent[] = [
     date: "2026-12-03",
     title: "Holiday Cocktail Making Class",
     time: "6:00–7:30 PM",
-    desc: "A hands-on class where you learn to make three holiday mini cocktails, then enjoy what you make. $35 per person, no bartending experience needed. 21 and over. Only 15 spots, so reserve ahead.",
+    desc: "A hands-on class where you learn to make three holiday mini cocktails, then enjoy what you make. $35 per person, tax included. No bartending experience needed. 21 and over. Only 16 spots, so reserve ahead.",
     signup:
       "https://tables.toasttab.com/chip-shots-1473-east-lake-mead-parkway-suite-110/experience/holiday-cocktail-making-class",
     signupLabel: "Reserve a spot",
