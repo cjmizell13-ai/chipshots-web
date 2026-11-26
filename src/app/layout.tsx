@@ -8,6 +8,7 @@ import VipSignup from "@/components/forms/VipSignup";
 import BackToTop from "@/components/BackToTop";
 import BookingProvider from "@/components/BookingProvider";
 import BookingTracker from "@/components/BookingTracker";
+import InAppBrowserGuard from "@/components/InAppBrowserGuard";
 import { business, liveDelivery, orderOnlineLive, reservationsLive, schedule } from "@/lib/site";
 
 const bodoni = Bodoni_Moda({
@@ -256,6 +257,7 @@ export default function RootLayout({
           <Footer />
           <BackToTop />
           <BookingTracker />
+          <InAppBrowserGuard />
         </BookingProvider>
       </body>
     </html>
